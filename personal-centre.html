@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Personal Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --dark: #1a252f;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: var(--primary);
+            color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .sidebar-header {
+            padding: 25px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            padding: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .sidebar-menu li a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            padding-left: 30px;
+        }
+
+        .sidebar-menu li a.active {
+            background: var(--secondary);
+            color: white;
+            border-left: 4px solid white;
+        }
+
+        .sidebar-menu li a i {
+            width: 24px;
+            text-align: center;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 15px 20px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* User Profile */
+        .user-profile {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .vip-badge {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Security Status */
+        .security-status {
+            padding: 20px;
+            border-left: 4px solid;
+            margin-bottom: 20px;
+        }
+
+        .security-low {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left-color: var(--danger);
+        }
+
+        .security-medium {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left-color: var(--warning);
+        }
+
+        .security-high {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left-color: var(--success);
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Summary Cards */
+        .summary-card {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .summary-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0;
+            color: var(--primary);
+        }
+
+        .summary-label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Recommended Settings */
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .setting-info h6 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .setting-info p {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-complete {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+
+        .status-incomplete {
+            background-color: rgba(220, 53, 69, 0.1);
+            color: var(--danger);
+        }
+
+        /* Tables */
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 500;
+        }
+
+        .table tbody tr {
+            transition: all 0.2s;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* Forms */
+        .form-control,
+        .form-select {
+            border-radius: 8px;
+            padding: 10px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        }
+
+        /* Buttons */
+        .btn {
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+            border-color: var(--success);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .btn-warning {
+            background-color: var(--warning);
+            border-color: var(--warning);
+            color: #212529;
+        }
+
+        /* Badges */
+        .badge {
+            padding: 5px 10px;
+            font-weight: 500;
+            border-radius: 20px;
+        }
+
+        /* Tabs */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 250px;
+            }
+
+            .main-content {
+                margin-left: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .sidebar-menu {
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .sidebar-menu li {
+                flex: 0 0 auto;
+                border-bottom: none;
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .sidebar-menu li a {
+                padding: 15px 20px;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 15px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="fas fa-user-shield"></i> Personal Center</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#" data-tab="account"><i class="fas fa-user-cog"></i> My Account</a></li>
+            <li><a href="#" data-tab="deposit"><i class="fas fa-money-bill-wave"></i> Deposit</a></li>
+            <li><a href="#" data-tab="withdrawal"><i class="fas fa-wallet"></i> Withdrawal</a></li>
+            <li><a href="#" data-tab="betting"><i class="fas fa-chart-line"></i> Betting Record</a></li>
+            <li><a href="#" data-tab="account-record"><i class="fas fa-receipt"></i> Account Record</a></li>
+            <li><a href="#" data-tab="profit-loss"><i class="fas fa-calculator"></i> Profit & Loss</a></li>
+            <li><a href="#" data-tab="rewards"><i class="fas fa-gift"></i> Reward Center</a></li>
+            <li><a href="#" data-tab="invite"><i class="fas fa-users"></i> Invite Friends</a></li>
+            <li><a href="#" data-tab="messages"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="#" data-tab="rebate"><i class="fas fa-hand-holding-usd"></i> Manual Rebate</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="user-profile">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" class="user-avatar">
+                            <h4>tester5429</h4>
+                            <span class="vip-badge">VIP0</span>
+                            <p class="mt-2 mb-0">Member since: 2025-05-11</p>
+                            <h3 class="mt-3">Rs 0.00</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="login-info">
+                                <p><i class="fas fa-clock me-2"></i> <strong>Last Login:</strong> 2025-06-14 16:53:24
+                                </p>
+                                <p><i class="fas fa-network-wired me-2"></i> <strong>IP Address:</strong> 14.1.107.37
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-status security-low">
+                        <div class="d-flex justify-content-between">
+                            <h6><i class="fas fa-shield-alt me-2"></i> Security Status</h6>
+                            <span class="badge bg-danger">Low</span>
+                        </div>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="26"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-2 mb-0">Score: 26/100 - Improve your account security</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-sync-alt me-2"></i> Pending Requests</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="summary-card">
+                                <div class="summary-value">0</div>
+                                <div class="summary-label">Deposit Requests</div>
+                                <small class="text-muted">Last updated: 14/08/2025</small>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-value">0</div>
+                                <div class="summary-label">Withdrawal Requests</div>
+                                <small class="text-muted">Last updated: 14/08/2025</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-tasks me-2"></i> Recommended Settings</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6>Personal Information</h6>
+                                    <p>Complete your profile to improve account security</p>
+                                </div>
+                                <div>
+                                    <span class="status-badge status-incomplete">Incomplete</span>
+                                    <button class="btn btn-sm btn-primary ms-2">Complete</button>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6>Login Password</h6>
+                                    <p>Use a strong password with letters, numbers and symbols</p>
+                                </div>
+                                <div>
+                                    <span class="status-badge status-complete">Completed</span>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2">Change</button>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6>Bank Account</h6>
+                                    <p>Add bank account for withdrawals and transfers</p>
+                                </div>
+                                <div>
+                                    <span class="status-badge status-incomplete">Incomplete</span>
+                                    <button class="btn btn-sm btn-primary ms-2">Add</button>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6>E-Wallet</h6>
+                                    <p>Link your e-wallet for faster transactions</p>
+                                </div>
+                                <div>
+                                    <span class="status-badge status-incomplete">Incomplete</span>
+                                    <button class="btn btn-sm btn-primary ms-2">Link</button>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6>Transaction Password</h6>
+                                    <p>Extra security for financial transactions</p>
+                                </div>
+                                <div>
+                                    <span class="status-badge status-incomplete">Incomplete</span>
+                                    <button class="btn btn-sm btn-primary ms-2">Set Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-bell me-2"></i> Recent Activities</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Activity</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-06-14</td>
+                                            <td>Login from new device</td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-13</td>
+                                            <td>Password changed</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-10</td>
+                                            <td>Withdrawal request</td>
+                                            <td><span class="badge bg-success">Processed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-08</td>
+                                            <td>Deposit received</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Account Tab -->
+        <div id="account" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h6><i class="fas fa-user-cog me-2"></i> Account Settings</h6>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control" value="tester5429" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">VIP Level</label>
+                                    <input type="text" class="form-control" value="VIP0" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Registration Date</label>
+                                    <input type="text" class="form-control" value="2025-05-11" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Last Login</label>
+                                    <input type="text" class="form-control" value="2025-06-14 16:53:24" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Last Login IP</label>
+                                    <input type="text" class="form-control" value="14.1.107.37" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Personal Information</h6>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter last name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select">
+                                        <option selected disabled>Select gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Contact Information</h6>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button type="reset" class="btn btn-outline-secondary me-2">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h6><i class="fas fa-lock me-2"></i> Security Settings</h6>
+                </div>
+                <div class="card-body">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h6>Login Password</h6>
+                            <p>Last changed: 2025-06-10</p>
+                        </div>
+                        <button class="btn btn-outline-primary">Change Password</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h6>Transaction Password</h6>
+                            <p>Not set up yet</p>
+                        </div>
+                        <button class="btn btn-primary">Set Up</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h6>Two-Factor Authentication</h6>
+                            <p>Add extra security to your account</p>
+                        </div>
+                        <button class="btn btn-outline-primary">Enable 2FA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deposit Tab -->
+        <div id="deposit" class="tab-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-money-bill-wave me-2"></i> Deposit Funds</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Minimum deposit: Rs 100 | Maximum deposit: Rs
+                                50,000
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-primary">
+                                        <div class="card-header bg-primary text-white">
+                                            <h6><i class="fas fa-university me-2"></i> Bank Transfer</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    Processing: 1-3 hours</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    No fees</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    Min: Rs 500</li>
+                                            </ul>
+                                            <button class="btn btn-primary w-100 mt-3">Deposit via Bank</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-success">
+                                        <div class="card-header bg-success text-white">
+                                            <h6><i class="fas fa-mobile-alt me-2"></i> E-Wallet</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    Instant processing</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    No fees</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                                    Min: Rs 200</li>
+                                            </ul>
+                                            <button class="btn btn-success w-100 mt-3">Deposit via E-Wallet</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="fas fa-history me-2"></i> Deposit History</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Method</th>
+                                                    <th>Status</th>
+                                                    <th>Reference</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2025-06-10</td>
+                                                    <td>Rs 1,500.00</td>
+                                                    <td>Bank Transfer</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>DEP78901234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-05-28</td>
+                                                    <td>Rs 2,000.00</td>
+                                                    <td>E-Wallet</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>DEP56789012</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-05-15</td>
+                                                    <td>Rs 1,000.00</td>
+                                                    <td>Bank Transfer</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>DEP34567890</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-info-circle me-2"></i> Deposit Information</h6>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="mb-3">JAZZCASH / EASYPASA</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Channel</label>
+                                <select class="form-select">
+                                    <option selected>Channel 6</option>
+                                    <option>Channel 1</option>
+                                    <option>Channel 2</option>
+                                    <option>Channel 3</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Deposit Amount</label>
+                                <div class="btn-group d-flex flex-wrap" role="group">
+                                    <button type="button" class="btn btn-outline-primary m-1">100</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">1,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">2,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">5,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">10,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">20,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">30,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">50,000</button>
+                                    <button type="button" class="btn btn-outline-primary m-1">100,000</button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Custom Amount</label>
+                                <input type="number" class="form-control" placeholder="Enter amount" min="100"
+                                    max="50000">
+                                <small class="text-muted">Minimum: Rs 100 | Maximum: Rs 50,000</small>
+                            </div>
+
+                            <button class="btn btn-primary w-100">Apply for Deposit</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-gift me-2"></i> Deposit Bonus</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-circle me-2"></i> 10% bonus on deposits above Rs 500 (Max
+                                Rs 1,000)
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Deposit Rs 500
+                                    <span class="badge bg-primary">+Rs 50</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Deposit Rs 1,000
+                                    <span class="badge bg-primary">+Rs 100</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Deposit Rs 5,000
+                                    <span class="badge bg-primary">+Rs 500</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Deposit Rs 10,000
+                                    <span class="badge bg-primary">+Rs 1,000</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdrawal Tab -->
+        <div id="withdrawal" class="tab-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-wallet me-2"></i> Withdraw Funds</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Minimum withdrawal: Rs 300 | Maximum withdrawal:
+                                Rs 50,000 per day
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6>Available Balance</h6>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h3 class="text-primary">Rs 0.00</h3>
+                                            <p class="text-muted">Withdrawable amount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6>Withdrawal Method</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <select class="form-select mb-3">
+                                                <option selected>Select method</option>
+                                                <option>Bank Transfer</option>
+                                                <option>E-Wallet</option>
+                                            </select>
+                                            <input type="number" class="form-control mb-3" placeholder="Enter amount"
+                                                min="300" max="50000">
+                                            <button class="btn btn-primary w-100">Request Withdrawal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="fas fa-history me-2"></i> Withdrawal History</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Method</th>
+                                                    <th>Status</th>
+                                                    <th>Reference</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2025-06-05</td>
+                                                    <td>Rs 3,000.00</td>
+                                                    <td>Bank Transfer</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>WTH78901234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-05-20</td>
+                                                    <td>Rs 2,500.00</td>
+                                                    <td>E-Wallet</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>WTH56789012</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-05-08</td>
+                                                    <td>Rs 1,800.00</td>
+                                                    <td>Bank Transfer</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>WTH34567890</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-credit-card me-2"></i> Withdrawal Accounts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="mb-3">Bank Accounts</h6>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h6>HBL Bank</h6>
+                                                <p class="mb-0">**** **** **** 1234</p>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-danger">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-primary w-100">Add Bank Account</button>
+                            </div>
+
+                            <div>
+                                <h6 class="mb-3">E-Wallets</h6>
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i> No e-wallets linked
+                                </div>
+                                <button class="btn btn-outline-primary w-100">Add E-Wallet</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-info-circle me-2"></i> Withdrawal Info</h6>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Processing Time
+                                    <span class="badge bg-primary">24-48 hours</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Fees
+                                    <span class="badge bg-primary">2% (min Rs 10)</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Daily Limit
+                                    <span class="badge bg-primary">Rs 50,000</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Remaining Today
+                                    <span class="badge bg-success">10/10</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-history me-2"></i> Recent Withdrawal</h6>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="alert alert-secondary">
+                                <i class="fas fa-info-circle me-2"></i> No withdrawal requests
+                            </div>
+                            <button class="btn btn-outline-primary">View All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Betting Record Tab -->
+        <div id="betting" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h6><i class="fas fa-clipboard-list me-2"></i> Betting Records</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <label class="form-label">From Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">To Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Game Type</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Slot</option>
+                                <option>Live</option>
+                                <option>Sport</option>
+                                <option>Fishing</option>
+                                <option>Poker</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Time Range</label>
+                            <select class="form-select">
+                                <option selected>Today</option>
+                                <option>Yesterday</option>
+                                <option>7-Days</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <label class="form-label">Vendor</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Vendor A</option>
+                                <option>Vendor B</option>
+                                <option>Vendor C</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Search</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search bets...">
+                                <button class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Won</option>
+                                <option>Lost</option>
+                                <option>Pending</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Bet Time</th>
+                                    <th>Bet Amount</th>
+                                    <th>Valid Bet</th>
+                                    <th>Award</th>
+                                    <th>Profit/Loss</th>
+                                    <th>Game Name</th>
+                                    <th>Game Number</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-06-14 14:23:45</td>
+                                    <td>Rs 500.00</td>
+                                    <td>Rs 500.00</td>
+                                    <td>Rs 0.00</td>
+                                    <td class="text-danger">-Rs 500.00</td>
+                                    <td>Football - Premier League</td>
+                                    <td>BT78901234</td>
+                                    <td><span class="badge bg-danger">Lost</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-13 21:12:33</td>
+                                    <td>Rs 1,000.00</td>
+                                    <td>Rs 1,000.00</td>
+                                    <td>Rs 2,000.00</td>
+                                    <td class="text-success">+Rs 1,000.00</td>
+                                    <td>Roulette - Live Casino</td>
+                                    <td>BT56789012</td>
+                                    <td><span class="badge bg-success">Won</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-12 18:45:21</td>
+                                    <td>Rs 200.00</td>
+                                    <td>Rs 200.00</td>
+                                    <td>Rs 800.00</td>
+                                    <td class="text-success">+Rs 600.00</td>
+                                    <td>Slot - Book of Ra</td>
+                                    <td>BT34567890</td>
+                                    <td><span class="badge bg-success">Won</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-11 16:30:15</td>
+                                    <td>Rs 750.00</td>
+                                    <td>Rs 750.00</td>
+                                    <td>Rs 1,500.00</td>
+                                    <td class="text-success">+Rs 750.00</td>
+                                    <td>Tennis - Wimbledon</td>
+                                    <td>BT12345678</td>
+                                    <td><span class="badge bg-success">Won</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-10 12:15:09</td>
+                                    <td>Rs 300.00</td>
+                                    <td>Rs 300.00</td>
+                                    <td>Rs 0.00</td>
+                                    <td class="text-danger">-Rs 300.00</td>
+                                    <td>Blackjack - Live Casino</td>
+                                    <td>BT90123456</td>
+                                    <td><span class="badge bg-danger">Lost</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="alert alert-secondary">
+                                <strong>Total Bets:</strong> 5 | <strong>Total Amount:</strong> Rs 2,750.00
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-secondary text-end">
+                                <strong>Wins:</strong> 3 | <strong>Losses:</strong> 2 | <strong>Net:</strong> <span
+                                    class="text-success">+Rs 1,550.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Record Tab -->
+        <div id="account-record" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h6><i class="fas fa-receipt me-2"></i> Account Transaction History</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <label class="form-label">From Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">To Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Transaction Type</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Deposit</option>
+                                <option>Withdrawal</option>
+                                <option>Bet</option>
+                                <option>Win</option>
+                                <option>Bonus</option>
+                                <option>Adjustment</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Completed</option>
+                                <option>Pending</option>
+                                <option>Failed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date/Time</th>
+                                    <th>Transaction ID</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Balance</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-06-14 14:23:45</td>
+                                    <td>TR78901234</td>
+                                    <td>Bet</td>
+                                    <td class="text-danger">-Rs 500.00</td>
+                                    <td>Rs 2,500.00</td>
+                                    <td>Football - Premier League</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-13 21:12:33</td>
+                                    <td>TR56789012</td>
+                                    <td>Win</td>
+                                    <td class="text-success">+Rs 2,000.00</td>
+                                    <td>Rs 3,000.00</td>
+                                    <td>Roulette - Live Casino</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-12 18:45:21</td>
+                                    <td>TR34567890</td>
+                                    <td>Win</td>
+                                    <td class="text-success">+Rs 800.00</td>
+                                    <td>Rs 1,000.00</td>
+                                    <td>Slot - Book of Ra</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-11 16:30:15</td>
+                                    <td>TR12345678</td>
+                                    <td>Deposit</td>
+                                    <td class="text-success">+Rs 1,500.00</td>
+                                    <td>Rs 1,500.00</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-10 12:15:09</td>
+                                    <td>TR90123456</td>
+                                    <td>Withdrawal</td>
+                                    <td class="text-danger">-Rs 3,000.00</td>
+                                    <td>Rs 0.00</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="alert alert-secondary">
+                                <strong>Total Transactions:</strong> 5 | <strong>Total Amount:</strong> Rs 1,800.00
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-secondary text-end">
+                                <strong>Credits:</strong> Rs 4,300.00 | <strong>Debits:</strong> Rs 3,500.00 |
+                                <strong>Net:</strong> <span class="text-success">+Rs 800.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profit & Loss Tab -->
+        <div id="profit-loss" class="tab-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-chart-pie me-2"></i> Profit & Loss Summary</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-6">
+                                    <div class="p-3 bg-light rounded">
+                                        <h5 class="text-success">+Rs 1,550.00</h5>
+                                        <p class="mb-0">Total Profit</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 bg-light rounded">
+                                        <h5 class="text-danger">-Rs 800.00</h5>
+                                        <p class="mb-0">Total Loss</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Game Type</th>
+                                            <th>Bets</th>
+                                            <th>Wins</th>
+                                            <th>Profit/Loss</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Slot</td>
+                                            <td>Rs 200.00</td>
+                                            <td>Rs 800.00</td>
+                                            <td class="text-success">+Rs 600.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Live</td>
+                                            <td>Rs 1,300.00</td>
+                                            <td>Rs 1,000.00</td>
+                                            <td class="text-danger">-Rs 300.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sport</td>
+                                            <td>Rs 1,250.00</td>
+                                            <td>Rs 1,500.00</td>
+                                            <td class="text-success">+Rs 250.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fishing</td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Poker</td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                        </tr>
+                                        <tr class="fw-bold">
+                                            <td>Total</td>
+                                            <td>Rs 2,750.00</td>
+                                            <td>Rs 3,300.00</td>
+                                            <td class="text-success">+Rs 550.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-calendar-alt me-2"></i> Daily Performance</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Bets</th>
+                                            <th>Wins</th>
+                                            <th>P/L</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-06-14</td>
+                                            <td>Rs 500.00</td>
+                                            <td>Rs 0.00</td>
+                                            <td class="text-danger">-Rs 500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-13</td>
+                                            <td>Rs 1,000.00</td>
+                                            <td>Rs 2,000.00</td>
+                                            <td class="text-success">+Rs 1,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-12</td>
+                                            <td>Rs 200.00</td>
+                                            <td>Rs 800.00</td>
+                                            <td class="text-success">+Rs 600.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-11</td>
+                                            <td>Rs 750.00</td>
+                                            <td>Rs 1,500.00</td>
+                                            <td class="text-success">+Rs 750.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-06-10</td>
+                                            <td>Rs 300.00</td>
+                                            <td>Rs 0.00</td>
+                                            <td class="text-danger">-Rs 300.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h6><i class="fas fa-trophy me-2"></i> Performance Highlights</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="p-3 bg-light rounded mb-3">
+                                        <h6 class="text-success">Best Day</h6>
+                                        <p class="mb-1">2025-06-13</p>
+                                        <h5 class="text-success">+Rs 1,000.00</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 bg-light rounded mb-3">
+                                        <h6 class="text-danger">Worst Day</h6>
+                                        <p class="mb-1">2025-06-14</p>
+                                        <h5 class="text-danger">-Rs 500.00</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Your overall profit is Rs 550.00 with a win rate
+                                of 60%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reward Center Tab -->
+        <div id="rewards" class="tab-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">
+                            <h6><i class="fas fa-gift me-2"></i> Available Rewards</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="reward-item mb-4 p-3 bg-light rounded">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">Welcome Bonus</h6>
+                                    <span class="badge bg-success">New</span>
+                                </div>
+                                <p class="mb-3">Get 100% bonus up to Rs 5,000 on your first deposit</p>
+                                <button class="btn btn-warning w-100">Claim Now</button>
+                            </div>
+
+                            <div class="reward-item mb-4 p-3 bg-light rounded">
+                                <h6 class="mb-2">Weekly Reload</h6>
+                                <p class="mb-3">50% bonus up to Rs 2,000 every Monday</p>
+                                <button class="btn btn-warning w-100">Claim Now</button>
+                            </div>
+
+                            <div class="reward-item p-3 bg-light rounded">
+                                <h6 class="mb-2">Birthday Bonus</h6>
+                                <p class="mb-3">Rs 500 free bonus on your birthday month</p>
+                                <button class="btn btn-secondary w-100" disabled>Available in Nov</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h6><i class="fas fa-crown me-2"></i> VIP Benefits</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <div class="vip-badge mb-3">VIP Level 0</div>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>500/3,000 points to next level</p>
+                            </div>
+
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Cashback
+                                    <span class="badge bg-primary">2%</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Withdrawal Limit
+                                    <span class="badge bg-primary">Rs 50,000/day</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Personal Manager
+                                    <span class="badge bg-secondary">No</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Exclusive Promotions
+                                    <span class="badge bg-secondary">No</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Faster Withdrawals
+                                    <span class="badge bg-secondary">No</span>
+                                </li>
+                            </ul>
+
+                            <button class="btn btn-outline-success w-100">View VIP Tiers</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <h6><i class="fas fa-coins me-2"></i> My Rewards</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <h3 class="text-primary">150 Points</h3>
+                                <p class="text-muted">Available Points</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h6 class="mb-3">Latest Reward</h6>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h6 class="mb-1">Deposit Bonus</h6>
+                                                <p class="mb-0 text-muted">10/06/2025</p>
+                                            </div>
+                                            <span class="text-success">+Rs 50</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <h6 class="mb-3">Redeemable Items</h6>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="fas fa-gift text-primary mb-2" style="font-size: 24px;"></i>
+                                                <h6>Gift Card</h6>
+                                                <p class="mb-0">200 Points</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="fas fa-money-bill-wave text-success mb-2"
+                                                    style="font-size: 24px;"></i>
+                                                <h6>Bonus Cash</h6>
+                                                <p class="mb-0">150 Points</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-info w-100">View Reward History</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invite Friends Tab -->
+        <div id="invite" class="tab-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h6><i class="fas fa-user-friends me-2"></i> Invite Friends & Earn</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <h4 class="text-primary">Your Referral Code</h4>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control form-control-lg text-center"
+                                        value="TEST5429-X" id="referralCode" readonly>
+                                    <button class="btn btn-primary" onclick="copyReferralCode()"><i
+                                            class="fas fa-copy"></i></button>
+                                </div>
+                                <p class="text-muted">Share this code with friends and earn rewards!</p>
+                            </div>
+
+                            <div class="row text-center mb-4">
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <h5 class="mb-0">3</h5>
+                                        <p class="mb-0">Invited</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <h5 class="mb-0">1</h5>
+                                        <p class="mb-0">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <h5 class="mb-0">Rs 500</h5>
+                                        <p class="mb-0">Earned</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center gap-2 mb-4">
+                                <button class="btn btn-outline-primary"><i
+                                        class="fab fa-facebook-f me-2"></i>Facebook</button>
+                                <button class="btn btn-outline-info"><i class="fab fa-twitter me-2"></i>Twitter</button>
+                                <button class="btn btn-outline-success"><i
+                                        class="fab fa-whatsapp me-2"></i>WhatsApp</button>
+                            </div>
+
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Earn 20% of your friend's first deposit and 5%
+                                of their losses for 30 days!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-history me-2"></i> Referral History</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Friend</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Earned</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>friend123</td>
+                                            <td>2025-06-05</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td class="text-success">Rs 500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>buddy456</td>
+                                            <td>2025-05-20</td>
+                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td>Rs 0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pal789</td>
+                                            <td>2025-05-15</td>
+                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td>Rs 0.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header bg-success text-white">
+                            <h6><i class="fas fa-award me-2"></i> How It Works</h6>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">1. Share your unique referral link with friends</li>
+                                <li class="list-group-item">2. They sign up using your link</li>
+                                <li class="list-group-item">3. They make their first deposit (min Rs 500)</li>
+                                <li class="list-group-item">4. You earn 20% of their first deposit as bonus!</li>
+                                <li class="list-group-item">5. Plus, earn 5% of their losses for 30 days</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internal Messages Tab -->
+        <div id="messages" class="tab-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-inbox me-2"></i> Messages (3)</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action active">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="mb-1">Welcome Bonus Claimed</h6>
+                                        <small>Today</small>
+                                    </div>
+                                    <p class="mb-1">Your welcome bonus has been credited</p>
+                                    <small>Support Team</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="mb-1">Weekly Promotion</h6>
+                                        <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Check out this week's promotions</p>
+                                    <small>Marketing Team</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="mb-1">Withdrawal Processed</h6>
+                                        <small>1 week ago</small>
+                                    </div>
+                                    <p class="mb-1">Your withdrawal has been processed</p>
+                                    <small>Finance Team</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="mb-1">Account Verification</h6>
+                                        <small>2 weeks ago</small>
+                                    </div>
+                                    <p class="mb-1">Please complete your verification</p>
+                                    <small>Security Team</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">Welcome Bonus Claimed</h6>
+                                <div>
+                                    <button class="btn btn-sm btn-outline-danger me-2"><i
+                                            class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i
+                                            class="fas fa-archive"></i></button>
+                                </div>
+                            </div>
+                            <small class="text-muted">From: Support Team | Date: 2025-06-14 10:30:45</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <p>Dear tester5429,</p>
+                                <p>We're pleased to inform you that your Welcome Bonus of Rs 2,500.00 has been
+                                    successfully credited to your account.</p>
+                                <p>This bonus comes with a 10x wagering requirement. You need to wager Rs 25,000 before
+                                    being able to withdraw any winnings from this bonus.</p>
+                                <p>The bonus will expire in 30 days (2025-07-14).</p>
+                                <p>If you have any questions, please don't hesitate to contact our support team.</p>
+                            </div>
+                            <div class="border-top pt-3">
+                                <p>Best regards,<br><strong>Customer Support Team</strong></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary me-2"><i class="fas fa-reply me-2"></i>Reply</button>
+                            <button class="btn btn-outline-secondary"><i
+                                    class="fas fa-forward me-2"></i>Forward</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Rebate Tab -->
+        <div id="rebate" class="tab-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h6><i class="fas fa-hand-holding-usd me-2"></i> Manual Rebate</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Current rebate rate: 1.5% of net losses (min Rs
+                                1,000 loss)
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Settlement Date</label>
+                                <input type="date" class="form-control" value="2025-06-14">
+                            </div>
+
+                            <div class="table-responsive mb-4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Game Type</th>
+                                            <th>Rebate Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Slot</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Live</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sport</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fishing</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Poker</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                        <tr class="fw-bold">
+                                            <td>Total</td>
+                                            <td>0.0000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-outline-primary"><i
+                                        class="fas fa-sync-alt me-2"></i>Refresh</button>
+                                <button class="btn btn-primary"><i class="fas fa-download me-2"></i>Receive</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6><i class="fas fa-history me-2"></i> Rebate History</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-06-10</td>
+                                            <td>Rs 127.50</td>
+                                            <td><span class="badge bg-success">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-05</td>
+                                            <td>Rs 78.00</td>
+                                            <td><span class="badge bg-success">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-04-01</td>
+                                            <td>Rs 45.00</td>
+                                            <td><span class="badge bg-success">Paid</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header bg-info text-white">
+                            <h6><i class="fas fa-question-circle me-2"></i> How Rebate Works</h6>
+                        </div>
+                        <div class="card-body">
+                            <p>Our manual rebate program allows you to request cashback on your losses for specific
+                                periods.</p>
+                            <ul class="mb-3">
+                                <li>Submit your request and our team will review it within 24 hours</li>
+                                <li>Current rebate rate: 1.5% of net losses</li>
+                                <li>Minimum loss requirement: Rs 1,000</li>
+                                <li>Maximum rebate per day: Rs 500</li>
+                            </ul>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i> Rebates are subject to terms and
+                                conditions
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.sidebar-menu a').forEach(item => {
+            if (item.getAttribute('data-tab')) {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all tabs and menu items
+                    document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
+                    // Add active class to clicked menu item
+                    this.classList.add('active');
+
+                    // Show corresponding tab content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            }
+        });
+
+        // Function to copy referral code
+        function copyReferralCode() {
+            const copyText = document.getElementById("referralCode");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Referral code copied: " + copyText.value);
+        }
+
+        // Show only dashboard tab by default
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            if (tab.id !== 'dashboard') {
+                tab.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

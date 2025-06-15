@@ -1,0 +1,401 @@
+/* --- custom css for the Header --- */
+.userLogo {
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.userLogo img {
+    width: 45px;
+    height: 45px;
+}
+
+.customBtn {
+    background-color: #0d1321;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.customBtn:hover {
+    background-color: #17223b;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-dropdown .dropdown-toggle {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+}
+
+.profile-dropdown .dropdown-menu a {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.profile-dropdown .dropdown-menu a:hover {
+    background-color: #1A2030;
+    color: var(--theme-color);
+}
+
+.wallet-box {
+    background-color: #18233f;
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.wallet-box .wallet-icon img {
+    width: 25px;
+    height: 25px;
+    opacity: 0.9;
+    transition: transform 0.2s ease;
+}
+
+.wallet-box .wallet-icon:hover img {
+    transform: scale(1.1);
+}
+
+.header-icon-sm img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.9;
+    transition: transform 0.2s ease;
+}
+
+.header-icon-sm:hover img {
+    transform: scale(1.1);
+}
+
+/* Game Modal CSS Starts  */
+@media (min-width: 768px) {
+    .mobile-modal {
+        display: none !important;
+    }
+}
+
+.mobile-modal .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    max-width: 100%;
+    transition: transform 0.3s ease-out;
+}
+
+.mobile-modal .modal-content {
+    border-radius: 25px 25px 0 0;
+    border: none;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #121c25, #1d2d3a);
+    color: white;
+    padding: 25px 20px 20px;
+    border-top: 3px solid #f8d56b;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    align-items: center;
+    position: relative;
+}
+
+.game-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 3px solid #f8d56b;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+    margin-left: 15px;
+}
+
+.game-title h2 {
+    font-weight: 800;
+    font-size: 1.7rem;
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    color: #f8d56b;
+}
+
+.game-title p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+}
+
+.btn-play {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    border: 2px solid #ff416c;
+    padding: 8px 32px;
+}
+
+.btn-trial {
+    padding: 8px 32px;
+    background: linear-gradient(45deg, #11998e, #38ef7d);
+    border: 2px solid #38ef7d;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Game Modal CSS Ends  */
+
+/* OWL Carousel CSS Starts  */
+.cusSearch {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel.all-games-carousel {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.all-games-carousel .item {
+    padding: 0 5px;
+}
+
+.all-games-carousel .nav-link {
+    background-color: #10142c;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.all-games-carousel .nav-link.active,
+.all-games-carousel .nav-link:hover {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: #fff;
+    border-color: #fff;
+}
+
+.all-games-carousel .nav-link i {
+    font-size: 16px;
+}
+
+/* OWL Carousel CSS Ends  */
+
+/* media queries */
+@media (min-width: 991px) {
+    .langDisplay {
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .menuDisplay {
+        display: none !important;
+    }
+}
+
+@media (max-width: 769px) {
+    .logo-menu {
+        width: 120px;
+    }
+
+    .langSelect,
+    .asHide {
+        display: none;
+    }
+
+    .asBlown img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .asBlown {
+        background-color: #17223b;
+        padding: 6px;
+        border-radius: 6px;
+    }
+
+    .wallet-box {
+        font-size: 12px !important;
+        padding: 5px 8px !important;
+    }
+
+    .cusLang {
+        background-color: #17223b;
+        padding: 2px;
+        border-radius: 6px;
+    }
+
+    .searchShow {
+        display: flex !important;
+    }
+
+    .cusLang img {
+        margin-left: 10px;
+    }
+
+    .cusLang .flag {
+        background-color: #17223b !important;
+    }
+
+    .winner__usdt__items .content .name__wrap .nametext {
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .allgames__items .badges__two::before {
+        width: 25px;
+    }
+
+    .allgames__items .badges__two .badge2 {
+        width: 20px;
+        font-weight: 100;
+        height: 20px;
+        line-height: 15px;
+        font-size: 7px;
+        z-index: 1;
+    }
+
+    .allgames__items .game__overlay .btn__grp .allvideo {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+        transition: all 0.4s;
+    }
+
+    .cmn--btn {
+        padding: 7px 14px 7px;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 200;
+    }
+
+    .game__overlay {
+        display: none !important;
+    }
+}
+
+@media (max-width: 530px) {
+    .logo-menu {
+        width: 100px;
+    }
+
+    .searchShow input {
+        width: 120px !important;
+    }
+
+    .header-bar {
+        width: 20px !important;
+    }
+
+    .winner__usdt__items {
+        padding: 4px;
+        border-radius: 8px;
+    }
+
+    .winner__usdt__items .thumb {
+        margin-bottom: 8px;
+    }
+
+    .winner__usdt__items .thumb img {
+        border-radius: 8px;
+    }
+
+    .winner__usdt__items .content .name__wrap .nametext {
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .wins__head__right .nav .nav-item .nav-link {
+        font-size: 16px !important;
+    }
+
+    .allgames__items .game__overlay {
+        margin-top: 15px;
+    }
+
+    .allgames__items .game__overlay .btn__grp .allvideo {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        transition: all 0.4s;
+    }
+
+    .cmn--btn {
+        padding: 2px 5px 2px;
+        font-size: 12px;
+        line-height: 10px;
+        font-weight: 200;
+    }
+}
+
+@media (min-width: 769px) {
+    .dropShow {
+        display: none !important;
+    }
+
+}
