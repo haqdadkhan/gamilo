@@ -3772,7 +3772,7 @@ p {
   }
 
   .allgames__head__wrap .wins__head__right {
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
   }
 
   .allgames__head__wrap form {

@@ -190,7 +190,7 @@
 .cusSearch {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
-    border: 1px solid white;
+    border: none;
     border-radius: 12px;
     padding: 8px 14px;
     font-size: 12px;
@@ -219,14 +219,18 @@
     padding: 0;
 }
 
-.all-games-carousel .item {
+.owl-carousel.all-games-carousel.nav-tabs {
+    border: none;
+}
+
+.all-games-carousel .nav-item {
     padding: 0;
 }
 
 .all-games-carousel .nav-link {
     background-color: #10142c;
     color: #fff;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 12px;
     padding: 8px 14px;
     font-size: 12px;
@@ -244,7 +248,6 @@
 .all-games-carousel .nav-link:hover {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: #fff;
-    border-color: #fff;
 }
 
 .all-games-carousel .nav-link i {
