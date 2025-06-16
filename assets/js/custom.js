@@ -16,3 +16,13 @@ $(document).ready(function () {
     });
 });
 
+// bottom navigation
+function setActive(clickedItem) {
+    // Remove active class from all items
+    document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Add active class to clicked item
+    clickedItem.classList.add('active');
+}
