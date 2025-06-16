@@ -507,3 +507,329 @@
     }
 
 }
+
+/* --- PROMOTIONS CSS STARTS ---  */
+.promotions-body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f8f9fa;
+    color: #2b2d42;
+}
+
+/* Header Section */
+.promotions-header {
+    background: linear-gradient(135deg, #3a0ca3, #14213d);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 32px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.promotions-title {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+.promotions-subtitle {
+    font-weight: 300;
+    opacity: 0.9;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+/* Filter Tabs */
+.promotions-tabs-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    margin-bottom: 32px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.promotions-tabs-container::-webkit-scrollbar {
+    display: none;
+}
+
+.promotions-tabs {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    padding: 4px 0;
+}
+
+.promotions-tabs .nav-link {
+    color: #8d99ae;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+    .promotions-tabs .nav-link {
+        padding: 9.6px 19.2px;
+        font-size: 14.4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .promotions-tabs {
+        display: flex;
+        justify-content: start;
+    }
+
+    .promotions-tabs .nav-link {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+.promotions-tabs .nav-link.active {
+    background: #3a0ca3;
+    color: white;
+    box-shadow: 0 4px 8px rgba(58, 12, 163, 0.3);
+}
+
+.promotions-tabs .nav-link:hover:not(.active) {
+    background: rgba(58, 12, 163, 0.1);
+    color: #3a0ca3;
+}
+
+/* Promotion Cards */
+.promotions-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 24px;
+    background: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.promotions-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.promotions-card-img-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.promotions-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.promotions-card:hover .promotions-card-img {
+    transform: scale(1.05);
+}
+
+.promotions-card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.promotions-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promotions-card-title {
+    font-weight: 700;
+    color: #14213d;
+    margin: 0;
+    font-size: 17.6px;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.promotions-card-btn {
+    background: #3a0ca3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.6px;
+    white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+    .promotions-card-title {
+        font-size: 18.4px;
+    }
+
+    .promotions-card-btn {
+        padding: 9.6px 20px;
+        font-size: 14.4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .promotions-card-title {
+        font-size: 19.2px;
+    }
+
+    .promotions-card-btn {
+        padding: 9.6px 24px;
+        font-size: 16px;
+    }
+}
+
+.promotions-card-btn:hover {
+    background: #14213d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.promotions-card-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.promotions-card-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Badge for New Promotions */
+.promotions-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f72585;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styling */
+.promotions-modal .modal-content {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+}
+
+.promotions-modal .modal-header {
+    background: linear-gradient(135deg, #3a0ca3, #14213d);
+    color: white;
+    border-bottom: none;
+    padding: 24px;
+}
+
+.promotions-modal .modal-title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.promotions-modal .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+.promotions-modal .modal-body {
+    padding: 32px;
+}
+
+.promotions-modal-section {
+    margin-bottom: 24px;
+}
+
+.promotions-modal-section-title {
+    color: #3a0ca3;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 17.6px;
+}
+
+.promotions-modal-section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 5px;
+    background: #3a0ca3;
+    border-radius: 3px;
+}
+
+.promotions-modal-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.promotions-modal-list li {
+    padding: 8px 0;
+    position: relative;
+}
+
+.promotions-modal-list li::before {
+    content: "•";
+    color: #3a0ca3;
+    font-weight: bold;
+    position: absolute;
+    left: -16px;
+}
+
+.promotions-modal-goodluck {
+    background: rgba(58, 12, 163, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 32px;
+    font-weight: 600;
+    color: #3a0ca3;
+    border: 1px dashed rgba(58, 12, 163, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .promotions-card-body {
+        padding: 16px;
+    }
+
+    .promotions-modal .modal-body {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .promotions-header {
+        padding: 24px 0;
+    }
+
+    .promotions-tabs-container {
+        padding: 3px;
+    }
+
+    .promotions-tabs .nav-link {
+        font-size: 12px;
+    }
+}
+/* --- PROMOTIONS CSS ENDS ---  */

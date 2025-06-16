@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Promotions | Your Brand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <style>
+
+    </style>
+</head>
+
+<body class="promotions-body">
+    <!-- Header -->
+    <header class="promotions-header">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="promotions-title mb-3">Exclusive Promotions</h1>
+                    <p class="promotions-subtitle lead">Boost your play with our premium offers</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container-fluid px-lg-4">
+        <!-- Filter Tabs -->
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="promotions-tabs-container">
+                    <ul class="nav promotions-tabs nav-pills" id="promotionsTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all"
+                                type="button" role="tab">All Promotions</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="new-tab" data-bs-toggle="pill" data-bs-target="#new"
+                                type="button" role="tab">New Players</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="deposit-tab" data-bs-toggle="pill" data-bs-target="#deposit"
+                                type="button" role="tab">Deposit Bonuses</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="vip-tab" data-bs-toggle="pill" data-bs-target="#vip"
+                                type="button" role="tab">VIP Rewards</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="cashback-tab" data-bs-toggle="pill" data-bs-target="#cashback"
+                                type="button" role="tab">Cashback</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promotion Cards -->
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="tab-content" id="promotionsTabContent">
+                    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                        <div class="row">
+                            <!-- Card 1 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="Welcome Bonus">
+                                        <span class="promotions-badge">NEW</span>
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">Welcome Bonus</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal1">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="Free Spins">
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">Free Spins</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal2">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1620343804940-c5fcb4e43208?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="VIP Program">
+                                        <span class="promotions-badge">VIP</span>
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">VIP Program</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal3">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="Cashback">
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">Cashback</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal4">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="Tournament">
+                                        <span class="promotions-badge">HOT</span>
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">Tournament</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal5">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="promotions-card">
+                                    <div class="promotions-card-img-container">
+                                        <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            class="promotions-card-img" alt="Reload Bonus">
+                                    </div>
+                                    <div class="promotions-card-body">
+                                        <div class="promotions-card-content">
+                                            <h3 class="promotions-card-title">Reload Bonus</h3>
+                                            <button class="promotions-card-btn" data-bs-toggle="modal"
+                                                data-bs-target="#promoModal6">
+                                                View <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other tab panes would go here -->
+                    <div class="tab-pane fade" id="new" role="tabpanel">...</div>
+                    <div class="tab-pane fade" id="deposit" role="tabpanel">...</div>
+                    <div class="tab-pane fade" id="vip" role="tabpanel">...</div>
+                    <div class="tab-pane fade" id="cashback" role="tabpanel">...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Promotion Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade promotions-modal" id="promoModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Welcome Bonus Package</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="promotions-modal-section">
+                        <p>Start your gaming journey with our generous welcome package designed to boost your bankroll.
+                        </p>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">Promotion Details</h6>
+                        <ul class="promotions-modal-list">
+                            <li>1st Deposit: 100% match bonus up to $400</li>
+                            <li>2nd Deposit: 50% match bonus up to $300</li>
+                            <li>3rd Deposit: 25% match bonus up to $300</li>
+                            <li>Total bonus potential of $1000</li>
+                            <li>30x wagering requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">Benefits</h6>
+                        <ul class="promotions-modal-list">
+                            <li>Extended playtime with boosted bankroll</li>
+                            <li>Lower than industry standard wagering</li>
+                            <li>Valid for 30 days from first deposit</li>
+                            <li>Works with all payment methods</li>
+                        </ul>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">How to Avail</h6>
+                        <ol class="promotions-modal-list">
+                            <li>Register a new account with us</li>
+                            <li>Make your first deposit of at least $20</li>
+                            <li>The bonus will be credited automatically</li>
+                            <li>Repeat for 2nd and 3rd deposits within 30 days</li>
+                        </ol>
+                    </div>
+
+                    <div class="promotions-modal-goodluck">
+                        Good luck and enjoy your boosted bankroll!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade promotions-modal" id="promoModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Free Spins Friday</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="promotions-modal-section">
+                        <p>Turn your Friday into a winning day with our weekly free spins offer!</p>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">Promotion Details</h6>
+                        <ul class="promotions-modal-list">
+                            <li>Available every Friday from 00:00 to 23:59 GMT</li>
+                            <li>Deposit $20 or more to qualify</li>
+                            <li>Receive 100 free spins on Book of Dead</li>
+                            <li>Free spins winnings subject to 30x wagering</li>
+                        </ul>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">Benefits</h6>
+                        <ul class="promotions-modal-list">
+                            <li>No maximum win limit on free spins</li>
+                            <li>Free spins valid for 7 days</li>
+                            <li>Works with all payment methods</li>
+                            <li>Can be combined with deposit bonuses</li>
+                        </ul>
+                    </div>
+
+                    <div class="promotions-modal-section">
+                        <h6 class="promotions-modal-section-title">How to Avail</h6>
+                        <ol class="promotions-modal-list">
+                            <li>Log in to your account on Friday</li>
+                            <li>Make a deposit of $20 or more</li>
+                            <li>Free spins will be credited within 1 hour</li>
+                            <li>Check your account notifications</li>
+                        </ol>
+                    </div>
+
+                    <div class="promotions-modal-goodluck">
+                        May the spins be ever in your favor!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
