@@ -192,8 +192,8 @@
     color: white;
     border: 1px solid white;
     border-radius: 12px;
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 8px 14px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -204,13 +204,23 @@
     transition: all 0.3s ease;
 }
 
+.cusSearch i {
+    font-size: 16px;
+}
+
+@media (max-width: 530px) {
+    .cusSearch span {
+        display: none;
+    }
+}
+
 .owl-carousel.all-games-carousel {
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
 }
 
 .all-games-carousel .item {
-    padding: 0 5px;
+    padding: 0;
 }
 
 .all-games-carousel .nav-link {
@@ -218,8 +228,8 @@
     color: #fff;
     border: 1px solid transparent;
     border-radius: 12px;
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 8px 14px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     gap: 6px;

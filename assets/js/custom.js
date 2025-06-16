@@ -1,3 +1,4 @@
+// Carousel for All Games
 $(document).ready(function () {
     $(".all-games-carousel").owlCarousel({
         loop: false,
@@ -14,3 +15,4 @@ $(document).ready(function () {
         }
     });
 });
+
