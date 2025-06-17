@@ -18,12 +18,17 @@
 
 <body class="promotions-body">
     <!-- Header -->
+    <!-- HEADER -->
     <header class="promotions-header">
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="promotions-title mb-3">Exclusive Promotions</h1>
-                    <p class="promotions-subtitle lead">Boost your play with our premium offers</p>
+            <div class="row">
+                <div class="col-3">
+                    <i class="fas fa-chevron-left promotions-back-icon"></i>
+                </div>
+                <div class="col-6">
+                    <h2 class="promotions-title text-center">Promotion</h2>
+                </div>
+                <div class="col-3">
                 </div>
             </div>
         </div>
@@ -34,11 +39,11 @@
         <!-- Filter Tabs -->
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="promotions-tabs-container">
+                <div class="promotions-tabs-wrapper">
                     <ul class="nav promotions-tabs nav-pills" id="promotionsTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all"
-                                type="button" role="tab">All Promotions</button>
+                                type="button" role="tab">All</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="new-tab" data-bs-toggle="pill" data-bs-target="#new"
@@ -58,6 +63,7 @@
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
 
@@ -68,118 +74,34 @@
                     <div class="tab-pane fade show active" id="all" role="tabpanel">
                         <div class="row">
                             <!-- Card 1 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                <div class="promotions-card-mobile">
+                                    <div class="promotions-card-image-wrapper">
                                         <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="Welcome Bonus">
-                                        <span class="promotions-badge">NEW</span>
+                                            alt="Welcome Bonus" class="promotions-card-image">
                                     </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">Welcome Bonus</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal1">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
+                                    <div class="promotions-card-content">
+                                        <h4 class="promotions-card-title">Welcome Bonus</h4>
+                                        <button class="promotions-card-button" data-bs-toggle="modal"
+                                            data-bs-target="#promoModal1">
+                                            View <i class="fas fa-chevron-right"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Card 2 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
-                                        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="Free Spins">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                <div class="promotions-card-mobile">
+                                    <div class="promotions-image-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                            alt="Welcome Bonus" class="promotions-image">
                                     </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">Free Spins</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal2">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
-                                        <img src="https://images.unsplash.com/photo-1620343804940-c5fcb4e43208?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="VIP Program">
-                                        <span class="promotions-badge">VIP</span>
-                                    </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">VIP Program</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal3">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
-                                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="Cashback">
-                                    </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">Cashback</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal4">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 5 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
-                                        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="Tournament">
-                                        <span class="promotions-badge">HOT</span>
-                                    </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">Tournament</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal5">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 6 -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                <div class="promotions-card">
-                                    <div class="promotions-card-img-container">
-                                        <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            class="promotions-card-img" alt="Reload Bonus">
-                                    </div>
-                                    <div class="promotions-card-body">
-                                        <div class="promotions-card-content">
-                                            <h3 class="promotions-card-title">Reload Bonus</h3>
-                                            <button class="promotions-card-btn" data-bs-toggle="modal"
-                                                data-bs-target="#promoModal6">
-                                                View <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                        </div>
+                                    <div class="promotions-content">
+                                        <h4 class="promotions-title">Welcome Bonus</h4>
+                                        <button class="promotions-button" data-bs-toggle="modal"
+                                            data-bs-target="#promoModal2">
+                                            View <i class="fas fa-chevron-right"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
