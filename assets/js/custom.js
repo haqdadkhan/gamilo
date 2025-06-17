@@ -1,5 +1,5 @@
-// Carousel for All Games
-$(document).ready(function () {
+// --- ALL GAMES CAROUSEL ---
+$(document).ready(function (e) {
     $(".all-games-carousel").owlCarousel({
         loop: false,
         margin: 10,
@@ -14,15 +14,17 @@ $(document).ready(function () {
             1200: { items: 6 }
         }
     });
+    $('.all-games-carousel').on('click', '.nav-link', function (e) {
+        e.stopPropagation();
+    });
+
+    e.stopPropagation();
 });
 
-// bottom navigation
+// --- BOTTOM NAV JS ---
 function setActive(clickedItem) {
-    // Remove active class from all items
     document.querySelectorAll('.bottom-nav-item').forEach(item => {
         item.classList.remove('active');
     });
-
-    // Add active class to clicked item
     clickedItem.classList.add('active');
 }
