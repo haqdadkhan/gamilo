@@ -3234,11 +3234,11 @@ p {
   }
 
   .main-menu .cmn-grp {
-    padding-left: 0 !important;
-    display: flex;
+    display: block !important;
     align-items: center;
     gap: 20px;
-    display: block !important;
+    padding-left: 0 !important;
+    border: none;
   }
 
   .main-menu .cmn-grp .cmn--btn {
@@ -4005,12 +4005,6 @@ p {
     position: absolute;
     top: 2px;
     right: 3px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .header-wrapper .lang .language__wrap {
-    display: none;
   }
 }
 
