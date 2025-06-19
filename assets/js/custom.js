@@ -24,7 +24,8 @@ function setActive(clickedItem) {
     clickedItem.classList.add('active');
 }
 
-// SIDEBAR ACTIVE/NOT-ACTIVE
+// --- SIDEBAR JS ---
+// SIDEBAR Active/Not Active
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".main-menu a");
 
@@ -42,5 +43,15 @@ window.addEventListener("scroll", () => {
         if (link.getAttribute("href") === `#${current}`) {
             link.parentElement.classList.add("active");
         }
+    });
+});
+
+// Menu item active state
+const menuItems = document.querySelectorAll('.menu-item');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
     });
 });

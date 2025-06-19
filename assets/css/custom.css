@@ -1,112 +1,292 @@
-/* Selection Style 😁 */
+/* Universal Style 😁 */
 ::selection {
     color: white;
     background-color: #35c31e;
 }
 
+@media (max-width: 992px) {
+    .left__body__wrap {
+        display: none !important;
+    }
+}
+
 /* SIDEBAR CSS STARTS  */
-/* Personal Centre */
-.special-nav-item {
-    margin: 32px 0 12px;
-    padding: 14px 16px;
-    border-radius: 8px 8px 0 0;
-    background: rgba(57, 255, 20, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 24px rgba(57, 255, 20, 0.08);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(57, 255, 20, 0.15);
-    position: relative;
-    text-align: center;
+:root {
+    --sidebar-bg: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --sidebar-width: 280px;
+    --accent-color: #00c9ff;
+    --secondary-accent: #92fe9d;
+    --text-color: #e0e0ff;
+    --menu-item-hover: rgba(0, 201, 255, 0.15);
+    --menu-item-active: rgba(0, 201, 255, 0.3);
+    --transition-speed: 0.3s;
+    --border-radius: 12px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.special-nav-item a {
+/* Modern Gaming Sidebar */
+.gaming-sidebar {
+    background: var(--sidebar-bg);
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: var(--shadow);
     display: flex;
-    gap: 8px;
-    color: #39ff14;
-    font-weight: 600;
-    font-size: 14.5px;
+    flex-direction: column;
+    border-right: 1px solid rgba(0, 201, 255, 0.2);
+}
+
+.sidebar-header {
+    padding: 25px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     text-decoration: none;
+    transition: transform 0.2s;
 }
 
-.special-nav-item:hover {
-    background: rgba(57, 255, 20, 0.1);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
-    transform: translateY(-2px);
+.logo:hover {
+    transform: scale(1.05);
 }
 
-.special-nav-item a .icon img {
-    width: 22px;
-    height: 22px;
-    /* filter: drop-shadow(0 0 4px #39ff14); */
+.logo-img {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 201, 255, 0.5);
 }
 
-@keyframes liquid-glow {
-
-    0%,
-    100% {
-        backdrop-filter: blur(12px) saturate(180%);
-        background: rgba(57, 255, 20, 0.12);
-        border-color: rgba(57, 255, 20, 0.3);
-    }
-
-    50% {
-        backdrop-filter: blur(16px) saturate(200%);
-        background: rgba(57, 255, 20, 0.18);
-        border-color: rgba(57, 255, 20, 0.4);
-    }
+.logo-img i {
+    font-size: 24px;
+    color: #0f0c29;
 }
 
-.main__body__wrap .left__body__wrap .header-wrapper .main-menu li {
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu {
+    padding: 15px 10px;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.menu-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 15px 10px 8px;
+    color: rgba(224, 224, 255, 0.6);
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 4px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: background var(--transition-speed);
+}
+
+.menu-item.active {
+    background: var(--menu-item-active);
+    box-shadow: 0 0 15px rgba(0, 201, 255, 0.2);
+}
+
+.menu-item.active .menu-link {
+    color: white;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all var(--transition-speed);
+}
+
+.menu-link:hover:not(.active) {
+    background: var(--menu-item-hover);
+    color: white;
+    transform: translateX(5px);
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    background: rgba(0, 201, 255, 0.1);
+    border-radius: 6px;
+}
+
+.menu-item.active .menu-icon {
+    background: var(--accent-color);
+    color: #0f0c29;
+}
+
+.menu-text {
+    flex: 1;
+    white-space: nowrap;
+}
+
+.menu-badge {
+    background: var(--accent-color);
+    color: #0f0c29;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 20px;
+    margin-left: 8px;
+}
+
+.btn-group {
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    color: #0f0c29;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid transparent;
-    margin: 4px 0;
 }
 
-.main__body__wrap .left__body__wrap .header-wrapper .main-menu li:hover {
-    background: rgba(57, 255, 20, 0.08);
-    backdrop-filter: blur(10px);
-    border-color: rgba(57, 255, 20, 0.2);
-    transform: translateX(4px);
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 201, 255, 0.5);
 }
 
-.main__body__wrap .left__body__wrap .header-wrapper .main-menu li.active {
-    background: rgba(57, 255, 20, 0.15);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(57, 255, 20, 0.3);
-    box-shadow:
-        0 4px 20px rgba(57, 255, 20, 0.1),
-        inset 0 0 12px rgba(57, 255, 20, 0.08);
-    animation: liquid-glow 3s ease-in-out infinite;
+.action-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    box-shadow: none;
 }
 
-.main__body__wrap .left__body__wrap .header-wrapper .main-menu li.active::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background: linear-gradient(to bottom,
-            transparent,
-            #39ff14,
-            transparent);
-    opacity: 0.6;
+.action-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(0);
 }
 
-.main__body__wrap .left__body__wrap .header-wrapper .main-menu li.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right,
-            transparent,
-            rgba(57, 255, 20, 0.6),
-            transparent);
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+
+    .menu-link {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .sidebar-header {
+        padding: 20px 10px;
+    }
+
+    .menu-link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .menu-icon {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gaming-sidebar {
+        width: 260px;
+    }
+
+    .main-content {
+        margin-left: 260px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .gaming-sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        margin-left: 240px;
+    }
 }
 
 /* SIDEBAR CSS ENDS */
