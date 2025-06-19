@@ -5,11 +5,11 @@
 }
 
 /* SIDEBAR CSS STARTS  */
-/* Personal Centre - Distinctive Style */
+/* Personal Centre */
 .special-nav-item {
-    margin: 32px 12px 12px;
+    margin: 32px 0 12px;
     padding: 14px 16px;
-    border-radius: 12px;
+    border-radius: 8px 8px 0 0;
     background: rgba(57, 255, 20, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -38,7 +38,7 @@
 .special-nav-item a .icon img {
     width: 22px;
     height: 22px;
-    filter: drop-shadow(0 0 4px #39ff14);
+    /* filter: drop-shadow(0 0 4px #39ff14); */
 }
 
 @keyframes liquid-glow {
@@ -460,7 +460,7 @@
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 8px 14px;
     font-size: 16px;
     display: flex;
@@ -470,7 +470,6 @@
     white-space: nowrap;
     width: 100%;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 .cusSearch i {
@@ -495,7 +494,7 @@
     background-color: #10142c;
     color: #fff;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 8px 14px;
     font-size: 16px;
     display: flex;
@@ -505,7 +504,6 @@
     white-space: nowrap;
     width: 100%;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 .all-nav-carousel .nav-link.active,

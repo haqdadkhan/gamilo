@@ -262,7 +262,7 @@
                         </div>
                         <div class="search__form">
                             <form action="#0">
-                                <input type="text" placeholder="Search........" />
+                                <input type="text" placeholder="Search..." />
                                 <span class="icon">
                                     <img src="assets/img/header/search.svg" alt="img" />
                                 </span>
@@ -671,28 +671,29 @@
                             Live Wins
                         </h4>
                         <div class="wins__head__right">
-                            <ul class="nav nav-tabs" id="myTablivewins" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            <div id="myTablivewins" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
+                                role="tablist">
+                                <div class="nav-item">
+                                    <button id="profile-tab" class="nav-link active" data-bs-toggle="tab"
                                         data-bs-target="#homeonelive" type="button" role="tab"
-                                        aria-controls="homeonelive" aria-selected="true">Live</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        aria-controls="profileonellive" aria-selected="true">Live</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="profile-tab" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#profileonellive" type="button" role="tab"
                                         aria-controls="profileonellive" aria-selected="false">Month</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                </div>
+                                <div class="nav-item">
+                                    <button id="profile-tab" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#contactonellive" type="button" role="tab"
-                                        aria-controls="contactonellive" aria-selected="false">Week</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="day-tab" data-bs-toggle="tab"
+                                        aria-controls="profileonellive" aria-selected="false">Week</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="profile-tab" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#daytonellive" type="button" role="tab"
-                                        aria-controls="daytonellive" aria-selected="false">Day</button>
-                                </li>
-                            </ul>
+                                        aria-controls="profileonellive" aria-selected="false">Day</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="wins__wrapper__section">
@@ -1762,36 +1763,29 @@
                             Daily Bonuses
                         </h4>
                         <div class="wins__head__right">
-                            <ul class="nav nav-tabs" id="myTabbonus" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tabbonus__two" data-bs-toggle="tab"
+                            <div id="myDailyBonuses" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
+                                role="tablist">
+                                <div class="nav-item">
+                                    <button id="home-tabbonus__two" class="nav-link active" data-bs-toggle="tab"
                                         data-bs-target="#homeonelivebouns__two" type="button" role="tab"
-                                        aria-controls="homeonelivebouns__two" aria-selected="true">
-                                        Day
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tabbonus__two" data-bs-toggle="tab"
+                                        aria-controls="homeonelivebouns__two" aria-selected="true">Live</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="profile-tabbonus__two" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#profileonellivebouns__two" type="button" role="tab"
-                                        aria-controls="profileonellivebouns__two" aria-selected="false">
-                                        Week
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tabbonus__two" data-bs-toggle="tab"
+                                        aria-controls="profileonellivebouns__two" aria-selected="false">Month</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="contact-tabbonus__two" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#contactonellivebouns__two" type="button" role="tab"
-                                        aria-controls="contactonellivebouns__two" aria-selected="false">
-                                        Month
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="day-tabbonus__two" data-bs-toggle="tab"
+                                        aria-controls="contactonellivebouns__two" aria-selected="false">Week</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="day-tabbonus__two" class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#daytonellivebouns__two" type="button" role="tab"
-                                        aria-controls="daytonellivebouns__two" aria-selected="false">
-                                        All
-                                    </button>
-                                </li>
-                            </ul>
+                                        aria-controls="daytonellivebouns__two" aria-selected="false">Day</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-content" id="myTabbonus-two">
@@ -2147,9 +2141,14 @@
                             Providers
                         </h4>
                         <div class="wins__head__right">
-                            <a href="#0" class="provider__all">
-                                All
-                            </a>
+                            <div id="myProviders" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
+                                role="tablist">
+                                <div class="nav-item">
+                                    <button id="providers-tab" class="nav-link active" data-bs-toggle="tab"
+                                        data-bs-target="#!" type="button" role="tab" aria-controls=""
+                                        aria-selected="true">Live</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="porvider__wrapper owl-theme owl-carousel">
@@ -2373,7 +2372,32 @@
                         <h4>
                             Recent Bitcoin winners
                         </h4>
-                        <ul class="nav nav-tabs" id="myTabjack" role="tablist">
+                        <div class="wins__head__right d-flex align-items-center gap-2 overflow-hidden">
+                            <div id="myRecentBitcoinWinners" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
+                                role="tablist">
+                                <div class="nav-item">
+                                    <button id="home-tablucky" class="nav-link active" data-bs-toggle="tab"
+                                        data-bs-target="#homeone" type="button" role="tab" aria-controls="homeone"
+                                        aria-selected="true">All Bets</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button id="profile-tablucky" class="nav-link" data-bs-toggle="tab"
+                                        data-bs-target="#profileone" type="button" role="tab" aria-controls="profileone"
+                                        aria-selected="false">High Rollers</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button class="nav-link" id="contact-tablucky" data-bs-toggle="tab"
+                                        data-bs-target="#contactone" type="button" role="tab" aria-controls="contactone"
+                                        aria-selected="false">Lucky Bets</button>
+                                </div>
+                                <div class="nav-item">
+                                    <button class="nav-link" id="lucky-tablucky" data-bs-toggle="tab"
+                                        data-bs-target="#contactonelucky" type="button" role="tab"
+                                        aria-controls="contactonelucky" aria-selected="false">Lucky Bets</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <ul class="nav nav-tabs" id="myTabjack" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tablucky" data-bs-toggle="tab"
                                     data-bs-target="#homeone" type="button" role="tab" aria-controls="homeone"
@@ -2394,7 +2418,7 @@
                                     data-bs-target="#contactonelucky" type="button" role="tab"
                                     aria-controls="contactonelucky" aria-selected="false">Lucky Bets</button>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="wins__wrap">
                         <div class="tab-content" id="myTabContent">

@@ -1413,7 +1413,7 @@ p {
 
 .winners__jackpot .gamewins__head__wrap {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 40px;
 }
@@ -3394,6 +3394,9 @@ p {
 
   .wins__table__wrap {
     display: grid;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 25px;
   }
 
   .wins__table__wrap h4 {
