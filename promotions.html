@@ -9,222 +9,627 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!--Fontawsome all min Css-->
     <link rel="stylesheet" href="assets/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Personal custom Css  -->
     <link rel="stylesheet" href="assets/css/custom.css" />
     <style>
+        :root {
+            --primary-color: #1A1A2E;
+            --secondary-color: #16213E;
+            --accent-color: #E94560;
+            --accent-light: #ff6b81;
+            --light-color: #F9F9F9;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --card-radius: 16px;
+            --transition: all 0.3s ease;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+        }
 
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .promo-header {
+            background: white;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .promo-back-btn {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .promo-back-btn:hover {
+            background: rgba(0, 0, 0, 0.08);
+            transform: translateX(-2px);
+        }
+
+        .promo-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .promo-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        /* Main Grid */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 32px 0;
+        }
+
+        /* Card Type 1: Full Bleed Image with Overlay Text */
+        .promo-card-hero {
+            grid-column: 1 / -1;
+            height: 400px;
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .promo-card-hero:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .promo-card-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .promo-card-hero:hover img {
+            transform: scale(1.03);
+        }
+
+        .promo-card-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+            color: white;
+            z-index: 2;
+        }
+
+        .promo-card-hero-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .promo-card-hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* Card Type 2: Square Image with Floating Badge */
+        .promo-card-square {
+            aspect-ratio: 1/1;
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .promo-card-square:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .promo-card-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .promo-card-square:hover img {
+            transform: scale(1.05);
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--accent-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .promo-card-square-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+            color: white;
+            z-index: 2;
+        }
+
+        .promo-card-square-content h4 {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 1.3rem;
+        }
+
+        .promo-card-square-content p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Card Type 3: Portrait Image with Minimal Text */
+        .promo-card-portrait {
+            aspect-ratio: 3/4;
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .promo-card-portrait:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .promo-card-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .promo-card-portrait:hover img {
+            transform: scale(1.05);
+        }
+
+        .promo-card-portrait-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .promo-card-portrait-content h4 {
+            font-weight: 800;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* Card Type 4: Minimal Text Overlay on Image */
+        .promo-card-minimal {
+            aspect-ratio: 16/9;
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .promo-card-minimal:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .promo-card-minimal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .promo-card-minimal:hover img {
+            transform: scale(1.05);
+        }
+
+        .promo-card-minimal-content {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: white;
+            z-index: 2;
+        }
+
+        .promo-card-minimal-content h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        /* Category Filter */
+        .promo-categories {
+            display: flex;
+            gap: 12px;
+            padding: 24px 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            margin-bottom: 8px;
+        }
+
+        .promo-categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .promo-category {
+            padding: 10px 20px;
+            background: white;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+            flex-shrink: 0;
+            white-space: nowrap;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+
+        .promo-category:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .promo-category.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Badges */
+        .badge {
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+        }
+
+        /* Floating Action Button */
+        .promo-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .promo-fab:hover {
+            background: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .promo-card-hero-content h3 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .promo-card-hero {
+                height: 360px;
+            }
+
+            .promo-card-hero-content {
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .promo-card-hero {
+                height: 300px;
+            }
+
+            .promo-card-hero-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .promo-card-portrait {
+                aspect-ratio: 1/1;
+            }
+
+            .promo-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .promo-card-hero {
+                height: 260px;
+            }
+
+            .promo-card-hero-content {
+                padding: 24px;
+            }
+
+            .promo-category {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .promo-fab {
+                width: 48px;
+                height: 48px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Focus states for accessibility */
+        a:focus,
+        button:focus,
+        .promo-category:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 3px;
+        }
+
+        /* Utility Classes */
+        .text-accent {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
-<body class="promotions-body">
+<body>
     <!-- Header -->
-    <!-- HEADER -->
-    <header class="promotions-header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-3">
-                    <i class="fas fa-chevron-left promotions-back-icon"></i>
-                </div>
-                <div class="col-6">
-                    <h2 class="promotions-title text-center">Promotion</h2>
-                </div>
-                <div class="col-3">
-                </div>
+    <header class="promo-header">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="#" class="promo-back-btn" aria-label="Go back">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h1 class="promo-title m-0">Premium Promotions</h1>
+                <div style="width: 40px;"></div> <!-- Spacer -->
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container-fluid px-lg-4">
-        <!-- Filter Tabs -->
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="promotions-tabs-wrapper">
-                    <ul class="nav promotions-tabs nav-pills" id="promotionsTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all"
-                                type="button" role="tab">All</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="new-tab" data-bs-toggle="pill" data-bs-target="#new"
-                                type="button" role="tab">New Players</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="deposit-tab" data-bs-toggle="pill" data-bs-target="#deposit"
-                                type="button" role="tab">Deposit Bonuses</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="vip-tab" data-bs-toggle="pill" data-bs-target="#vip"
-                                type="button" role="tab">VIP Rewards</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="cashback-tab" data-bs-toggle="pill" data-bs-target="#cashback"
-                                type="button" role="tab">Cashback</button>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
+    <!-- Category Filter -->
+    <div class="container">
+        <div class="promo-categories">
+            <div class="promo-category active" tabindex="0">All Promos</div>
+            <div class="promo-category" tabindex="0">New</div>
+            <div class="promo-category" tabindex="0">Slots</div>
+            <div class="promo-category" tabindex="0">VIP</div>
+            <div class="promo-category" tabindex="0">Cashback</div>
+            <div class="promo-category" tabindex="0">Free Spins</div>
+            <div class="promo-category" tabindex="0">Live Casino</div>
+            <div class="promo-category" tabindex="0">Tournaments</div>
         </div>
+    </div>
 
-        <!-- Promotion Cards -->
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="tab-content" id="promotionsTabContent">
-                    <div class="tab-pane fade show active" id="all" role="tabpanel">
-                        <div class="row">
-                            <!-- Card 1 -->
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                <div class="promotions-card-mobile">
-                                    <div class="promotions-card-image-wrapper">
-                                        <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            alt="Welcome Bonus" class="promotions-card-image">
-                                    </div>
-                                    <div class="promotions-card-content">
-                                        <h4 class="promotions-card-title">Welcome Bonus</h4>
-                                        <button class="promotions-card-button" data-bs-toggle="modal"
-                                            data-bs-target="#promoModal1">
-                                            View <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                <div class="promotions-card-mobile">
-                                    <div class="promotions-card-image-wrapper">
-                                        <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                            alt="Welcome Bonus" class="promotions-card-image">
-                                    </div>
-                                    <div class="promotions-card-content">
-                                        <h4 class="promotions-card-title">Welcome Bonus</h4>
-                                        <button class="promotions-card-button" data-bs-toggle="modal"
-                                            data-bs-target="#promoModal2">
-                                            View <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Main Grid -->
+    <div class="container">
+        <div class="promo-grid">
+            <!-- Hero Card -->
+            <div class="promo-card-hero">
+                <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
+                    alt="Welcome Bonus">
+                <div class="promo-card-hero-content">
+                    <h3>Welcome Package</h3>
+                    <p>Up to $1000 + 200 Free Spins on your first deposit</p>
+                    <div class="mt-3">
+                        <span class="badge bg-light text-dark me-2">New Players</span>
+                        <span class="badge bg-light text-dark">50x Wagering</span>
                     </div>
-
-                    <!-- Other tab panes would go here -->
-                    <div class="tab-pane fade" id="new" role="tabpanel">...</div>
-                    <div class="tab-pane fade" id="deposit" role="tabpanel">...</div>
-                    <div class="tab-pane fade" id="vip" role="tabpanel">...</div>
-                    <div class="tab-pane fade" id="cashback" role="tabpanel">...</div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- Promotion Modals -->
-    <!-- Modal 1 -->
-    <div class="modal fade promotions-modal" id="promoModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Welcome Bonus Package</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Square Card 1 -->
+            <div class="promo-card-square">
+                <div class="promo-badge">Hot Deal</div>
+                <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Free Spins">
+                <div class="promo-card-square-content">
+                    <h4>Free Spins Friday</h4>
+                    <p>50 FS on Book of Dead</p>
                 </div>
-                <div class="modal-body">
-                    <div class="promotions-modal-section">
-                        <p>Start your gaming journey with our generous welcome package designed to boost your bankroll.
-                        </p>
-                    </div>
+            </div>
 
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">Promotion Details</h6>
-                        <ul class="promotions-modal-list">
-                            <li>1st Deposit: 100% match bonus up to $400</li>
-                            <li>2nd Deposit: 50% match bonus up to $300</li>
-                            <li>3rd Deposit: 25% match bonus up to $300</li>
-                            <li>Total bonus potential of $1000</li>
-                            <li>30x wagering requirements</li>
-                        </ul>
-                    </div>
+            <!-- Square Card 2 -->
+            <div class="promo-card-square">
+                <img src="https://images.unsplash.com/photo-1620231109648-302d034cb29b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="VIP Program">
+                <div class="promo-card-square-content">
+                    <h4>VIP Club</h4>
+                    <p>Exclusive Rewards & Bonuses</p>
+                </div>
+            </div>
 
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">Benefits</h6>
-                        <ul class="promotions-modal-list">
-                            <li>Extended playtime with boosted bankroll</li>
-                            <li>Lower than industry standard wagering</li>
-                            <li>Valid for 30 days from first deposit</li>
-                            <li>Works with all payment methods</li>
-                        </ul>
-                    </div>
+            <!-- Portrait Card 1 -->
+            <div class="promo-card-portrait">
+                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Reload Bonus">
+                <div class="promo-card-portrait-content">
+                    <h4>50% Reload</h4>
+                    <p class="mb-0">Every Monday</p>
+                </div>
+            </div>
 
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">How to Avail</h6>
-                        <ol class="promotions-modal-list">
-                            <li>Register a new account with us</li>
-                            <li>Make your first deposit of at least $20</li>
-                            <li>The bonus will be credited automatically</li>
-                            <li>Repeat for 2nd and 3rd deposits within 30 days</li>
-                        </ol>
-                    </div>
+            <!-- Minimal Card 1 -->
+            <div class="promo-card-minimal">
+                <img src="https://images.unsplash.com/photo-1593510987185-1ec2256148a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Cashback">
+                <div class="promo-card-minimal-content">
+                    <h4>10% Cashback</h4>
+                    <p class="mb-0">Weekly protection</p>
+                </div>
+            </div>
 
-                    <div class="promotions-modal-goodluck">
-                        Good luck and enjoy your boosted bankroll!
-                    </div>
+            <!-- Minimal Card 2 -->
+            <div class="promo-card-minimal">
+                <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Tournament">
+                <div class="promo-card-minimal-content">
+                    <h4>$10K Tournament</h4>
+                    <p class="mb-0">Join now!</p>
+                </div>
+            </div>
+
+            <!-- Portrait Card 2 -->
+            <div class="promo-card-portrait">
+                <div class="promo-badge">New</div>
+                <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Birthday Bonus">
+                <div class="promo-card-portrait-content">
+                    <h4>Birthday Gift</h4>
+                    <p class="mb-0">Claim your reward</p>
+                </div>
+            </div>
+
+            <!-- Square Card 3 -->
+            <div class="promo-card-square">
+                <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="High Roller">
+                <div class="promo-card-square-content">
+                    <h4>High Roller</h4>
+                    <p>25% Weekly Bonus</p>
+                </div>
+            </div>
+
+            <!-- Additional Card for Better Grid Layout -->
+            <div class="promo-card-minimal">
+                <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Loyalty">
+                <div class="promo-card-minimal-content">
+                    <h4>Loyalty Rewards</h4>
+                    <p class="mb-0">Earn points daily</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal 2 -->
-    <div class="modal fade promotions-modal" id="promoModal2" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Free Spins Friday</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="promotions-modal-section">
-                        <p>Turn your Friday into a winning day with our weekly free spins offer!</p>
-                    </div>
-
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">Promotion Details</h6>
-                        <ul class="promotions-modal-list">
-                            <li>Available every Friday from 00:00 to 23:59 GMT</li>
-                            <li>Deposit $20 or more to qualify</li>
-                            <li>Receive 100 free spins on Book of Dead</li>
-                            <li>Free spins winnings subject to 30x wagering</li>
-                        </ul>
-                    </div>
-
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">Benefits</h6>
-                        <ul class="promotions-modal-list">
-                            <li>No maximum win limit on free spins</li>
-                            <li>Free spins valid for 7 days</li>
-                            <li>Works with all payment methods</li>
-                            <li>Can be combined with deposit bonuses</li>
-                        </ul>
-                    </div>
-
-                    <div class="promotions-modal-section">
-                        <h6 class="promotions-modal-section-title">How to Avail</h6>
-                        <ol class="promotions-modal-list">
-                            <li>Log in to your account on Friday</li>
-                            <li>Make a deposit of $20 or more</li>
-                            <li>Free spins will be credited within 1 hour</li>
-                            <li>Check your account notifications</li>
-                        </ol>
-                    </div>
-
-                    <div class="promotions-modal-goodluck">
-                        May the spins be ever in your favor!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Floating Action Button -->
+    <button class="promo-fab" aria-label="Special offers">
+        <i class="fas fa-gift"></i>
+    </button>
 
     <!--Bootstrap bundle min js-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category filter functionality
+            const categories = document.querySelectorAll('.promo-category');
+            categories.forEach(category => {
+                category.addEventListener('click', function () {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                });
+
+                // Keyboard accessibility
+                category.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        category.click();
+                    }
+                });
+            });
+
+            // FAB interaction
+            const fab = document.querySelector('.promo-fab');
+            if (fab) {
+                fab.addEventListener('click', () => {
+                    // Simple feedback animation
+                    fab.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        fab.style.transform = 'scale(1)';
+                        // Here you would typically show a modal or navigate
+                        alert('Special offers will be displayed here');
+                    }, 200);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

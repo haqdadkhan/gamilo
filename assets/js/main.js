@@ -105,16 +105,16 @@ $(document).ready(function () {
 		],
 		responsive: {
 			0: {
-				items: 1,
-			},
-			400: {
 				items: 2,
+			},
+			465: {
+				items: 3,
 			},
 			500: {
 				items: 3,
 			},
-			767: {
-				items: 3,
+			769: {
+				items: 4,
 			},
 			991: {
 				items: 4,
