@@ -117,3 +117,77 @@ menuItems.forEach(item => {
         item.classList.add('active');
     });
 });
+
+
+// --- PERSONAL CENTRE JS ---
+// Tab switching functionality
+document.querySelectorAll('.sidebar-menu a').forEach(item => {
+    if (item.getAttribute('data-tab')) {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs and menu items
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Add active class to clicked menu item
+            this.classList.add('active');
+
+            // Show corresponding tab content
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    }
+});
+
+// Function to copy referral code
+function copyReferralCode() {
+    const copyText = document.getElementById("referralCode");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Referral code copied: " + copyText.value);
+}
+
+// Show only dashboard tab by default
+document.querySelectorAll('.tab-content').forEach(tab => {
+    if (tab.id !== 'dashboard') {
+        tab.classList.remove('active');
+    }
+});
+
+// Theme switching functionality
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? null : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+
+    // Update icon
+    const icon = document.querySelector('.theme-toggle i');
+    if (newTheme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+
+    // Save preference to localStorage
+    if (newTheme) {
+        localStorage.setItem('theme', newTheme);
+    } else {
+        localStorage.removeItem('theme');
+    }
+}
+
+// Check for saved theme preference
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    const icon = document.querySelector('.theme-toggle i');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+}

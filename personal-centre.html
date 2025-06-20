@@ -5,26 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIP Personal Center</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrap Min Css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--Fontawsome all min Css-->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #e74c3c;
-            --accent: #3498db;
-            --dark: #1a252f;
-            --light: #f8f9fa;
-            --success: #28a745;
-            --danger: #dc3545;
-            --warning: #ffc107;
-            --info: #17a2b8;
+            --bg: #ffffff;
+            --card-bg: #f0f0f0;
+            --text: #0f0f0f;
+            --text-muted: #555555;
+            --primary: #ab2e00;
+            --accent: #d58a00;
+            --highlight: #ff8c00;
+            --btn: #ab2e00;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --hover-bg: rgba(255, 69, 0, 0.05);
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --table-text: #0f0f0f;
+            --table-hover: rgba(0, 0, 0, 0.03);
+        }
+
+        [data-theme="dark"] {
+            --bg: #000000;
+            --card-bg: #111111;
+            --text: #ffffff;
+            --text-muted: #b3b3b3;
+            --primary: #ab2e00;
+            --accent: #d58a00;
+            --highlight: #ff8c00;
+            --btn: #d58a00;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --hover-bg: rgba(255, 69, 0, 0.08);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            --table-text: #ffffff;
+            --table-hover: rgba(255, 255, 255, 0.03);
         }
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
+            background-color: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* Sidebar */
@@ -34,17 +58,18 @@
             position: fixed;
             left: 0;
             top: 0;
-            background: var(--primary);
-            color: white;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            color: var(--text);
+            box-shadow: var(--shadow);
             z-index: 1000;
             transition: all 0.3s;
         }
 
         .sidebar-header {
             padding: 25px 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--primary);
+            color: white;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .sidebar-menu {
@@ -55,7 +80,7 @@
 
         .sidebar-menu li {
             padding: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-color);
             transition: all 0.3s;
         }
 
@@ -63,22 +88,22 @@
             display: flex;
             align-items: center;
             padding: 15px 25px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s;
         }
 
         .sidebar-menu li a:hover {
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
+            background: var(--hover-bg);
+            color: var(--text);
             padding-left: 30px;
         }
 
         .sidebar-menu li a.active {
-            background: var(--secondary);
+            background: var(--primary);
             color: white;
-            border-left: 4px solid white;
+            border-left: 4px solid var(--accent);
         }
 
         .sidebar-menu li a i {
@@ -86,6 +111,7 @@
             text-align: center;
             margin-right: 12px;
             font-size: 18px;
+            color: var(--accent);
         }
 
         /* Main Content */
@@ -93,26 +119,29 @@
             margin-left: 280px;
             padding: 30px;
             transition: all 0.3s;
+            background: var(--bg);
         }
 
         /* Cards */
         .card {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             margin-bottom: 25px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--card-bg);
+            color: var(--text);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .card-header {
-            background: white;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: var(--hover-bg);
+            border-bottom: 1px solid var(--border-color);
             padding: 15px 20px;
             font-weight: 600;
             color: var(--primary);
@@ -123,13 +152,14 @@
 
         .card-body {
             padding: 20px;
+            color: var(--text);
         }
 
         /* User Profile */
         .user-profile {
             text-align: center;
             padding: 30px 20px;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border-radius: 10px 10px 0 0;
         }
@@ -144,8 +174,8 @@
         }
 
         .vip-badge {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
+            background: linear-gradient(135deg, var(--btn), #e67e22);
+            color: var(--text);
             padding: 3px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -159,27 +189,29 @@
             padding: 20px;
             border-left: 4px solid;
             margin-bottom: 20px;
+            background-color: var(--card-bg);
         }
 
         .security-low {
-            background-color: rgba(220, 53, 69, 0.1);
-            border-left-color: var(--danger);
+            border-left-color: #dc3545;
         }
 
         .security-medium {
-            background-color: rgba(255, 193, 7, 0.1);
-            border-left-color: var(--warning);
+            border-left-color: #ffc107;
         }
 
         .security-high {
-            background-color: rgba(40, 167, 69, 0.1);
-            border-left-color: var(--success);
+            border-left-color: #28a745;
         }
 
         .progress {
             height: 8px;
             border-radius: 4px;
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: var(--hover-bg);
+        }
+
+        .progress-bar {
+            background-color: var(--primary);
         }
 
         /* Summary Cards */
@@ -188,9 +220,10 @@
             border-radius: 10px;
             margin-bottom: 20px;
             text-align: center;
-            background: white;
+            background: var(--card-bg);
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
         .summary-card::before {
@@ -200,7 +233,7 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: var(--accent);
+            background: var(--primary);
         }
 
         .summary-value {
@@ -212,7 +245,7 @@
 
         .summary-label {
             font-size: 14px;
-            color: #6c757d;
+            color: var(--text-muted);
         }
 
         /* Recommended Settings */
@@ -221,7 +254,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .setting-item:last-child {
@@ -231,11 +264,12 @@
         .setting-info h6 {
             margin-bottom: 5px;
             font-weight: 600;
+            color: var(--text);
         }
 
         .setting-info p {
             font-size: 13px;
-            color: #6c757d;
+            color: var(--text-muted);
             margin-bottom: 0;
         }
 
@@ -248,12 +282,12 @@
 
         .status-complete {
             background-color: rgba(40, 167, 69, 0.1);
-            color: var(--success);
+            color: #28a745;
         }
 
         .status-incomplete {
             background-color: rgba(220, 53, 69, 0.1);
-            color: var(--danger);
+            color: #dc3545;
         }
 
         /* Tables */
@@ -264,6 +298,8 @@
 
         .table {
             margin-bottom: 0;
+            color: var(--text);
+            background-color: var(--card-bg);
         }
 
         .table thead th {
@@ -273,12 +309,20 @@
             font-weight: 500;
         }
 
-        .table tbody tr {
+        /* Table specific styles */
+        .table tbody tr td {
             transition: all 0.2s;
+            background: var(--card-bg);
+            color: var(--table-text);
+            border-color: var(--border-color);
         }
 
         .table tbody tr:hover {
-            background-color: rgba(0, 0, 0, 0.02);
+            background-color: var(--table-hover);
+        }
+
+        .table tbody tr:hover {
+            background-color: var(--hover-bg);
         }
 
         /* Forms */
@@ -286,14 +330,26 @@
         .form-select {
             border-radius: 8px;
             padding: 10px 15px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
             transition: all 0.3s;
+            background: var(--card-bg);
+            color: var(--text);
         }
 
         .form-control:focus,
         .form-select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+            background: var(--card-bg);
+            color: var(--text);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-label {
+            color: var(--text);
         }
 
         /* Buttons */
@@ -305,29 +361,41 @@
         }
 
         .btn-primary {
-            background-color: var(--accent);
-            border-color: var(--accent);
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
         }
 
         .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
         }
 
         .btn-success {
-            background-color: var(--success);
-            border-color: var(--success);
+            background-color: #28a745;
+            border-color: #28a745;
         }
 
         .btn-danger {
-            background-color: var(--danger);
-            border-color: var(--danger);
+            background-color: #dc3545;
+            border-color: #dc3545;
         }
 
         .btn-warning {
-            background-color: var(--warning);
-            border-color: var(--warning);
+            background-color: var(--btn);
+            border-color: var(--btn);
             color: #212529;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
         }
 
         /* Badges */
@@ -335,6 +403,24 @@
             padding: 5px 10px;
             font-weight: 500;
             border-radius: 20px;
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+            color: white;
+        }
+
+        .bg-success {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        .bg-warning {
+            background-color: var(--btn) !important;
+            color: #212529;
         }
 
         /* Tabs */
@@ -357,6 +443,36 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Alerts */
+        .alert {
+            border-radius: 8px;
+        }
+
+        .alert-info {
+            background-color: rgba(38, 228, 255, 0.2);
+            border-color: var(--highlight);
+            color: var(--text);
+        }
+
+        .alert-warning {
+            background-color: rgba(255, 47, 178, 0.2);
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .alert-secondary {
+            background-color: var(--hover-bg);
+            border-color: var(--border-color);
+            color: var(--text);
+        }
+
+        /* List Groups */
+        .list-group-item {
+            background-color: var(--card-bg);
+            color: var(--text);
+            border-color: var(--border-color);
         }
 
         /* Responsive */
@@ -389,7 +505,7 @@
             .sidebar-menu li {
                 flex: 0 0 auto;
                 border-bottom: none;
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid var(--border-color);
             }
 
             .sidebar-menu li a {
@@ -411,21 +527,45 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
+            background: var(--hover-bg);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
+            background: var(--primary);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--accent);
+        }
+
+        /* Theme toggle button (add this to your HTML) */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
+    <!-- Light/Dark Mode Button -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <div class="sidebar">
         <div class="sidebar-header">
             <h4><i class="fas fa-user-shield"></i> Personal Center</h4>
@@ -489,12 +629,12 @@
                             <div class="summary-card">
                                 <div class="summary-value">0</div>
                                 <div class="summary-label">Deposit Requests</div>
-                                <small class="text-muted">Last updated: 14/08/2025</small>
+                                <small class="text-white">Last updated: 14/08/2025</small>
                             </div>
                             <div class="summary-card">
                                 <div class="summary-value">0</div>
                                 <div class="summary-label">Withdrawal Requests</div>
-                                <small class="text-muted">Last updated: 14/08/2025</small>
+                                <small class="text-white">Last updated: 14/08/2025</small>
                             </div>
                         </div>
                     </div>
@@ -863,7 +1003,7 @@
                                 <label class="form-label">Custom Amount</label>
                                 <input type="number" class="form-control" placeholder="Enter amount" min="100"
                                     max="50000">
-                                <small class="text-muted">Minimum: Rs 100 | Maximum: Rs 50,000</small>
+                                <small class="text-white">Minimum: Rs 100 | Maximum: Rs 50,000</small>
                             </div>
 
                             <button class="btn btn-primary w-100">Apply for Deposit</button>
@@ -925,7 +1065,7 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h3 class="text-primary">Rs 0.00</h3>
-                                            <p class="text-muted">Withdrawable amount</p>
+                                            <p class="text-white">Withdrawable amount</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1380,13 +1520,13 @@
                                 <div class="col-6">
                                     <div class="p-3 bg-light rounded">
                                         <h5 class="text-success">+Rs 1,550.00</h5>
-                                        <p class="mb-0">Total Profit</p>
+                                        <p class="mb-0 text-dark">Total Profit</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-light rounded">
                                         <h5 class="text-danger">-Rs 800.00</h5>
-                                        <p class="mb-0">Total Loss</p>
+                                        <p class="mb-0 text-dark">Total Loss</p>
                                     </div>
                                 </div>
                             </div>
@@ -1507,14 +1647,14 @@
                                 <div class="col-6">
                                     <div class="p-3 bg-light rounded mb-3">
                                         <h6 class="text-success">Best Day</h6>
-                                        <p class="mb-1">2025-06-13</p>
+                                        <p class="mb-1 text-dark">2025-06-13</p>
                                         <h5 class="text-success">+Rs 1,000.00</h5>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-light rounded mb-3">
                                         <h6 class="text-danger">Worst Day</h6>
-                                        <p class="mb-1">2025-06-14</p>
+                                        <p class="mb-1 text-dark">2025-06-14</p>
                                         <h5 class="text-danger">-Rs 500.00</h5>
                                     </div>
                                 </div>
@@ -1540,22 +1680,22 @@
                         <div class="card-body">
                             <div class="reward-item mb-4 p-3 bg-light rounded">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h6 class="mb-0">Welcome Bonus</h6>
-                                    <span class="badge bg-success">New</span>
+                                    <h6 class="mb-0 text-dark">Welcome Bonus</h6>
+                                    <span class="badge bg-success text-dark">New</span>
                                 </div>
-                                <p class="mb-3">Get 100% bonus up to Rs 5,000 on your first deposit</p>
-                                <button class="btn btn-warning w-100">Claim Now</button>
+                                <p class="mb-3 text-dark">Get 100% bonus up to Rs 5,000 on your first deposit</p>
+                                <button class="btn btn-warning w-100 text-dark">Claim Now</button>
                             </div>
 
                             <div class="reward-item mb-4 p-3 bg-light rounded">
-                                <h6 class="mb-2">Weekly Reload</h6>
-                                <p class="mb-3">50% bonus up to Rs 2,000 every Monday</p>
+                                <h6 class="mb-2 text-dark">Weekly Reload</h6>
+                                <p class="mb-3 text-dark">50% bonus up to Rs 2,000 every Monday</p>
                                 <button class="btn btn-warning w-100">Claim Now</button>
                             </div>
 
                             <div class="reward-item p-3 bg-light rounded">
-                                <h6 class="mb-2">Birthday Bonus</h6>
-                                <p class="mb-3">Rs 500 free bonus on your birthday month</p>
+                                <h6 class="mb-2 text-dark">Birthday Bonus</h6>
+                                <p class="mb-3 text-dark">Rs 500 free bonus on your birthday month</p>
                                 <button class="btn btn-secondary w-100" disabled>Available in Nov</button>
                             </div>
                         </div>
@@ -1613,7 +1753,7 @@
                         <div class="card-body">
                             <div class="text-center mb-4">
                                 <h3 class="text-primary">150 Points</h3>
-                                <p class="text-muted">Available Points</p>
+                                <p class="text-white">Available Points</p>
                             </div>
 
                             <div class="mb-4">
@@ -1623,7 +1763,7 @@
                                         <div class="d-flex justify-content-between">
                                             <div>
                                                 <h6 class="mb-1">Deposit Bonus</h6>
-                                                <p class="mb-0 text-muted">10/06/2025</p>
+                                                <p class="mb-0 text-white">10/06/2025</p>
                                             </div>
                                             <span class="text-success">+Rs 50</span>
                                         </div>
@@ -1680,24 +1820,24 @@
                                     <button class="btn btn-primary" onclick="copyReferralCode()"><i
                                             class="fas fa-copy"></i></button>
                                 </div>
-                                <p class="text-muted">Share this code with friends and earn rewards!</p>
+                                <p class="text-white">Share this code with friends and earn rewards!</p>
                             </div>
 
                             <div class="row text-center mb-4">
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
+                                    <div class="p-3 bg-light rounded text-dark">
                                         <h5 class="mb-0">3</h5>
                                         <p class="mb-0">Invited</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
+                                    <div class="p-3 bg-light rounded text-dark">
                                         <h5 class="mb-0">1</h5>
                                         <p class="mb-0">Active</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
+                                    <div class="p-3 bg-light rounded text-dark">
                                         <h5 class="mb-0">Rs 500</h5>
                                         <p class="mb-0">Earned</p>
                                     </div>
@@ -1832,13 +1972,13 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="mb-0">Welcome Bonus Claimed</h6>
                                 <div>
-                                    <button class="btn btn-sm btn-outline-danger me-2"><i
+                                    <button class="btn btn-sm btn-outline-danger me-2 mx-5"><i
                                             class="fas fa-trash"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i
+                                    <button class="btn btn-sm btn-outline-secondary mx-2"><i
                                             class="fas fa-archive"></i></button>
                                 </div>
                             </div>
-                            <small class="text-muted">From: Support Team | Date: 2025-06-14 10:30:45</small>
+                            <small class="text-white">From: Support Team | Date: 2025-06-14 10:30:45</small>
                         </div>
                         <div class="card-body">
                             <div class="mb-4">
@@ -1990,9 +2130,11 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Tab switching functionality
+    <!--Bootstrap bundle min js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom js  -->
+    <script src="./assets/js/custom.js"></script>
+    <script>// Tab switching functionality
         document.querySelectorAll('.sidebar-menu a').forEach(item => {
             if (item.getAttribute('data-tab')) {
                 item.addEventListener('click', function (e) {
@@ -2031,6 +2173,38 @@
                 tab.classList.remove('active');
             }
         });
+
+        // Theme switching functionality
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? null : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+
+            // Update icon
+            const icon = document.querySelector('.theme-toggle i');
+            if (newTheme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+
+            // Save preference to localStorage
+            if (newTheme) {
+                localStorage.setItem('theme', newTheme);
+            } else {
+                localStorage.removeItem('theme');
+            }
+        }
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            const icon = document.querySelector('.theme-toggle i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
     </script>
 </body>
 
