@@ -1,4 +1,4 @@
-/* Universal Style 😁 */
+/* CUSTOM SELECT Style 😁 */
 ::selection {
     color: white;
     background-color: #35c31e;
@@ -10,7 +10,7 @@
     }
 }
 
-/* SIDEBAR CSS STARTS  */
+/* --- SIDEBAR CSS STARTS ---  */
 :root {
     --sidebar-bg: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     --sidebar-width: 280px;
@@ -289,7 +289,7 @@
     }
 }
 
-/* SIDEBAR CSS ENDS */
+/* --- SIDEBAR CSS ENDS --- */
 
 /* --- HEADER CSS STARTS --- */
 .logo-menu {
@@ -522,7 +522,189 @@
 
 /* --- HEADER CSS ENDS --- */
 
-/* --- Game Modal CSS Starts ---  */
+/*---- MARQUEE CSS STARTS ----*/
+.announcement-bar {
+    background: linear-gradient(90deg, #3BE41F 0%, #35C31E 100%);
+    color: #000;
+    padding: 10px;
+    margin: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: scroll-left 25s linear infinite;
+    will-change: transform;
+}
+
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.marquee-content span {
+    padding-right: 50px;
+    flex-shrink: 0;
+}
+
+/* --- MARQUEE CSS ENDS ---  */
+
+/* --- LATEST WINNERS CSS STARTS ---  */
+.banner__feature .thumb img {
+    width: 40px;
+    height: 40px;
+}
+
+.banner__feature .content {
+    overflow: hidden;
+}
+
+.banner__feature .content h6 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.banner__feature .content p {
+    font-size: 1rem;
+    color: #abb7e0;
+    margin-bottom: 0;
+}
+
+.banner__feature .owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.banner__feature .owl-nav button {
+    background: linear-gradient(135deg, #4e5a9d, #3a447c) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 20px !important;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner__feature .owl-nav button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #5d6ab8, #4855a1) !important;
+}
+
+.banner__feature .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.banner__feature .owl-dots button.owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #3a447c !important;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.banner__feature .owl-dots button.owl-dot.active {
+    background: #4e5a9d !important;
+    transform: scale(1.2);
+}
+
+.banner__feature .owl-carousel .owl-stage {
+    margin-bottom: 15px;
+}
+
+.banner__feature .header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner__feature .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #6c8eff, #a66bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(108, 142, 255, 0.3);
+}
+
+.banner__feature .header p {
+    color: #abb7e0;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.banner__feature .winner-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.banner__feature .currency {
+    color: #35C31E;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .banner__feature .banner__feature {
+        padding: 20px 15px;
+    }
+
+    .banner__feature .header h1 {
+        font-size: 2rem;
+    }
+
+    .banner__feature .owl-nav {
+        top: -55px;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- LATEST WINNERS CSS ENDS ---  */
+
+/* --- GAME MODAL CSS Starts ---  */
 @media (min-width: 768px) {
     .mobile-modal {
         display: none !important;
@@ -633,9 +815,9 @@
     transform: rotate(90deg);
 }
 
-/* --- Game Modal CSS Ends --- */
+/* --- GAME MODAL CSS Ends --- */
 
-/* --- OWL Carousel CSS Starts ---  */
+/* --- OWL CAROUSEL CSS Starts ---  */
 .cusSearch {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
@@ -702,9 +884,9 @@
     }
 }
 
-/* --- OWL Carousel CSS Ends --- */
+/* --- OWL CAROUSEL CSS Ends --- */
 
-/* --- Bottom Nav CSS Starts --- */
+/* --- BOTTOM NAV CSS Starts --- */
 .bottom-nav {
     position: fixed;
     bottom: 10px;
@@ -811,10 +993,14 @@
     }
 }
 
-/* --- Bottom Nav CSS Ends --- */
+/* --- BOTTOM NAV CSS Ends --- */
 
-/* ALL GAMES CSS STARTS */
+/* --- ALL GAMES CSS STARTS --- */
 @media (max-width:769px) {
+    .allgames__items:hover img {
+        scale: 1.1;
+    }
+
     .winner__usdt__items .content .name__wrap .nametext {
         font-weight: 400;
         font-size: 18px;
@@ -842,9 +1028,9 @@
     }
 }
 
-/* ALL GAMES CSS ENDS */
+/* --- ALL GAMES CSS ENDS --- */
 
-/* WINNER USDT CSS STARTS */
+/* --- WINNER USDT CSS STARTS --- */
 @media (max-width: 530px) {
     .winner__usdt__items {
         padding: 4px;
@@ -881,7 +1067,7 @@
     }
 }
 
-/* WINNER USDT CSS ENDS */
+/* --- WINNER USDT CSS ENDS --- */
 
 /* --- PROMOTIONS CSS STARTS ---  */
 /* Header Section */

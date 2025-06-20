@@ -27,7 +27,7 @@ $(document).ready(function () {
 		margin: 20,
 		smartSpeed: 2500,
 		autoplayTimeout: 3000,
-		autoplay: false,
+		autoplay: true,
 		nav: true,
 		dots: true,
 		responsiveClass: true,

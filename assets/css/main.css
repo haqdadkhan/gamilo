@@ -1588,6 +1588,7 @@ p {
   position: relative;
   width: 100%;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .allgames__items img {

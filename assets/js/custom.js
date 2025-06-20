@@ -1,4 +1,66 @@
-// --- ALL GAMES CAROUSEL ---
+// --- LATEST WINNERS CAROUSEL ---
+$(document).ready(function () {
+    $('#winner').owlCarousel({
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
+        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        smartSpeed: 800,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+            },
+            576: {
+                items: 2,
+                nav: false,
+            },
+            769: {
+                items: 3,
+                nav: true,
+            },
+            1025: {
+                items: 4,
+                nav: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+            }
+        }
+    });
+
+    // Add animation to items when they become active
+    $('#winner').on('changed.owl.carousel', function (event) {
+        var currentItem = event.item.index;
+        var items = $(this).find('.owl-item');
+
+        // Reset all items
+        items.removeClass('active-animate');
+
+        // Animate the active items
+        setTimeout(function () {
+            items.eq(currentItem).addClass('active-animate');
+            if (items.eq(currentItem + 1).length) {
+                items.eq(currentItem + 1).addClass('active-animate');
+            }
+        }, 50);
+    });
+
+    // Trigger initial animation
+    setTimeout(function () {
+        $('#winner .owl-item.active').addClass('active-animate');
+        $('#winner .owl-item.active').next().addClass('active-animate');
+    }, 300);
+});
+
+// --- ALL NAV CAROUSEL ---
 $(document).ready(function (e) {
     $(".all-nav-carousel").owlCarousel({
         loop: false,
@@ -27,7 +89,7 @@ function setActive(clickedItem) {
 // --- SIDEBAR JS ---
 // SIDEBAR Active/Not Active
 const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".main-menu a");
+const navLinks = document.querySelectorAll(".sidebar-menu .menu-items .menu-item a");
 
 window.addEventListener("scroll", () => {
     let current = "";
