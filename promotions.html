@@ -4,632 +4,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Promotions | Your Brand</title>
-    <!--Bootstrap Min Css-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <!--Fontawsome all min Css-->
-    <link rel="stylesheet" href="assets/css/all.min.css" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+    <title>Gaming Promotions</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet">
-    <!-- Personal custom Css  -->
-    <link rel="stylesheet" href="assets/css/custom.css" />
     <style>
-        :root {
-            --primary-color: #1A1A2E;
-            --secondary-color: #16213E;
-            --accent-color: #E94560;
-            --accent-light: #ff6b81;
-            --light-color: #F9F9F9;
-            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            --card-radius: 16px;
-            --transition: all 0.3s ease;
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-        }
-
+        /* Custom styles for enhanced UI */
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
         }
 
-        /* Header */
-        .promo-header {
-            background: white;
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
-            backdrop-filter: blur(8px);
-            background-color: rgba(255, 255, 255, 0.92);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .promo-back-btn {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.03);
-        }
-
-        .promo-back-btn:hover {
-            background: rgba(0, 0, 0, 0.08);
-            transform: translateX(-2px);
-        }
-
-        .promo-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.8rem;
-            letter-spacing: -0.5px;
-            color: var(--primary-color);
+        /* Background image classes */
+        .full-card-bg-1 {
+            background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 450px;
             position: relative;
-            display: inline-block;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .promo-title::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 3px;
-        }
-
-        /* Main Grid */
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            padding: 32px 0;
-        }
-
-        /* Card Type 1: Full Bleed Image with Overlay Text */
-        .promo-card-hero {
-            grid-column: 1 / -1;
-            height: 400px;
+        .full-card-bg-2 {
+            background: url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 450px;
             position: relative;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow-md);
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .promo-card-hero:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+        .multi-card-bg-1 {
+            background: url('https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 200px;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .promo-card-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s ease;
+        .multi-card-bg-2 {
+            background: url('https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 200px;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .promo-card-hero:hover img {
+        .multi-card-bg-3 {
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 200px;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .multi-card-bg-4 {
+            background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 200px;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effects with neon glow */
+        .full-card-bg-1:hover,
+        .full-card-bg-2:hover,
+        .multi-card-bg-1:hover,
+        .multi-card-bg-2:hover,
+        .multi-card-bg-3:hover,
+        .multi-card-bg-4:hover {
             transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border: 2px solid #00ffcc;
         }
 
-        .promo-card-hero-content {
+        /* Gradient overlay */
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            right: 0;
-            padding: 40px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-            color: white;
-            z-index: 2;
-        }
-
-        .promo-card-hero-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .promo-card-hero-content p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        /* Card Type 2: Square Image with Floating Badge */
-        .promo-card-square {
-            aspect-ratio: 1/1;
-            position: relative;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .promo-card-square:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .promo-card-square img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 1s ease;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
         }
 
-        .promo-card-square:hover img {
-            transform: scale(1.05);
+        .full-card-bg-1:hover .gradient-overlay,
+        .full-card-bg-2:hover .gradient-overlay,
+        .multi-card-bg-1:hover .gradient-overlay,
+        .multi-card-bg-2:hover .gradient-overlay,
+        .multi-card-bg-3:hover .gradient-overlay,
+        .multi-card-bg-4:hover .gradient-overlay {
+            opacity: 0.85;
         }
 
-        .promo-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: var(--accent-color);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        p {
+            color: #b0b0b0;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #00ffcc;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #00ffcc !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff007a !important;
+            text-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for fade-in */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Button styles */
+        .btn-neon {
+            background: transparent;
+            border: 2px solid #00ffcc;
+            color: #00ffcc;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 2;
-        }
-
-        .promo-card-square-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 24px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
-            color: white;
-            z-index: 2;
-        }
-
-        .promo-card-square-content h4 {
-            font-weight: 700;
-            margin-bottom: 6px;
-            font-size: 1.3rem;
-        }
-
-        .promo-card-square-content p {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        /* Card Type 3: Portrait Image with Minimal Text */
-        .promo-card-portrait {
-            aspect-ratio: 3/4;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
             position: relative;
-            border-radius: var(--card-radius);
             overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
         }
 
-        .promo-card-portrait:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+        .btn-neon:hover {
+            background: #00ffcc;
+            color: #1a1a2e;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
         }
 
-        .promo-card-portrait img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s ease;
+        /* Link styles */
+        .neon-link {
+            color: #ff007a;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .promo-card-portrait:hover img {
-            transform: scale(1.05);
-        }
-
-        .promo-card-portrait-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 24px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .promo-card-portrait-content h4 {
-            font-weight: 800;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        /* Card Type 4: Minimal Text Overlay on Image */
-        .promo-card-minimal {
-            aspect-ratio: 16/9;
-            position: relative;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .promo-card-minimal:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .promo-card-minimal img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s ease;
-        }
-
-        .promo-card-minimal:hover img {
-            transform: scale(1.05);
-        }
-
-        .promo-card-minimal-content {
-            position: absolute;
-            bottom: 16px;
-            left: 16px;
-            right: 16px;
-            padding: 16px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            color: white;
-            z-index: 2;
-        }
-
-        .promo-card-minimal-content h4 {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-
-        /* Category Filter */
-        .promo-categories {
-            display: flex;
-            gap: 12px;
-            padding: 24px 0;
-            overflow-x: auto;
-            scrollbar-width: none;
-            margin-bottom: 8px;
-        }
-
-        .promo-categories::-webkit-scrollbar {
-            display: none;
-        }
-
-        .promo-category {
-            padding: 10px 20px;
-            background: white;
-            border-radius: 50px;
-            font-weight: 600;
-            color: var(--primary-color);
-            cursor: pointer;
-            transition: var(--transition);
-            flex-shrink: 0;
-            white-space: nowrap;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            font-size: 0.9rem;
-        }
-
-        .promo-category:hover {
-            background: rgba(0, 0, 0, 0.02);
-        }
-
-        .promo-category.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* Badges */
-        .badge {
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-        }
-
-        /* Floating Action Button */
-        .promo-fab {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 56px;
-            height: 56px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: var(--shadow-md);
-            z-index: 10;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .promo-fab:hover {
-            background: var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1200px) {
-            .promo-card-hero-content h3 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .promo-card-hero {
-                height: 360px;
-            }
-
-            .promo-card-hero-content {
-                padding: 32px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .promo-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
-
-            .promo-card-hero {
-                height: 300px;
-            }
-
-            .promo-card-hero-content h3 {
-                font-size: 1.8rem;
-            }
-
-            .promo-card-portrait {
-                aspect-ratio: 1/1;
-            }
-
-            .promo-title {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .promo-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .promo-card-hero {
-                height: 260px;
-            }
-
-            .promo-card-hero-content {
-                padding: 24px;
-            }
-
-            .promo-category {
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-
-            .promo-fab {
-                width: 48px;
-                height: 48px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Focus states for accessibility */
-        a:focus,
-        button:focus,
-        .promo-category:focus {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 3px;
-        }
-
-        /* Utility Classes */
-        .text-accent {
-            color: var(--accent-color);
+        .neon-link:hover {
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="promo-header">
+    <!-- Sticky Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <div class="d-flex align-items-center justify-content-between">
-                <a href="#" class="promo-back-btn" aria-label="Go back">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-                <h1 class="promo-title m-0">Premium Promotions</h1>
-                <div style="width: 40px;"></div> <!-- Spacer -->
+            <a class="navbar-brand" href="#">Gaming Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promotions">Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=nav-item>
+                            <a class="nav-link" href="#">Community</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Category Filter -->
-    <div class="container">
-        <div class="promo-categories">
-            <div class="promo-category active" tabindex="0">All Promos</div>
-            <div class="promo-category" tabindex="0">New</div>
-            <div class="promo-category" tabindex="0">Slots</div>
-            <div class="promo-category" tabindex="0">VIP</div>
-            <div class="promo-category" tabindex="0">Cashback</div>
-            <div class="promo-category" tabindex="0">Free Spins</div>
-            <div class="promo-category" tabindex="0">Live Casino</div>
-            <div class="promo-category" tabindex="0">Tournaments</div>
-        </div>
-    </div>
+    <section id="promotions" class="py-5 mt-5">
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-5 animate-fade-in">
+                <h1 class="display-4 fw-bold">Gaming Deals & Promotions</h1>
+                <p class="lead">Level up your gaming experience with these exclusive offers.</p>
+            </div>
 
-    <!-- Main Grid -->
-    <div class="container">
-        <div class="promo-grid">
-            <!-- Hero Card -->
-            <div class="promo-card-hero">
-                <img src="https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
-                    alt="Welcome Bonus">
-                <div class="promo-card-hero-content">
-                    <h3>Welcome Package</h3>
-                    <p>Up to $1000 + 200 Free Spins on your first deposit</p>
-                    <div class="mt-3">
-                        <span class="badge bg-light text-dark me-2">New Players</span>
-                        <span class="badge bg-light text-dark">50x Wagering</span>
+            <!-- First Grid of Smaller Cards -->
+            <div class="row row-cols-2 row-cols-md-4 g-1 g-sm-2 g-lg-3 mb-2 mb-md-3 animate-fade-in"
+                style="animation-delay: 0.4s;">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-1 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center text-white">
+                            <h3 class="h4 fw-semibold">Steam Summer Sale</h3>
+                            <p class="small">Up to 80% off top titles!</p>
+                            <a href="#" class="neon-link">View Deals</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-2 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center text-white">
+                            <h3 class="h4 fw-semibold">PS+ Essential</h3>
+                            <p class="small">3 months for price of 2!</p>
+                            <a href="#" class="neon-link">Subscribe Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-3 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h3 class="h4 fw-semibold">Xbox Game Pass</h3>
+                            <p class="small">First month for $1!</p>
+                            <a href="#" class="neon-link">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-4 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h3 class="h4 fw-semibold">Epic Free Games</h3>
+                            <p class="small">Claim this week's free title!</p>
+                            <a href="#" class="neon-link">Get It Free</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Square Card 1 -->
-            <div class="promo-card-square">
-                <div class="promo-badge">Hot Deal</div>
-                <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Free Spins">
-                <div class="promo-card-square-content">
-                    <h4>Free Spins Friday</h4>
-                    <p>50 FS on Book of Dead</p>
+            <!-- First Full-width Card -->
+            <div class="row mb-2 mb-md-3 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="col-12">
+                    <div
+                        class="full-card-bg-1 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h2 class="display-4 fw-bold">Mega Gaming Bundle</h2>
+                            <p class="lead">10 AAA titles for one incredible price!</p>
+                            <a href="#" class="btn btn-neon btn-lg rounded-pill mt-3">Download Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Square Card 2 -->
-            <div class="promo-card-square">
-                <img src="https://images.unsplash.com/photo-1620231109648-302d034cb29b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="VIP Program">
-                <div class="promo-card-square-content">
-                    <h4>VIP Club</h4>
-                    <p>Exclusive Rewards & Bonuses</p>
+            <!-- Second Grid of Smaller Cards -->
+            <div class="row row-cols-2 row-cols-md-4 g-1 g-sm-2 g-lg-3 mb-2 mb-md-3 animate-fade-in"
+                style="animation-delay: 0.4s;">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-1 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h3 class="h4 fw-semibold">Pre-order Bonus</h3>
+                            <p class="small">Get exclusive in-game content!</p>
+                            <a href="#" class="neon-link">Pre-order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-2 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h3 class="h4">Esports Gear</h3>
+                            <p class="small">Pro-grade gear 30% off!</p>
+                            <a href="#" class="neon-link">Shop Gear</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div
+                        class="multi-card-bg-3 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h3 class="h4">VR Bundle</h3>
+                            <p class="small">Headset + 5 games package!</p>
+                            <a href="#" class="neon-link">View Offer</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div>
+                    <div class="col">
+                        <div
+                            class="multi-card-bg-4 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                            <div class="gradient-overlay"></div>
+                            <div class="position-relative text-center">
+                                <h3 class="h4">Gaming PC Deal</h3>
+                                <p class="small">$500 off!</p>
+                                <a href="#" class="neon-link">Build Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Portrait Card 1 -->
-            <div class="promo-card-portrait">
-                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Reload Bonus">
-                <div class="promo-card-portrait-content">
-                    <h4>50% Reload</h4>
-                    <p class="mb-0">Every Monday</p>
+            <!-- Second Full-width Card -->
+            <div class="row mb-2 mb-md-3 animate-fade-in" style="animation-delay: 0.6s;">
+                <div class="col-12">
+                    <div
+                        class="full-card-bg-2 rounded-2 overflow-hidden d-flex align-items-center justify-content-center">
+                        <div class="gradient-overlay"></div>
+                        <div class="position-relative text-center">
+                            <h2 class="display-4">Ultimate Gaming Pass</h2>
+                            <p class="lead">Unlimited access to our premium titles!</p>
+                            <a href="#" class="btn btn-neon btn-lg rounded-pill mt-3">Subscribe Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+    </section>
 
-            <!-- Minimal Card 1 -->
-            <div class="promo-card-minimal">
-                <img src="https://images.unsplash.com/photo-1593510987185-1ec2256148a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Cashback">
-                <div class="promo-card-minimal-content">
-                    <h4>10% Cashback</h4>
-                    <p class="mb-0">Weekly protection</p>
-                </div>
-            </div>
-
-            <!-- Minimal Card 2 -->
-            <div class="promo-card-minimal">
-                <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Tournament">
-                <div class="promo-card-minimal-content">
-                    <h4>$10K Tournament</h4>
-                    <p class="mb-0">Join now!</p>
-                </div>
-            </div>
-
-            <!-- Portrait Card 2 -->
-            <div class="promo-card-portrait">
-                <div class="promo-badge">New</div>
-                <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Birthday Bonus">
-                <div class="promo-card-portrait-content">
-                    <h4>Birthday Gift</h4>
-                    <p class="mb-0">Claim your reward</p>
-                </div>
-            </div>
-
-            <!-- Square Card 3 -->
-            <div class="promo-card-square">
-                <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="High Roller">
-                <div class="promo-card-square-content">
-                    <h4>High Roller</h4>
-                    <p>25% Weekly Bonus</p>
-                </div>
-            </div>
-
-            <!-- Additional Card for Better Grid Layout -->
-            <div class="promo-card-minimal">
-                <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                    alt="Loyalty">
-                <div class="promo-card-minimal-content">
-                    <h4>Loyalty Rewards</h4>
-                    <p class="mb-0">Earn points daily</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating Action Button -->
-    <button class="promo-fab" aria-label="Special offers">
-        <i class="fas fa-gift"></i>
-    </button>
-
-    <!--Bootstrap bundle min js-->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Category filter functionality
-            const categories = document.querySelectorAll('.promo-category');
-            categories.forEach(category => {
-                category.addEventListener('click', function () {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                });
-
-                // Keyboard accessibility
-                category.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        category.click();
-                    }
-                });
-            });
-
-            // FAB interaction
-            const fab = document.querySelector('.promo-fab');
-            if (fab) {
-                fab.addEventListener('click', () => {
-                    // Simple feedback animation
-                    fab.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        fab.style.transform = 'scale(1)';
-                        // Here you would typically show a modal or navigate
-                        alert('Special offers will be displayed here');
-                    }, 200);
-                });
-            }
-        });
-    </script>
+    <!-- Bootstrap 5 JS Bundle via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
