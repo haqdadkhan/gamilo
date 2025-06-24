@@ -416,6 +416,7 @@ p {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -3730,8 +3731,9 @@ p {
     margin-right: 0px;
   }
 
-  .bonus__wrapper .owl-nav {
-    display: none;
+  .bonus__wrapper .owl-nav,
+  .porvider__wrapper .owl-nav {
+    display: none !important;
   }
 }
 
