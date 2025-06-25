@@ -1232,7 +1232,7 @@
             </section>
             <!--Winner__usdt End-->
             <!--Allgames Here-->
-            <section class="all__games pt-80 pb-80" id="allgame">
+            <section class="all__games pt-80 pb-80" id="allgame allGames">
                 <div class="container-fluid">
                     <div class="allgames__head__wrap wow fadeInDown" data-wow-delay="0.2s">
                         <div class="wins__head__right d-flex align-items-center gap-2 overflow-hidden">
@@ -1242,299 +1242,772 @@
                                     <span>Search</span>
                                 </button>
                             </div>
-                            <div class="owl-carousel owl-theme all-nav-carousel nav-tabs" role="tablist">
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
-                                        <i class="fas fa-gamepad"></i> All Games
-                                    </button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">
-                                        <i class="fas fa-star"></i> Popular
-                                    </button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">
-                                        <i class="fas fa-bolt"></i> New
-                                    </button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">
-                                        <i class="fas fa-gift"></i> Bonus Trio
-                                    </button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab6">
-                                        <i class="fas fa-dice"></i> Hold’n’Spin
-                                    </button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab7">
-                                        <i class="fas fa-fire"></i> Hot
-                                    </button>
+                            <div class="nav-scroll-wrapper">
+                                <div class="nav-scroll-container owl-carousel owl-theme all-nav-carousel nav-tabs"
+                                    role="tablist">
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
+                                            <i class="fas fa-gamepad"></i> All Games
+                                        </button>
+                                    </div>
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">
+                                            <i class="fas fa-star"></i> Popular
+                                        </button>
+                                    </div>
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">
+                                            <i class="fas fa-bolt"></i> New
+                                        </button>
+                                    </div>
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">
+                                            <i class="fas fa-gift"></i> Bonus Trio
+                                        </button>
+                                    </div>
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab6">
+                                            <i class="fas fa-dice"></i> Hold’n’Spin
+                                        </button>
+                                    </div>
+                                    <div class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab7">
+                                            <i class="fas fa-fire"></i> Hot
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="all__games__section">
                         <div class="tab-content" id="myTabContentlivealgames">
-                            <div class="tab-pane fade show active" id="homeoneallgames" role="tabpanel">
-                                <div class="row g-2 g-md-3">
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                            <div class="tab-pane fade show active scroll-wrapper" id="homeoneallgames" role="tabpanel">
+                                <div class="g-2 g-md-3 scroll-container">
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm1.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two badge__color">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm2.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm3.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm4.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm5.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <img src="assets/img/allgames/gm6.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm7.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm8.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm9.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game1.jpg" alt="img"
+                                                    class="img-fluid gameImg">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <img src="assets/img/allgames/gm10.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two badge__color">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game2.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm1.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game3.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                                        class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-4">
-                                        <div class="allgames__items">
-                                            <div class="badges__two badge__color">
-                                                <a href="#" class="badge2">New</a>
+                                    <div class="col-md-3 col-xl-2 col-sm-3 col-4">
+                                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                            class="d-flex flex-column gap-2">
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="assets/img/allgames/gm4.png" alt="img" class="img-fluid"
-                                                style="width:100%;height:auto;max-height:200px;object-fit:cover">
-                                            <div class="game__overlay">
-                                                <div class="btn__grp">
-                                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
-                                                        class="play-btn allvideo">
-                                                        <img src="assets/img/allgames/play.png" alt="play">
-                                                    </a>
-                                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal"
-                                                        data-bs-target="#critter">
-                                                        <span>Play For Fun</span>
-                                                    </a>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="allgames__items">
+                                                <div class="badges__two">
+                                                    <a href="#" class="badge2">New</a>
+                                                </div>
+                                                <img src="assets/img/allgames/game4.jpg" alt="img" class="img-fluid">
+                                                <div class="game__overlay">
+                                                    <div class="btn__grp">
+                                                        <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                            class="play-btn allvideo">
+                                                            <img src="assets/img/allgames/play.png" alt="play">
+                                                        </a>
+                                                        <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                            data-bs-target="#critter">
+                                                            <span>Play For Fun</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1546,724 +2019,12 @@
                 </div>
             </section>
             <!--Allgames End-->
-            <!--Battles Start-->
-            <section class="battles__section" id="battle">
-                <div class="container-fluid">
-                    <div class="battle__head__wrap wow fadeInDown" data-wow-delay="0.2s">
-                        <h4>
-                            Gamlio Battles
-                        </h4>
-                    </div>
-                    <div class="battle__wrap owl-theme owl-carousel">
-                        <div class="battle__items">
-                            <div class="thumb">
-                                <img src="assets/img/battles/battle1.png" alt="battles" />
-                                <div class="thumb__content">
-                                    <h4>
-                                        Gamlio High Rollers Battle
-                                    </h4>
-                                    <div class="timing__wrap">
-                                        <span class="finish">
-                                            Finish In
-                                        </span>
-                                        <ul>
-                                            <li>
-                                                <h5 class="day-box">5</h5>
-                                                <p>days</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="hr-box">8</h5>
-                                                <p>hours</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="min-box">48</h5>
-                                                <p>minutes</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="sec-box">20</h5>
-                                                <p>seconds</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="prize__pol">
-                                        <h6>
-                                            PRIZE POOL
-                                        </h6>
-                                        <h3>
-                                            $30 000
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="battles__player__wrap">
-                                <ul>
-                                    <li class="head">
-                                        <span>Place</span>
-                                        <span>Player, Wager</span>
-                                        <span>Prize</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag1.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player1.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49205
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$6,000</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag2.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player2.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49345
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$4,500</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag3.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player3.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49111
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$3,000</span>
-                                    </li>
-                                    <li class="last__button">
-                                        <a href="#0" class="battle__btn">
-                                            <span>View Battle </span>
-                                            <span><i class="fa-solid fa-chevron-right"></i></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="battle__items">
-                            <div class="thumb">
-                                <img src="assets/img/battles/battle2.png" alt="battles" />
-                                <div class="thumb__content">
-                                    <h4>
-                                        Gamlio Battle
-                                    </h4>
-                                    <div class="timing__wrap">
-                                        <span class="finish">
-                                            Finish In
-                                        </span>
-                                        <ul>
-                                            <li>
-                                                <h5 class="day-box">5</h5>
-                                                <p>days</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="hr-box">8</h5>
-                                                <p>hours</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="min-box">48</h5>
-                                                <p>minutes</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="sec-box">20</h5>
-                                                <p>seconds</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="prize__pol">
-                                        <h6>
-                                            PRIZE POOL
-                                        </h6>
-                                        <h3>
-                                            $150
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="battles__player__wrap">
-                                <ul>
-                                    <li class="head">
-                                        <span>Place</span>
-                                        <span>Player, Wager</span>
-                                        <span>Prize</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag1.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player1.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49205
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$9,000</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag2.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player2.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49345
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$4,500</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag3.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player3.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49111
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$5,500</span>
-                                    </li>
-                                    <li class="last__button">
-                                        <a href="#0" class="battle__btn">
-                                            <span>View Battle </span>
-                                            <span><i class="fa-solid fa-chevron-right"></i></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="battle__items">
-                            <div class="thumb">
-                                <img src="assets/img/battles/battle3.png" alt="battles" />
-                                <div class="thumb__content">
-                                    <h4>
-                                        Daily Battle
-                                    </h4>
-                                    <div class="timing__wrap">
-                                        <span class="finish">
-                                            Finish In
-                                        </span>
-                                        <ul>
-                                            <li>
-                                                <h5 class="day-box">5</h5>
-                                                <p>days</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="hr-box">8</h5>
-                                                <p>hours</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="min-box">48</h5>
-                                                <p>minutes</p>
-                                            </li>
-                                            <li>
-                                                <h5 class="sec-box">20</h5>
-                                                <p>seconds</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="prize__pol">
-                                        <h6>
-                                            PRIZE POOL
-                                        </h6>
-                                        <h3>
-                                            $10 000
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="battles__player__wrap">
-                                <ul>
-                                    <li class="head">
-                                        <span>Place</span>
-                                        <span>Player, Wager</span>
-                                        <span>Prize</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag1.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player1.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49205
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$8,000</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag2.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player2.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49345
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$10,500</span>
-                                    </li>
-                                    <li class="body__items">
-                                        <span class="icon"><img src="assets/img/battles/bag3.png" alt="badge" /></span>
-                                        <div class="content__body">
-                                            <span class="palyer">
-                                                <img src="assets/img/battles/player3.png" alt="player" />
-                                            </span>
-                                            <span>
-                                                <span class="user">
-                                                    User49111
-                                                </span>
-                                                <span class="user__amount">
-                                                    $91,782.513
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <span class="price">$20,000</span>
-                                    </li>
-                                    <li class="last__button">
-                                        <a href="#0" class="battle__btn">
-                                            <span>View Battle </span>
-                                            <span><i class="fa-solid fa-chevron-right"></i></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Battles End-->
-            <!--Winner__usdt Here-->
-            <section class="winners__jackpot bonus__section pt-80" id="bonus">
-                <div class="container-fluid">
-                    <div class="gamewins__head__wrap bonus__head__title wow fadeInDown" data-wow-delay="0.2s">
-                        <h4>
-                            Daily Bonuses
-                        </h4>
-                        <div class="wins__head__right">
-                            <div id="myDailyBonuses" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
-                                role="tablist">
-                                <div class="nav-item">
-                                    <button id="home-tabbonus__two" class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#homeonelivebouns__two" type="button" role="tab"
-                                        aria-controls="homeonelivebouns__two" aria-selected="true">Live</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button id="profile-tabbonus__two" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profileonellivebouns__two" type="button" role="tab"
-                                        aria-controls="profileonellivebouns__two" aria-selected="false">Month</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button id="contact-tabbonus__two" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#contactonellivebouns__two" type="button" role="tab"
-                                        aria-controls="contactonellivebouns__two" aria-selected="false">Week</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button id="day-tabbonus__two" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#daytonellivebouns__two" type="button" role="tab"
-                                        aria-controls="daytonellivebouns__two" aria-selected="false">Day</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-content" id="myTabbonus-two">
-                        <div class="tab-pane fade show active" id="homeonelivebouns__two" role="tabpanel">
-                            <div class="bonus__wrapper owl-theme owl-carousel">
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b1.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji9</span>
-                                        <h6>$1,11213</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b2.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Hidden</span>
-                                        <h6>$6,512.24</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b3.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>rolocoster</span>
-                                        <h6>$4,006.25</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profileonellivebouns__two" role="tabpanel">
-                            <div class="bonus__wrapper owl-theme owl-carousel">
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b1.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji9</span>
-                                        <h6>$1,11213</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b2.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Hidden</span>
-                                        <h6>$6,512.24</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b3.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>rolocoster</span>
-                                        <h6>$4,006.25</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="contactonellivebouns__two" role="tabpanel">
-                            <div class="bonus__wrapper owl-theme owl-carousel">
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b1.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji9</span>
-                                        <h6>$1,11213</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b2.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Hidden</span>
-                                        <h6>$6,512.24</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b3.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>rolocoster</span>
-                                        <h6>$4,006.25</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="daytonellivebouns__two" role="tabpanel">
-                            <div class="bonus__wrapper owl-theme owl-carousel">
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b1.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji9</span>
-                                        <h6>$1,11213</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b2.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Hidden</span>
-                                        <h6>$6,512.24</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b3.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>rolocoster</span>
-                                        <h6>$4,006.25</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b4.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>AceMay</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b5.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Dubaidevil66666</span>
-                                        <h6>$1,665.49</h6>
-                                    </div>
-                                </div>
-                                <div class="bonus__items">
-                                    <div class="thumb">
-                                        <img src="assets/img/bonus/b6.png" alt="img" />
-                                    </div>
-                                    <div class="content">
-                                        <span>Aji96555</span>
-                                        <h6>$2.667.74</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Winner__usdt End-->
             <!--Providers Here-->
             <section class="winners__jackpot bonus__section provider__section pt-80 pb-80" id="provider">
                 <div class="container-fluid">
                     <div class="gamewins__head__wrap wow fadeInDown" data-wow-delay="0.2s">
                         <h4>
-                            Providers
+                            Beautified
                         </h4>
                         <div class="wins__head__right">
                             <div id="myProviders" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
@@ -2416,661 +2177,6 @@
                 </div>
             </section>
             <!--Providers End-->
-            <!--BestWinner Start-->
-            <section class="best__winner" id="twinner">
-                <div class="container-fluid">
-                    <div class="gamewins__head__wrap wow fadeInDown" data-wow-delay="0.2s">
-                        <h4>
-                            Top Winners
-                        </h4>
-                    </div>
-                    <div class="row g-4">
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="best__items">
-                                <div class="content">
-                                    <span>
-                                        Cleo’s Book
-                                    </span>
-                                    <h5>
-                                        €81,270.00
-                                    </h5>
-                                </div>
-                                <a href="#0" class="thumb">
-                                    <img src="assets/img/wins/best1.png" alt="img" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="best__items">
-                                <div class="content">
-                                    <span>
-                                        Sweet Bonanza
-                                    </span>
-                                    <h5>
-                                        €24,670.00
-                                    </h5>
-                                </div>
-                                <a href="#0" class="thumb">
-                                    <img src="assets/img/wins/best2.png" alt="img" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="best__items">
-                                <div class="content">
-                                    <span>
-                                        Cleo’s Book
-                                    </span>
-                                    <h5>
-                                        A$34,077.50
-                                    </h5>
-                                </div>
-                                <a href="#0" class="thumb">
-                                    <img src="assets/img/wins/best3.png" alt="img" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="best__items">
-                                <div class="content">
-                                    <span>
-                                        Hot Shots
-                                    </span>
-                                    <h5>
-                                        C$32,938.78
-                                    </h5>
-                                </div>
-                                <a href="#0" class="thumb">
-                                    <img src="assets/img/wins/best4.png" alt="img" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--BestWinner End-->
-            <!--Games End-->
-            <!--Wins Here-->
-            <section class="wins__section__tab pt-80" id="recent">
-                <div class="container-fluid">
-                    <div class="wins__table__wrap wow fadeInDown" data-wow-delay="0.2s">
-                        <h4>
-                            Recent Bitcoin winners
-                        </h4>
-                        <div class="wins__head__right d-flex align-items-center gap-2 overflow-hidden">
-                            <div id="myRecentBitcoinWinners" class="owl-carousel owl-theme all-nav-carousel nav-tabs"
-                                role="tablist">
-                                <div class="nav-item">
-                                    <button id="home-tablucky" class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#homeone" type="button" role="tab" aria-controls="homeone"
-                                        aria-selected="true">All Bets</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button id="profile-tablucky" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profileone" type="button" role="tab" aria-controls="profileone"
-                                        aria-selected="false">High Rollers</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" id="contact-tablucky" data-bs-toggle="tab"
-                                        data-bs-target="#contactone" type="button" role="tab" aria-controls="contactone"
-                                        aria-selected="false">Lucky Bets</button>
-                                </div>
-                                <div class="nav-item">
-                                    <button class="nav-link" id="lucky-tablucky" data-bs-toggle="tab"
-                                        data-bs-target="#contactonelucky" type="button" role="tab"
-                                        aria-controls="contactonelucky" aria-selected="false">Lucky Bets</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <ul class="nav nav-tabs" id="myTabjack" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tablucky" data-bs-toggle="tab"
-                                    data-bs-target="#homeone" type="button" role="tab" aria-controls="homeone"
-                                    aria-selected="true">All Bets</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tablucky" data-bs-toggle="tab"
-                                    data-bs-target="#profileone" type="button" role="tab" aria-controls="profileone"
-                                    aria-selected="false">High Rollers</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tablucky" data-bs-toggle="tab"
-                                    data-bs-target="#contactone" type="button" role="tab" aria-controls="contactone"
-                                    aria-selected="false">Lucky Bets</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="lucky-tablucky" data-bs-toggle="tab"
-                                    data-bs-target="#contactonelucky" type="button" role="tab"
-                                    aria-controls="contactonelucky" aria-selected="false">Lucky Bets</button>
-                            </li>
-                        </ul> -->
-                    </div>
-                    <div class="wins__wrap">
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="homeone" role="tabpanel">
-                                <div class="wins__table">
-                                    <table>
-                                        <tbody>
-                                            <tr class="fist__tr">
-                                                <th>Game</th>
-                                                <th>Player/Clan</th>
-                                                <th>Time</th>
-                                                <th>Wager</th>
-                                                <th>Multiplier</th>
-                                                <th>Payout</th>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat1.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl1.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            quin508
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>15s</td>
-                                                <td>$3.00</td>
-                                                <td>0.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat2.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl2.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>10s</td>
-                                                <td>$50.00</td>
-                                                <td>2.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat3.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl3.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Jazzollini
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>25s</td>
-                                                <td>$10.00</td>
-                                                <td>8.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat4.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl4.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>35s</td>
-                                                <td>$50.00</td>
-                                                <td>6.00x</td>
-                                                <td class="text-base">$310.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat5.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl5.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            nijads
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>40s</td>
-                                                <td>$240.00</td>
-                                                <td>5.00x</td>
-                                                <td>$5.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat6.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl6.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Jazzollini
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>49s</td>
-                                                <td>$240.00</td>
-                                                <td class="text-base">1.93x</td>
-                                                <td class="text-base">$38.60</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat7.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl7.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>50s</td>
-                                                <td>$10.00</td>
-                                                <td class="text-base">2.28x</td>
-                                                <td class="text-base">$45.58</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="profileone" role="tabpanel">
-                                <div class="wins__table">
-                                    <table>
-                                        <tbody>
-                                            <tr class="fist__tr">
-                                                <th>Game</th>
-                                                <th>Player/Clan</th>
-                                                <th>Time</th>
-                                                <th>Wager</th>
-                                                <th>Multiplier</th>
-                                                <th>Payout</th>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat1.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl1.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            quin508
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>15s</td>
-                                                <td>$3.00</td>
-                                                <td>0.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat2.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl2.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>10s</td>
-                                                <td>$50.00</td>
-                                                <td>2.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat3.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl3.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Jazzollini
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>25s</td>
-                                                <td>$10.00</td>
-                                                <td>8.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat4.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl4.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>35s</td>
-                                                <td>$50.00</td>
-                                                <td>6.00x</td>
-                                                <td class="text-base">$310.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat5.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl5.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            nijads
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>40s</td>
-                                                <td>$240.00</td>
-                                                <td>5.00x</td>
-                                                <td>$5.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="contactone" role="tabpanel">
-                                <div class="wins__table">
-                                    <table>
-                                        <tbody>
-                                            <tr class="fist__tr">
-                                                <th>Game</th>
-                                                <th>Player/Clan</th>
-                                                <th>Time</th>
-                                                <th>Wager</th>
-                                                <th>Multiplier</th>
-                                                <th>Payout</th>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat4.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl4.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>35s</td>
-                                                <td>$50.00</td>
-                                                <td>6.00x</td>
-                                                <td class="text-base">$310.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat5.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl5.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            nijads
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>40s</td>
-                                                <td>$240.00</td>
-                                                <td>5.00x</td>
-                                                <td>$5.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat6.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl6.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Jazzollini
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>49s</td>
-                                                <td>$240.00</td>
-                                                <td class="text-base">1.93x</td>
-                                                <td class="text-base">$38.60</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat7.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl7.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>50s</td>
-                                                <td>$10.00</td>
-                                                <td class="text-base">2.28x</td>
-                                                <td class="text-base">$45.58</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="contactonelucky" role="tabpanel">
-                                <div class="wins__table">
-                                    <table>
-                                        <tbody>
-                                            <tr class="fist__tr">
-                                                <th>Game</th>
-                                                <th>Player/Clan</th>
-                                                <th>Time</th>
-                                                <th>Wager</th>
-                                                <th>Multiplier</th>
-                                                <th>Payout</th>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat1.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl1.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            quin508
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>15s</td>
-                                                <td>$3.00</td>
-                                                <td>0.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat2.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl2.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Hidden
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>10s</td>
-                                                <td>$50.00</td>
-                                                <td>2.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr class="tb1">
-                                                <td class="tdfirst">
-                                                    <div class="icon">
-                                                        <img src="assets/img/wins/fat3.png" alt="t-img" />
-                                                    </div>
-                                                    <span>
-                                                        Fat Drac
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span class="td__items">
-                                                        <span class="icon">
-                                                            <img src="assets/img/wins/pl3.png" alt="t-img" />
-                                                        </span>
-                                                        <span>
-                                                            Jazzollini
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td>25s</td>
-                                                <td>$10.00</td>
-                                                <td>8.00x</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <!--Wins End-->
             <!--Footer Start-->
             <section class="footer__section pt-80">

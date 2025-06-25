@@ -1,3 +1,160 @@
+// --- SWIPE OVER EACH SECT NAV ---
+const navScrollContainer = document.querySelector('.nav-scroll-container');
+let isNavDragging = false;
+let navStartX;
+let navScrollLeft;
+
+// Drag to scroll functionality
+navScrollContainer.addEventListener('mousedown', (navEvent) => {
+    isNavDragging = true;
+    navScrollContainer.classList.add('grabbing');
+    navStartX = navEvent.pageX - navScrollContainer.offsetLeft;
+    navScrollLeft = navScrollContainer.scrollLeft;
+});
+
+navScrollContainer.addEventListener('mouseleave', () => {
+    isNavDragging = false;
+    navScrollContainer.classList.remove('grabbing');
+});
+
+navScrollContainer.addEventListener('mouseup', () => {
+    isNavDragging = false;
+    navScrollContainer.classList.remove('grabbing');
+});
+
+navScrollContainer.addEventListener('mousemove', (navEvent) => {
+    if (!isNavDragging) return;
+    navEvent.preventDefault();
+    const navX = navEvent.pageX - navScrollContainer.offsetLeft;
+    const navWalk = (navX - navStartX) * 2;
+    navScrollContainer.scrollLeft = navScrollLeft - navWalk;
+});
+
+// Touch support for mobile devices
+navScrollContainer.addEventListener('touchstart', (navEvent) => {
+    isNavDragging = true;
+    navScrollContainer.classList.add('grabbing');
+    navStartX = navEvent.touches[0].pageX - navScrollContainer.offsetLeft;
+    navScrollLeft = navScrollContainer.scrollLeft;
+});
+
+navScrollContainer.addEventListener('touchend', () => {
+    isNavDragging = false;
+    navScrollContainer.classList.remove('grabbing');
+});
+
+navScrollContainer.addEventListener('touchmove', (navEvent) => {
+    if (!isNavDragging) return;
+    const navX = navEvent.touches[0].pageX - navScrollContainer.offsetLeft;
+    const navWalk = (navX - navStartX) * 2;
+    navScrollContainer.scrollLeft = navScrollLeft - navWalk;
+});
+
+// Dynamic edge blur effect
+function updateNavEdgeBlur() {
+    const navMaxScroll = navScrollContainer.scrollWidth - navScrollContainer.clientWidth;
+    const navScrollPos = navScrollContainer.scrollLeft;
+
+    if (navScrollPos <= 10) {
+        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
+        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
+    } else if (navScrollPos >= navMaxScroll - 10) {
+        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
+        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
+    } else {
+        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 15px, #000 calc(100% - 15px), transparent 100%)';
+        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 15px, #000 calc(100% - 15px), transparent 100%)';
+    }
+}
+
+// Initial check
+updateNavEdgeBlur();
+
+// Update on scroll
+navScrollContainer.addEventListener('scroll', updateNavEdgeBlur);
+
+// Update on resize
+window.addEventListener('resize', updateNavEdgeBlur);
+
+// --- SWIPE OVER EACH GAME SECT ---
+const container = document.querySelector('.scroll-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+// Drag to scroll functionality
+container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    container.classList.add('grabbing');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('mouseleave', () => {
+    isDown = false;
+    container.classList.remove('grabbing');
+});
+
+container.addEventListener('mouseup', () => {
+    isDown = false;
+    container.classList.remove('grabbing');
+});
+
+container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll multiplier
+    container.scrollLeft = scrollLeft - walk;
+});
+
+// Touch support for mobile devices
+container.addEventListener('touchstart', (e) => {
+    isDown = true;
+    container.classList.add('grabbing');
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('touchend', () => {
+    isDown = false;
+    container.classList.remove('grabbing');
+});
+
+container.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll multiplier
+    container.scrollLeft = scrollLeft - walk;
+});
+
+// Dynamic edge blur effect
+function updateEdgeBlur() {
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const scrollPos = container.scrollLeft;
+
+    // Remove all classes first
+    container.classList.remove('can-scroll-left', 'can-scroll-right');
+
+    // Add classes based on scroll position
+    if (scrollPos > 10) {
+        container.classList.add('can-scroll-left');
+    }
+    if (scrollPos < maxScroll - 10) {
+        container.classList.add('can-scroll-right');
+    }
+}
+
+// Initial check
+updateEdgeBlur();
+
+// Update on scroll
+container.addEventListener('scroll', updateEdgeBlur);
+
+// Update on resize
+window.addEventListener('resize', updateEdgeBlur);
+
+
 // --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {
     $('#winner').owlCarousel({

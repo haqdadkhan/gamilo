@@ -10,6 +10,122 @@
     }
 }
 
+/* --- SWIPE OVER EACH SECT NAV --- */
+.nav-scroll-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px 0;
+    cursor: grab;
+    user-select: none;
+}
+
+.nav-scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.nav-scroll-container.grabbing {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+.nav-item {
+    flex: 0 0 auto;
+}
+
+/* Dynamic edge blur classes */
+.nav-scroll-container.left-blur::before,
+.nav-scroll-container.right-blur::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nav-scroll-container.left-blur::before {
+    left: 0;
+    background: linear-gradient(to right, #000616, transparent);
+}
+
+.nav-scroll-container.right-blur::after {
+    right: 0;
+    background: linear-gradient(to left, #000616, transparent);
+}
+
+/* --- SWIPE OVER EACH GAME SECT --- */
+.scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    gap: 12px;
+    /* margin-top: 24px; */
+    padding: 10px 0;
+    cursor: grab;
+    user-select: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container.grabbing {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+.scroll-container::before,
+.scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.scroll-container::before {
+    left: 0;
+    background: linear-gradient(to right, #000616, transparent);
+}
+
+.scroll-container::after {
+    right: 0;
+    background: linear-gradient(to left, #000616, transparent);
+}
+
+.scroll-container.can-scroll-left::before {
+    opacity: 1;
+}
+
+.scroll-container.can-scroll-right::after {
+    opacity: 1;
+}
+
 /* --- SIDEBAR CSS STARTS ---  */
 :root {
     --sidebar-bg: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -996,6 +1112,21 @@
 /* --- BOTTOM NAV CSS Ends --- */
 
 /* --- ALL GAMES CSS STARTS --- */
+.allgames__items {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.allgames__items img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 2/3;
+    border-radius: 10px;
+    transition: all 0.4s;
+    object-fit: cover;
+}
+
 @media (max-width:769px) {
     .allgames__items:hover img {
         scale: 1.1;

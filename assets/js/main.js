@@ -56,77 +56,6 @@ $(document).ready(function () {
 			},
 		},
 	});
-	$(".battle__wrap").owlCarousel({
-		loop: true,
-		margin: 20,
-		smartSpeed: 2500,
-		autoplayTimeout: 3000,
-		autoplay: false,
-		nav: true,
-		dots: true,
-		responsiveClass: true,
-		navText: [
-			'<i class="fa-solid fa-chevron-right"></i>',
-			'<i class="fas fa-chevron-right"></i>',
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			500: {
-				items: 1,
-			},
-			767: {
-				items: 2,
-			},
-			991: {
-				items: 2,
-			},
-			1199: {
-				items: 2,
-			},
-			1399: {
-				items: 3,
-			},
-		},
-	});
-	$(".bonus__wrapper").owlCarousel({
-		loop: true,
-		margin: 20,
-		smartSpeed: 2500,
-		autoplayTimeout: 3000,
-		autoplay: false,
-		nav: true,
-		dots: false,
-		responsiveClass: true,
-		navText: [
-			'<i class="fa-solid fa-chevron-left"></i>',
-			'<i class="fas fa-chevron-right"></i>',
-		],
-		responsive: {
-			0: {
-				items: 2,
-			},
-			465: {
-				items: 3,
-			},
-			500: {
-				items: 3,
-			},
-			769: {
-				items: 4,
-			},
-			991: {
-				items: 4,
-			},
-			1200: {
-				items: 5,
-			},
-			1399: {
-				items: 6,
-			},
-		},
-	});
 	$(".porvider__wrapper").owlCarousel({
 		loop: true,
 		margin: 20,
@@ -164,8 +93,6 @@ $(document).ready(function () {
 			},
 		},
 	});
-
-
 
 	//Magnifiq pupup
 	$('.picture-btn').magnificPopup({
