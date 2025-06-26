@@ -1271,6 +1271,171 @@
 }
 
 /* --- POPULAR GAMES CSS ENDS --- */
+/* --- POOL FUN CSS STARTS --- */
+.pfCard {
+    max-width: 300px;
+    background: linear-gradient(145deg, #13153b, #0a0c24);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 0, 174, 0.15);
+    position: relative;
+}
+
+.pfCard:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pfCardMainImage {
+    position: relative;
+    overflow: hidden;
+}
+
+.pfCardBanner {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.pfCard:hover .pfCardBanner {
+    transform: scale(1.1);
+}
+
+.pfCardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: linear-gradient(to right, #0f112f, #1a1c3e);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pfCardInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pfCardThumbnail {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pfCardTitle {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.pfCardPlayBtn {
+    background: linear-gradient(135deg, #ff00ae, #d1008f);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 7px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 174, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pfCardPlayBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 174, 0.4);
+}
+
+.pfCardPlayBtn:active {
+    transform: translateY(0);
+}
+
+.pfCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff00ae, transparent);
+    z-index: 2;
+}
+
+.pfCardBadge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ff00ae;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+/* other stylings  */
+.pfCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.pfCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pfCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.pfCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.pfCard .game__overlay .btn__grp .cmn--btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.pfCard:hover .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+/* --- POOL FUN CSS ENDS --- */
 /* --- WINNER USDT CSS STARTS --- */
 @media (max-width: 530px) {
     .winner__usdt__items {
