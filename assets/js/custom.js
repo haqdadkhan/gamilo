@@ -1,80 +1,71 @@
 // --- SWIPE OVER EACH SECT NAV ---
-const navScrollContainer = document.querySelector('.nav-scroll-container');
-let isNavDragging = false;
-let navStartX;
-let navScrollLeft;
+const scrollableContainer = document.querySelector('.nav-scroll-container');
+let isDragging = false;
+let dragStartX;
+let initialScrollLeft;
 
 // Drag to scroll functionality
-navScrollContainer.addEventListener('mousedown', (navEvent) => {
-    isNavDragging = true;
-    navScrollContainer.classList.add('grabbing');
-    navStartX = navEvent.pageX - navScrollContainer.offsetLeft;
-    navScrollLeft = navScrollContainer.scrollLeft;
+scrollableContainer.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    scrollableContainer.classList.add('grabbing');
+    dragStartX = event.pageX - scrollableContainer.offsetLeft;
+    initialScrollLeft = scrollableContainer.scrollLeft;
 });
 
-navScrollContainer.addEventListener('mouseleave', () => {
-    isNavDragging = false;
-    navScrollContainer.classList.remove('grabbing');
+scrollableContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    scrollableContainer.classList.remove('grabbing');
 });
 
-navScrollContainer.addEventListener('mouseup', () => {
-    isNavDragging = false;
-    navScrollContainer.classList.remove('grabbing');
+scrollableContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    scrollableContainer.classList.remove('grabbing');
 });
 
-navScrollContainer.addEventListener('mousemove', (navEvent) => {
-    if (!isNavDragging) return;
-    navEvent.preventDefault();
-    const navX = navEvent.pageX - navScrollContainer.offsetLeft;
-    const navWalk = (navX - navStartX) * 2;
-    navScrollContainer.scrollLeft = navScrollLeft - navWalk;
+scrollableContainer.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    const currentX = event.pageX - scrollableContainer.offsetLeft;
+    const dragDistance = (currentX - dragStartX) * 2; // Scroll multiplier
+    scrollableContainer.scrollLeft = initialScrollLeft - dragDistance;
 });
 
 // Touch support for mobile devices
-navScrollContainer.addEventListener('touchstart', (navEvent) => {
-    isNavDragging = true;
-    navScrollContainer.classList.add('grabbing');
-    navStartX = navEvent.touches[0].pageX - navScrollContainer.offsetLeft;
-    navScrollLeft = navScrollContainer.scrollLeft;
+scrollableContainer.addEventListener('touchstart', (event) => {
+    isDragging = true;
+    scrollableContainer.classList.add('grabbing');
+    dragStartX = event.touches[0].pageX - scrollableContainer.offsetLeft;
+    initialScrollLeft = scrollableContainer.scrollLeft;
 });
 
-navScrollContainer.addEventListener('touchend', () => {
-    isNavDragging = false;
-    navScrollContainer.classList.remove('grabbing');
+scrollableContainer.addEventListener('touchend', () => {
+    isDragging = false;
+    scrollableContainer.classList.remove('grabbing');
 });
 
-navScrollContainer.addEventListener('touchmove', (navEvent) => {
-    if (!isNavDragging) return;
-    const navX = navEvent.touches[0].pageX - navScrollContainer.offsetLeft;
-    const navWalk = (navX - navStartX) * 2;
-    navScrollContainer.scrollLeft = navScrollLeft - navWalk;
+scrollableContainer.addEventListener('touchmove', (event) => {
+    if (!isDragging) return;
+    const currentX = event.touches[0].pageX - scrollableContainer.offsetLeft;
+    const dragDistance = (currentX - dragStartX) * 2;
+    scrollableContainer.scrollLeft = initialScrollLeft - dragDistance;
 });
+// Dynamic edge fade effect
+function updateScrollFades() {
+    const maxScrollableDistance = scrollableContainer.scrollWidth - scrollableContainer.clientWidth;
+    const currentScrollPosition = scrollableContainer.scrollLeft;
+    scrollableContainer.classList.remove('can-scroll-start', 'can-scroll-end');
 
-// Dynamic edge blur effect
-function updateNavEdgeBlur() {
-    const navMaxScroll = navScrollContainer.scrollWidth - navScrollContainer.clientWidth;
-    const navScrollPos = navScrollContainer.scrollLeft;
-
-    if (navScrollPos <= 10) {
-        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
-        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
-    } else if (navScrollPos >= navMaxScroll - 10) {
-        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
-        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%)';
-    } else {
-        navScrollContainer.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 15px, #000 calc(100% - 15px), transparent 100%)';
-        navScrollContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0, #000 15px, #000 calc(100% - 15px), transparent 100%)';
+    if (currentScrollPosition > 10) {
+        scrollableContainer.classList.add('can-scroll-start');
+    }
+    if (currentScrollPosition < maxScrollableDistance - 10) {
+        scrollableContainer.classList.add('can-scroll-end');
     }
 }
-
 // Initial check
-updateNavEdgeBlur();
-
-// Update on scroll
-navScrollContainer.addEventListener('scroll', updateNavEdgeBlur);
-
-// Update on resize
-window.addEventListener('resize', updateNavEdgeBlur);
+updateScrollFades();
+scrollableContainer.addEventListener('scroll', updateScrollFades);
+window.addEventListener('resize', updateScrollFades);
 
 // --- SWIPE OVER EACH GAME SECT ---
 const container = document.querySelector('.scroll-container');

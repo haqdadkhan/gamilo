@@ -11,8 +11,10 @@
 }
 
 /* --- SWIPE OVER EACH SECT NAV --- */
+/* --- NAVIGATION SCROLL SECTION --- */
 .nav-scroll-wrapper {
     position: relative;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -20,9 +22,7 @@
     display: flex;
     overflow-x: auto;
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* IE and Edge */
     scroll-behavior: smooth;
     gap: 10px;
     padding: 10px 0;
@@ -32,7 +32,6 @@
 
 .nav-scroll-container::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Opera */
 }
 
 .nav-scroll-container.grabbing {
@@ -40,30 +39,51 @@
     scroll-behavior: auto;
 }
 
-.nav-item {
-    flex: 0 0 auto;
-}
-
-/* Dynamic edge blur classes */
-.nav-scroll-container.left-blur::before,
-.nav-scroll-container.right-blur::after {
+.nav-scroll-container::before,
+.nav-scroll-container::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 40px;
+    width: 50px;
     pointer-events: none;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.nav-scroll-container.left-blur::before {
+.nav-scroll-container::before {
     left: 0;
     background: linear-gradient(to right, #000616, transparent);
 }
 
-.nav-scroll-container.right-blur::after {
+.nav-scroll-container::after {
     right: 0;
     background: linear-gradient(to left, #000616, transparent);
+}
+
+.nav-scroll-container.can-scroll-start::before {
+    opacity: 1;
+}
+
+.nav-scroll-container.can-scroll-end::after {
+    opacity: 1;
+}
+
+@media (max-width: 769px) {
+
+    .nav-scroll-container::before,
+    .nav-scroll-container::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .nav-scroll-container::before,
+    .nav-scroll-container::after {
+        width: 20px;
+    }
 }
 
 /* --- SWIPE OVER EACH GAME SECT --- */
@@ -124,6 +144,29 @@
 
 .scroll-container.can-scroll-right::after {
     opacity: 1;
+}
+
+@media (max-width: 769px) {
+
+    .scroll-container::before,
+    .scroll-container::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .scroll-container::before,
+    .scroll-container::after {
+        width: 20px;
+    }
+}
+
+/* --- MODAL BACKDROP --- */
+@media (min-width: 768px) {
+    /* .modal-backdrop {
+        display: none !important;
+    } */
 }
 
 /* --- SIDEBAR CSS STARTS ---  */
@@ -380,7 +423,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .gaming-sidebar {
         width: 260px;
     }
@@ -794,7 +837,7 @@
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .banner__feature .banner__feature {
         padding: 20px 15px;
     }
@@ -821,8 +864,11 @@
 /* --- LATEST WINNERS CSS ENDS ---  */
 
 /* --- GAME MODAL CSS Starts ---  */
-@media (min-width: 768px) {
-    .mobile-modal {
+@media (min-width: 769px) {
+
+    .mobile-modal,
+    .modal-dialog,
+    .modal-content {
         display: none !important;
     }
 }
@@ -933,7 +979,7 @@
 
 /* --- GAME MODAL CSS Ends --- */
 
-/* --- OWL CAROUSEL CSS Starts ---  */
+/* --- NAV OWL CAROUSEL CSS Starts ---  */
 .cusSearch {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
@@ -1000,7 +1046,7 @@
     }
 }
 
-/* --- OWL CAROUSEL CSS Ends --- */
+/* --- NAV OWL CAROUSEL CSS Ends --- */
 
 /* --- BOTTOM NAV CSS Starts --- */
 .bottom-nav {
@@ -1116,20 +1162,62 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    width: 170px;
+    height: 220px;
 }
 
 .allgames__items img {
-    height: auto;
+    height: 100%;
     width: 100%;
-    aspect-ratio: 2/3;
+    /* aspect-ratio: 2/3; */
     border-radius: 10px;
     transition: all 0.4s;
-    object-fit: cover;
+    object-fit: fill;
 }
 
-@media (max-width:769px) {
-    .allgames__items:hover img {
-        scale: 1.1;
+.allgames__items:hover img {
+    scale: 1.1;
+}
+
+.exploreAllGamesPapa {
+    margin: 20px auto 0;
+    width: max-content;
+    padding: 1px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #622fe3, #f805af);
+}
+
+.exploreAllGamesPapa:hover {
+    background: #8b86f4;
+}
+
+.exploreAllGames {
+    padding: 5px 48px;
+    border-radius: 25px;
+    background: #000616;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+}
+
+@media (max-width: 1024px) {
+    .allgames__items {
+        width: 155px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 769px) {
+    .exploreAllGames {
+        padding: 5px 40px;
+        font-size: 14px;
+    }
+
+    .allgames__items {
+        width: 130px;
+        height: 180px;
     }
 
     .winner__usdt__items .content .name__wrap .nametext {
@@ -1149,18 +1237,40 @@
         font-size: 7px;
         z-index: 1;
     }
+}
 
-    .allgames__items .game__overlay .btn__grp .allvideo {
-        display: block;
-        width: 32px;
-        height: 32px;
-        margin: 0 auto;
-        transition: all 0.4s;
+@media (max-width: 466px) {
+    .allgames__items {
+        width: 105px;
+        height: 150px;
     }
 }
 
 /* --- ALL GAMES CSS ENDS --- */
+/* --- POPULAR GAMES CSS STARTS --- */
+.sectionTitle div i {
+    font-size: 28px;
+}
 
+.sectionTitle div h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    line-height: 30px;
+    margin: 0;
+}
+
+@media (max-width: 769px) {
+    .sectionTitle div i {
+        font-size: 28px;
+    }
+
+    .sectionTitle div h2 {
+        font-size: 20px;
+    }
+}
+
+/* --- POPULAR GAMES CSS ENDS --- */
 /* --- WINNER USDT CSS STARTS --- */
 @media (max-width: 530px) {
     .winner__usdt__items {
@@ -1187,14 +1297,6 @@
 
     .allgames__items .game__overlay {
         margin-top: 15px;
-    }
-
-    .allgames__items .game__overlay .btn__grp .allvideo {
-        display: block;
-        width: 20px;
-        height: 20px;
-        margin: 0 auto;
-        transition: all 0.4s;
     }
 }
 
@@ -1370,7 +1472,7 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .promotions-card-body {
         padding: 16px;
     }
@@ -2097,7 +2199,7 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .if-container {
         padding: 10px;
     }
