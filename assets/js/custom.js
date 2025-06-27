@@ -1,4 +1,4 @@
-// --- SWIPE OVER EACH SECT NAV ---
+// --- SWIPE OVER SECT NAV ---
 const scrollableContainer = document.querySelector('.nav-scroll-container');
 let isDragging = false;
 let dragStartX;
@@ -67,7 +67,7 @@ updateScrollFades();
 scrollableContainer.addEventListener('scroll', updateScrollFades);
 window.addEventListener('resize', updateScrollFades);
 
-// --- SWIPE OVER EACH GAME SECT ---
+// --- SWIPE OVER ALL GAMES SECT ---
 const container = document.querySelector('.scroll-container');
 let isDown = false;
 let startX;
@@ -95,11 +95,10 @@ container.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll multiplier
+    const walk = (x - startX) * 2;
     container.scrollLeft = scrollLeft - walk;
 });
 
-// Touch support for mobile devices
 container.addEventListener('touchstart', (e) => {
     isDown = true;
     container.classList.add('grabbing');
@@ -115,7 +114,7 @@ container.addEventListener('touchend', () => {
 container.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll multiplier
+    const walk = (x - startX) * 2;
     container.scrollLeft = scrollLeft - walk;
 });
 
@@ -124,10 +123,7 @@ function updateEdgeBlur() {
     const maxScroll = container.scrollWidth - container.clientWidth;
     const scrollPos = container.scrollLeft;
 
-    // Remove all classes first
     container.classList.remove('can-scroll-left', 'can-scroll-right');
-
-    // Add classes based on scroll position
     if (scrollPos > 10) {
         container.classList.add('can-scroll-left');
     }
@@ -135,16 +131,9 @@ function updateEdgeBlur() {
         container.classList.add('can-scroll-right');
     }
 }
-
-// Initial check
 updateEdgeBlur();
-
-// Update on scroll
 container.addEventListener('scroll', updateEdgeBlur);
-
-// Update on resize
 window.addEventListener('resize', updateEdgeBlur);
-
 
 // --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {

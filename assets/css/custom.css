@@ -10,8 +10,7 @@
     }
 }
 
-/* --- SWIPE OVER EACH SECT NAV --- */
-/* --- NAVIGATION SCROLL SECTION --- */
+/* --- SWIPE OVER ALL GAMES NAV STARTS --- */
 .nav-scroll-wrapper {
     position: relative;
     width: 100%;
@@ -86,7 +85,8 @@
     }
 }
 
-/* --- SWIPE OVER EACH GAME SECT --- */
+/* --- SWIPE OVER ALL GAMES NAV ENDS --- */
+/* --- SWIPE OVER ALL GAMES SECT STARTS --- */
 .scroll-wrapper {
     position: relative;
     width: 100%;
@@ -161,6 +161,52 @@
         width: 20px;
     }
 }
+
+/* --- SWIPE OVER ALL GAMES SECT ENDS --- */
+
+/* --- SWIPE OVER TOT WEEK SECT STARTS --- */
+.totCard {
+    position: relative;
+    width: 240px;
+    height: 280px;
+}
+
+.totCard .totCardBanner {
+    width: 160px;
+    height: 280px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.totCard span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 175px;
+    line-height: 145px;
+    font-weight: 800;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 4px 8px;
+    letter-spacing: -4px;
+    background: rgba(255, 255, 255, 0.05);
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+    /* keep all above styles */
+    -webkit-text-stroke: 2px linear-gradient(90deg, #a855f7, #06b6d4);
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #a855f7, #06b6d4);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* --- SWIPE OVER TOT WEEK SECT ENDS --- */
+
 
 /* --- MODAL BACKDROP --- */
 @media (min-width: 768px) {
@@ -1333,6 +1379,10 @@
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .pfCardPlayBtn {
