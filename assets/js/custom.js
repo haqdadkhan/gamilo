@@ -135,6 +135,38 @@ updateEdgeBlur();
 container.addEventListener('scroll', updateEdgeBlur);
 window.addEventListener('resize', updateEdgeBlur);
 
+// --- THE FISHING ROD CAROUSEL ---
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    loop: true,
+    autoplay: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    breakpoints: {
+        430: {
+            slidesPerView: 2
+        },
+        575: {
+            slidesPerView: 3
+        },
+        1200: {
+            slidesPerView: 4
+        }
+    },
+    pagination: {
+        // el: ".swiper-pagination",
+    },
+});
+
+
 // --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {
     $('#winner').owlCarousel({
