@@ -211,13 +211,13 @@
     height: 100%;
 }
 
-.swiper {
+.tfr-scroll-container .swiper {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.swiper-slide {
+.tfr-scroll-container .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 300px;
@@ -225,28 +225,238 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #642fe3;
+    border-radius: 15px;
 }
 
-.swiper-slide img {
+.tfr-scroll-container .swiper-slide img {
     display: block;
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 10px;
     opacity: 0.5;
+    border-radius: 15px;
 }
 
-.swiper-slide-active {
+.tfr-scroll-container .swiper-slide-active {
     margin-bottom: 25px;
     opacity: 1;
     height: 90% !important;
 }
 
-.swiper-slide-active img {
+.tfr-scroll-container .swiper-slide-active img {
     opacity: 1;
 }
 
 /* --- THE FISHING ROD SECT ENDS --- */
+/* --- JACKPOT SECT STARTS --- */
+.sectionTitle button {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sectionTitle button:hover {
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+    box-shadow: 0 0 8px #6c5ce7;
+}
+
+.jp-section-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://arquypielago.com/wp-content/uploads/2025/02/9.jpg') center/cover no-repeat;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+
+/* Header Styles */
+.jackpot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+}
+
+.jackpot-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.jackpot-amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffd700;
+    animation: jackpotPulse 2s infinite;
+}
+
+/* Card Styles with Glassmorphism */
+.jpCard {
+    position: relative;
+    width: 120px !important;
+    height: 160px !important;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.jpCard:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.jpCardBanner {
+    width: 120px !important;
+    height: 160px !important;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.jpCardTitle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.jp-cards-container .swiper {
+    max-width: 528px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.jp-cards-container .swiper.jpSwiper {
+    max-width: 528px;
+    margin-left: 0 !important;
+    margin-right: auto;
+}
+
+.jp-cards-container .jpSwiper .swiper-wrapper {
+    width: 100% !important;
+}
+
+.jp-cards-container .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #642fe3;
+    border-radius: 15px;
+}
+
+.jp-cards-container .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgb(104, 94, 119);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: background 0.3s;
+}
+
+.jp-cards-container .swiper-pagination-bullet:hover {
+    background: #642fe3;
+}
+
+.jp-cards-container .swiper-pagination-bullet-active {
+    background: #642fe3;
+}
+
+/* othersssss */
+.jpCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.jpCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.jpCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.jpCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.jpCard:hover .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sectionTitle button {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .jp-section-bg {
+        padding: 1rem 0.7rem;
+    }
+
+    .jackpot-title {
+        font-size: 1.5rem;
+    }
+
+    .jackpot-amount {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .jpCard {
+        width: 100px;
+        height: 140px;
+    }
+}
+
+/* --- JACKPOT SECT ENDS --- */
 /* --- MODAL BACKDROP --- */
 @media (min-width: 768px) {
     /* .modal-backdrop {

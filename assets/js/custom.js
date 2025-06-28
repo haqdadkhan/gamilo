@@ -144,7 +144,7 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     slidesPerView: 1,
     coverflowEffect: {
-        rotate: 50,
+        rotate: 40,
         stretch: 0,
         depth: 100,
         modifier: 1,
@@ -161,11 +161,26 @@ var swiper = new Swiper(".mySwiper", {
             slidesPerView: 4
         }
     },
-    pagination: {
-        // el: ".swiper-pagination",
-    },
 });
 
+// JACKPOT CAROUSEL
+var jpSwiper = new Swiper('.jpSwiper', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    breakpoints: {
+        476: {
+            slidesPerView: 4,
+            spaceBetween: 14,
+        },
+        992: {
+            slidesPerView: 4,
+        }
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
 
 // --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {
