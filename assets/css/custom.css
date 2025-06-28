@@ -221,7 +221,7 @@
     background-position: center;
     background-size: cover;
     width: 300px;
-    height: 300px;
+    height: 400px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,7 +232,7 @@
 .tfr-scroll-container .swiper-slide img {
     display: block;
     width: 100%;
-    height: 300px;
+    height: 400px !important;
     object-fit: cover;
     opacity: 0.5;
     border-radius: 15px;
@@ -245,6 +245,53 @@
 }
 
 .tfr-scroll-container .swiper-slide-active img {
+    opacity: 1;
+}
+
+.tfrCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.tfrCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tfrCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px !important;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.tfrCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100% !important;
+}
+
+.tfrCard .game__overlay .btn__grp .cmn--btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.tfrCard.swiper-slide-active .game__overlay {
+    inset: 0 0 -100% 0;
     opacity: 1;
 }
 
@@ -310,7 +357,7 @@
     position: relative;
     width: 120px !important;
     height: 160px !important;
-    border-radius: 16px;
+    border-radius: 8px !important;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -321,10 +368,16 @@
 }
 
 .jpCardBanner {
+    border-radius: 8px !important;
     width: 120px !important;
     height: 160px !important;
     object-fit: cover;
     opacity: 0.9;
+}
+
+.jpCard:hover .jpCardBanner {
+    scale: 1.1;
+    transition: all 0.3s ease;
 }
 
 .jpCardTitle {
@@ -1628,7 +1681,7 @@
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
-    width: 150px;
+    max-width: 130px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1638,9 +1691,8 @@
     background: linear-gradient(135deg, #ff00ae, #d1008f);
     color: #fff;
     border: none;
-    font-weight: bold;
-    font-size: 13px;
-    padding: 7px 18px;
+    font-size: 12px;
+    padding: 3px 8px;
     border-radius: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 0, 174, 0.3);
@@ -1731,6 +1783,30 @@
 .pfCard:hover .game__overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
+}
+
+@media (max-width: 1100px) {
+    .pfCardTitle {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pfCardTitle {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 769px) {
+    .pfCardTitle {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .pfCardTitle {
+        max-width: 140px;
+    }
 }
 
 /* --- POOL FUN CSS ENDS --- */

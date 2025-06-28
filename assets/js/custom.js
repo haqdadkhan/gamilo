@@ -140,7 +140,11 @@ var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     loop: true,
-    autoplay: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
     centeredSlides: true,
     slidesPerView: 1,
     coverflowEffect: {
@@ -163,8 +167,9 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-// JACKPOT CAROUSEL
+// --- JACKPOT CAROUSEL ---
 var jpSwiper = new Swiper('.jpSwiper', {
+    pauseOnMouseEnter: true,
     slidesPerView: 2,
     spaceBetween: 10,
     breakpoints: {
@@ -181,6 +186,24 @@ var jpSwiper = new Swiper('.jpSwiper', {
         clickable: true,
     },
 });
+
+// --- POOL FUN CAROUSEL ---
+var pfSwiper = new Swiper('.pfSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    breakpoints: {
+        576: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});
+
 
 // --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {
