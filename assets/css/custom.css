@@ -1589,6 +1589,18 @@
 /* --- BOTTOM NAV CSS Ends --- */
 
 /* --- ALL GAMES CSS STARTS --- */
+
+.ag-cards-container .agSwiper .swiper-slide {
+    width: max-content;
+    margin-right: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .ag-cards-container .agSwiper {
+        padding-right: 70px;
+    }
+}
+
 .allgames__items {
     position: relative;
     border-radius: 10px;
