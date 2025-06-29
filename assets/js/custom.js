@@ -200,7 +200,7 @@ window.addEventListener('resize', updateModalAttributes);
 
 
 // --- THE FISHING ROD CAROUSEL ---
-var swiper = new Swiper(".mySwiper", {
+var tfrSwiper = new Swiper(".tfrSwiper", {
     effect: "coverflow",
     grabCursor: true,
     loop: true,
@@ -232,16 +232,65 @@ var swiper = new Swiper(".mySwiper", {
             slidesPerView: 4
         }
     },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+// --- TOT OF THE WEEK CAROUSEL ---
+var totSwiper = new Swiper(".totSwiper", {
+    grabCursor: true,
+    slidesPerView: 1.3,
+    spaceBetween: 10,
+    breakpoints: {
+        351: {
+            slidesPerView: 1.5,
+        },
+        426: {
+            slidesPerView: 1.8,
+        },
+        465: {
+            slidesPerView: 2
+        },
+        526: {
+            slidesPerView: 2.3
+        },
+        769: {
+            slidesPerView: 3
+        },
+        1200: {
+            slidesPerView: 4
+        }
+    },
 });
 
 // --- JACKPOT CAROUSEL ---
 var jpSwiper = new Swiper('.jpSwiper', {
-    pauseOnMouseEnter: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
     slidesPerView: 2,
     spaceBetween: 10,
     breakpoints: {
-        476: {
-            slidesPerView: 4,
+        350: {
+            slidesPerView: 2.2,
+        },
+        375: {
+            slidesPerView: 2.4,
+        },
+        400: {
+            slidesPerView: 2.5,
+        },
+        426: {
+            slidesPerView: 2.7,
+        },
+        466: {
+            slidesPerView: 3.1,
+        },
+        530: {
+            slidesPerView: 3.5,
             spaceBetween: 14,
         },
         992: {
@@ -263,12 +312,25 @@ var pfSwiper = new Swiper('.pfSwiper', {
             slidesPerView: 2,
         },
         768: {
-            slidesPerView: 2,
+            slidesPerView: 2.5,
         },
-        1024: {
+        1025: {
             slidesPerView: 3,
         },
+        1180: {
+            slidesPerView: 3.2,
+        },
+        1240: {
+            slidesPerView: 3.5,
+        },
+        1375: {
+            slidesPerView: 4,
+        },
     },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
 });
 
 

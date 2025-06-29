@@ -167,57 +167,116 @@
 /* --- SWIPE OVER TOT WEEK SECT STARTS --- */
 .totCard {
     position: relative;
-    width: 240px;
+    max-width: 240px;
     height: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
-.totCard .totCardBanner {
+.totCard:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.totCard .totCardMainImage {
     width: 160px;
     height: 280px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
+    margin-left: auto;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.totCard span {
+.totCard .totCardMainImage .totCardBanner {
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.totCardMainImage:hover .totCardBanner {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.totCard>span {
     position: absolute;
     bottom: 0;
-    left: 0;
-    font-size: 175px;
-    line-height: 145px;
+    left: 5px;
+    font-size: 160px;
+    line-height: 140px;
     font-weight: 800;
     z-index: 2;
-    color: rgba(255, 255, 255, 0.12);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 12px;
-    padding: 4px 8px;
-    letter-spacing: -4px;
-    background: rgba(255, 255, 255, 0.05);
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
-    background-clip: padding-box;
-    transition: all 0.3s ease;
-    /* keep all above styles */
-    -webkit-text-stroke: 2px linear-gradient(90deg, #a855f7, #06b6d4);
-    -webkit-text-fill-color: transparent;
-    background: linear-gradient(90deg, #a855f7, #06b6d4);
+    color: #0a0c24;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: transparent;
+    background: linear-gradient(180deg, #aa00ff, #00e1ff);
     -webkit-background-clip: text;
-    color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.totCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.totCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.totCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.totCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.totCard .game__overlay .btn__grp .cmn--btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.totCard:hover .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
 }
 
 /* --- THE FISHING ROD SECT ENDS --- */
-#tfrGames .tfr-scroll-container {
+#tfrGames .tfr-cards-container {
     position: relative;
     height: 100%;
 }
 
-.tfr-scroll-container .swiper {
+.tfr-cards-container .swiper {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
 }
 
-.tfr-scroll-container .swiper-slide {
+.tfr-cards-container .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 300px;
@@ -229,7 +288,7 @@
     border-radius: 15px;
 }
 
-.tfr-scroll-container .swiper-slide img {
+.tfr-cards-container .swiper-slide img {
     display: block;
     width: 100%;
     height: 400px !important;
@@ -238,13 +297,13 @@
     border-radius: 15px;
 }
 
-.tfr-scroll-container .swiper-slide-active {
+.tfr-cards-container .swiper-slide-active {
     margin-bottom: 25px;
     opacity: 1;
     height: 90% !important;
 }
 
-.tfr-scroll-container .swiper-slide-active img {
+.tfr-cards-container .swiper-slide-active img {
     opacity: 1;
 }
 
@@ -293,6 +352,24 @@
 .tfrCard.swiper-slide-active .game__overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
+}
+
+.tfr-cards-container .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgb(104, 94, 119);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: background 0.3s;
+}
+
+.tfr-cards-container .swiper-pagination-bullet:hover {
+    background: #642fe3;
+}
+
+.tfr-cards-container .swiper-pagination-bullet-active {
+    background: #642fe3;
 }
 
 @media (max-width:769px) {
@@ -422,7 +499,7 @@
 .jp-cards-container .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px;
+    width: auto;
     height: 300px;
     display: flex;
     justify-content: center;
@@ -1694,19 +1771,35 @@
 }
 
 .pfCardPlayBtn {
-    background: linear-gradient(135deg, #ff00ae, #d1008f);
-    color: #fff;
-    border: none;
+    background: transparent;
+    color: white;
+    border: 1px solid #ff00ae;
     font-size: 12px;
-    padding: 3px 8px;
+    padding: 3px 10px;
     border-radius: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 0, 174, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #ff00ae, 0 0 10px #ff00ae inset;
+    animation: neonBorderPulse 3s infinite;
 }
+
+@keyframes neonBorderPulse {
+    0% {
+        box-shadow: 0 0 4px #ff00ae, 0 0 8px #ff00ae inset;
+    }
+
+    50% {
+        box-shadow: 0 0 8px #ff00ae, 0 0 16px #ff00ae inset;
+    }
+
+    100% {
+        box-shadow: 0 0 4px #ff00ae, 0 0 8px #ff00ae inset;
+    }
+}
+
 
 .pfCardPlayBtn:hover {
     transform: translateY(-2px);
@@ -1789,6 +1882,24 @@
 .pfCard:hover .game__overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
+}
+
+.pf-cards-container .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgb(104, 94, 119);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: background 0.3s;
+}
+
+.pf-cards-container .swiper-pagination-bullet:hover {
+    background: #642fe3;
+}
+
+.pf-cards-container .swiper-pagination-bullet-active {
+    background: #642fe3;
 }
 
 @media (max-width: 1100px) {
