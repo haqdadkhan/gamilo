@@ -1691,6 +1691,11 @@
     margin: 0;
 }
 
+.pg-cards-container .pgSwiper .swiper-slide {
+    width: max-content;
+    margin-right: 0 !important;
+}
+
 @media (max-width: 769px) {
     .sectionTitle div i {
         font-size: 28px;
@@ -1698,6 +1703,12 @@
 
     .sectionTitle div h2 {
         font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pg-cards-container .pgSwiper {
+        padding-right: 70px;
     }
 }
 

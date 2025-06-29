@@ -198,6 +198,14 @@ updateModalAttributes();
 
 window.addEventListener('resize', updateModalAttributes);
 
+// --- POP GAMES CAROUSEL ---
+var pgSwiper = new Swiper(".pgSwiper", {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    watchOverflow: true
+});
+
 
 // --- THE FISHING ROD CAROUSEL ---
 var tfrSwiper = new Swiper(".tfrSwiper", {
@@ -237,6 +245,7 @@ var tfrSwiper = new Swiper(".tfrSwiper", {
         clickable: true,
     },
 });
+
 // --- TOT OF THE WEEK CAROUSEL ---
 var totSwiper = new Swiper(".totSwiper", {
     grabCursor: true,
