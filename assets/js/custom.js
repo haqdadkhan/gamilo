@@ -135,6 +135,70 @@ updateEdgeBlur();
 container.addEventListener('scroll', updateEdgeBlur);
 window.addEventListener('resize', updateEdgeBlur);
 
+// --- EVERYTHING'S ATTRIBUTES UPDATE ---
+function updateModalAttributes() {
+    const isMobile = window.innerWidth <= 768;
+    document.querySelectorAll('.agCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+    document.querySelectorAll('.pgCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+    document.querySelectorAll('.totCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+    document.querySelectorAll('.pfCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+    document.querySelectorAll('.tfrCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+    document.querySelectorAll('.jpCard').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
+}
+
+updateModalAttributes();
+
+window.addEventListener('resize', updateModalAttributes);
+
+
 // --- THE FISHING ROD CAROUSEL ---
 var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
@@ -155,10 +219,13 @@ var swiper = new Swiper(".mySwiper", {
         slideShadows: true,
     },
     breakpoints: {
-        430: {
+        376: {
+            slidesPerView: 1.5
+        },
+        476: {
             slidesPerView: 2
         },
-        575: {
+        769: {
             slidesPerView: 3
         },
         1200: {

@@ -256,7 +256,7 @@
     align-items: flex-end;
     justify-content: center;
     inset: 0 0 -100% 0;
-    border-radius: 10px;
+    border-radius: 15px;
     background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
     opacity: 0;
     transition: all 0.4s;
@@ -293,6 +293,12 @@
 .tfrCard.swiper-slide-active .game__overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
+}
+
+@media (max-width:769px) {
+    .tfrCard .game__overlay {
+        display: grid !important;
+    }
 }
 
 /* --- THE FISHING ROD SECT ENDS --- */
