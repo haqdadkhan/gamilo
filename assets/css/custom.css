@@ -910,7 +910,6 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
-    /* filter: blur(5px); */
 }
 
 .swiper-blur-container::before {

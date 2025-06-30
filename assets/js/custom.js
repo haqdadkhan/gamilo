@@ -86,7 +86,7 @@ function setupGameGridSwiper(selector) {
     const swiper = new Swiper(selector, {
         grabCursor: true,
         slidesPerView: 'auto',
-        spaceBetween: 10,
+        spaceBetween: 8,
         freeMode: true,
         watchOverflow: true
     });
@@ -105,6 +105,8 @@ const pgSwiper = setupGameGridSwiper('.pgSwiper');
 // --- TOT OF THE WEEK CAROUSEL ---
 const totSwiper = new Swiper(".totSwiper", {
     grabCursor: true,
+    freeMode: true,
+    watchOverflow: true,
     slidesPerView: 1.3,
     spaceBetween: 10,
     breakpoints: {
@@ -133,9 +135,18 @@ applySwiperBlurEffect(totSwiper, '.totSwiper');
 
 // --- POOL FUN CAROUSEL ---
 const pfSwiper = new Swiper('.pfSwiper', {
+    grabCursor: true,
+    freeMode: true,
+    watchOverflow: true,
     slidesPerView: 1,
     spaceBetween: 12,
     breakpoints: {
+        376: {
+            slidesPerView: 1.2,
+        },
+        450: {
+            slidesPerView: 1.5,
+        },
         576: {
             slidesPerView: 2,
         },
