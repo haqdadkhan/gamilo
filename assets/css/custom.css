@@ -898,6 +898,41 @@
 /* --- NAV OWL CAROUSEL CSS Ends --- */
 
 
+/* === FADE EFFECT CSS STARTS === */
+.swiper-blur-container::before,
+.swiper-blur-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* filter: blur(5px); */
+}
+
+.swiper-blur-container::before {
+    left: 0;
+    background: linear-gradient(to right, #000616, transparent);
+}
+
+.swiper-blur-container::after {
+    right: 0;
+    background: linear-gradient(to left, #000616, transparent);
+}
+
+.show-left-blur::before {
+    opacity: 1;
+}
+
+.show-right-blur::after {
+    opacity: 1;
+}
+
+/* === FADE EFFECT CSS ENDS === */
+
 
 /* --- ALL GAMES CSS STARTS --- */
 .ag-cards-container .agSwiper .swiper-slide {

@@ -70,24 +70,99 @@ $(document).ready(function (e) {
     });
 });
 
+// === FADE EFFECT - FUNCTION ===
+function applySwiperBlurEffect(swiper, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    const updateBlur = () => {
+        container.classList.toggle('show-left-blur', !swiper.isBeginning);
+        container.classList.toggle('show-right-blur', !swiper.isEnd);
+    };
+    swiper.on('slideChange', updateBlur);
+    swiper.on('touchMove', updateBlur);
+    updateBlur();
+}
+// === FADE EFFECT - DYNAMIC CAROUSEL ===
+function setupGameGridSwiper(selector) {
+    const swiper = new Swiper(selector, {
+        grabCursor: true,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        freeMode: true,
+        watchOverflow: true
+    });
+    applySwiperBlurEffect(swiper, selector);
+    return swiper;
+}
+
 // --- ALL GAMES CAROUSEL ---
-var agSwiper = new Swiper(".agSwiper", {
-    grabCursor: true,
-    slidesPerView: 'auto',
-    spaceBetween: 10,
-    watchOverflow: true
-});
+// input for fade
+const agSwiper = setupGameGridSwiper('.agSwiper');
 
 // --- POPULAR GAMES CAROUSEL ---
-var pgSwiper = new Swiper(".pgSwiper", {
+// input for fade
+const pgSwiper = setupGameGridSwiper('.pgSwiper');
+
+// --- TOT OF THE WEEK CAROUSEL ---
+const totSwiper = new Swiper(".totSwiper", {
     grabCursor: true,
-    slidesPerView: 'auto',
+    slidesPerView: 1.3,
     spaceBetween: 10,
-    watchOverflow: true
+    breakpoints: {
+        351: {
+            slidesPerView: 1.5,
+        },
+        426: {
+            slidesPerView: 1.8,
+        },
+        465: {
+            slidesPerView: 2
+        },
+        526: {
+            slidesPerView: 2.3
+        },
+        769: {
+            slidesPerView: 3
+        },
+        1200: {
+            slidesPerView: 4
+        }
+    },
+});
+// input for fade
+applySwiperBlurEffect(totSwiper, '.totSwiper');
+
+// --- POOL FUN CAROUSEL ---
+const pfSwiper = new Swiper('.pfSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    breakpoints: {
+        576: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 2.5,
+        },
+        1025: {
+            slidesPerView: 3,
+        },
+        1180: {
+            slidesPerView: 3.2,
+        },
+        1240: {
+            slidesPerView: 3.5,
+        },
+        1375: {
+            slidesPerView: 4,
+        },
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
 });
 
 // --- THE FISHING ROD CAROUSEL ---
-var tfrSwiper = new Swiper(".tfrSwiper", {
+const tfrSwiper = new Swiper(".tfrSwiper", {
     effect: "coverflow",
     grabCursor: true,
     loop: true,
@@ -125,35 +200,8 @@ var tfrSwiper = new Swiper(".tfrSwiper", {
     },
 });
 
-// --- TOT OF THE WEEK CAROUSEL ---
-var totSwiper = new Swiper(".totSwiper", {
-    grabCursor: true,
-    slidesPerView: 1.3,
-    spaceBetween: 10,
-    breakpoints: {
-        351: {
-            slidesPerView: 1.5,
-        },
-        426: {
-            slidesPerView: 1.8,
-        },
-        465: {
-            slidesPerView: 2
-        },
-        526: {
-            slidesPerView: 2.3
-        },
-        769: {
-            slidesPerView: 3
-        },
-        1200: {
-            slidesPerView: 4
-        }
-    },
-});
-
 // --- JACKPOT CAROUSEL ---
-var jpSwiper = new Swiper('.jpSwiper', {
+const jpSwiper = new Swiper('.jpSwiper', {
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
@@ -189,36 +237,6 @@ var jpSwiper = new Swiper('.jpSwiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
-});
-
-// --- POOL FUN CAROUSEL ---
-var pfSwiper = new Swiper('.pfSwiper', {
-    slidesPerView: 1,
-    spaceBetween: 12,
-    breakpoints: {
-        576: {
-            slidesPerView: 2,
-        },
-        768: {
-            slidesPerView: 2.5,
-        },
-        1025: {
-            slidesPerView: 3,
-        },
-        1180: {
-            slidesPerView: 3.2,
-        },
-        1240: {
-            slidesPerView: 3.5,
-        },
-        1375: {
-            slidesPerView: 4,
-        },
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    }
 });
 
 // --- LATEST WINNERS CAROUSEL ---
@@ -261,8 +279,8 @@ $(document).ready(function () {
 
     // Add animation to items when they become active
     $('#winner').on('changed.owl.carousel', function (event) {
-        var currentItem = event.item.index;
-        var items = $(this).find('.owl-item');
+        const currentItem = event.item.index;
+        const items = $(this).find('.owl-item');
 
         // Reset all items
         items.removeClass('active-animate');
@@ -322,7 +340,6 @@ menuItems.forEach(item => {
         item.classList.add('active');
     });
 });
-
 
 // --- PERSONAL CENTRE JS ---
 // Tab switching functionality
