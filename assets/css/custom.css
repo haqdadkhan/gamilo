@@ -10,596 +10,6 @@
     }
 }
 
-/* --- SWIPE OVER ALL GAMES NAV STARTS --- */
-.nav-scroll-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.nav-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-behavior: smooth;
-    gap: 10px;
-    padding: 10px 0;
-    cursor: grab;
-    user-select: none;
-}
-
-.nav-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.nav-scroll-container.grabbing {
-    cursor: grabbing;
-    scroll-behavior: auto;
-}
-
-.nav-scroll-container::before,
-.nav-scroll-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.nav-scroll-container::before {
-    left: 0;
-    background: linear-gradient(to right, #000616, transparent);
-}
-
-.nav-scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, #000616, transparent);
-}
-
-.nav-scroll-container.can-scroll-start::before {
-    opacity: 1;
-}
-
-.nav-scroll-container.can-scroll-end::after {
-    opacity: 1;
-}
-
-@media (max-width: 769px) {
-
-    .nav-scroll-container::before,
-    .nav-scroll-container::after {
-        width: 30px;
-    }
-}
-
-@media (max-width: 576px) {
-
-    .nav-scroll-container::before,
-    .nav-scroll-container::after {
-        width: 20px;
-    }
-}
-
-/* --- SWIPE OVER ALL GAMES NAV ENDS --- */
-/* --- SWIPE OVER ALL GAMES SECT STARTS --- */
-.scroll-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-behavior: smooth;
-    gap: 12px;
-    /* margin-top: 24px; */
-    padding: 10px 0;
-    cursor: grab;
-    user-select: none;
-}
-
-.scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.scroll-container.grabbing {
-    cursor: grabbing;
-    scroll-behavior: auto;
-}
-
-.scroll-container::before,
-.scroll-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.scroll-container::before {
-    left: 0;
-    background: linear-gradient(to right, #000616, transparent);
-}
-
-.scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, #000616, transparent);
-}
-
-.scroll-container.can-scroll-left::before {
-    opacity: 1;
-}
-
-.scroll-container.can-scroll-right::after {
-    opacity: 1;
-}
-
-@media (max-width: 769px) {
-
-    .scroll-container::before,
-    .scroll-container::after {
-        width: 30px;
-    }
-}
-
-@media (max-width: 576px) {
-
-    .scroll-container::before,
-    .scroll-container::after {
-        width: 20px;
-    }
-}
-
-/* --- SWIPE OVER ALL GAMES SECT ENDS --- */
-
-/* --- SWIPE OVER TOT WEEK SECT STARTS --- */
-.totCard {
-    position: relative;
-    max-width: 240px;
-    height: 280px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-}
-
-.totCard:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-.totCard .totCardMainImage {
-    width: 160px;
-    height: 280px;
-    margin-left: auto;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.totCard .totCardMainImage .totCardBanner {
-    top: 0;
-    right: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.totCardMainImage:hover .totCardBanner {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-.totCard>span {
-    position: absolute;
-    bottom: 0;
-    left: 5px;
-    font-size: 160px;
-    line-height: 140px;
-    font-weight: 800;
-    z-index: 2;
-    color: #0a0c24;
-    -webkit-text-stroke: 2px;
-    -webkit-text-stroke-color: transparent;
-    background: linear-gradient(180deg, #aa00ff, #00e1ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-align: center;
-    margin-top: 100px;
-}
-
-.totCard .game__overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    inset: 0 0 -100% 0;
-    border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    opacity: 0;
-    transition: all 0.4s;
-}
-
-.totCard .game__overlay .btn__grp {
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.totCard .game__overlay .btn__grp .allvideo {
-    display: block;
-    width: 35px;
-    height: 35px;
-    margin: 0 auto;
-    transition: all 0.4s;
-}
-
-.totCard .game__overlay .btn__grp .allvideo img {
-    width: 100%;
-    height: 100%;
-}
-
-.totCard .game__overlay .btn__grp .cmn--btn {
-    font-weight: 600;
-    background-color: transparent;
-    border: 1px solid var(--theme-color);
-    border-radius: 5px;
-    padding: 5px 20px;
-}
-
-.totCard:hover .game__overlay {
-    inset: 0 0 -100% 0;
-    opacity: 1;
-}
-
-/* --- THE FISHING ROD SECT ENDS --- */
-#tfrGames .tfr-cards-container {
-    position: relative;
-    height: 100%;
-}
-
-.tfr-cards-container .swiper {
-    width: 100%;
-    padding-top: 20px;
-}
-
-.tfr-cards-container .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 400px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #642fe3;
-    border-radius: 15px;
-}
-
-.tfr-cards-container .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 400px !important;
-    object-fit: cover;
-    opacity: 0.5;
-    border-radius: 15px;
-}
-
-.tfr-cards-container .swiper-slide-active {
-    margin-bottom: 25px;
-    opacity: 1;
-    height: 90% !important;
-}
-
-.tfr-cards-container .swiper-slide-active img {
-    opacity: 1;
-}
-
-.tfrCard .game__overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    inset: 0 0 -100% 0;
-    border-radius: 15px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    opacity: 0;
-    transition: all 0.4s;
-}
-
-.tfrCard .game__overlay .btn__grp {
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.tfrCard .game__overlay .btn__grp .allvideo {
-    display: block;
-    width: 35px;
-    height: 35px !important;
-    margin: 0 auto;
-    transition: all 0.4s;
-}
-
-.tfrCard .game__overlay .btn__grp .allvideo img {
-    width: 100%;
-    height: 100% !important;
-}
-
-.tfrCard .game__overlay .btn__grp .cmn--btn {
-    font-weight: 600;
-    background-color: transparent;
-    border: 1px solid var(--theme-color);
-    border-radius: 5px;
-    padding: 5px 20px;
-}
-
-.tfrCard.swiper-slide-active .game__overlay {
-    inset: 0 0 -100% 0;
-    opacity: 1;
-}
-
-.tfr-cards-container .swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-    background: rgb(104, 94, 119);
-    opacity: 1;
-    border-radius: 50%;
-    margin: 0 4px;
-    transition: background 0.3s;
-}
-
-.tfr-cards-container .swiper-pagination-bullet:hover {
-    background: #642fe3;
-}
-
-.tfr-cards-container .swiper-pagination-bullet-active {
-    background: #642fe3;
-}
-
-@media (max-width:769px) {
-    .tfrCard .game__overlay {
-        display: grid !important;
-    }
-}
-
-/* --- THE FISHING ROD SECT ENDS --- */
-/* --- JACKPOT SECT STARTS --- */
-.sectionTitle button {
-    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.sectionTitle button:hover {
-    transition: all 0.3s ease;
-    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
-    box-shadow: 0 0 8px #6c5ce7;
-}
-
-.jp-section-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://arquypielago.com/wp-content/uploads/2025/02/9.jpg') center/cover no-repeat;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    overflow: hidden;
-}
-
-/* Header Styles */
-.jackpot-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 1rem;
-}
-
-.jackpot-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.jackpot-amount {
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #ffd700;
-    animation: jackpotPulse 2s infinite;
-}
-
-/* Card Styles with Glassmorphism */
-.jpCard {
-    position: relative;
-    width: 120px !important;
-    height: 160px !important;
-    border-radius: 8px !important;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.jpCard:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-}
-
-.jpCardBanner {
-    border-radius: 8px !important;
-    width: 120px !important;
-    height: 160px !important;
-    object-fit: cover;
-    opacity: 0.9;
-}
-
-.jpCard:hover .jpCardBanner {
-    scale: 1.1;
-    transition: all 0.3s ease;
-}
-
-.jpCardTitle {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(4px);
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-}
-
-.jp-cards-container .swiper {
-    max-width: 528px;
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.jp-cards-container .swiper.jpSwiper {
-    max-width: 528px;
-    margin-left: 0 !important;
-    margin-right: auto;
-}
-
-.jp-cards-container .jpSwiper .swiper-wrapper {
-    width: 100% !important;
-}
-
-.jp-cards-container .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: auto;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #642fe3;
-    border-radius: 15px;
-}
-
-.jp-cards-container .swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-    background: rgb(104, 94, 119);
-    opacity: 1;
-    border-radius: 50%;
-    margin: 0 4px;
-    transition: background 0.3s;
-}
-
-.jp-cards-container .swiper-pagination-bullet:hover {
-    background: #642fe3;
-}
-
-.jp-cards-container .swiper-pagination-bullet-active {
-    background: #642fe3;
-}
-
-/* othersssss */
-.jpCard .game__overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    inset: 0 0 -100% 0;
-    border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    opacity: 0;
-    transition: all 0.4s;
-}
-
-.jpCard .game__overlay .btn__grp {
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-.jpCard .game__overlay .btn__grp .allvideo {
-    display: block;
-    width: 35px;
-    height: 35px;
-    margin: 0 auto;
-    transition: all 0.4s;
-}
-
-.jpCard .game__overlay .btn__grp .allvideo img {
-    width: 100%;
-    height: 100%;
-}
-
-.jpCard:hover .game__overlay {
-    inset: 0 0 -100% 0;
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .sectionTitle button {
-        padding: 6px 14px;
-        font-size: 12px;
-    }
-
-    .jp-section-bg {
-        padding: 1rem 0.7rem;
-    }
-
-    .jackpot-title {
-        font-size: 1.5rem;
-    }
-
-    .jackpot-amount {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .jpCard {
-        width: 100px;
-        height: 140px;
-    }
-}
-
-/* --- JACKPOT SECT ENDS --- */
-/* --- MODAL BACKDROP --- */
-@media (min-width: 768px) {
-    /* .modal-backdrop {
-        display: none !important;
-    } */
-}
-
 /* --- SIDEBAR CSS STARTS ---  */
 :root {
     --sidebar-bg: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -1150,6 +560,7 @@
 
 /* --- MARQUEE CSS ENDS ---  */
 
+
 /* --- LATEST WINNERS CSS STARTS ---  */
 .banner__feature .thumb img {
     width: 40px;
@@ -1293,6 +704,13 @@
 }
 
 /* --- LATEST WINNERS CSS ENDS ---  */
+
+/* --- MODAL BACKDROP --- */
+@media (min-width: 768px) {
+    /* .modal-backdrop {
+        display: none !important;
+    } */
+}
 
 /* --- GAME MODAL CSS Starts ---  */
 @media (min-width: 769px) {
@@ -1479,117 +897,9 @@
 
 /* --- NAV OWL CAROUSEL CSS Ends --- */
 
-/* --- BOTTOM NAV CSS Starts --- */
-.bottom-nav {
-    position: fixed;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 30px);
-    max-width: 500px;
-    height: 60px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 10px;
-    z-index: 1000;
-}
 
-.bottom-nav-item {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.nav-icon {
-    font-size: 22px;
-    color: #6c757d;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.bottom-nav-item.active .nav-icon {
-    color: #4361ee;
-    transform: translateY(-5px);
-}
-
-.bottom-nav-item.active::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    width: 40px;
-    height: 4px;
-    background: #4361ee;
-    border-radius: 2px;
-}
-
-.bottom-nav-text {
-    position: absolute;
-    bottom: 8px;
-    font-size: 11px;
-    color: #6c757d;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-.bottom-nav-item.active .bottom-nav-text {
-    color: #4361ee;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.bottom-nav-item:hover .nav-icon {
-    color: #4361ee;
-}
-
-.bottom-nav-item:hover .bottom-nav-text {
-    opacity: 1;
-    transform: translateY(0);
-    color: #6c757d;
-}
-
-@media (max-width: 376px) {
-    .bottom-nav-item.active::before {
-        top: -10px;
-        width: 35px;
-    }
-
-    .bottom-nav-item {
-        width: 50px;
-        height: 50px;
-    }
-
-    .bottom-nav-text {
-        font-size: 10px;
-    }
-
-    .nav-icon {
-        font-size: 18px;
-    }
-}
-
-@media (min-width: 769px) {
-    .bottom-nav {
-        display: none;
-    }
-}
-
-/* --- BOTTOM NAV CSS Ends --- */
 
 /* --- ALL GAMES CSS STARTS --- */
-
 .ag-cards-container .agSwiper .swiper-slide {
     width: max-content;
     margin-right: 0 !important;
@@ -1725,6 +1035,108 @@
 }
 
 /* --- POPULAR GAMES CSS ENDS --- */
+/* --- TOT WEEK SECT STARTS --- */
+.totCard {
+    position: relative;
+    max-width: 240px;
+    height: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.totCard:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.totCard .totCardMainImage {
+    width: 160px;
+    height: 280px;
+    margin-left: auto;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.totCard .totCardMainImage .totCardBanner {
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.totCardMainImage:hover .totCardBanner {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.totCard>span {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    font-size: 160px;
+    line-height: 140px;
+    font-weight: 800;
+    z-index: 2;
+    color: #0a0c24;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: transparent;
+    background: linear-gradient(180deg, #aa00ff, #00e1ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.totCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.totCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.totCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.totCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.totCard .game__overlay .btn__grp .cmn--btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.totCard:hover .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+/* --- TOT WEEK SECT ENDS --- */
 /* --- POOL FUN CSS STARTS --- */
 .pfCard {
     max-width: 300px;
@@ -1950,36 +1362,444 @@
 }
 
 /* --- POOL FUN CSS ENDS --- */
-/* --- WINNER USDT CSS STARTS --- */
-@media (max-width: 530px) {
-    .winner__usdt__items {
-        padding: 4px;
-        border-radius: 8px;
-    }
+/* --- THE FISHING ROD SECT STARTS --- */
+#tfrGames .tfr-cards-container {
+    position: relative;
+    height: 100%;
+}
 
-    .winner__usdt__items .thumb {
-        margin-bottom: 8px;
-    }
+.tfr-cards-container .swiper {
+    width: 100%;
+    padding-top: 20px;
+}
 
-    .winner__usdt__items .thumb img {
-        border-radius: 8px;
-    }
+.tfr-cards-container .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 400px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #642fe3;
+    border-radius: 15px;
+}
 
-    .winner__usdt__items .content .name__wrap .nametext {
-        font-weight: 400;
-        font-size: 14px;
-    }
+.tfr-cards-container .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px !important;
+    object-fit: cover;
+    opacity: 0.5;
+    border-radius: 15px;
+}
 
-    .wins__head__right .nav .nav-item .nav-link {
-        font-size: 16px !important;
-    }
+.tfr-cards-container .swiper-slide-active {
+    margin-bottom: 25px;
+    opacity: 1;
+    height: 90% !important;
+}
 
-    .allgames__items .game__overlay {
-        margin-top: 15px;
+.tfr-cards-container .swiper-slide-active img {
+    opacity: 1;
+}
+
+.tfrCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 15px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.tfrCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tfrCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px !important;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.tfrCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100% !important;
+}
+
+.tfrCard .game__overlay .btn__grp .cmn--btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.tfrCard.swiper-slide-active .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+.tfr-cards-container .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgb(104, 94, 119);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: background 0.3s;
+}
+
+.tfr-cards-container .swiper-pagination-bullet:hover {
+    background: #642fe3;
+}
+
+.tfr-cards-container .swiper-pagination-bullet-active {
+    background: #642fe3;
+}
+
+@media (max-width:769px) {
+    .tfrCard .game__overlay {
+        display: grid !important;
     }
 }
 
-/* --- WINNER USDT CSS ENDS --- */
+/* --- THE FISHING ROD SECT ENDS --- */
+/* --- JACKPOT SECT STARTS --- */
+.sectionTitle button {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sectionTitle button:hover {
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+    box-shadow: 0 0 8px #6c5ce7;
+}
+
+.jp-section-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://arquypielago.com/wp-content/uploads/2025/02/9.jpg') center/cover no-repeat;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+
+/* Header Styles */
+.jackpot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+}
+
+.jackpot-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.jackpot-amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffd700;
+    animation: jackpotPulse 2s infinite;
+}
+
+.jpCard {
+    position: relative;
+    width: 120px !important;
+    height: 160px !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.jpCard:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.jpCardBanner {
+    border-radius: 8px !important;
+    width: 120px !important;
+    height: 160px !important;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.jpCard:hover .jpCardBanner {
+    scale: 1.1;
+    transition: all 0.3s ease;
+}
+
+.jpCardTitle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.jp-cards-container .swiper {
+    max-width: 528px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.jp-cards-container .swiper.jpSwiper {
+    max-width: 528px;
+    margin-left: 0 !important;
+    margin-right: auto;
+}
+
+.jp-cards-container .jpSwiper .swiper-wrapper {
+    width: 100% !important;
+}
+
+.jp-cards-container .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #642fe3;
+    border-radius: 15px;
+}
+
+.jp-cards-container .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: rgb(104, 94, 119);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: background 0.3s;
+}
+
+.jp-cards-container .swiper-pagination-bullet:hover {
+    background: #642fe3;
+}
+
+.jp-cards-container .swiper-pagination-bullet-active {
+    background: #642fe3;
+}
+
+/* othersssss */
+.jpCard .game__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.jpCard .game__overlay .btn__grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.jpCard .game__overlay .btn__grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.jpCard .game__overlay .btn__grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.jpCard:hover .game__overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sectionTitle button {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .jp-section-bg {
+        padding: 1rem 0.7rem;
+    }
+
+    .jackpot-title {
+        font-size: 1.5rem;
+    }
+
+    .jackpot-amount {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .jpCard {
+        width: 100px;
+        height: 140px;
+    }
+}
+
+/* --- JACKPOT SECT ENDS --- */
+
+
+
+/* --- BOTTOM NAV CSS Starts --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    max-width: 500px;
+    height: 60px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.bottom-nav-item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-icon {
+    font-size: 22px;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-nav-item.active .nav-icon {
+    color: #4361ee;
+    transform: translateY(-5px);
+}
+
+.bottom-nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 40px;
+    height: 4px;
+    background: #4361ee;
+    border-radius: 2px;
+}
+
+.bottom-nav-text {
+    position: absolute;
+    bottom: 8px;
+    font-size: 11px;
+    color: #6c757d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.bottom-nav-item.active .bottom-nav-text {
+    color: #4361ee;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bottom-nav-item:hover .nav-icon {
+    color: #4361ee;
+}
+
+.bottom-nav-item:hover .bottom-nav-text {
+    opacity: 1;
+    transform: translateY(0);
+    color: #6c757d;
+}
+
+@media (max-width: 376px) {
+    .bottom-nav-item.active::before {
+        top: -10px;
+        width: 35px;
+    }
+
+    .bottom-nav-item {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bottom-nav-text {
+        font-size: 10px;
+    }
+
+    .nav-icon {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* --- BOTTOM NAV CSS Ends --- */
 
 /* --- PROMOTIONS CSS STARTS ---  */
 /* Header Section */
@@ -2180,791 +2000,3 @@
 }
 
 /* --- PROMOTIONS CSS ENDS ---  */
-
-/* --- REWARD CENTRE CSS STARTS ---  */
-.reward-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.reward-header {
-    background: linear-gradient(135deg, #3a0ca3, #14213d);
-    color: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.user-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #4cc9f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.user-balance {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.reward-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.reward-card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-    border: none;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.reward-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.reward-card i {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #3a0ca3;
-}
-
-.reward-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.vip-progress {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.progress {
-    height: 10px;
-    border-radius: 5px;
-    background-color: #e9ecef;
-}
-
-.progress-bar {
-    background-color: #f72585;
-}
-
-.vip-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-}
-
-/* Modal Styles */
-.reward-modal .modal-content {
-    border-radius: 12px;
-    border: none;
-}
-
-.reward-modal .modal-header {
-    background: linear-gradient(135deg, #3a0ca3, #14213d);
-    color: white;
-    border-bottom: none;
-    padding: 20px;
-}
-
-.reward-modal .modal-title {
-    font-weight: 700;
-}
-
-.reward-modal .btn-close {
-    filter: invert(1);
-    opacity: 0.8;
-}
-
-.ticket-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #f72585;
-}
-
-.ticket-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.ticket-reward {
-    color: #f72585;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.ticket-due {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed #ddd;
-}
-
-.countdown {
-    color: #ff9f1c;
-    font-weight: bold;
-}
-
-.btn-claim {
-    background-color: #f72585;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 20px;
-    font-weight: 600;
-}
-
-.btn-claim:hover {
-    background-color: #e5177b;
-}
-
-.wheel-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.wheel-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.wheel-card i {
-    font-size: 2rem;
-    color: #3a0ca3;
-    margin-bottom: 10px;
-}
-
-.wheel-card h4 {
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-.btn-signin {
-    background-color: #2ec4b6;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 20px;
-    font-weight: 600;
-    width: 100%;
-}
-
-.btn-signin:hover {
-    background-color: #29b3a6;
-}
-
-.conditions {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-.invite-section {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.invite-link {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btn-copy {
-    background-color: #3a0ca3;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    font-weight: 600;
-}
-
-.income-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.income-amount {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #3a0ca3;
-}
-
-.reward-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.stat-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #3a0ca3;
-}
-
-.rc.nav-tabs .nav-link {
-    color: #14213d;
-    font-weight: 600;
-}
-
-.rc.nav-tabs .nav-link.active {
-    color: #3a0ca3;
-    font-weight: 700;
-    border-bottom: 3px solid #3a0ca3;
-}
-
-.referral-tier {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #4cc9f0;
-}
-
-.tier-amount {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #f72585;
-}
-
-.no-data {
-    text-align: center;
-    padding: 40px 0;
-    color: #6c757d;
-}
-
-@media (max-width:576px) {
-    .reward-cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .reward-cards .reward-card i {
-        font-size: 30px;
-    }
-
-    .reward-cards .reward-card h3 {
-        font-size: 16px;
-    }
-}
-
-/* --- REWARD CENTRE CSS ENDS --- */
-
-/* --- SHARE N EARN CSS STARTS ---  */
-/* Container */
-.if-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
-}
-
-/* Header */
-.if-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #d1d5db;
-}
-
-.if-header h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 0;
-}
-
-/* Tabs */
-.if-tabs {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.if-tab {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-    padding: 12px 10px;
-    cursor: pointer;
-    font-weight: 500;
-    color: #6b7280;
-    transition: all 0.2s ease;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-}
-
-.if-tab.active {
-    color: #2563eb;
-    border-bottom-color: #2563eb;
-    background-color: rgba(37, 99, 235, 0.05);
-}
-
-.if-tab-content {
-    display: none;
-    background-color: #ffffff;
-    padding: 20px 15px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.if-tab-content.active {
-    display: block;
-}
-
-/* Share Section */
-.if-share-section {
-    background-color: #f3f4f6;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    border: 1px solid #d1d5db;
-}
-
-.if-share-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #1f2937;
-}
-
-.if-share-link-container {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid #d1d5db;
-    margin-bottom: 16px;
-}
-
-.if-share-link {
-    flex: 1;
-    padding: 12px 16px;
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.if-copy-btn {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 0 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.if-copy-btn:hover {
-    background-color: #1e40af;
-}
-
-/* Income Cards */
-.if-income-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.if-income-card {
-    background-color: #ffffff;
-    padding: 18px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    transition: transform 0.2s ease;
-}
-
-.if-income-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.if-income-title {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #6b7280;
-}
-
-.if-income-value {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 4px;
-}
-
-.if-income-subtext {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-/* Rewards Grid */
-.if-rewards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin-top: 24px;
-}
-
-.if-reward-card {
-    background-color: #ffffff;
-    padding: 18px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    transition: transform 0.2s ease;
-}
-
-.if-reward-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.if-reward-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    color: #1f2937;
-}
-
-.if-reward-amount {
-    font-size: 24px;
-    font-weight: 600;
-    color: #10b981;
-    margin-bottom: 4px;
-}
-
-.if-reward-count {
-    font-size: 14px;
-    color: #6b7280;
-}
-
-/* Program Info */
-.if-program-info {
-    background-color: #f3f4f6;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    border: 1px solid #d1d5db;
-}
-
-.if-program-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #1f2937;
-}
-
-.if-program-subtitle {
-    font-size: 14px;
-    color: #6b7280;
-    margin-bottom: 16px;
-}
-
-.if-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.if-info-item {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-}
-
-.if-info-value {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2563eb;
-    margin-bottom: 4px;
-}
-
-.if-info-label {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-.if-program-note {
-    font-size: 13px;
-    color: #6b7280;
-    font-style: italic;
-    margin-top: 12px;
-}
-
-/* Milestones */
-.if-milestone-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.if-milestone-item {
-    display: flex;
-    align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid #d1d5db;
-}
-
-.if-milestone-checkbox {
-    margin-right: 12px;
-    width: 18px;
-    height: 18px;
-    accent-color: #10b981;
-}
-
-.if-milestone-label {
-    flex: 1;
-    font-size: 14px;
-    color: #1f2937;
-}
-
-.if-milestone-amount {
-    font-size: 14px;
-    font-weight: 600;
-    color: #10b981;
-}
-
-/* VIP Levels */
-.if-vip-levels {
-    margin-top: 24px;
-}
-
-.if-vip-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    color: #1f2937;
-}
-
-.if-vip-level {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #d1d5db;
-}
-
-.if-vip-name {
-    font-size: 14px;
-    color: #1f2937;
-}
-
-.if-vip-status {
-    font-size: 14px;
-    font-weight: 500;
-    color: #10b981;
-}
-
-/* Records Table */
-.if-records-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-}
-
-.if-records-table th {
-    background-color: #f3f4f6;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 14px;
-    color: #1f2937;
-    border-bottom: 1px solid #d1d5db;
-}
-
-.if-records-table td {
-    padding: 12px 16px;
-    font-size: 14px;
-    border-bottom: 1px solid #d1d5db;
-}
-
-.if-no-data {
-    text-align: center;
-    padding: 40px;
-    color: #9ca3af;
-    font-size: 14px;
-}
-
-.if-total-row {
-    font-weight: 500;
-    background-color: #f3f4f6;
-}
-
-/* Section Titles */
-.if-section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 24px 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #d1d5db;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 769px) {
-    .if-container {
-        padding: 10px;
-    }
-
-    .if-header h1 {
-        font-size: 20px;
-    }
-
-    .if-tab {
-        padding: 12px 8px;
-        font-size: 14px;
-        min-width: 100px;
-    }
-
-    .if-income-grid,
-    .if-rewards-grid,
-    .if-info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .if-share-section {
-        padding: 15px;
-    }
-
-    .if-share-title {
-        font-size: 16px;
-    }
-
-    .if-share-link {
-        font-size: 13px;
-        padding: 10px 12px;
-    }
-
-    .if-income-card,
-    .if-reward-card,
-    .if-info-item {
-        padding: 15px;
-    }
-
-    .if-program-info {
-        padding: 15px;
-    }
-
-    .if-program-title {
-        font-size: 16px;
-    }
-
-    .if-records-table th,
-    .if-records-table td {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .if-tab {
-        min-width: 80px;
-        padding: 10px 6px;
-        font-size: 13px;
-    }
-
-    .if-tab-content {
-        padding: 15px 10px;
-    }
-
-    .if-share-link-container {
-        flex-direction: column;
-    }
-
-    .if-share-link {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .if-copy-btn {
-        padding: 10px;
-        border-radius: 0 0 6px 6px;
-    }
-
-    .if-income-value {
-        font-size: 18px;
-    }
-
-    .if-reward-amount {
-        font-size: 20px;
-    }
-}
-
-/* --- SHARE N EARN CSS ENDS --- */
