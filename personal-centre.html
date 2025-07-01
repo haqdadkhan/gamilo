@@ -55,17 +55,16 @@
     </header>
 
 
-    <div class="sidebar">
+    <div id="sidebar" class="sidebar">
         <ul class="sidebar-menu">
-            <li><a href="#" class="active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#" data-tab="account"><i class="fas fa-user-cog"></i> My Account</a></li>
+            <li><a href="#" class="active" data-tab="account"><i class="fas fa-user-cog"></i> My Account</a></li>
             <li><a href="#" data-tab="deposit"><i class="fas fa-money-bill-wave"></i> Deposit</a></li>
             <li><a href="#" data-tab="withdrawal"><i class="fas fa-wallet"></i> Withdrawal</a></li>
-            <li><a href="#" data-tab="betting"><i class="fas fa-chart-line"></i> Betting Record</a></li>
+            <li><a href="#" data-tab="betting-record"><i class="fas fa-chart-line"></i> Betting Record</a></li>
             <li><a href="#" data-tab="account-record"><i class="fas fa-receipt"></i> Account Record</a></li>
             <li><a href="#" data-tab="profit-loss"><i class="fas fa-calculator"></i> Profit & Loss</a></li>
-            <li><a href="#" data-tab="rewards"><i class="fas fa-gift"></i> Reward Center</a></li>
-            <li><a href="#" data-tab="invite"><i class="fas fa-users"></i> Invite Friends</a></li>
+            <li><a href="#" data-tab="reward-centre"><i class="fas fa-gift"></i> Reward Centre</a></li>
+            <li><a href="#" data-tab="invitation"><i class="fas fa-users"></i> Invite Friends</a></li>
             <li><a href="#" data-tab="messages"><i class="fas fa-envelope"></i> Messages</a></li>
             <li><a href="#" data-tab="rebate"><i class="fas fa-hand-holding-usd"></i> Manual Rebate</a></li>
             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -73,8 +72,8 @@
     </div>
 
     <div class="main-content">
-        <!-- Dashboard Tab -->
-        <div id="dashboard" class="tab-content active">
+        <!-- ACCOUNT TAB STARTS -->
+        <div id="account" class="tab-content active">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card">
@@ -99,97 +98,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="security-status security-low">
-                        <div class="d-flex justify-content-between">
-                            <h6><i class="fas fa-shield-alt me-2"></i> Security Status</h6>
-                            <span class="badge bg-danger">Low</span>
-                        </div>
-                        <div class="progress mt-2">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="26"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p class="mt-2 mb-0">Score: 26/100 - Improve your account security</p>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-sync-alt me-2"></i> Pending Requests</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="summary-card">
-                                <div class="summary-value">0</div>
-                                <div class="summary-label">Deposit Requests</div>
-                                <small class="text-white">Last updated: 14/08/2025</small>
-                            </div>
-                            <div class="summary-card">
-                                <div class="summary-value">0</div>
-                                <div class="summary-label">Withdrawal Requests</div>
-                                <small class="text-white">Last updated: 14/08/2025</small>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
                 <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-tasks me-2"></i> Recommended Settings</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h6>Personal Information</h6>
-                                    <p>Complete your profile to improve account security</p>
-                                </div>
-                                <div>
-                                    <span class="status-badge status-incomplete">Incomplete</span>
-                                    <button class="btn btn-sm btn-primary ms-2">Complete</button>
-                                </div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h6>Login Password</h6>
-                                    <p>Use a strong password with letters, numbers and symbols</p>
-                                </div>
-                                <div>
-                                    <span class="status-badge status-complete">Completed</span>
-                                    <button class="btn btn-sm btn-outline-secondary ms-2">Change</button>
-                                </div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h6>Bank Account</h6>
-                                    <p>Add bank account for withdrawals and transfers</p>
-                                </div>
-                                <div>
-                                    <span class="status-badge status-incomplete">Incomplete</span>
-                                    <button class="btn btn-sm btn-primary ms-2">Add</button>
-                                </div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h6>E-Wallet</h6>
-                                    <p>Link your e-wallet for faster transactions</p>
-                                </div>
-                                <div>
-                                    <span class="status-badge status-incomplete">Incomplete</span>
-                                    <button class="btn btn-sm btn-primary ms-2">Link</button>
-                                </div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-info">
-                                    <h6>Transaction Password</h6>
-                                    <p>Extra security for financial transactions</p>
-                                </div>
-                                <div>
-                                    <span class="status-badge status-incomplete">Incomplete</span>
-                                    <button class="btn btn-sm btn-primary ms-2">Set Up</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="card">
                         <div class="card-header">
                             <h6><i class="fas fa-bell me-2"></i> Recent Activities</h6>
@@ -230,263 +140,420 @@
                             </div>
                         </div>
                     </div>
+                    <div class="security-status security-low">
+                        <div class="d-flex justify-content-between">
+                            <h6><i class="fas fa-shield-alt me-2"></i> Security Status</h6>
+                            <span class="badge bg-danger">Low</span>
+                        </div>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="26"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mt-2 mb-0">Score: 26/100 - Improve your account security</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-sync-alt me-2"></i> Pending Requests</h6>
+                    </div>
+                    <div class="card-body d-flex">
+                        <div class="summary-card">
+                            <div class="summary-value">0</div>
+                            <div class="summary-label">Deposit Requests</div>
+                            <small class="text-white">Last updated: 14/08/2025</small>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-value">0</div>
+                            <div class="summary-label">Withdrawal Requests</div>
+                            <small class="text-white">Last updated: 14/08/2025</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- ACCOUNT TAB ENDS -->
 
-        <!-- My Account Tab -->
-        <div id="account" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <h6><i class="fas fa-user-cog me-2"></i> Account Settings</h6>
-                </div>
-                <div class="card-body">
+        <!-- EDIT ACCOUNT TAB STARTS -->
+        <div id="eaSidebar" class="eaSidebar position-fixed top-0 end-0 h-100 bg-white shadow-2xl overflow-y-auto">
+            <div class="settings-header">
+                <span>
+                    <h2><i class="fas fa-user-cog me-2"></i>Account Settings</h2>
+                    <p>Manage your personal information, security, and pay methods</p>
+                </span>
+                <button type="button" id="cancel-account-btn" class="btn btn-secondary p-2">
+                    <i class="fas fa-close"></i>
+                </button>
+            </div>
+            <ul class="nav nav-tabs eaNav" id="settingsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="ea-personal-tab" data-bs-toggle="tab"
+                        data-bs-target="#ea-personal" type="button" role="tab">
+                        <i class="fas fa-user me-2"></i>Personal Info
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ea-password-tab" data-bs-toggle="tab" data-bs-target="#ea-password"
+                        type="button" role="tab">
+                        <i class="fas fa-lock me-2"></i>Password
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ea-bank-tab" data-bs-toggle="tab" data-bs-target="#ea-bank"
+                        type="button" role="tab">
+                        <i class="fas fa-university me-2"></i>Bank Account
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ea-ewallet-tab" data-bs-toggle="tab" data-bs-target="#ea-ewallet"
+                        type="button" role="tab">
+                        <i class="fas fa-wallet me-2"></i>E-Wallet
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ea-transaction-tab" data-bs-toggle="tab"
+                        data-bs-target="#ea-transaction" type="button" role="tab">
+                        <i class="fas fa-key me-2"></i>Transaction PIN
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="settingsTabContent">
+                <!-- Personal Info Tab -->
+                <div class="eaPersonal tab-pane fade show active" id="ea-personal" role="tabpanel">
+                    <div class="account-status">
+                        <div class="status-item">
+                            <span>Account Status</span>
+                            <span class="badge bg-success">Active</span>
+                        </div>
+                        <div class="status-item">
+                            <span>Member Since</span>
+                            <span>May 11, 2025</span>
+                        </div>
+                        <div class="status-item">
+                            <span>Last Login</span>
+                            <span>June 14, 2025 (16:53) from 14.1.107.37</span>
+                        </div>
+                    </div>
+                    <h5 class="section-title">Personal Information</h5>
                     <form>
-                        <div class="row mb-4">
+                        <div class="row g-3">
                             <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" value="tester5429" readonly>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">VIP Level</label>
-                                    <input type="text" class="form-control" value="VIP0" readonly>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Registration Date</label>
-                                    <input type="text" class="form-control" value="2025-05-11" readonly>
+                                <label class="form-label">Nickname</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-user-tag input-group-icon"></i>
+                                    <input type="text" class="form-control input-with-icon" placeholder="Your nickname"
+                                        value="Tester">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Last Login</label>
-                                    <input type="text" class="form-control" value="2025-06-14 16:53:24" readonly>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Last Login IP</label>
-                                    <input type="text" class="form-control" value="14.1.107.37" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h6 class="mb-3">Personal Information</h6>
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter first name">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control">
+                                <label class="form-label">Email Address</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-envelope input-group-icon"></i>
+                                    <input type="email" class="form-control input-with-icon"
+                                        placeholder="your@email.com" value="tester5429@example.com">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter last name">
+                                <label class="form-label">Full Name</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-user input-group-icon"></i>
+                                    <input type="text" class="form-control input-with-icon"
+                                        placeholder="First and last name" value="John Doe">
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Gender</label>
-                                    <select class="form-select">
-                                        <option selected disabled>Select gender</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Other</option>
-                                    </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-mobile-alt input-group-icon"></i>
+                                    <input type="tel" class="form-control input-with-icon" placeholder="+92 3XX XXXXXXX"
+                                        value="+92 300 1234567">
                                 </div>
                             </div>
                         </div>
-
-                        <h6 class="mb-3">Contact Information</h6>
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" placeholder="Enter phone number">
+                        <div class="mt-4 d-flex justify-content-end gap-2">
+                            <button type="button" id="cancel-personal-btn"
+                                class="btn btn-outline-secondary px-4">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Password Tab -->
+                <div class="eaPassword tab-pane fade" id="ea-password" role="tabpanel">
+                    <h5 class="section-title">Change Password</h5>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Current Password</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-lock input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Enter current password">
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="form-label">Address</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                                <label class="form-label">New Password</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-key input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Create new password" id="newPassword">
+                                </div>
+                                <div class="password-strength">
+                                    <div class="password-strength-bar" id="passwordStrength"></div>
+                                </div>
+                                <div class="password-requirements">
+                                    <small>Password must contain at least 8 characters, including uppercase, lowercase,
+                                        numbers, and special characters.</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Confirm New Password</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-check-circle input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Confirm new password">
                                 </div>
                             </div>
                         </div>
-
-                        <div class="d-flex justify-content-end">
-                            <button type="reset" class="btn btn-outline-secondary me-2">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <div class="mt-4 d-flex justify-content-end gap-2">
+                            <button type="button" id="cancel-password-btn"
+                                class="btn btn-outline-secondary px-4">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Bank Account Tab -->
+                <div class="eaBank tab-pane fade" id="ea-bank" role="tabpanel">
+                    <h5 class="section-title">Bank Accounts</h5>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> You can add multiple bank accounts for withdrawals.
+                    </div>
+                    <div class="bank-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Habib_Bank_Logo.svg/1200px-Habib_Bank_Logo.svg.png"
+                                alt="HBL Bank" class="bank-logo">
+                            <div>
+                                <h6 class="mb-0">HBL Bank</h6>
+                                <small class="text-muted">Habib Bank Limited</small>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Account Title</label>
+                                    <input type="text" class="form-control" placeholder="Account holder name"
+                                        value="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Account Number</label>
+                                    <input type="text" class="form-control" placeholder="1234567890"
+                                        value="1234567890123">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">IBAN Number</label>
+                                    <input type="text" class="form-control" placeholder="PKXXHABBXXXXXX"
+                                        value="PK36HABB0001234567890123">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Branch Code</label>
+                                    <input type="text" class="form-control" placeholder="1234" value="0123">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Branch Name</label>
+                                    <input type="text" class="form-control" placeholder="Main Branch"
+                                        value="Main Branch Karachi">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">CNIC Number</label>
+                                    <input type="text" class="form-control" placeholder="XXXXX-XXXXXXX-X"
+                                        value="42101-1234567-8">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Swift Code</label>
+                                    <input type="text" class="form-control" placeholder="HABBPKKA" value="HABBPKKA">
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-danger">Remove</button>
+                                <button type="submit" class="btn btn-primary px-4">Update Details</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#addBankForm">
+                            <i class="fas fa-plus me-2"></i>Add Another Bank Account
+                        </button>
+                    </div>
+                    <div class="collapse mt-3" id="addBankForm">
+                        <div class="bank-card">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Bank Name</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select your bank</option>
+                                            <option>HBL - Habib Bank Limited</option>
+                                            <option>UBL - United Bank Limited</option>
+                                            <option>MCB - Muslim Commercial Bank</option>
+                                            <option>ABL - Allied Bank Limited</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Account Title</label>
+                                        <input type="text" class="form-control" placeholder="Account holder name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Account Number</label>
+                                        <input type="text" class="form-control" placeholder="1234567890">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">IBAN Number</label>
+                                        <input type="text" class="form-control" placeholder="PKXXHABBXXXXXX">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Branch Name</label>
+                                        <input type="text" class="form-control" placeholder="Main Branch">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">CNIC Number</label>
+                                        <input type="text" class="form-control" placeholder="XXXXX-XXXXXXX-X">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Swift Code</label>
+                                        <input type="text" class="form-control" placeholder="HABBPKKA">
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary px-4">Add Bank Account</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- E-Wallet Tab -->
+                <div class="eaWallet tab-pane fade" id="ea-ewallet" role="tabpanel">
+                    <h5 class="section-title">E-Wallet Accounts</h5>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Add your mobile wallet accounts for faster transactions.
+                    </div>
+                    <div class="bank-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://play-lh.googleusercontent.com/emW_gMN5Wm7Pq6P4XwJpXfqBVOjJF0Uj-N2r6jW6HZvqy8X5_8v8HwQ9X9x9X9X9X9X9X9=w240-h480-rw"
+                                alt="JazzCash" class="bank-logo">
+                            <div>
+                                <h6 class="mb-0">JazzCash</h6>
+                                <small class="text-muted">Mobile Wallet</small>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Account Name</label>
+                                    <input type="text" class="form-control" placeholder="Account holder name"
+                                        value="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="03XX XXXXXX"
+                                        value="03001234567">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">CNIC Number</label>
+                                    <input type="text" class="form-control" placeholder="XXXXX-XXXXXXX-X"
+                                        value="12345-1234567-1">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Verification Code</label>
+                                    <input type="text" class="form-control" placeholder="Enter verification code">
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-danger">Remove</button>
+                                <button type="submit" class="btn btn-primary px-4">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="divider">OR</div>
+                    <div class="bank-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://play-lh.googleusercontent.com/3FmxvUbq7Jv4XZqT7XTH3xqJXUxZ3X9X9X9X9X9X9X9X9X9X9X9X9X9X9X9X9X9X9=w240-h480-rw"
+                                alt="EasyPaisa" class="bank-logo">
+                            <div>
+                                <h6 class="mb-0">EasyPaisa</h6>
+                                <small class="text-muted">Mobile Wallet</small>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Account Name</label>
+                                    <input type="text" class="form-control" placeholder="Account holder name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="03XX XXXXXX">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">CNIC Number</label>
+                                    <input type="text" class="form-control" placeholder="XXXXX-XXXXXXX-X">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Verification Code</label>
+                                    <input type="text" class="form-control" placeholder="Enter verification code">
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary px-4">Add EasyPaisa</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Transaction PIN Tab -->
+                <div class="eaTransaction tab-pane fade" id="ea-transaction" role="tabpanel">
+                    <h5 class="section-title">Transaction PIN</h5>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Transaction PIN is required for all financial
+                        transactions.
+                    </div>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Current Transaction PIN</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-lock input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Enter current 6-digit PIN" maxlength="6">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">New Transaction PIN</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-key input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Create new 6-digit PIN" maxlength="6" id="newTransactionPin">
+                                </div>
+                                <div class="password-requirements">
+                                    <small>Must be exactly 6 digits (numbers only)</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Confirm New Transaction PIN</label>
+                                <div class="position-relative">
+                                    <i class="fas fa-check-circle input-group-icon"></i>
+                                    <input type="password" class="form-control input-with-icon"
+                                        placeholder="Confirm new 6-digit PIN" maxlength="6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-end gap-2">
+                            <button type="button" id="cancel-transaction-btn"
+                                class="btn btn-outline-secondary px-4">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4">Update PIN</button>
                         </div>
                     </form>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h6><i class="fas fa-lock me-2"></i> Security Settings</h6>
-                </div>
-                <div class="card-body">
-                    <div class="setting-item">
-                        <div class="setting-info">
-                            <h6>Login Password</h6>
-                            <p>Last changed: 2025-06-10</p>
-                        </div>
-                        <button class="btn btn-outline-primary">Change Password</button>
-                    </div>
-                    <div class="setting-item">
-                        <div class="setting-info">
-                            <h6>Transaction Password</h6>
-                            <p>Not set up yet</p>
-                        </div>
-                        <button class="btn btn-primary">Set Up</button>
-                    </div>
-                    <div class="setting-item">
-                        <div class="setting-info">
-                            <h6>Two-Factor Authentication</h6>
-                            <p>Add extra security to your account</p>
-                        </div>
-                        <button class="btn btn-outline-primary">Enable 2FA</button>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <!-- -- EDIT ACCOUNT TAB STARTS -- -->
-        <div id="edit-account" class="eaSidebar position-fixed top-0 end-0 h-100 bg-white shadow-lg overflow-y-auto"
-            style="width: 50%;">
-            <div class="d-flex h-100">
-                <div class="w-25 bg-light p-3 border-end">
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#edit-account-info" data-bs-toggle="tab"><i
-                                    class="fas fa-user-cog me-2"></i>Account Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#edit-personal-info" data-bs-toggle="tab"><i
-                                    class="fas fa-user me-2"></i>Personal Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#edit-contact-info" data-bs-toggle="tab"><i
-                                    class="fas fa-envelope me-2"></i>Contact Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#edit-security-settings" data-bs-toggle="tab"><i
-                                    class="fas fa-lock me-2"></i>Security Settings</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w-75 p-4">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="edit-account-info">
-                            <h6 class="mb-3 fw-semibold">Account Information</h6>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" value="tester5429" readonly>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">VIP Level</label>
-                                    <input type="text" class="form-control" value="VIP0" readonly>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Registration Date</label>
-                                    <input type="text" class="form-control" value="2025-05-11" readonly>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Last Login</label>
-                                    <input type="text" class="form-control" value="2025-06-14 16:53:24" readonly>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Last Login IP</label>
-                                    <input type="text" class="form-control" value="14.1.107.37" readonly>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="edit-personal-info">
-                            <h6 class="mb-3 fw-semibold">Personal Information</h6>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter first name">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter last name">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Gender</label>
-                                    <select class="form-select">
-                                        <option selected disabled>Select gender</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="edit-contact-info">
-                            <h6 class="mb-3 fw-semibold">Contact Information</h6>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter email">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" placeholder="Enter phone number">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Address</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="edit-security-settings">
-                            <h6 class="mb-3 fw-semibold">Security Settings</h6>
-                            <div class="row g-3">
-                                <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h6 class="mb-0">Login Password</h6>
-                                        <small class="text-muted">Last changed: 2025-06-10</small>
-                                    </div>
-                                    <button class="btn btn-outline-primary">Change Password</button>
-                                </div>
-                                <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h6 class="mb-0">Transaction Password</h6>
-                                        <small class="text-muted">Not set up yet</small>
-                                    </div>
-                                    <button class="btn btn-primary">Set Up</button>
-                                </div>
-                                <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h6 class="mb-0">Two-Factor Authentication</h6>
-                                        <small class="text-muted">Add extra security to your account</small>
-                                    </div>
-                                    <button class="btn btn-outline-primary">Enable 2FA</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 d-flex justify-content-end gap-2">
-                        <button id="cancel-btn" class="btn btn-outline-secondary">Cancel</button>
-                        <button id="save-btn" class="btn btn-primary">Save Changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- -- EDIT ACCOUNT TAB ENDS -- -->
+        <!-- EDIT ACCOUNT TAB ENDS -->
 
         <!-- Deposit Tab -->
         <div id="deposit" class="tab-content">
@@ -830,7 +897,7 @@
         </div>
 
         <!-- Betting Record Tab -->
-        <div id="betting" class="tab-content">
+        <div id="betting-record" class="tab-content">
             <div class="card">
                 <div class="card-header">
                     <h6><i class="fas fa-clipboard-list me-2"></i> Betting Records</h6>
@@ -1290,8 +1357,8 @@
             </div>
         </div>
 
-        <!-- Reward Center Tab -->
-        <div id="rewards" class="tab-content">
+        <!-- Reward Centre Tab -->
+        <div id="reward-centre" class="tab-content">
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -1425,7 +1492,7 @@
         </div>
 
         <!-- Invite Friends Tab -->
-        <div id="invite" class="tab-content">
+        <div id="invitation" class="tab-content">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card">
@@ -1843,15 +1910,6 @@
             });
         });
 
-        // --- EA SIDEBAR (Bootstrap Tab API) ---
-        document.querySelectorAll('.eaSidebar .nav-link').forEach(tab => {
-            tab.addEventListener('click', function (e) {
-                e.preventDefault();
-                const bsTab = new bootstrap.Tab(this);
-                bsTab.show();
-            });
-        });
-
         // --- BOTTOM NAVIGATION ACTIVE STATE ---
         function setActive(element) {
             document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
@@ -1859,27 +1917,26 @@
         }
 
         // --- EDIT ACCOUNT PANEL TOGGLE ---
-        const editProfileBtn = document.getElementById('edit-profile-btn');
-        if (editProfileBtn) {
-            editProfileBtn.addEventListener('click', function () {
-                document.getElementById('edit-account').classList.add('open');
-            });
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('eaSidebar');
+            const editButton = document.getElementById('edit-profile-btn');
+            const cancelButtons = [
+                document.getElementById('cancel-account-btn'),
+                document.getElementById('cancel-personal-btn'),
+                document.getElementById('cancel-password-btn'),
+                document.getElementById('cancel-transaction-btn')
+            ];
 
-        const cancelBtn = document.getElementById('cancel-btn');
-        if (cancelBtn) {
-            cancelBtn.addEventListener('click', function () {
-                document.getElementById('edit-account').classList.remove('open');
+            editButton.addEventListener('click', () => {
+                sidebar.classList.add('open');
             });
-        }
 
-        const saveBtn = document.getElementById('save-btn');
-        if (saveBtn) {
-            saveBtn.addEventListener('click', function () {
-                alert('Changes saved successfully!');
-                document.getElementById('edit-account').classList.remove('open');
+            cancelButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    sidebar.classList.remove('open');
+                });
             });
-        }
+        });
 
         // --- COPY REFERRAL CODE ---
         function copyReferralCode() {

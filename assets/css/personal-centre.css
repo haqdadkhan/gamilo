@@ -368,6 +368,20 @@ body {
 
 /* --- BOTTOM NAV CSS Ends --- */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- MAIN CONTENT CSS STARTS --- */
 .main-content {
     margin-left: 280px;
@@ -682,12 +696,12 @@ body {
 }
 
 /* Sidebar Tabs */
-#sidebar .tab-content {
+.tab-content {
     display: none;
     animation: fadeIn 0.4s ease-in-out;
 }
 
-#sidebar .tab-content.active {
+.tab-content.active {
     display: block;
 }
 
@@ -767,48 +781,298 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -- EDIT ACCOUNT CSS STARTS -- */
+#eaSidebar .tab-content {
+    display: block;
+}
+
 .eaSidebar {
+    overflow-y: auto;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
+    width: 100%;
+    max-width: 550px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .eaSidebar.open {
     transform: translateX(0);
 }
 
-.eaSidebar .nav-link {
-    transition: all 0.3s ease;
-    border-radius: 0.375rem;
-    color: var(--text);
-    background-color: var(--card-bg);
+.eaSidebar :root {
+    --primary: #6c5ce7;
+    --card-bg: #f8f9fa;
+    --hover-bg: #e9ecef;
+    --text: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
 }
 
-.eaSidebar .nav-link:hover {
-    transform: translateX(-5px);
+.eaSidebar .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: white;
+    padding: 1.5rem;
+}
+
+.eaSidebar .settings-header h2 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.eaSidebar .settings-header p {
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+.eaSidebar .eaNav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 14px;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: nowrap;
+}
+
+.eaSidebar .eaNav .nav-link {
+    white-space: nowrap;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    border-radius: 0.375rem;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.eaSidebar .eaNav .nav-link:hover {
+    color: var(--primary);
+    transform: translateY(-1px);
     background-color: var(--hover-bg);
 }
 
-.eaSidebar .nav-link.active {
+.eaSidebar .eaNav .nav-link.active {
+    color: var(--primary);
+    background: transparent;
+    font-weight: 600;
+    background-color: var(--hover-bg);
+}
+
+.eaSidebar .eaNav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
     background-color: var(--primary);
-    color: white !important;
-    transform: translateX(-10px);
 }
 
 .eaSidebar .tab-content {
-    display: block;
-    color: var(--text);
+    padding: 12px;
+}
+
+.eaSidebar .tab-content .eaPersonal button,
+.eaSidebar .tab-content .eaPassword button,
+.eaSidebar .tab-content .eaBank button,
+.eaSidebar .tab-content .eaWallet button,
+.eaSidebar .tab-content .eaTransaction button {
+    font-size: 16px;
+    padding: 8px 24px;
+}
+
+.eaSidebar .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.eaSidebar .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
 }
 
 .eaSidebar .form-control,
-.eaSidebar .form-select,
-.eaSidebar .form-control:focus,
-.eaSidebar .form-select:focus {
+.eaSidebar .form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     background-color: var(--card-bg);
     color: var(--text);
-    border-color: var(--border-color);
+}
+
+.eaSidebar .form-control:focus,
+.eaSidebar .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    border-color: var(--primary);
 }
 
 .eaSidebar .form-control::placeholder {
     color: var(--text-muted);
 }
+
+.eaSidebar .input-group-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    z-index: 5;
+}
+
+.eaSidebar .input-with-icon {
+    padding-left: 45px !important;
+}
+
+.eaSidebar .bank-card {
+    border-radius: 10px;
+    padding: 14px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.eaSidebar .bank-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.eaSidebar .bank-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: white;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.eaSidebar .password-strength {
+    height: 5px;
+    background-color: #e9ecef;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.eaSidebar .password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.eaSidebar .password-requirements {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.eaSidebar .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+.eaSidebar .btn-primary:hover {
+    background-color: #5a4bd1;
+    border-color: #5a4bd1;
+}
+
+.eaSidebar .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.eaSidebar .divider::before,
+.eaSidebar .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.eaSidebar .divider::before {
+    margin-right: 1rem;
+}
+
+.eaSidebar .divider::after {
+    margin-left: 1rem;
+}
+
+.eaSidebar .account-status {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 2rem;
+}
+
+.eaSidebar .status-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.eaSidebar .status-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .eaSidebar .eaNav .nav-link {
+        padding: 10px 20px;
+    }
+
+    .eaSidebar .tab-content .eaPersonal button,
+    .eaSidebar .tab-content .eaPassword button,
+    .eaSidebar .tab-content .eaBank button,
+    .eaSidebar .tab-content .eaWallet button,
+    .eaSidebar .tab-content .eaTransaction button {
+        font-size: 14px;
+        /* padding: 6px 14px; */
+    }
+
+    .eaSidebar .eaNav .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* -- EDIT ACCOUNT CSS ENDS -- */
