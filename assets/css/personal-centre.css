@@ -1,4 +1,5 @@
-/* --- ROOT VARIABLES STARTS --- */
+/* --- ROOT VARIABLES + DARK MODE STARTS --- */
+/* -- global variables -- */
 :root {
     --bg: #ffffff;
     --card-bg: #f0f0f0;
@@ -13,6 +14,19 @@
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     --table-text: #0f0f0f;
     --table-hover: rgba(0, 0, 0, 0.03);
+    --success: #00b894;
+    --danger: #d63031;
+    --warning: #fdcb6e;
+}
+
+/* eaSidebar variables */
+#eaSidebar :root {
+    --primary: #6c5ce7;
+    --card-bg: #f8f9fa;
+    --hover-bg: #e9ecef;
+    --text: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
 }
 
 [data-theme="dark"] {
@@ -31,7 +45,7 @@
     --table-hover: rgba(255, 255, 255, 0.03);
 }
 
-/* --- ROOT VARIABLES ENDS --- */
+/* --- ROOT VARIABLES + DARK MODE ENDS --- */
 
 
 /* --- BODY STYLES STARTS --- */
@@ -258,112 +272,325 @@ body {
 /* --- SIDEBAR (#sidebar) ENDS --- */
 
 
-/* --- ACCOUNT TAB (#account) STARTS --- */
-#account .card {
+/* --- ACCOUNT TAB (#my-account) STARTS --- */
+#my-account .card {
     border: none;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     background: var(--card-bg);
     color: var(--text);
+    position: relative;
+    border: 1px solid var(--border-color);
 }
 
-#account .card:hover {
+#my-account .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-#account .card-header {
-    background: var(--hover-bg);
+#my-account .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+#my-account .card:hover::before {
+    opacity: 1;
+}
+
+#my-account .card-header {
+    background: transparent;
     border-bottom: 1px solid var(--border-color);
-    padding: 15px 20px;
+    padding: 20px 25px;
     font-weight: 600;
     color: var(--primary);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-#account .card-body {
-    padding: 20px;
+#my-account .card-header h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#my-account .card-header h6 i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+#my-account .card-body {
+    padding: 25px;
     color: var(--text);
+    position: relative;
+    z-index: 1;
 }
 
-#account .user-profile {
+/* Profile Section */
+#my-account .user-profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 25px;
     background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
-    border-radius: 10px 10px 0 0;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+    overflow: hidden;
 }
 
-#account .user-avatar {
-    width: 100px;
-    height: 100px;
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+#my-account .user-avatar {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
-#account .vip-badge {
-    background: linear-gradient(135deg, var(--btn), #e67e22);
-    color: var(--text);
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
+#my-account .user-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+#my-account .user-profile h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+#my-account .vip-badge {
+    background: linear-gradient(135deg, #fdcb6e, #e17055);
+    color: #2d3436;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: pulse 2s infinite;
 }
 
-#account .security-status {
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#my-account .user-profile p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+#my-account .user-profile h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 15px 0 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Login Info */
+#my-account .login-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+#my-account .login-info p i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+#my-account .login-info p strong {
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+/* Recent Activities */
+#my-account .table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#my-account .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#my-account .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+
+#my-account .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#my-account .table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#my-account .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#my-account .badge {
+    padding: 6px 12px;
+    font-weight: 500;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+#my-account .bg-success {
+    background-color: var(--success) !important;
+}
+
+#my-account .bg-danger {
+    background-color: var(--danger) !important;
+}
+
+/* Security Status */
+#my-account .security-status {
     padding: 20px;
     border-left: 4px solid;
     margin-bottom: 20px;
     background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }
 
-#account .security-low {
-    border-left-color: #dc3545;
+#my-account .security-status:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-#account .security-medium {
-    border-left-color: #ffc107;
+#my-account .security-low {
+    border-left-color: var(--danger);
 }
 
-#account .security-high {
-    border-left-color: #28a745;
+#my-account .security-medium {
+    border-left-color: var(--warning);
 }
 
-#account .progress {
-    height: 8px;
-    border-radius: 4px;
+#my-account .security-high {
+    border-left-color: var(--success);
+}
+
+#my-account .progress {
+    height: 10px;
+    border-radius: 5px;
     background-color: var(--hover-bg);
+    margin-top: 15px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-#account .progress-bar {
+#my-account .progress-bar {
     background-color: var(--primary);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
 }
 
-#account .summary-card {
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+#my-account .progress-bar.bg-danger {
+    background-color: var(--danger) !important;
+}
+
+/* Summary Cards */
+#my-account .summary-card {
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 0;
     text-align: center;
     background: var(--card-bg);
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    flex: 1;
+    margin: 0 10px;
+    border: 1px solid var(--border-color);
 }
 
-#account .summary-card::before {
+#my-account .summary-card:first-child {
+    margin-left: 0;
+}
+
+#my-account .summary-card:last-child {
+    margin-right: 0;
+}
+
+#my-account .summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#my-account .summary-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -373,216 +600,136 @@ body {
     background: var(--primary);
 }
 
-#account .summary-value {
-    font-size: 28px;
+#my-account .summary-value {
+    font-size: 2.2rem;
     font-weight: 700;
     margin: 10px 0;
     color: var(--primary);
+    transition: all 0.3s ease;
 }
 
-#account .summary-label {
-    font-size: 14px;
+#my-account .summary-card:hover .summary-value {
+    transform: scale(1.1);
+}
+
+#my-account .summary-label {
+    font-size: 0.9rem;
     color: var(--text-muted);
-}
-
-#account .setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-#account .setting-item:last-child {
-    border-bottom: none;
-}
-
-#account .setting-info h6 {
     margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-#account .setting-info p {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 0;
-}
-
-#account .status-badge {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
     font-weight: 500;
 }
 
-#account .status-complete {
-    background-color: rgba(40, 167, 69, 0.1);
-    color: #28a745;
+#my-account .summary-card small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.8;
 }
 
-#account .status-incomplete {
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-}
-
-#account .table-responsive {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#account .table {
-    margin-bottom: 0;
-    color: var(--text);
-    background-color: var(--card-bg);
-}
-
-#account .table thead th {
-    background-color: var(--primary);
+/* Edit Button */
+#my-account #edit-profile-btn {
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
     color: white;
     border: none;
-    font-weight: 500;
 }
 
-#account .table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
-    color: var(--table-text);
-    border-color: var(--border-color);
+#my-account #edit-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(15deg);
 }
 
-#account .table tbody tr:hover {
-    background-color: var(--table-hover);
+/* Responsive Design */
+@media (max-width: 992px) {
+    #my-account .user-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    #my-account .summary-value {
+        font-size: 1.8rem;
+    }
 }
 
-#account .table tbody tr:hover {
-    background-color: var(--hover-bg);
+@media (max-width: 768px) {
+    #my-account .card-body.d-flex {
+        flex-direction: column;
+    }
+
+    #my-account .summary-card {
+        margin: 10px 0;
+    }
+
+    #my-account .summary-card:first-child {
+        margin-top: 0;
+    }
+
+    #my-account .summary-card:last-child {
+        margin-bottom: 0;
+    }
 }
 
-#account .form-control,
-#account .form-select {
-    border-radius: 8px;
-    padding: 10px 15px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+@media (max-width: 576px) {
+    #my-account .user-profile {
+        padding: 30px 20px;
+    }
+
+    #my-account .user-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    #my-account .user-profile h4 {
+        font-size: 1.3rem;
+    }
+
+    #my-account .user-profile h3 {
+        font-size: 1.8rem;
+    }
+
+    #my-account .card-header,
+    #my-account .card-body {
+        padding: 15px;
+    }
 }
 
-#account .form-control:focus,
-#account .form-select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
-    background: var(--card-bg);
-    color: var(--text);
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-#account .form-control::placeholder {
-    color: var(--text-muted);
+.slide-up {
+    animation: slideUp 0.5s ease-out;
 }
 
-#account .form-label {
-    color: var(--text);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-#account .btn {
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 500;
-    transition: all 0.3s;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#account .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: white;
-}
-
-#account .btn-primary:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
-
-#account .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-#account .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-#account .btn-warning {
-    background-color: var(--btn);
-    border-color: var(--btn);
-    color: #212529;
-}
-
-#account .btn-outline-primary {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-#account .btn-outline-primary:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
-#account .badge {
-    padding: 5px 10px;
-    font-weight: 500;
-    border-radius: 20px;
-}
-
-#account .bg-primary {
-    background-color: var(--primary) !important;
-    color: white;
-}
-
-#account .bg-success {
-    background-color: #28a745 !important;
-}
-
-#account .bg-danger {
-    background-color: #dc3545 !important;
-}
-
-#account .bg-warning {
-    background-color: var(--btn) !important;
-    color: #212529;
-}
-
-#account .alert {
-    border-radius: 8px;
-}
-
-#account .alert-info {
-    background-color: rgba(38, 228, 255, 0.2);
-    border-color: var(--highlight);
-    color: var(--text);
-}
-
-#account .alert-warning {
-    background-color: rgba(255, 47, 178, 0.2);
-    border-color: var(--accent);
-    color: var(--text);
-}
-
-#account .alert-secondary {
-    background-color: var(--hover-bg);
-    border-color: var(--border-color);
-    color: var(--text);
-}
-
-#account .list-group-item {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border-color: var(--border-color);
-}
-
-/* --- ACCOUNT TAB (#account) ENDS --- */
+/* --- ACCOUNT TAB (#my-account) ENDS --- */
 
 
 /* --- DEPOSIT TAB (#deposit) STARTS --- */
@@ -961,8 +1108,8 @@ body {
 /* --- BETTING TAB (#betting-record) ENDS --- */
 
 
-/* --- ACCOUNT RECORD TAB (#account-record) STARTS --- */
-#account-record .card {
+/* --- ACCOUNT RECORD TAB (#my-account-record) STARTS --- */
+#my-account-record .card {
     border: none;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -973,12 +1120,12 @@ body {
     color: var(--text);
 }
 
-#account-record .card:hover {
+#my-account-record .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-#account-record .card-header {
+#my-account-record .card-header {
     background: var(--hover-bg);
     border-bottom: 1px solid var(--border-color);
     padding: 15px 20px;
@@ -989,13 +1136,13 @@ body {
     align-items: center;
 }
 
-#account-record .card-body {
+#my-account-record .card-body {
     padding: 20px;
     color: var(--text);
 }
 
-#account-record .form-control,
-#account-record .form-select {
+#my-account-record .form-control,
+#my-account-record .form-select {
     border-radius: 8px;
     padding: 10px 15px;
     border: 1px solid var(--border-color);
@@ -1004,60 +1151,60 @@ body {
     color: var(--text);
 }
 
-#account-record .table-responsive {
+#my-account-record .table-responsive {
     border-radius: 10px;
     overflow: hidden;
 }
 
-#account-record .table {
+#my-account-record .table {
     margin-bottom: 0;
     color: var(--text);
     background-color: var(--card-bg);
 }
 
-#account-record .table thead th {
+#my-account-record .table thead th {
     background-color: var(--primary);
     color: white;
     border: none;
     font-weight: 500;
 }
 
-#account-record .table tbody tr td {
+#my-account-record .table tbody tr td {
     transition: all 0.2s;
     background: var(--card-bg);
     color: var(--table-text);
     border-color: var(--border-color);
 }
 
-#account-record .table tbody tr:hover {
+#my-account-record .table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
-#account-record .text-success {
+#my-account-record .text-success {
     color: #28a745 !important;
 }
 
-#account-record .text-danger {
+#my-account-record .text-danger {
     color: #dc3545 !important;
 }
 
-#account-record .alert-secondary {
+#my-account-record .alert-secondary {
     background-color: var(--hover-bg);
     border-color: var(--border-color);
     color: var(--text);
 }
 
-#account-record .badge {
+#my-account-record .badge {
     padding: 5px 10px;
     font-weight: 500;
     border-radius: 20px;
 }
 
-#account-record .bg-success {
+#my-account-record .bg-success {
     background-color: #28a745 !important;
 }
 
-/* --- ACCOUNT RECORD TAB (#account-record) ENDS --- */
+/* --- ACCOUNT RECORD TAB (#my-account-record) ENDS --- */
 
 
 /* --- PROFIT & LOSS TAB (#profit-loss) STARTS --- */
@@ -1597,15 +1744,6 @@ body {
     transform: translateX(0);
 }
 
-#eaSidebar :root {
-    --primary: #6c5ce7;
-    --card-bg: #f8f9fa;
-    --hover-bg: #e9ecef;
-    --text: #212529;
-    --text-muted: #6c757d;
-    --border-color: #dee2e6;
-}
-
 #eaSidebar .settings-header {
     display: flex;
     justify-content: space-between;
@@ -1838,6 +1976,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    #eaSidebar .settings-header {
+        padding: 1rem;
+    }
+
     #eaSidebar .eaNav .nav-link {
         padding: 10px 20px;
     }
