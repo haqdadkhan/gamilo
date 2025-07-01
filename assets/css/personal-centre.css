@@ -1,3 +1,4 @@
+/* --- ROOT VARIABLES STARTS --- */
 :root {
     --bg: #ffffff;
     --card-bg: #f0f0f0;
@@ -30,6 +31,10 @@
     --table-hover: rgba(255, 255, 255, 0.03);
 }
 
+/* --- ROOT VARIABLES ENDS --- */
+
+
+/* --- BODY STYLES STARTS --- */
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     background-color: var(--bg);
@@ -38,8 +43,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- HEADER CSS STARTS --- */
-/* Desktop Header */
+/* --- BODY STYLES ENDS --- */
+
+
+/* --- HEADER (desktop-header) STARTS --- */
 .desktop-header {
     position: sticky;
     top: 0;
@@ -54,47 +61,43 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo Styling */
-.header-logo i {
+.desktop-header .header-logo i {
     color: #0dcaf0;
 }
 
-.header-logo h4 {
+.desktop-header .header-logo h4 {
     font-weight: 600;
     font-size: 1.25rem;
 }
 
-/* Home Button */
-.home-btn {
+.desktop-header .home-btn {
     font-size: 1.05rem;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.home-btn:hover {
+.desktop-header .home-btn:hover {
     color: #0dcaf0;
 }
 
-/* Profile Button */
-.userLogo {
+.desktop-header .userLogo {
     border: none;
     background: none;
 }
 
-.userLogo img {
+.desktop-header .userLogo img {
     width: 40px;
     height: 40px;
     object-fit: cover;
     transition: transform 0.2s ease;
 }
 
-.userLogo:hover img {
+.desktop-header .userLogo:hover img {
     transform: scale(1.05);
 }
 
-/* Dropdown */
-.dropdown-menu {
+.desktop-header .dropdown-menu {
     background-color: #1e1e1e;
     border: none;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
@@ -102,19 +105,19 @@ body {
     z-index: 999;
 }
 
-.dropdown-item {
+.desktop-header .dropdown-item {
     transition: background-color 0.2s ease;
 }
 
-.dropdown-item:hover {
+.desktop-header .dropdown-item:hover {
     background-color: #2a2a2a;
 }
 
-.dropdown-divider {
+.desktop-header .dropdown-divider {
     margin: 0.5rem 0;
 }
 
-.theme-toggle {
+.desktop-header .theme-toggle {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -133,17 +136,17 @@ body {
         padding: 8px 16px;
     }
 
-    .theme-toggle {
+    .desktop-header .theme-toggle {
         width: 35px;
         height: 35px;
     }
-
 }
 
-/* --- HEADER CSS ENDS --- */
+/* --- HEADER (desktop-header) ENDS --- */
 
-/* --- SIDEBAR CSS STARTS --- */
-.sidebar {
+
+/* --- SIDEBAR (#sidebar) STARTS --- */
+#sidebar {
     width: 280px;
     height: 100vh;
     position: fixed;
@@ -156,19 +159,19 @@ body {
     transition: all 0.3s;
 }
 
-.sidebar-menu {
+#sidebar .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar-menu li {
+#sidebar .sidebar-menu li {
     padding: 0;
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s;
 }
 
-.sidebar-menu li a {
+#sidebar .sidebar-menu li a {
     display: flex;
     align-items: center;
     padding: 15px 25px;
@@ -178,19 +181,19 @@ body {
     transition: all 0.2s;
 }
 
-.sidebar-menu li a:hover {
+#sidebar .sidebar-menu li a:hover {
     background: var(--hover-bg);
     color: var(--text);
     padding-left: 30px;
 }
 
-.sidebar-menu li a.active {
+#sidebar .sidebar-menu li a.active {
     background: var(--primary);
     color: white;
     border-left: 4px solid var(--accent);
 }
 
-.sidebar-menu li a i {
+#sidebar .sidebar-menu li a i {
     width: 24px;
     text-align: center;
     margin-right: 12px;
@@ -198,46 +201,42 @@ body {
     color: var(--accent);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
-    .sidebar {
+    #sidebar {
         width: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    .sidebar {
+    #sidebar {
         width: 100%;
         height: auto;
         position: sticky;
     }
 
-    .sidebar-menu {
+    #sidebar .sidebar-menu {
         display: flex;
         overflow-x: auto;
     }
 
-    .sidebar-menu li {
+    #sidebar .sidebar-menu li {
         flex: 0 0 auto;
         border-bottom: 1px solid transparent;
         border-right: 1px solid var(--border-color);
     }
 
-    .sidebar-menu li a {
+    #sidebar .sidebar-menu li a {
         padding: 10px 15px;
         white-space: nowrap;
     }
 }
 
 @media (max-width: 576px) {
-    .sidebar {
+    #sidebar {
         top: 56px;
     }
 }
 
-
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 5px;
@@ -256,9 +255,1610 @@ body {
     background: var(--accent);
 }
 
-/* --- SIDEBAR CSS ENDS --- */
+/* --- SIDEBAR (#sidebar) ENDS --- */
 
-/* --- BOTTOM NAV CSS Starts --- */
+
+/* --- ACCOUNT TAB (#account) STARTS --- */
+#account .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#account .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#account .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#account .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#account .user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+#account .user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+}
+
+#account .vip-badge {
+    background: linear-gradient(135deg, var(--btn), #e67e22);
+    color: var(--text);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#account .security-status {
+    padding: 20px;
+    border-left: 4px solid;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+}
+
+#account .security-low {
+    border-left-color: #dc3545;
+}
+
+#account .security-medium {
+    border-left-color: #ffc107;
+}
+
+#account .security-high {
+    border-left-color: #28a745;
+}
+
+#account .progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--hover-bg);
+}
+
+#account .progress-bar {
+    background-color: var(--primary);
+}
+
+#account .summary-card {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+#account .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary);
+}
+
+#account .summary-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--primary);
+}
+
+#account .summary-label {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+#account .setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#account .setting-item:last-child {
+    border-bottom: none;
+}
+
+#account .setting-info h6 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+#account .setting-info p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+#account .status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#account .status-complete {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+#account .status-incomplete {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+#account .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#account .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#account .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#account .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#account .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#account .table tbody tr:hover {
+    background-color: var(--hover-bg);
+}
+
+#account .form-control,
+#account .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#account .form-control:focus,
+#account .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#account .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+#account .form-label {
+    color: var(--text);
+}
+
+#account .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#account .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#account .btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+#account .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#account .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+#account .btn-warning {
+    background-color: var(--btn);
+    border-color: var(--btn);
+    color: #212529;
+}
+
+#account .btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#account .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#account .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#account .bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#account .bg-success {
+    background-color: #28a745 !important;
+}
+
+#account .bg-danger {
+    background-color: #dc3545 !important;
+}
+
+#account .bg-warning {
+    background-color: var(--btn) !important;
+    color: #212529;
+}
+
+#account .alert {
+    border-radius: 8px;
+}
+
+#account .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#account .alert-warning {
+    background-color: rgba(255, 47, 178, 0.2);
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+#account .alert-secondary {
+    background-color: var(--hover-bg);
+    border-color: var(--border-color);
+    color: var(--text);
+}
+
+#account .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+/* --- ACCOUNT TAB (#account) ENDS --- */
+
+
+/* --- DEPOSIT TAB (#deposit) STARTS --- */
+#deposit .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#deposit .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#deposit .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#deposit .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#deposit .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#deposit .card.border-primary .card-header {
+    background-color: var(--primary);
+    color: white;
+}
+
+#deposit .card.border-success .card-header {
+    background-color: #28a745;
+    color: white;
+}
+
+#deposit .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#deposit .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#deposit .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#deposit .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#deposit .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#deposit .form-control,
+#deposit .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#deposit .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#deposit .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#deposit .btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+#deposit .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#deposit .btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#deposit .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#deposit .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#deposit .bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#deposit .bg-success {
+    background-color: #28a745 !important;
+}
+
+#deposit .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+/* --- DEPOSIT TAB (#deposit) ENDS --- */
+
+
+/* --- WITHDRAWAL TAB (#withdrawal) STARTS --- */
+#withdrawal .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#withdrawal .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#withdrawal .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#withdrawal .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#withdrawal .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#withdrawal .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#withdrawal .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#withdrawal .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#withdrawal .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#withdrawal .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#withdrawal .form-control,
+#withdrawal .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#withdrawal .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#withdrawal .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#withdrawal .btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+#withdrawal .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+#withdrawal .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+#withdrawal .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#withdrawal .bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#withdrawal .bg-success {
+    background-color: #28a745 !important;
+}
+
+#withdrawal .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+/* --- WITHDRAWAL TAB (#withdrawal) ENDS --- */
+
+
+/* --- BETTING TAB (#betting-record) STARTS --- */
+#betting-record .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#betting-record .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#betting-record .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#betting-record .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#betting-record .form-control,
+#betting-record .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#betting-record .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#betting-record .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#betting-record .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#betting-record .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#betting-record .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#betting-record .text-success {
+    color: #28a745 !important;
+}
+
+#betting-record .text-danger {
+    color: #dc3545 !important;
+}
+
+#betting-record .alert-secondary {
+    background-color: var(--hover-bg);
+    border-color: var(--border-color);
+    color: var(--text);
+}
+
+#betting-record .pagination .page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#betting-record .pagination .page-link {
+    color: var(--primary);
+}
+
+/* --- BETTING TAB (#betting-record) ENDS --- */
+
+
+/* --- ACCOUNT RECORD TAB (#account-record) STARTS --- */
+#account-record .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#account-record .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#account-record .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#account-record .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#account-record .form-control,
+#account-record .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#account-record .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#account-record .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#account-record .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#account-record .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#account-record .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#account-record .text-success {
+    color: #28a745 !important;
+}
+
+#account-record .text-danger {
+    color: #dc3545 !important;
+}
+
+#account-record .alert-secondary {
+    background-color: var(--hover-bg);
+    border-color: var(--border-color);
+    color: var(--text);
+}
+
+#account-record .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#account-record .bg-success {
+    background-color: #28a745 !important;
+}
+
+/* --- ACCOUNT RECORD TAB (#account-record) ENDS --- */
+
+
+/* --- PROFIT & LOSS TAB (#profit-loss) STARTS --- */
+#profit-loss .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#profit-loss .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#profit-loss .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profit-loss .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#profit-loss .bg-light {
+    background-color: var(--hover-bg) !important;
+}
+
+#profit-loss .text-dark {
+    color: var(--text) !important;
+}
+
+#profit-loss .text-success {
+    color: #28a745 !important;
+}
+
+#profit-loss .text-danger {
+    color: #dc3545 !important;
+}
+
+#profit-loss .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#profit-loss .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#profit-loss .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#profit-loss .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#profit-loss .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#profit-loss .fw-bold {
+    font-weight: 600 !important;
+}
+
+/* --- PROFIT & LOSS TAB (#profit-loss) ENDS --- */
+
+
+/* --- REWARDS TAB (#rewards-centre) STARTS --- */
+#rewards-centre .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#rewards-centre .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#rewards-centre .card-header.bg-warning {
+    background-color: var(--btn) !important;
+    color: #212529;
+}
+
+#rewards-centre .card-header.bg-success {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+#rewards-centre .card-header.bg-info {
+    background-color: #17a2b8 !important;
+    color: white;
+}
+
+#rewards-centre .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#rewards-centre .reward-item {
+    padding: 1rem;
+    background-color: var(--hover-bg);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#rewards-centre .text-dark {
+    color: var(--text) !important;
+}
+
+#rewards-centre .vip-badge {
+    background: linear-gradient(135deg, var(--btn), #e67e22);
+    color: var(--text);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#rewards-centre .progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--hover-bg);
+}
+
+#rewards-centre .progress-bar {
+    background-color: var(--primary);
+}
+
+#rewards-centre .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+#rewards-centre .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#rewards-centre .bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#rewards-centre .bg-secondary {
+    background-color: #6c757d !important;
+}
+
+#rewards-centre .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+#rewards-centre .btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+#rewards-centre .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+
+#rewards-centre .btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* --- REWARDS TAB (#rewards-centre) ENDS --- */
+
+
+/* --- INVITE FRIENDS TAB (#invitation) STARTS --- */
+#invitation .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#invitation .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#invitation .card-header.bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#invitation .card-header.bg-success {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+#invitation .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#invitation .bg-light {
+    background-color: var(--hover-bg) !important;
+}
+
+#invitation .text-dark {
+    color: var(--text) !important;
+}
+
+#invitation .form-control-lg {
+    font-size: 1.25rem;
+}
+
+#invitation .btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#invitation .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#invitation .btn-outline-info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+}
+
+#invitation .btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: white;
+}
+
+#invitation .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+#invitation .btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+#invitation .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#invitation .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#invitation .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#invitation .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#invitation .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#invitation .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#invitation .bg-success {
+    background-color: #28a745 !important;
+}
+
+#invitation .bg-secondary {
+    background-color: #6c757d !important;
+}
+
+#invitation .text-success {
+    color: #28a745 !important;
+}
+
+#invitation .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+/* --- INVITE FRIENDS TAB (#invitation) ENDS --- */
+
+
+/* --- MESSAGES TAB (#messages) STARTS --- */
+#messages .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#messages .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#messages .card-header {
+    background: var(--hover-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#messages .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#messages .list-group-item.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+#messages .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+#messages .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+#messages .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+#messages .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+#messages .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+#messages .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#messages .btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+#messages .border-top {
+    border-top: 1px solid var(--border-color) !important;
+}
+
+/* --- MESSAGES TAB (#messages) ENDS --- */
+
+
+/* --- MANUAL REBATE TAB (#rebate) STARTS --- */
+#rebate .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+#rebate .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#rebate .card-header.bg-primary {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+#rebate .card-body {
+    padding: 20px;
+    color: var(--text);
+}
+
+#rebate .alert-info {
+    background-color: rgba(38, 228, 255, 0.2);
+    border-color: var(--highlight);
+    color: var(--text);
+}
+
+#rebate .table {
+    margin-bottom: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+
+#rebate .table thead th {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+#rebate .table tbody tr td {
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--table-text);
+    border-color: var(--border-color);
+}
+
+#rebate .table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+#rebate .btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#rebate .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#rebate .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+#rebate .btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+#rebate .badge {
+    padding: 5px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+#rebate .bg-success {
+    background-color: #28a745 !important;
+}
+
+#rebate .alert-warning {
+    background-color: rgba(255, 47, 178, 0.2);
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+#rebate .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+/* --- MANUAL REBATE TAB (#rebate) ENDS --- */
+
+
+/* --- EDIT ACCOUNT (#eaSidebar) STARTS --- */
+#eaSidebar .tab-content {
+    display: block;
+}
+
+#eaSidebar {
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#eaSidebar.open {
+    transform: translateX(0);
+}
+
+#eaSidebar :root {
+    --primary: #6c5ce7;
+    --card-bg: #f8f9fa;
+    --hover-bg: #e9ecef;
+    --text: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+#eaSidebar .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: white;
+    padding: 1.5rem;
+}
+
+#eaSidebar .settings-header h2 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#eaSidebar .settings-header p {
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+#eaSidebar .eaNav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 14px;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: nowrap;
+}
+
+#eaSidebar .eaNav .nav-link {
+    white-space: nowrap;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    border-radius: 0.375rem;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+#eaSidebar .eaNav .nav-link:hover {
+    color: var(--primary);
+    transform: translateY(-1px);
+    background-color: var(--hover-bg);
+}
+
+#eaSidebar .eaNav .nav-link.active {
+    color: var(--primary);
+    background: transparent;
+    font-weight: 600;
+    background-color: var(--hover-bg);
+}
+
+#eaSidebar .eaNav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+#eaSidebar .tab-content {
+    padding: 12px;
+}
+
+#eaSidebar .tab-content .eaPersonal button,
+#eaSidebar .tab-content .eaPassword button,
+#eaSidebar .tab-content .eaBank button,
+#eaSidebar .tab-content .eaWallet button,
+#eaSidebar .tab-content .eaTransaction button {
+    font-size: 16px;
+    padding: 8px 24px;
+}
+
+#eaSidebar .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+#eaSidebar .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+#eaSidebar .form-control,
+#eaSidebar .form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+#eaSidebar .form-control:focus,
+#eaSidebar .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    border-color: var(--primary);
+}
+
+#eaSidebar .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+#eaSidebar .input-group-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    z-index: 5;
+}
+
+#eaSidebar .input-with-icon {
+    padding-left: 45px !important;
+}
+
+#eaSidebar .bank-card {
+    border-radius: 10px;
+    padding: 14px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+#eaSidebar .bank-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+#eaSidebar .bank-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: white;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+}
+
+#eaSidebar .password-strength {
+    height: 5px;
+    background-color: #e9ecef;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#eaSidebar .password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#eaSidebar .password-requirements {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+#eaSidebar .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+#eaSidebar .btn-primary:hover {
+    background-color: #5a4bd1;
+    border-color: #5a4bd1;
+}
+
+#eaSidebar .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+#eaSidebar .divider::before,
+#eaSidebar .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#eaSidebar .divider::before {
+    margin-right: 1rem;
+}
+
+#eaSidebar .divider::after {
+    margin-left: 1rem;
+}
+
+#eaSidebar .account-status {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 2rem;
+}
+
+#eaSidebar .status-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+#eaSidebar .status-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    #eaSidebar .eaNav .nav-link {
+        padding: 10px 20px;
+    }
+
+    #eaSidebar .tab-content .eaPersonal button,
+    #eaSidebar .tab-content .eaPassword button,
+    #eaSidebar .tab-content .eaBank button,
+    #eaSidebar .tab-content .eaWallet button,
+    #eaSidebar .tab-content .eaTransaction button {
+        font-size: 14px;
+    }
+
+    #eaSidebar .eaNav .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* --- EDIT ACCOUNT (#eaSidebar) ENDS --- */
+
+
+/* --- BOTTOM NAVIGATION (bottom-nav) STARTS --- */
 .bottom-nav {
     position: fixed;
     bottom: 10px;
@@ -277,7 +1877,7 @@ body {
     z-index: 1000;
 }
 
-.bottom-nav-item {
+.bottom-nav .bottom-nav-item {
     position: relative;
     width: 60px;
     height: 60px;
@@ -290,7 +1890,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-icon {
+.bottom-nav .nav-icon {
     font-size: 22px;
     color: #6c757d;
     transition: all 0.3s ease;
@@ -298,12 +1898,12 @@ body {
     z-index: 2;
 }
 
-.bottom-nav-item.active .nav-icon {
+.bottom-nav .bottom-nav-item.active .nav-icon {
     color: #4361ee;
     transform: translateY(-5px);
 }
 
-.bottom-nav-item.active::before {
+.bottom-nav .bottom-nav-item.active::before {
     content: '';
     position: absolute;
     top: -5px;
@@ -313,7 +1913,7 @@ body {
     border-radius: 2px;
 }
 
-.bottom-nav-text {
+.bottom-nav .bottom-nav-text {
     position: absolute;
     bottom: 8px;
     font-size: 11px;
@@ -324,38 +1924,38 @@ body {
     transform: translateY(10px);
 }
 
-.bottom-nav-item.active .bottom-nav-text {
+.bottom-nav .bottom-nav-item.active .bottom-nav-text {
     color: #4361ee;
     opacity: 1;
     transform: translateY(0);
 }
 
-.bottom-nav-item:hover .nav-icon {
+.bottom-nav .bottom-nav-item:hover .nav-icon {
     color: #4361ee;
 }
 
-.bottom-nav-item:hover .bottom-nav-text {
+.bottom-nav .bottom-nav-item:hover .bottom-nav-text {
     opacity: 1;
     transform: translateY(0);
     color: #6c757d;
 }
 
 @media (max-width: 376px) {
-    .bottom-nav-item.active::before {
+    .bottom-nav .bottom-nav-item.active::before {
         top: -10px;
         width: 35px;
     }
 
-    .bottom-nav-item {
+    .bottom-nav .bottom-nav-item {
         width: 50px;
         height: 50px;
     }
 
-    .bottom-nav-text {
+    .bottom-nav .bottom-nav-text {
         font-size: 10px;
     }
 
-    .nav-icon {
+    .bottom-nav .nav-icon {
         font-size: 18px;
     }
 }
@@ -366,23 +1966,10 @@ body {
     }
 }
 
-/* --- BOTTOM NAV CSS Ends --- */
+/* --- BOTTOM NAVIGATION (bottom-nav) ENDS --- */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- MAIN CONTENT CSS STARTS --- */
+/* --- GLOBAL STYLES STARTS --- */
 .main-content {
     margin-left: 280px;
     padding: 30px;
@@ -390,312 +1977,24 @@ body {
     background: var(--bg);
 }
 
-/* Cards */
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    margin-bottom: 25px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 250px;
+    }
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
 }
 
-.card-header {
-    background: var(--hover-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 20px;
-    font-weight: 600;
-    color: var(--primary);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
 }
 
-.card-body {
-    padding: 20px;
-    color: var(--text);
-}
-
-/* User Profile */
-.user-profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    border-radius: 10px 10px 0 0;
-}
-
-.user-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 15px;
-}
-
-.vip-badge {
-    background: linear-gradient(135deg, var(--btn), #e67e22);
-    color: var(--text);
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-}
-
-/* Security Status */
-.security-status {
-    padding: 20px;
-    border-left: 4px solid;
-    margin-bottom: 20px;
-    background-color: var(--card-bg);
-}
-
-.security-low {
-    border-left-color: #dc3545;
-}
-
-.security-medium {
-    border-left-color: #ffc107;
-}
-
-.security-high {
-    border-left-color: #28a745;
-}
-
-.progress {
-    height: 8px;
-    border-radius: 4px;
-    background-color: var(--hover-bg);
-}
-
-.progress-bar {
-    background-color: var(--primary);
-}
-
-/* Summary Cards */
-.summary-card {
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    background: var(--card-bg);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.summary-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--primary);
-}
-
-.summary-value {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 10px 0;
-    color: var(--primary);
-}
-
-.summary-label {
-    font-size: 14px;
-    color: var(--text-muted);
-}
-
-/* Recommended Settings */
-.setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.setting-item:last-child {
-    border-bottom: none;
-}
-
-.setting-info h6 {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.setting-info p {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 0;
-}
-
-.status-badge {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.status-complete {
-    background-color: rgba(40, 167, 69, 0.1);
-    color: #28a745;
-}
-
-.status-incomplete {
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-}
-
-/* Tables */
-.table-responsive {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.table {
-    margin-bottom: 0;
-    color: var(--text);
-    background-color: var(--card-bg);
-}
-
-.table thead th {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    font-weight: 500;
-}
-
-/* Table specific styles */
-.table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
-    color: var(--table-text);
-    border-color: var(--border-color);
-}
-
-.table tbody tr:hover {
-    background-color: var(--table-hover);
-}
-
-.table tbody tr:hover {
-    background-color: var(--hover-bg);
-}
-
-/* Forms */
-.form-control,
-.form-select {
-    border-radius: 8px;
-    padding: 10px 15px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
-    background: var(--card-bg);
-    color: var(--text);
-}
-
-.form-control::placeholder {
-    color: var(--text-muted);
-}
-
-.form-label {
-    color: var(--text);
-}
-
-/* Buttons */
-.btn {
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
-
-.btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-warning {
-    background-color: var(--btn);
-    border-color: var(--btn);
-    color: #212529;
-}
-
-.btn-outline-primary {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
-/* Badges */
-.badge {
-    padding: 5px 10px;
-    font-weight: 500;
-    border-radius: 20px;
-}
-
-.bg-primary {
-    background-color: var(--primary) !important;
-    color: white;
-}
-
-.bg-success {
-    background-color: #28a745 !important;
-}
-
-.bg-danger {
-    background-color: #dc3545 !important;
-}
-
-.bg-warning {
-    background-color: var(--btn) !important;
-    color: #212529;
-}
-
-/* Sidebar Tabs */
 .tab-content {
     display: none;
     animation: fadeIn 0.4s ease-in-out;
@@ -717,362 +2016,4 @@ body {
     }
 }
 
-/* Alerts */
-.alert {
-    border-radius: 8px;
-}
-
-.alert-info {
-    background-color: rgba(38, 228, 255, 0.2);
-    border-color: var(--highlight);
-    color: var(--text);
-}
-
-.alert-warning {
-    background-color: rgba(255, 47, 178, 0.2);
-    border-color: var(--accent);
-    color: var(--text);
-}
-
-.alert-secondary {
-    background-color: var(--hover-bg);
-    border-color: var(--border-color);
-    color: var(--text);
-}
-
-/* List Groups */
-.list-group-item {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border-color: var(--border-color);
-}
-
-@media (max-width: 992px) {
-    .main-content {
-        margin-left: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .main-content {
-        padding: 15px;
-    }
-}
-
-/* --- MAIN CONTENT CSS ENDS --- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -- EDIT ACCOUNT CSS STARTS -- */
-#eaSidebar .tab-content {
-    display: block;
-}
-
-.eaSidebar {
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-    width: 100%;
-    max-width: 550px;
-    background-color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.eaSidebar.open {
-    transform: translateX(0);
-}
-
-.eaSidebar :root {
-    --primary: #6c5ce7;
-    --card-bg: #f8f9fa;
-    --hover-bg: #e9ecef;
-    --text: #212529;
-    --text-muted: #6c757d;
-    --border-color: #dee2e6;
-}
-
-.eaSidebar .settings-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
-    padding: 1.5rem;
-}
-
-.eaSidebar .settings-header h2 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.eaSidebar .settings-header p {
-    opacity: 0.9;
-    margin-bottom: 0;
-}
-
-.eaSidebar .eaNav {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 14px;
-    background: white;
-    border-bottom: 1px solid var(--border-color);
-    flex-wrap: nowrap;
-}
-
-.eaSidebar .eaNav .nav-link {
-    white-space: nowrap;
-    border: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    padding: 0.75rem 1.25rem;
-    position: relative;
-    border-radius: 0.375rem;
-    background-color: var(--card-bg);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.eaSidebar .eaNav .nav-link:hover {
-    color: var(--primary);
-    transform: translateY(-1px);
-    background-color: var(--hover-bg);
-}
-
-.eaSidebar .eaNav .nav-link.active {
-    color: var(--primary);
-    background: transparent;
-    font-weight: 600;
-    background-color: var(--hover-bg);
-}
-
-.eaSidebar .eaNav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
-}
-
-.eaSidebar .tab-content {
-    padding: 12px;
-}
-
-.eaSidebar .tab-content .eaPersonal button,
-.eaSidebar .tab-content .eaPassword button,
-.eaSidebar .tab-content .eaBank button,
-.eaSidebar .tab-content .eaWallet button,
-.eaSidebar .tab-content .eaTransaction button {
-    font-size: 16px;
-    padding: 8px 24px;
-}
-
-.eaSidebar .section-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-    position: relative;
-    padding-bottom: 0.75rem;
-}
-
-.eaSidebar .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary);
-    border-radius: 3px;
-}
-
-.eaSidebar .form-control,
-.eaSidebar .form-select {
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
-    color: var(--text);
-}
-
-.eaSidebar .form-control:focus,
-.eaSidebar .form-select:focus {
-    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
-    border-color: var(--primary);
-}
-
-.eaSidebar .form-control::placeholder {
-    color: var(--text-muted);
-}
-
-.eaSidebar .input-group-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    z-index: 5;
-}
-
-.eaSidebar .input-with-icon {
-    padding-left: 45px !important;
-}
-
-.eaSidebar .bank-card {
-    border-radius: 10px;
-    padding: 14px;
-    background-color: white;
-    border: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-}
-
-.eaSidebar .bank-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.eaSidebar .bank-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-right: 1rem;
-    border-radius: 8px;
-    background: white;
-    padding: 5px;
-    border: 1px solid var(--border-color);
-}
-
-.eaSidebar .password-strength {
-    height: 5px;
-    background-color: #e9ecef;
-    margin-top: 0.5rem;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.eaSidebar .password-strength-bar {
-    height: 100%;
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-.eaSidebar .password-requirements {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-}
-
-.eaSidebar .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-}
-
-.eaSidebar .btn-primary:hover {
-    background-color: #5a4bd1;
-    border-color: #5a4bd1;
-}
-
-.eaSidebar .divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
-.eaSidebar .divider::before,
-.eaSidebar .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.eaSidebar .divider::before {
-    margin-right: 1rem;
-}
-
-.eaSidebar .divider::after {
-    margin-left: 1rem;
-}
-
-.eaSidebar .account-status {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 2rem;
-}
-
-.eaSidebar .status-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed var(--border-color);
-}
-
-.eaSidebar .status-item:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    .eaSidebar .eaNav .nav-link {
-        padding: 10px 20px;
-    }
-
-    .eaSidebar .tab-content .eaPersonal button,
-    .eaSidebar .tab-content .eaPassword button,
-    .eaSidebar .tab-content .eaBank button,
-    .eaSidebar .tab-content .eaWallet button,
-    .eaSidebar .tab-content .eaTransaction button {
-        font-size: 14px;
-        /* padding: 6px 14px; */
-    }
-
-    .eaSidebar .eaNav .nav-link {
-        font-size: 14px;
-    }
-}
-
-/* -- EDIT ACCOUNT CSS ENDS -- */
+/* --- GLOBAL STYLES ENDS --- */
