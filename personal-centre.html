@@ -80,7 +80,12 @@
                     <div class="card">
                         <div class="user-profile">
                             <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" class="user-avatar">
-                            <h4>tester5429</h4>
+                            <span class="d-flex align-items-center">
+                                <h4>tester5429</h4>
+                                <button id="edit-profile-btn" class="btn btn-link text-primary p-1 ms-2">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </span>
                             <span class="vip-badge">VIP0</span>
                             <p class="mt-2 mb-0">Member since: 2025-05-11</p>
                             <h3 class="mt-3">Rs 0.00</h3>
@@ -352,6 +357,136 @@
                 </div>
             </div>
         </div>
+
+        <!-- -- EDIT ACCOUNT TAB STARTS -- -->
+        <div id="edit-account" class="eaSidebar position-fixed top-0 end-0 h-100 bg-white shadow-lg overflow-y-auto"
+            style="width: 50%;">
+            <div class="d-flex h-100">
+                <div class="w-25 bg-light p-3 border-end">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#edit-account-info" data-bs-toggle="tab"><i
+                                    class="fas fa-user-cog me-2"></i>Account Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#edit-personal-info" data-bs-toggle="tab"><i
+                                    class="fas fa-user me-2"></i>Personal Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#edit-contact-info" data-bs-toggle="tab"><i
+                                    class="fas fa-envelope me-2"></i>Contact Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#edit-security-settings" data-bs-toggle="tab"><i
+                                    class="fas fa-lock me-2"></i>Security Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-75 p-4">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="edit-account-info">
+                            <h6 class="mb-3 fw-semibold">Account Information</h6>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control" value="tester5429" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">VIP Level</label>
+                                    <input type="text" class="form-control" value="VIP0" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Registration Date</label>
+                                    <input type="text" class="form-control" value="2025-05-11" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Last Login</label>
+                                    <input type="text" class="form-control" value="2025-06-14 16:53:24" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Last Login IP</label>
+                                    <input type="text" class="form-control" value="14.1.107.37" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="edit-personal-info">
+                            <h6 class="mb-3 fw-semibold">Personal Information</h6>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first name">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter last name">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select">
+                                        <option selected disabled>Select gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="edit-contact-info">
+                            <h6 class="mb-3 fw-semibold">Contact Information</h6>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter email">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter phone number">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="edit-security-settings">
+                            <h6 class="mb-3 fw-semibold">Security Settings</h6>
+                            <div class="row g-3">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Login Password</h6>
+                                        <small class="text-muted">Last changed: 2025-06-10</small>
+                                    </div>
+                                    <button class="btn btn-outline-primary">Change Password</button>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Transaction Password</h6>
+                                        <small class="text-muted">Not set up yet</small>
+                                    </div>
+                                    <button class="btn btn-primary">Set Up</button>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Two-Factor Authentication</h6>
+                                        <small class="text-muted">Add extra security to your account</small>
+                                    </div>
+                                    <button class="btn btn-outline-primary">Enable 2FA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-end gap-2">
+                        <button id="cancel-btn" class="btn btn-outline-secondary">Cancel</button>
+                        <button id="save-btn" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -- EDIT ACCOUNT TAB ENDS -- -->
 
         <!-- Deposit Tab -->
         <div id="deposit" class="tab-content">
@@ -1655,78 +1790,109 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Custom js  -->
     <script src="./assets/js/custom.js"></script>
-    <script>// Tab switching functionality
-        document.querySelectorAll('.sidebar-menu a').forEach(item => {
-            if (item.getAttribute('data-tab')) {
-                item.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    // Remove active class from all tabs and menu items
-                    document.querySelectorAll('.sidebar-menu a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    document.querySelectorAll('.tab-content').forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-
-                    // Add active class to clicked menu item
-                    this.classList.add('active');
-
-                    // Show corresponding tab content
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            }
-        });
-
-        // Function to copy referral code
-        function copyReferralCode() {
-            const copyText = document.getElementById("referralCode");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            document.execCommand("copy");
-            alert("Referral code copied: " + copyText.value);
-        }
-
-        // Show only dashboard tab by default
-        document.querySelectorAll('.tab-content').forEach(tab => {
-            if (tab.id !== 'dashboard') {
-                tab.classList.remove('active');
-            }
-        });
-
-        // Theme switching functionality
+    <script>
+        // --- THEME TOGGLE WITH LOCAL STORAGE ---
         function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? null : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-
-            // Update icon
-            const icon = document.querySelector('.theme-toggle i');
-            if (newTheme === 'dark') {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-
-            // Save preference to localStorage
             if (newTheme) {
+                html.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
             } else {
+                html.removeAttribute('data-theme');
                 localStorage.removeItem('theme');
+            }
+
+            // Update toggle icon
+            const icon = document.querySelector('.theme-toggle i');
+            if (icon) {
+                if (newTheme === 'dark') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
             }
         }
 
-        // Check for saved theme preference
+        // On load, apply saved theme
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             const icon = document.querySelector('.theme-toggle i');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            if (icon) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+
+        // --- SIDEBAR MENU TAB SWITCHING (NON-Bootstrap custom sidebar) ---
+        document.querySelectorAll('.sidebar-menu a[data-tab]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Remove active state
+                document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show correct tab content
+                const tabId = this.getAttribute('data-tab');
+                document.querySelectorAll('.main-content .tab-content').forEach(tab => tab.classList.remove('active'));
+                const targetTab = document.getElementById(tabId);
+                if (targetTab) targetTab.classList.add('active');
+            });
+        });
+
+        // --- EA SIDEBAR (Bootstrap Tab API) ---
+        document.querySelectorAll('.eaSidebar .nav-link').forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                const bsTab = new bootstrap.Tab(this);
+                bsTab.show();
+            });
+        });
+
+        // --- BOTTOM NAVIGATION ACTIVE STATE ---
+        function setActive(element) {
+            document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // --- EDIT ACCOUNT PANEL TOGGLE ---
+        const editProfileBtn = document.getElementById('edit-profile-btn');
+        if (editProfileBtn) {
+            editProfileBtn.addEventListener('click', function () {
+                document.getElementById('edit-account').classList.add('open');
+            });
+        }
+
+        const cancelBtn = document.getElementById('cancel-btn');
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', function () {
+                document.getElementById('edit-account').classList.remove('open');
+            });
+        }
+
+        const saveBtn = document.getElementById('save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function () {
+                alert('Changes saved successfully!');
+                document.getElementById('edit-account').classList.remove('open');
+            });
+        }
+
+        // --- COPY REFERRAL CODE ---
+        function copyReferralCode() {
+            const referralCode = document.getElementById('referralCode');
+            if (referralCode) {
+                referralCode.select();
+                referralCode.setSelectionRange(0, 99999);
+                document.execCommand('copy');
+                alert('Referral code copied to clipboard!');
+            }
         }
     </script>
+
 </body>
 
 </html>
