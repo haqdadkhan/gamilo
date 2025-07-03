@@ -1777,112 +1777,156 @@
         </div>
         <!-- INVITATION TAB ENDS -->
 
-        <!-- Internal Messages Tab -->
+        <!-- MESSAGES TAB STARTS -->
         <div id="messages" class="tab-content">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-inbox me-2"></i> Messages (3)</h6>
+                    <div class="card message-inbox">
+                        <div class="card-header inbox-header">
+                            <h6 class="m-0"><i class="fas fa-inbox me-2"></i> Messages <span
+                                    class="badge bg-primary rounded-pill pulse-slow">3</span></h6>
                         </div>
                         <div class="card-body p-0">
-                            <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action active">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mb-1">Welcome Bonus Claimed</h6>
-                                        <small>Today</small>
+                            <div class="list-group list-group-flush message-list">
+                                <a href="#" class="list-group-item list-group-item-action message-item active">
+                                    <div class="message-preview">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Welcome Bonus Claimed</h6>
+                                            <small class="message-time">Today, 10:30 AM</small>
+                                        </div>
+                                        <p class="message-snippet">Your welcome bonus has been credited</p>
+                                        <div class="message-meta">
+                                            <span class="badge sender-badge support">Support Team</span>
+                                            <i class="fas fa-star text-warning ms-auto"></i>
+                                        </div>
                                     </div>
-                                    <p class="mb-1">Your welcome bonus has been credited</p>
-                                    <small>Support Team</small>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mb-1">Weekly Promotion</h6>
-                                        <small>3 days ago</small>
+                                <a href="#" class="list-group-item list-group-item-action message-item unread">
+                                    <div class="message-preview">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Weekly Promotion</h6>
+                                            <small class="message-time">3 days ago</small>
+                                        </div>
+                                        <p class="message-snippet">Check out this week's promotions</p>
+                                        <div class="message-meta">
+                                            <span class="badge sender-badge marketing">Marketing Team</span>
+                                        </div>
                                     </div>
-                                    <p class="mb-1">Check out this week's promotions</p>
-                                    <small>Marketing Team</small>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mb-1">Withdrawal Processed</h6>
-                                        <small>1 week ago</small>
+                                <a href="#" class="list-group-item list-group-item-action message-item">
+                                    <div class="message-preview">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Withdrawal Processed</h6>
+                                            <small class="message-time">1 week ago</small>
+                                        </div>
+                                        <p class="message-snippet">Your withdrawal has been processed</p>
+                                        <div class="message-meta">
+                                            <span class="badge sender-badge finance">Finance Team</span>
+                                        </div>
                                     </div>
-                                    <p class="mb-1">Your withdrawal has been processed</p>
-                                    <small>Finance Team</small>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mb-1">Account Verification</h6>
-                                        <small>2 weeks ago</small>
+                                <a href="#" class="list-group-item list-group-item-action message-item">
+                                    <div class="message-preview">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Account Verification</h6>
+                                            <small class="message-time">2 weeks ago</small>
+                                        </div>
+                                        <p class="message-snippet">Please complete your verification</p>
+                                        <div class="message-meta">
+                                            <span class="badge sender-badge security">Security Team</span>
+                                        </div>
                                     </div>
-                                    <p class="mb-1">Please complete your verification</p>
-                                    <small>Security Team</small>
                                 </a>
                             </div>
+                        </div>
+                        <div class="card-footer inbox-footer">
+                            <button class="btn btn-sm btn-outline-primary w-100">
+                                <i class="fas fa-sync-alt me-2"></i>Refresh
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card message-viewer">
+                        <div class="card-header message-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">Welcome Bonus Claimed</h6>
                                 <div>
-                                    <button class="btn btn-sm btn-outline-danger me-2 mx-5"><i
-                                            class="fas fa-trash"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary mx-2"><i
-                                            class="fas fa-archive"></i></button>
+                                    <h6 class="mb-0 message-title">Welcome Bonus Claimed</h6>
+                                    <small class="message-info">From: <span class="sender-name">Support Team</span> |
+                                        Date: <span class="message-date">2025-06-14 10:30:45</span></small>
+                                </div>
+                                <div class="message-actions">
+                                    <button class="btn btn-sm btn-icon btn-outline-danger me-2" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-icon btn-outline-secondary" title="Archive">
+                                        <i class="fas fa-archive"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <small class="text-white">From: Support Team | Date: 2025-06-14 10:30:45</small>
                         </div>
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <p>Dear tester5429,</p>
-                                <p>We're pleased to inform you that your Welcome Bonus of Rs 2,500.00 has been
-                                    successfully credited to your account.</p>
-                                <p>This bonus comes with a 10x wagering requirement. You need to wager Rs 25,000 before
-                                    being able to withdraw any winnings from this bonus.</p>
-                                <p>The bonus will expire in 30 days (2025-07-14).</p>
+                        <div class="card-body message-content">
+                            <div class="message-body">
+                                <p>Dear <strong>tester5429</strong>,</p>
+                                <p>We're pleased to inform you that your Welcome Bonus of <span
+                                        class="text-success fw-bold">Rs 2,500.00</span> has been successfully credited
+                                    to your account.</p>
+                                <p>This bonus comes with a <span class="fw-bold">10x wagering requirement</span>. You
+                                    need to wager <span class="fw-bold">Rs 25,000</span> before being able to withdraw
+                                    any winnings from this bonus.</p>
+                                <p>The bonus will expire in <span class="fw-bold">30 days</span> (<span
+                                        class="text-danger">2025-07-14</span>).</p>
                                 <p>If you have any questions, please don't hesitate to contact our support team.</p>
                             </div>
-                            <div class="border-top pt-3">
-                                <p>Best regards,<br><strong>Customer Support Team</strong></p>
+                            <div class="message-signature">
+                                <p>Best regards,</p>
+                                <p><strong>Customer Support Team</strong></p>
+                                <div class="company-logo mt-3">
+                                    <img src="https://via.placeholder.com/150x50?text=Company+Logo" alt="Company Logo"
+                                        class="img-fluid" style="max-height: 40px;">
+                                </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary me-2"><i class="fas fa-reply me-2"></i>Reply</button>
-                            <button class="btn btn-outline-secondary"><i
-                                    class="fas fa-forward me-2"></i>Forward</button>
+                        <div class="card-footer message-footer">
+                            <button class="btn btn-primary me-2 btn-action">
+                                <i class="fas fa-reply me-2"></i>Reply
+                            </button>
+                            <button class="btn btn-outline-secondary btn-action">
+                                <i class="fas fa-forward me-2"></i>Forward
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- MESSAGES TAB ENDS -->
 
-        <!-- Manual Rebate Tab -->
+        <!-- MANUAL REBATE TAB STARTS -->
         <div id="rebate" class="tab-content">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h6><i class="fas fa-hand-holding-usd me-2"></i> Manual Rebate</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header bg-gradient-primary">
+                            <h6 class="m-0"><i class="fas fa-hand-holding-usd me-2"></i> Manual Rebate</h6>
+                            <div class="header-accent"></div>
                         </div>
                         <div class="card-body">
-                            <div class="alert alert-info">
+                            <div class="alert alert-info neo-alert shimmer">
                                 <i class="fas fa-info-circle me-2"></i> Current rebate rate: 1.5% of net losses (min Rs
                                 1,000 loss)
                             </div>
 
                             <div class="mb-4">
                                 <label class="form-label">Settlement Date</label>
-                                <input type="date" class="form-control" value="2025-06-14">
+                                <div class="input-group neo-input-group">
+                                    <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                                    <input type="date" class="form-control neo-input" value="2025-06-14">
+                                </div>
                             </div>
 
                             <div class="table-responsive mb-4">
-                                <table class="table">
+                                <table class="table table-hover neo-table">
                                     <thead>
                                         <tr>
                                             <th>Game Type</th>
@@ -1890,51 +1934,54 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Slot</td>
-                                            <td>0.0000</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type-badge slot">Slot</span></td>
+                                            <td class="text-muted">0.0000</td>
                                         </tr>
-                                        <tr>
-                                            <td>Live</td>
-                                            <td>0.0000</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type-badge live">Live</span></td>
+                                            <td class="text-muted">0.0000</td>
                                         </tr>
-                                        <tr>
-                                            <td>Sport</td>
-                                            <td>0.0000</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type-badge sport">Sport</span></td>
+                                            <td class="text-muted">0.0000</td>
                                         </tr>
-                                        <tr>
-                                            <td>Fishing</td>
-                                            <td>0.0000</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type-badge fishing">Fishing</span></td>
+                                            <td class="text-muted">0.0000</td>
                                         </tr>
-                                        <tr>
-                                            <td>Poker</td>
-                                            <td>0.0000</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type-badge poker">Poker</span></td>
+                                            <td class="text-muted">0.0000</td>
                                         </tr>
-                                        <tr class="fw-bold">
-                                            <td>Total</td>
-                                            <td>0.0000</td>
+                                        <tr class="total-row slide-in-row">
+                                            <td class="fw-bold">Total</td>
+                                            <td class="fw-bold">0.0000</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
 
                             <div class="d-flex justify-content-between">
-                                <button class="btn btn-outline-primary"><i
-                                        class="fas fa-sync-alt me-2"></i>Refresh</button>
-                                <button class="btn btn-primary"><i class="fas fa-download me-2"></i>Receive</button>
+                                <button class="btn btn-outline-primary btn-icon-text hover-grow">
+                                    <i class="fas fa-sync-alt me-2"></i>Refresh
+                                </button>
+                                <button class="btn btn-primary btn-icon-text hover-grow pulse-on-hover">
+                                    <i class="fas fa-download me-2"></i>Receive
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-history me-2"></i> Rebate History</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-history me-2"></i> Rebate History</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover neo-table">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
@@ -1943,20 +1990,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-10</td>
-                                            <td>Rs 127.50</td>
-                                            <td><span class="badge bg-success">Paid</span></td>
+                                            <td class="text-success">Rs 127.50</td>
+                                            <td><span class="badge bg-success rounded-pill pulse-slow">Paid</span></td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-05-05</td>
-                                            <td>Rs 78.00</td>
-                                            <td><span class="badge bg-success">Paid</span></td>
+                                            <td class="text-success">Rs 78.00</td>
+                                            <td><span class="badge bg-success rounded-pill pulse-slow">Paid</span></td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-04-01</td>
-                                            <td>Rs 45.00</td>
-                                            <td><span class="badge bg-success">Paid</span></td>
+                                            <td class="text-success">Rs 45.00</td>
+                                            <td><span class="badge bg-success rounded-pill pulse-slow">Paid</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1964,20 +2011,24 @@
                         </div>
                     </div>
 
-                    <div class="card mt-4">
-                        <div class="card-header bg-info text-white">
-                            <h6><i class="fas fa-question-circle me-2"></i> How Rebate Works</h6>
+                    <div class="card neo-card mt-4">
+                        <div class="card-header neo-header bg-gradient-info">
+                            <h6 class="m-0"><i class="fas fa-question-circle me-2"></i> How Rebate Works</h6>
                         </div>
                         <div class="card-body">
-                            <p>Our manual rebate program allows you to request cashback on your losses for specific
-                                periods.</p>
-                            <ul class="mb-3">
-                                <li>Submit your request and our team will review it within 24 hours</li>
-                                <li>Current rebate rate: 1.5% of net losses</li>
-                                <li>Minimum loss requirement: Rs 1,000</li>
-                                <li>Maximum rebate per day: Rs 500</li>
+                            <p class="mb-3">Our manual rebate program allows you to request cashback on your losses for
+                                specific periods.</p>
+                            <ul class="feature-list mb-3">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Submit your
+                                    request and our team will review it within 24 hours</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Current rebate
+                                    rate: 1.5% of net losses</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Minimum loss
+                                    requirement: Rs 1,000</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Maximum rebate
+                                    per day: Rs 500</li>
                             </ul>
-                            <div class="alert alert-warning">
+                            <div class="alert alert-warning neo-alert">
                                 <i class="fas fa-exclamation-triangle me-2"></i> Rebates are subject to terms and
                                 conditions
                             </div>
@@ -1986,6 +2037,7 @@
                 </div>
             </div>
         </div>
+        <!-- MANUAL REBATE TAB ENDS -->
 
         <!-- Bottom Navigation Starts -->
         <nav class="bottom-nav">
