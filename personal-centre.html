@@ -1628,56 +1628,72 @@
         </div>
         <!-- REWARD CENTRE TAB ENDS -->
 
-        <!-- Invite Friends Tab -->
+        <!-- INVITATION TAB STARTS -->
         <div id="invitation" class="tab-content">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h6><i class="fas fa-user-friends me-2"></i> Invite Friends & Earn</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header bg-primary-gradient">
+                            <h6 class="m-0"><i class="fas fa-user-friends me-2"></i> Invite Friends & Earn</h6>
                         </div>
                         <div class="card-body">
                             <div class="text-center mb-4">
-                                <h4 class="text-primary">Your Referral Code</h4>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control form-control-lg text-center"
+                                <h4 class="text-gradient-primary">Your Referral Code</h4>
+                                <div class="input-group mb-3 referral-code-group">
+                                    <input type="text"
+                                        class="form-control form-control-lg text-center referral-code-input"
                                         value="TEST5429-X" id="referralCode" readonly>
-                                    <button class="btn btn-primary" onclick="copyReferralCode()"><i
-                                            class="fas fa-copy"></i></button>
+                                    <button class="btn btn-primary btn-copy pulse-on-hover"
+                                        onclick="copyReferralCode()">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
                                 </div>
-                                <p class="text-white">Share this code with friends and earn rewards!</p>
+                                <p class="text-muted">Share this code with friends and earn rewards!</p>
                             </div>
 
-                            <div class="row text-center mb-4">
+                            <div class="row text-center mb-4 g-3">
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded text-dark">
-                                        <h5 class="mb-0">3</h5>
+                                    <div class="p-3 stats-card invited-card hover-scale">
+                                        <div class="stats-icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <h5 class="mb-0 win-pulse">3</h5>
                                         <p class="mb-0">Invited</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded text-dark">
-                                        <h5 class="mb-0">1</h5>
+                                    <div class="p-3 stats-card active-card hover-scale">
+                                        <div class="stats-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <h5 class="mb-0 win-pulse">1</h5>
                                         <p class="mb-0">Active</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="p-3 bg-light rounded text-dark">
-                                        <h5 class="mb-0">Rs 500</h5>
+                                    <div class="p-3 stats-card earned-card hover-scale">
+                                        <div class="stats-icon">
+                                            <i class="fas fa-rupee-sign"></i>
+                                        </div>
+                                        <h5 class="mb-0 win-pulse">Rs 500</h5>
                                         <p class="mb-0">Earned</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="d-flex justify-content-center gap-2 mb-4">
-                                <button class="btn btn-outline-primary"><i
-                                        class="fab fa-facebook-f me-2"></i>Facebook</button>
-                                <button class="btn btn-outline-info"><i class="fab fa-twitter me-2"></i>Twitter</button>
-                                <button class="btn btn-outline-success"><i
-                                        class="fab fa-whatsapp me-2"></i>WhatsApp</button>
+                            <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+                                <button class="btn btn-social facebook hover-bounce">
+                                    <i class="fab fa-facebook-f me-2"></i>Facebook
+                                </button>
+                                <button class="btn btn-social twitter hover-bounce">
+                                    <i class="fab fa-twitter me-2"></i>Twitter
+                                </button>
+                                <button class="btn btn-social whatsapp hover-bounce">
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                                </button>
                             </div>
 
-                            <div class="alert alert-info">
+                            <div class="alert alert-info neo-alert">
                                 <i class="fas fa-info-circle me-2"></i> Earn 20% of your friend's first deposit and 5%
                                 of their losses for 30 days!
                             </div>
@@ -1686,13 +1702,13 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-history me-2"></i> Referral History</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-history me-2"></i> Referral History</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover neo-table">
                                     <thead>
                                         <tr>
                                             <th>Friend</th>
@@ -1702,22 +1718,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>friend123</td>
                                             <td>2025-06-05</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td class="text-success">Rs 500.00</td>
+                                            <td><span class="badge bg-success rounded-pill status-pulse">Active</span>
+                                            </td>
+                                            <td class="text-success win-glow">Rs 500.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>buddy456</td>
                                             <td>2025-05-20</td>
-                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td><span class="badge bg-secondary rounded-pill">Inactive</span></td>
                                             <td>Rs 0.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>pal789</td>
                                             <td>2025-05-15</td>
-                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td><span class="badge bg-secondary rounded-pill">Inactive</span></td>
                                             <td>Rs 0.00</td>
                                         </tr>
                                     </tbody>
@@ -1726,23 +1743,39 @@
                         </div>
                     </div>
 
-                    <div class="card mt-4">
-                        <div class="card-header bg-success text-white">
-                            <h6><i class="fas fa-award me-2"></i> How It Works</h6>
+                    <div class="card neo-card mt-4">
+                        <div class="card-header neo-header bg-success-gradient">
+                            <h6 class="m-0"><i class="fas fa-award me-2"></i> How It Works</h6>
                         </div>
                         <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">1. Share your unique referral link with friends</li>
-                                <li class="list-group-item">2. They sign up using your link</li>
-                                <li class="list-group-item">3. They make their first deposit (min Rs 500)</li>
-                                <li class="list-group-item">4. You earn 20% of their first deposit as bonus!</li>
-                                <li class="list-group-item">5. Plus, earn 5% of their losses for 30 days</li>
+                            <ul class="list-group list-group-flush steps-list">
+                                <li class="list-group-item hover-slide">
+                                    <span class="step-number">1</span>
+                                    Share your unique referral link with friends
+                                </li>
+                                <li class="list-group-item hover-slide">
+                                    <span class="step-number">2</span>
+                                    They sign up using your link
+                                </li>
+                                <li class="list-group-item hover-slide">
+                                    <span class="step-number">3</span>
+                                    They make their first deposit (min Rs 500)
+                                </li>
+                                <li class="list-group-item hover-slide">
+                                    <span class="step-number">4</span>
+                                    You earn 20% of their first deposit as bonus!
+                                </li>
+                                <li class="list-group-item hover-slide">
+                                    <span class="step-number">5</span>
+                                    Plus, earn 5% of their losses for 30 days
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- INVITATION TAB ENDS -->
 
         <!-- Internal Messages Tab -->
         <div id="messages" class="tab-content">

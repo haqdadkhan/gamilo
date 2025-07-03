@@ -2751,131 +2751,397 @@ body {
 
 
 /* --- INVITE FRIENDS TAB (#invitation) STARTS --- */
-#invitation .card {
+#invitation .neo-card {
+    background-color: var(--card-bg);
     border: none;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-#invitation .card:hover {
+#invitation .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-#invitation .card-header.bg-primary {
-    background-color: var(--primary) !important;
+#invitation .neo-header {
     color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-#invitation .card-header.bg-success {
-    background-color: #28a745 !important;
-    color: white;
+#invitation .neo-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
 }
 
-#invitation .card-body {
-    padding: 20px;
-    color: var(--text);
+@keyframes headerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
-#invitation .bg-light {
-    background-color: var(--hover-bg) !important;
+#invitation .bg-primary-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
 }
 
-#invitation .text-dark {
-    color: var(--text) !important;
+#invitation .bg-success-gradient {
+    background: linear-gradient(135deg, var(--success), #00d4a4) !important;
 }
 
-#invitation .form-control-lg {
+/* Referral Code Section */
+#invitation .referral-code-group {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+#invitation .referral-code-group:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#invitation .referral-code-input {
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 1rem;
     font-size: 1.25rem;
+    text-align: center;
 }
 
-#invitation .btn-outline-primary {
-    border-color: var(--primary);
-    color: var(--primary);
+#invitation .btn-copy {
+    border-radius: 0 12px 12px 0;
+    padding: 0 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
 }
 
-#invitation .btn-outline-primary:hover {
-    background-color: var(--primary);
+#invitation .btn-copy:hover {
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
+}
+
+#invitation .text-gradient-primary {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* Stats Cards */
+#invitation .stats-card {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem 0.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#invitation .stats-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+#invitation .invited-card::before {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+#invitation .active-card::before {
+    background: linear-gradient(90deg, var(--success), #00d4a4);
+}
+
+#invitation .earned-card::before {
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+}
+
+#invitation .stats-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1rem;
     color: white;
 }
 
-#invitation .btn-outline-info {
-    border-color: #17a2b8;
-    color: #17a2b8;
+#invitation .invited-card .stats-icon {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
 }
 
-#invitation .btn-outline-info:hover {
-    background-color: #17a2b8;
-    color: white;
+#invitation .active-card .stats-icon {
+    background: linear-gradient(135deg, var(--success), #00d4a4);
 }
 
-#invitation .btn-outline-success {
-    border-color: #28a745;
-    color: #28a745;
+#invitation .earned-card .stats-icon {
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
 }
 
-#invitation .btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
+/* Social Buttons */
+#invitation .btn-social {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid;
+    min-width: 120px;
 }
 
-#invitation .alert-info {
-    background-color: rgba(38, 228, 255, 0.2);
-    border-color: var(--highlight);
-    color: var(--text);
+#invitation .btn-social.facebook {
+    border-color: var(--facebook);
+    color: var(--facebook);
+    background-color: white;
 }
 
-#invitation .table {
-    margin-bottom: 0;
-    color: var(--text);
-    background-color: var(--card-bg);
+#invitation .btn-social.twitter {
+    border-color: var(--twitter);
+    color: var(--twitter);
+    background-color: white;
 }
 
-#invitation .table thead th {
-    background-color: var(--primary);
+#invitation .btn-social.whatsapp {
+    border-color: var(--whatsapp);
+    color: var(--whatsapp);
+    background-color: white;
+}
+
+/* Table Styles */
+#invitation .neo-table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    color: var(--table-text);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#invitation .neo-table thead th {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
     border: none;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
 }
 
-#invitation .table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
-    color: var(--table-text);
-    border-color: var(--border-color);
+#invitation .neo-table tbody tr {
+    transition: all 0.3s ease;
 }
 
-#invitation .table tbody tr:hover {
+#invitation .neo-table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
+/* How It Works List */
+#invitation .steps-list {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#invitation .steps-list .list-group-item {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+#invitation .step-number {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--success), #00d4a4);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Animations */
+#invitation .hover-scale {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#invitation .hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#invitation .hover-bounce {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#invitation .hover-bounce:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#invitation .hover-slide:hover {
+    transform: translateX(8px);
+}
+
+#invitation .pulse-on-hover:hover {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+    }
+}
+
+#invitation .win-pulse {
+    animation: winPulse 2s infinite;
+}
+
+@keyframes winPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#invitation .status-pulse {
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgba(0, 184, 148, 0);
+    }
+}
+
+#invitation .slide-in-row {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
+}
+
+#invitation .slide-in-row:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#invitation .slide-in-row:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#invitation .slide-in-row:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#invitation .win-glow {
+    position: relative;
+    font-weight: 600;
+}
+
+#invitation .win-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.2);
+    z-index: -1;
+    animation: winGlow 2s infinite;
+}
+
+@keyframes winGlow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Badges */
 #invitation .badge {
-    padding: 5px 10px;
-    font-weight: 500;
-    border-radius: 20px;
+    padding: 0.5em 1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 20px !important;
 }
 
-#invitation .bg-success {
-    background-color: #28a745 !important;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #invitation .stats-card {
+        padding: 1rem 0.5rem;
+    }
 
-#invitation .bg-secondary {
-    background-color: #6c757d !important;
-}
+    #invitation .btn-social {
+        padding: 0.5rem 1rem;
+        min-width: auto;
+        font-size: 0.9rem;
+    }
 
-#invitation .text-success {
-    color: #28a745 !important;
-}
-
-#invitation .list-group-item {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border-color: var(--border-color);
+    #invitation .referral-code-input {
+        font-size: 1rem;
+    }
 }
 
 /* --- INVITE FRIENDS TAB (#invitation) ENDS --- */
