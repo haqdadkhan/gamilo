@@ -2356,117 +2356,398 @@ body {
 /* --- PROFIT & LOSS TAB (#profit-loss) ENDS --- */
 
 
-/* --- REWARDS TAB (#rewards-centre) STARTS --- */
-#rewards-centre .card {
+/* --- REWARD TAB (#rewards-centre) STARTS --- */
+#reward-centre .neo-card {
+    background-color: var(--card-bg);
     border: none;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+    transition: all 0.3s ease;
+    height: 100%;
 }
 
-#rewards-centre .card:hover {
+#reward-centre .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-#rewards-centre .card-header.bg-warning {
-    background-color: var(--btn) !important;
+#reward-centre .neo-header {
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#reward-centre .neo-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
+}
+
+@keyframes headerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#reward-centre .bg-warning-gradient {
+    background: linear-gradient(90deg, var(--btn), var(--accent)) !important;
     color: #212529;
 }
 
-#rewards-centre .card-header.bg-success {
-    background-color: #28a745 !important;
-    color: white;
+#reward-centre .bg-success-gradient {
+    background: linear-gradient(90deg, var(--success), #00d4a4) !important;
 }
 
-#rewards-centre .card-header.bg-info {
-    background-color: #17a2b8 !important;
-    color: white;
+#reward-centre .bg-info-gradient {
+    background: linear-gradient(90deg, var(--info), #17c1e8) !important;
 }
 
-#rewards-centre .card-body {
-    padding: 20px;
-    color: var(--text);
-}
-
-#rewards-centre .reward-item {
-    padding: 1rem;
-    background-color: var(--hover-bg);
-    border-radius: 8px;
+/* Reward Items */
+#reward-centre .reward-item {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
     margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-#rewards-centre .text-dark {
-    color: var(--text) !important;
+#reward-centre .reward-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
 
-#rewards-centre .vip-badge {
-    background: linear-gradient(135deg, var(--btn), #e67e22);
-    color: var(--text);
-    padding: 3px 10px;
+#reward-centre .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+#reward-centre .shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* VIP Section */
+#reward-centre .vip-badge {
+    background: linear-gradient(135deg, var(--btn), var(--accent));
+    color: white;
+    padding: 0.5rem 1.5rem;
     border-radius: 20px;
-    font-size: 12px;
     font-weight: bold;
     display: inline-block;
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
-#rewards-centre .progress {
-    height: 8px;
-    border-radius: 4px;
+#reward-centre .glow-effect {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(171, 46, 0, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 15px rgba(171, 46, 0, 0.8);
+    }
+}
+
+#reward-centre .progress-container {
+    position: relative;
+}
+
+#reward-centre .neo-progress {
+    height: 10px;
+    border-radius: 5px;
     background-color: var(--hover-bg);
+    overflow: hidden;
 }
 
-#rewards-centre .progress-bar {
-    background-color: var(--primary);
+#reward-centre .progress-bar {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width 1s ease-in-out;
 }
 
-#rewards-centre .list-group-item {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border-color: var(--border-color);
+#reward-centre .progress-animate {
+    animation: progressAnimation 1.5s ease-out;
 }
 
-#rewards-centre .badge {
-    padding: 5px 10px;
-    font-weight: 500;
-    border-radius: 20px;
+@keyframes progressAnimation {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 15%;
+    }
 }
 
-#rewards-centre .bg-primary {
-    background-color: var(--primary) !important;
+#reward-centre .progress-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+#reward-centre .vip-benefits .list-group-item {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+/* Points Display */
+#reward-centre .points-display {
+    position: relative;
+    padding: 1rem 0;
+}
+
+#reward-centre .text-gradient-primary {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+#reward-centre .points-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0.2;
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: wave 3s infinite ease-in-out;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: scaleX(0.9);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scaleX(1.1);
+        opacity: 0.3;
+    }
+}
+
+/* Redeem Items */
+#reward-centre .redeem-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+#reward-centre .redeem-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+#reward-centre .bg-primary-light {
+    background-color: rgba(171, 46, 0, 0.1);
+}
+
+#reward-centre .bg-success-light {
+    background-color: rgba(0, 184, 148, 0.1);
+}
+
+/* Reward History */
+#reward-centre .reward-history-card {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+#reward-centre .btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#reward-centre .btn-warning {
+    background: linear-gradient(90deg, var(--btn), var(--accent));
+    color: white;
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+}
+
+#reward-centre .btn-warning:hover {
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
+}
+
+#reward-centre .btn-info {
+    background: linear-gradient(90deg, var(--info), #17c1e8);
+    color: white;
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+#reward-centre .btn-info:hover {
+    background: linear-gradient(90deg, #17c1e8, #3dd5f3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(23, 162, 184, 0.4);
+}
+
+#reward-centre .btn-outline-success {
+    border: 1px solid var(--success);
+    color: var(--success);
+    background: transparent;
+}
+
+#reward-centre .btn-outline-success:hover {
+    background: linear-gradient(90deg, var(--success), #00d4a4);
     color: white;
 }
 
-#rewards-centre .bg-secondary {
-    background-color: #6c757d !important;
+#reward-centre .btn-elevate {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-#rewards-centre .btn-outline-success {
-    border-color: #28a745;
-    color: #28a745;
+#reward-centre .btn-elevate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-#rewards-centre .btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
+/* Animations */
+#reward-centre .hover-float {
+    transition: all 0.3s ease;
 }
 
-#rewards-centre .btn-info {
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-    color: white;
+#reward-centre .hover-float:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-#rewards-centre .btn-info:hover {
-    background-color: #138496;
-    border-color: #117a8b;
+#reward-centre .hover-grow {
+    transition: all 0.3s ease;
 }
 
-/* --- REWARDS TAB (#rewards-centre) ENDS --- */
+#reward-centre .hover-grow:hover {
+    transform: scale(1.02);
+}
+
+#reward-centre .pulse-slow {
+    animation: pulse-slow 2s infinite;
+}
+
+@keyframes pulse-slow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+    }
+}
+
+#reward-centre .win-glow {
+    position: relative;
+    font-weight: 600;
+}
+
+#reward-centre .win-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.2);
+    z-index: -1;
+    animation: winPulse 2s infinite;
+}
+
+@keyframes winPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+/* Badges */
+#reward-centre .badge {
+    padding: 0.5em 1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 20px !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #reward-centre {
+        padding: 1rem;
+    }
+
+    #reward-centre .reward-item,
+    #reward-centre .vip-benefits .list-group-item,
+    #reward-centre .redeem-card {
+        padding: 1rem;
+    }
+
+    #reward-centre .redeem-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}
+
+/* --- REWARD TAB (#rewards-centre) ENDS --- */
 
 
 /* --- INVITE FRIENDS TAB (#invitation) STARTS --- */
