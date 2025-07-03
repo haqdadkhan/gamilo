@@ -1994,86 +1994,363 @@ body {
 
 
 /* --- PROFIT & LOSS TAB (#profit-loss) STARTS --- */
-#profit-loss .card {
+#profit-loss .neo-card {
+    background-color: var(--card-bg);
     border: none;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+    transition: all 0.3s ease;
 }
 
-#profit-loss .card:hover {
+#profit-loss .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-#profit-loss .card-header {
-    background: var(--hover-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 20px;
-    font-weight: 600;
-    color: var(--primary);
+#profit-loss .neo-header {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#profit-loss .neo-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
+}
+
+@keyframes headerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Summary Cards */
+#profit-loss .summary-card {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+#profit-loss .profit-card {
+    border-left: 4px solid var(--success);
+}
+
+#profit-loss .loss-card {
+    border-left: 4px solid var(--danger);
+}
+
+#profit-loss .summary-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 1.25rem;
 }
 
-#profit-loss .card-body {
-    padding: 20px;
-    color: var(--text);
+#profit-loss .profit-card .summary-icon {
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--success);
 }
 
-#profit-loss .bg-light {
-    background-color: var(--hover-bg) !important;
+#profit-loss .loss-card .summary-icon {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
 }
 
-#profit-loss .text-dark {
-    color: var(--text) !important;
+/* Highlight Cards */
+#profit-loss .highlight-card {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    height: 100%;
 }
 
-#profit-loss .text-success {
-    color: #28a745 !important;
+#profit-loss .best-day {
+    border-top: 4px solid var(--success);
 }
 
-#profit-loss .text-danger {
-    color: #dc3545 !important;
+#profit-loss .worst-day {
+    border-top: 4px solid var(--danger);
 }
 
-#profit-loss .table {
-    margin-bottom: 0;
-    color: var(--text);
-    background-color: var(--card-bg);
+#profit-loss .highlight-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
 }
 
-#profit-loss .table thead th {
-    background-color: var(--primary);
+#profit-loss .best-day .highlight-icon {
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+}
+
+#profit-loss .worst-day .highlight-icon {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+}
+
+/* Table Styles */
+#profit-loss .neo-table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    color: var(--table-text);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#profit-loss .neo-table thead th {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: white;
     border: none;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
 }
 
-#profit-loss .table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
-    color: var(--table-text);
-    border-color: var(--border-color);
+#profit-loss .neo-table tbody tr {
+    transition: all 0.3s ease;
 }
 
-#profit-loss .table tbody tr:hover {
+#profit-loss .neo-table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
-#profit-loss .alert-info {
-    background-color: rgba(38, 228, 255, 0.2);
-    border-color: var(--highlight);
-    color: var(--text);
+#profit-loss .total-row {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    font-weight: 600;
 }
 
-#profit-loss .fw-bold {
-    font-weight: 600 !important;
+/* Game Type Badges */
+#profit-loss .game-type {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#profit-loss .game-type.slot {
+    background-color: rgba(9, 132, 227, 0.1);
+    color: var(--info);
+    border: 1px solid var(--info);
+}
+
+#profit-loss .game-type.live {
+    background-color: rgba(253, 203, 110, 0.1);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+#profit-loss .game-type.sport {
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+#profit-loss .game-type.fishing {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+#profit-loss .game-type.poker {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Animations */
+#profit-loss .slide-in-row {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
+}
+
+#profit-loss .slide-in-row:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#profit-loss .slide-in-row:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#profit-loss .slide-in-row:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+#profit-loss .slide-in-row:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+#profit-loss .slide-in-row:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+#profit-loss .slide-in-row:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#profit-loss .win-glow {
+    position: relative;
+    font-weight: 600;
+}
+
+#profit-loss .win-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.2);
+    z-index: -1;
+    animation: winPulse 2s infinite;
+}
+
+@keyframes winPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+#profit-loss .loss-pulse {
+    position: relative;
+    font-weight: 600;
+}
+
+#profit-loss .loss-pulse::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(220, 53, 69, 0.2);
+    z-index: -1;
+    animation: lossPulse 2s infinite;
+}
+
+@keyframes lossPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+#profit-loss .hover-glow {
+    transition: all 0.3s ease;
+}
+
+#profit-loss .hover-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#profit-loss .neo-alert {
+    border-radius: 8px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#profit-loss .shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+#profit-loss .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #profit-loss {
+        padding: 1rem;
+    }
+
+    #profit-loss .summary-card,
+    #profit-loss .highlight-card {
+        padding: 1rem;
+    }
+
+    #profit-loss .summary-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
 }
 
 /* --- PROFIT & LOSS TAB (#profit-loss) ENDS --- */

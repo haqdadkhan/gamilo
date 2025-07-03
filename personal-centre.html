@@ -1298,32 +1298,38 @@
         </div>
         <!-- ACCOUNT RECORD TAB ENDS -->
 
-        <!-- Profit & Loss Tab -->
+        <!-- PROFIT & LOSS TAB STARTS -->
         <div id="profit-loss" class="tab-content">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-chart-pie me-2"></i> Profit & Loss Summary</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-chart-pie me-2"></i> Profit & Loss Summary</h6>
                         </div>
                         <div class="card-body">
-                            <div class="row text-center mb-4">
+                            <div class="row text-center mb-4 g-3">
                                 <div class="col-6">
-                                    <div class="p-3 bg-light rounded">
-                                        <h5 class="text-success">+Rs 1,550.00</h5>
-                                        <p class="mb-0 text-dark">Total Profit</p>
+                                    <div class="p-3 summary-card profit-card hover-glow">
+                                        <div class="summary-icon">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                        <h5 class="text-success win-glow">+Rs 1,550.00</h5>
+                                        <p class="mb-0">Total Profit</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="p-3 bg-light rounded">
-                                        <h5 class="text-danger">-Rs 800.00</h5>
-                                        <p class="mb-0 text-dark">Total Loss</p>
+                                    <div class="p-3 summary-card loss-card hover-glow">
+                                        <div class="summary-icon">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <h5 class="text-danger loss-pulse">-Rs 800.00</h5>
+                                        <p class="mb-0">Total Loss</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover neo-table">
                                     <thead>
                                         <tr>
                                             <th>Game Type</th>
@@ -1333,41 +1339,41 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Slot</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type slot">Slot</span></td>
                                             <td>Rs 200.00</td>
                                             <td>Rs 800.00</td>
-                                            <td class="text-success">+Rs 600.00</td>
+                                            <td class="text-success win-glow">+Rs 600.00</td>
                                         </tr>
-                                        <tr>
-                                            <td>Live</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type live">Live</span></td>
                                             <td>Rs 1,300.00</td>
                                             <td>Rs 1,000.00</td>
-                                            <td class="text-danger">-Rs 300.00</td>
+                                            <td class="text-danger loss-pulse">-Rs 300.00</td>
                                         </tr>
-                                        <tr>
-                                            <td>Sport</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type sport">Sport</span></td>
                                             <td>Rs 1,250.00</td>
                                             <td>Rs 1,500.00</td>
-                                            <td class="text-success">+Rs 250.00</td>
+                                            <td class="text-success win-glow">+Rs 250.00</td>
                                         </tr>
-                                        <tr>
-                                            <td>Fishing</td>
-                                            <td>Rs 0.00</td>
-                                            <td>Rs 0.00</td>
-                                            <td>Rs 0.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Poker</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type fishing">Fishing</span></td>
                                             <td>Rs 0.00</td>
                                             <td>Rs 0.00</td>
                                             <td>Rs 0.00</td>
                                         </tr>
-                                        <tr class="fw-bold">
-                                            <td>Total</td>
-                                            <td>Rs 2,750.00</td>
-                                            <td>Rs 3,300.00</td>
-                                            <td class="text-success">+Rs 550.00</td>
+                                        <tr class="slide-in-row">
+                                            <td><span class="game-type poker">Poker</span></td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                            <td>Rs 0.00</td>
+                                        </tr>
+                                        <tr class="total-row slide-in-row">
+                                            <td><strong>Total</strong></td>
+                                            <td><strong>Rs 2,750.00</strong></td>
+                                            <td><strong>Rs 3,300.00</strong></td>
+                                            <td class="text-success win-glow"><strong>+Rs 550.00</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1377,13 +1383,13 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-calendar-alt me-2"></i> Daily Performance</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-calendar-alt me-2"></i> Daily Performance</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover neo-table">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
@@ -1393,35 +1399,35 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-14</td>
                                             <td>Rs 500.00</td>
                                             <td>Rs 0.00</td>
-                                            <td class="text-danger">-Rs 500.00</td>
+                                            <td class="text-danger loss-pulse">-Rs 500.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-13</td>
                                             <td>Rs 1,000.00</td>
                                             <td>Rs 2,000.00</td>
-                                            <td class="text-success">+Rs 1,000.00</td>
+                                            <td class="text-success win-glow">+Rs 1,000.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-12</td>
                                             <td>Rs 200.00</td>
                                             <td>Rs 800.00</td>
-                                            <td class="text-success">+Rs 600.00</td>
+                                            <td class="text-success win-glow">+Rs 600.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-11</td>
                                             <td>Rs 750.00</td>
                                             <td>Rs 1,500.00</td>
-                                            <td class="text-success">+Rs 750.00</td>
+                                            <td class="text-success win-glow">+Rs 750.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="slide-in-row">
                                             <td>2025-06-10</td>
                                             <td>Rs 300.00</td>
                                             <td>Rs 0.00</td>
-                                            <td class="text-danger">-Rs 300.00</td>
+                                            <td class="text-danger loss-pulse">-Rs 300.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1429,28 +1435,34 @@
                         </div>
                     </div>
 
-                    <div class="card mt-4">
-                        <div class="card-header">
-                            <h6><i class="fas fa-trophy me-2"></i> Performance Highlights</h6>
+                    <div class="card neo-card mt-4">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-trophy me-2"></i> Performance Highlights</h6>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row g-3">
                                 <div class="col-6">
-                                    <div class="p-3 bg-light rounded mb-3">
+                                    <div class="p-3 highlight-card best-day hover-glow">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-crown"></i>
+                                        </div>
                                         <h6 class="text-success">Best Day</h6>
-                                        <p class="mb-1 text-dark">2025-06-13</p>
-                                        <h5 class="text-success">+Rs 1,000.00</h5>
+                                        <p class="mb-1">2025-06-13</p>
+                                        <h5 class="text-success win-glow">+Rs 1,000.00</h5>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="p-3 bg-light rounded mb-3">
+                                    <div class="p-3 highlight-card worst-day hover-glow">
+                                        <div class="highlight-icon">
+                                            <i class="fas fa-cloud-rain"></i>
+                                        </div>
                                         <h6 class="text-danger">Worst Day</h6>
-                                        <p class="mb-1 text-dark">2025-06-14</p>
-                                        <h5 class="text-danger">-Rs 500.00</h5>
+                                        <p class="mb-1">2025-06-14</p>
+                                        <h5 class="text-danger loss-pulse">-Rs 500.00</h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="alert alert-info">
+                            <div class="alert alert-info neo-alert shimmer mt-3">
                                 <i class="fas fa-info-circle me-2"></i> Your overall profit is Rs 550.00 with a win rate
                                 of 60%
                             </div>
@@ -1459,6 +1471,7 @@
                 </div>
             </div>
         </div>
+        <!-- PROFIT & LOSS TAB ENDS -->
 
         <!-- Reward Centre Tab -->
         <div id="reward-centre" class="tab-content">
