@@ -1620,99 +1620,374 @@ body {
 
 
 /* --- ACCOUNT RECORD TAB (#my-account-record) STARTS --- */
-#my-account-record .card {
+#account-record .neo-card {
+    background-color: var(--card-bg);
     border: none;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+    transition: all 0.3s ease;
 }
 
-#my-account-record .card:hover {
+#account-record .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-#my-account-record .card-header {
-    background: var(--hover-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 20px;
-    font-weight: 600;
-    color: var(--primary);
+#account-record .neo-header {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#my-account-record .card-body {
-    padding: 20px;
-    color: var(--text);
-}
-
-#my-account-record .form-control,
-#my-account-record .form-select {
-    border-radius: 8px;
-    padding: 10px 15px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
-}
-
-#my-account-record .table-responsive {
-    border-radius: 10px;
     overflow: hidden;
 }
 
-#my-account-record .table {
-    margin-bottom: 0;
-    color: var(--text);
-    background-color: var(--card-bg);
+#account-record .neo-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
 }
 
-#my-account-record .table thead th {
+@keyframes headerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#account-record .header-actions .btn {
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#account-record .header-actions .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Elements */
+#account-record .neo-input,
+#account-record .neo-select {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#account-record .neo-input:focus,
+#account-record .neo-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+}
+
+#account-record .neo-input-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+#account-record .neo-input-group .input-group-text {
     background-color: var(--primary);
     color: white;
     border: none;
-    font-weight: 500;
 }
 
-#my-account-record .table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
+/* Table Styles */
+#account-record .neo-table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
     color: var(--table-text);
-    border-color: var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-#my-account-record .table tbody tr:hover {
+#account-record .neo-table thead th {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+#account-record .neo-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+#account-record .neo-table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
-#my-account-record .text-success {
-    color: #28a745 !important;
-}
-
-#my-account-record .text-danger {
-    color: #dc3545 !important;
-}
-
-#my-account-record .alert-secondary {
-    background-color: var(--hover-bg);
-    border-color: var(--border-color);
+/* Transaction Elements */
+#account-record .transaction-date {
+    font-weight: 600;
     color: var(--text);
 }
 
-#my-account-record .badge {
-    padding: 5px 10px;
-    font-weight: 500;
-    border-radius: 20px;
+#account-record .transaction-time {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-#my-account-record .bg-success {
-    background-color: #28a745 !important;
+#account-record .transaction-id {
+    color: var(--text-muted);
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+#account-record .badge-type {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#account-record .badge-type.deposit {
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+#account-record .badge-type.withdrawal {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+#account-record .badge-type.bet {
+    background-color: rgba(253, 203, 110, 0.1);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+#account-record .badge-type.win {
+    background-color: rgba(9, 132, 227, 0.1);
+    color: var(--info);
+    border: 1px solid var(--info);
+}
+
+/* Amount Animations */
+#account-record .win-glow {
+    position: relative;
+    font-weight: 600;
+}
+
+#account-record .win-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.2);
+    z-index: -1;
+    animation: winPulse 2s infinite;
+}
+
+@keyframes winPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+#account-record .loss-pulse {
+    position: relative;
+    font-weight: 600;
+}
+
+#account-record .loss-pulse::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(220, 53, 69, 0.2);
+    z-index: -1;
+    animation: lossPulse 2s infinite;
+}
+
+@keyframes lossPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+/* Summary Cards */
+#account-record .summary-card {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+#account-record .summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+#account-record .summary-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(171, 46, 0, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+#account-record .net-profit {
+    font-weight: 700;
+}
+
+/* Pagination */
+#account-record .pagination .page-item.active .page-link {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-color: var(--primary);
+    color: white;
+}
+
+#account-record .pagination .page-link {
+    color: var(--primary);
+    border: 1px solid var(--border-color);
+    margin: 0 3px;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+#account-record .pagination .page-link:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Animations */
+#account-record .slide-in-row {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
+}
+
+#account-record .slide-in-row:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#account-record .slide-in-row:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#account-record .slide-in-row:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+#account-record .slide-in-row:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+#account-record .slide-in-row:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#account-record .pulse-slow {
+    animation: pulse-slow 2s infinite;
+}
+
+@keyframes pulse-slow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #account-record {
+        padding: 1rem;
+    }
+
+    #account-record .neo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    #account-record .header-actions {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    #account-record .header-actions .btn {
+        width: 100%;
+    }
+
+    #account-record .summary-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #account-record .summary-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* --- ACCOUNT RECORD TAB (#my-account-record) ENDS --- */
