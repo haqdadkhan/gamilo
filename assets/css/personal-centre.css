@@ -1132,130 +1132,211 @@ body {
 
 /* --- WITHDRAWAL TAB (#withdrawal) STARTS --- */
 #withdrawal .card {
+    background-color: var(--card-bg);
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 #withdrawal .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 #withdrawal .card-header {
-    background: var(--hover-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 20px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
     font-weight: 600;
-    color: var(--primary);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-#withdrawal .card-body {
-    padding: 20px;
-    color: var(--text);
+#withdrawal .card-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
 }
 
-#withdrawal .alert-info {
-    background-color: rgba(38, 228, 255, 0.2);
-    border-color: var(--highlight);
-    color: var(--text);
+@keyframes headerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
-#withdrawal .table-responsive {
-    border-radius: 10px;
+/* Balance Card Specific */
+#withdrawal .balance-card {
+    position: relative;
     overflow: hidden;
 }
 
+#withdrawal .balance-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0.3;
+    filter: blur(5px);
+    animation: balancePulse 3s infinite;
+}
+
+@keyframes balancePulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#withdrawal .balance-card .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Elements */
+#withdrawal .form-control,
+#withdrawal .form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+#withdrawal .form-control:focus,
+#withdrawal .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+}
+
+/* Buttons */
+#withdrawal .btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+#withdrawal .btn-primary {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+}
+
+#withdrawal .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
+}
+
+#withdrawal .btn-outline-primary {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+#withdrawal .btn-outline-primary:hover {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+}
+
+/* Table Styles */
 #withdrawal .table {
-    margin-bottom: 0;
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
     color: var(--text);
-    background-color: var(--card-bg);
 }
 
 #withdrawal .table thead th {
-    background-color: var(--primary);
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: white;
     border: none;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 1rem;
 }
 
-#withdrawal .table tbody tr td {
-    transition: all 0.2s;
-    background: var(--card-bg);
-    color: var(--table-text);
-    border-color: var(--border-color);
+#withdrawal .table tbody tr {
+    transition: all 0.3s ease;
 }
 
 #withdrawal .table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
-#withdrawal .form-control,
-#withdrawal .form-select {
-    border-radius: 8px;
-    padding: 10px 15px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-    background: var(--card-bg);
-    color: var(--text);
-}
-
-#withdrawal .btn {
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-#withdrawal .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: white;
-}
-
-#withdrawal .btn-primary:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
-
-#withdrawal .btn-outline-danger {
-    border-color: #dc3545;
-    color: #dc3545;
-}
-
-#withdrawal .btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: white;
-}
-
+/* Badges */
 #withdrawal .badge {
-    padding: 5px 10px;
-    font-weight: 500;
+    padding: 0.5em 1em;
+    font-weight: 600;
     border-radius: 20px;
 }
 
 #withdrawal .bg-primary {
-    background-color: var(--primary) !important;
-    color: white;
+    background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
 }
 
-#withdrawal .bg-success {
-    background-color: #28a745 !important;
+/* Animations */
+#withdrawal .slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
 }
 
-#withdrawal .list-group-item {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border-color: var(--border-color);
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#withdrawal .pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #withdrawal {
+        padding: 1rem;
+    }
+
+    #withdrawal .card-header {
+        padding: 0.75rem 1rem;
+    }
 }
 
 /* --- WITHDRAWAL TAB (#withdrawal) ENDS --- */

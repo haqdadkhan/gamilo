@@ -760,58 +760,69 @@
         </div>
         <!-- DEPOSIT TAB ENDS-->
 
-        <!-- Withdrawal Tab -->
+        <!-- WITHDRAWAL TAB STARTS -->
         <div id="withdrawal" class="tab-content">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-wallet me-2"></i> Withdraw Funds</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-wallet me-2"></i> Withdraw Funds</h6>
                         </div>
                         <div class="card-body">
-                            <div class="alert alert-info">
+                            <div class="alert alert-info neo-alert shimmer">
                                 <i class="fas fa-info-circle me-2"></i> Minimum withdrawal: Rs 300 | Maximum withdrawal:
                                 Rs 50,000 per day
                             </div>
 
-                            <div class="row mb-4">
+                            <div class="row mb-4 g-4">
                                 <div class="col-md-6">
-                                    <div class="card h-100">
+                                    <div class="card h-100 balance-card hover-glow">
                                         <div class="card-header">
                                             <h6>Available Balance</h6>
                                         </div>
                                         <div class="card-body text-center">
-                                            <h3 class="text-primary">Rs 0.00</h3>
-                                            <p class="text-white">Withdrawable amount</p>
+                                            <div class="balance-display">
+                                                <h3 class="text-gradient-primary">Rs 0.00</h3>
+                                                <p class="text-muted">Withdrawable amount</p>
+                                                <div class="balance-wave"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="card h-100">
+                                    <div class="card h-100 withdraw-form hover-float">
                                         <div class="card-header">
                                             <h6>Withdrawal Method</h6>
                                         </div>
                                         <div class="card-body">
-                                            <select class="form-select mb-3">
-                                                <option selected>Select method</option>
-                                                <option>Bank Transfer</option>
-                                                <option>E-Wallet</option>
-                                            </select>
-                                            <input type="number" class="form-control mb-3" placeholder="Enter amount"
-                                                min="300" max="50000">
-                                            <button class="btn btn-primary w-100">Request Withdrawal</button>
+                                            <div class="mb-3">
+                                                <select class="form-select neo-select">
+                                                    <option selected>Select method</option>
+                                                    <option>Bank Transfer</option>
+                                                    <option>E-Wallet</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="input-group neo-input">
+                                                    <span class="input-group-text">Rs</span>
+                                                    <input type="number" class="form-control" placeholder="Enter amount"
+                                                        min="300" max="50000">
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary w-100 btn-elevate">Request
+                                                Withdrawal</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6><i class="fas fa-history me-2"></i> Withdrawal History</h6>
+                            <div class="card neo-card">
+                                <div class="card-header neo-header">
+                                    <h6 class="m-0"><i class="fas fa-history me-2"></i> Withdrawal History</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table table-hover neo-table">
                                             <thead>
                                                 <tr>
                                                     <th>Date</th>
@@ -822,26 +833,32 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <tr class="slide-in">
                                                     <td>2025-06-05</td>
-                                                    <td>Rs 3,000.00</td>
-                                                    <td>Bank Transfer</td>
-                                                    <td><span class="badge bg-success">Completed</span></td>
-                                                    <td>WTH78901234</td>
+                                                    <td><span class="amount-highlight">Rs 3,000.00</span></td>
+                                                    <td><span class="method-tag bank">Bank Transfer</span></td>
+                                                    <td><span
+                                                            class="badge bg-success rounded-pill pulse-slow">Completed</span>
+                                                    </td>
+                                                    <td><code class="ref-code">WTH78901234</code></td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="slide-in">
                                                     <td>2025-05-20</td>
-                                                    <td>Rs 2,500.00</td>
-                                                    <td>E-Wallet</td>
-                                                    <td><span class="badge bg-success">Completed</span></td>
-                                                    <td>WTH56789012</td>
+                                                    <td><span class="amount-highlight">Rs 2,500.00</span></td>
+                                                    <td><span class="method-tag ewallet">E-Wallet</span></td>
+                                                    <td><span
+                                                            class="badge bg-success rounded-pill pulse-slow">Completed</span>
+                                                    </td>
+                                                    <td><code class="ref-code">WTH56789012</code></td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="slide-in">
                                                     <td>2025-05-08</td>
-                                                    <td>Rs 1,800.00</td>
-                                                    <td>Bank Transfer</td>
-                                                    <td><span class="badge bg-success">Completed</span></td>
-                                                    <td>WTH34567890</td>
+                                                    <td><span class="amount-highlight">Rs 1,800.00</span></td>
+                                                    <td><span class="method-tag bank">Bank Transfer</span></td>
+                                                    <td><span
+                                                            class="badge bg-success rounded-pill pulse-slow">Completed</span>
+                                                    </td>
+                                                    <td><code class="ref-code">WTH34567890</code></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -853,77 +870,96 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-credit-card me-2"></i> Withdrawal Accounts</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-credit-card me-2"></i> Withdrawal Accounts</h6>
                         </div>
                         <div class="card-body">
                             <div class="mb-4">
-                                <h6 class="mb-3">Bank Accounts</h6>
-                                <div class="card mb-3">
+                                <h6 class="mb-3 accent-text"><i class="fas fa-university me-2"></i>Bank Accounts</h6>
+                                <div class="card account-card hover-grow">
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h6>HBL Bank</h6>
-                                                <p class="mb-0">**** **** **** 1234</p>
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="bank-icon me-2">
+                                                        <i class="fas fa-landmark"></i>
+                                                    </div>
+                                                    <h6 class="m-0">HBL Bank</h6>
+                                                </div>
+                                                <p class="mb-0 text-muted">**** **** **** 1234</p>
                                             </div>
-                                            <button class="btn btn-sm btn-outline-danger">Remove</button>
+                                            <button class="btn btn-sm btn-outline-danger btn-icon">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-primary w-100">Add Bank Account</button>
+                                <button class="btn btn-outline-primary w-100 mt-3 hover-grow">
+                                    <i class="fas fa-plus-circle me-2"></i>Add Bank Account
+                                </button>
                             </div>
 
                             <div>
-                                <h6 class="mb-3">E-Wallets</h6>
-                                <div class="alert alert-warning">
+                                <h6 class="mb-3 accent-text"><i class="fas fa-mobile-alt me-2"></i>E-Wallets</h6>
+                                <div class="alert alert-warning neo-alert">
                                     <i class="fas fa-exclamation-circle me-2"></i> No e-wallets linked
                                 </div>
-                                <button class="btn btn-outline-primary w-100">Add E-Wallet</button>
+                                <button class="btn btn-outline-primary w-100 hover-grow">
+                                    <i class="fas fa-plus-circle me-2"></i>Add E-Wallet
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-info-circle me-2"></i> Withdrawal Info</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-info-circle me-2"></i> Withdrawal Info</h6>
                         </div>
                         <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Processing Time
-                                    <span class="badge bg-primary">24-48 hours</span>
+                            <ul class="list-group list-group-flush info-list">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                    <span><i class="fas fa-clock me-2"></i>Processing Time</span>
+                                    <span class="badge bg-primary rounded-pill">24-48 hours</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Fees
-                                    <span class="badge bg-primary">2% (min Rs 10)</span>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                    <span><i class="fas fa-percentage me-2"></i>Fees</span>
+                                    <span class="badge bg-primary rounded-pill">2% (min Rs 10)</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Daily Limit
-                                    <span class="badge bg-primary">Rs 50,000</span>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                    <span><i class="fas fa-calendar-day me-2"></i>Daily Limit</span>
+                                    <span class="badge bg-primary rounded-pill">Rs 50,000</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Remaining Today
-                                    <span class="badge bg-success">10/10</span>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                    <span><i class="fas fa-check-circle me-2"></i>Remaining Today</span>
+                                    <span class="badge bg-success rounded-pill pulse-slow">10/10</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h6><i class="fas fa-history me-2"></i> Recent Withdrawal</h6>
+                    <div class="card neo-card">
+                        <div class="card-header neo-header">
+                            <h6 class="m-0"><i class="fas fa-history me-2"></i> Recent Withdrawal</h6>
                         </div>
                         <div class="card-body text-center">
-                            <div class="alert alert-secondary">
-                                <i class="fas fa-info-circle me-2"></i> No withdrawal requests
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <p class="text-muted">No withdrawal requests</p>
+                                <button class="btn btn-outline-primary hover-grow">View All</button>
                             </div>
-                            <button class="btn btn-outline-primary">View All</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- WITHDRAWAL TAB ENDS -->
 
         <!-- Betting Record Tab -->
         <div id="betting-record" class="tab-content">
