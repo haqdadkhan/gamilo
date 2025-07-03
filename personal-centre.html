@@ -961,25 +961,25 @@
         </div>
         <!-- WITHDRAWAL TAB ENDS -->
 
-        <!-- Betting Record Tab -->
+        <!-- BETTING RECORD TAB STARTS -->
         <div id="betting-record" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <h6><i class="fas fa-clipboard-list me-2"></i> Betting Records</h6>
+            <div class="card neo-card">
+                <div class="card-header neo-header">
+                    <h6 class="m-0"><i class="fas fa-clipboard-list me-2"></i> Betting Records</h6>
                 </div>
                 <div class="card-body">
-                    <div class="row mb-4">
+                    <div class="row mb-4 g-3">
                         <div class="col-md-3">
                             <label class="form-label">From Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control neo-input">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">To Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control neo-input">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Game Type</label>
-                            <select class="form-select">
+                            <select class="form-select neo-select">
                                 <option selected>All</option>
                                 <option>Slot</option>
                                 <option>Live</option>
@@ -990,7 +990,7 @@
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Time Range</label>
-                            <select class="form-select">
+                            <select class="form-select neo-select">
                                 <option selected>Today</option>
                                 <option>Yesterday</option>
                                 <option>7-Days</option>
@@ -999,10 +999,10 @@
                         </div>
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-4 g-3">
                         <div class="col-md-3">
                             <label class="form-label">Vendor</label>
-                            <select class="form-select">
+                            <select class="form-select neo-select">
                                 <option selected>All</option>
                                 <option>Vendor A</option>
                                 <option>Vendor B</option>
@@ -1011,14 +1011,16 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Search</label>
-                            <div class="input-group">
+                            <div class="input-group neo-input-group">
                                 <input type="text" class="form-control" placeholder="Search bets...">
-                                <button class="btn btn-primary">Search</button>
+                                <button class="btn btn-primary btn-search">
+                                    <i class="fas fa-search me-1"></i> Search
+                                </button>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Status</label>
-                            <select class="form-select">
+                            <select class="form-select neo-select">
                                 <option selected>All</option>
                                 <option>Won</option>
                                 <option>Lost</option>
@@ -1028,7 +1030,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-hover neo-table">
                             <thead>
                                 <tr>
                                     <th>Bet Time</th>
@@ -1042,70 +1044,70 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="slide-in-row">
                                     <td>2025-06-14 14:23:45</td>
                                     <td>Rs 500.00</td>
                                     <td>Rs 500.00</td>
                                     <td>Rs 0.00</td>
-                                    <td class="text-danger">-Rs 500.00</td>
+                                    <td class="text-danger loss-pulse">-Rs 500.00</td>
                                     <td>Football - Premier League</td>
-                                    <td>BT78901234</td>
-                                    <td><span class="badge bg-danger">Lost</span></td>
+                                    <td><code>BT78901234</code></td>
+                                    <td><span class="badge bg-danger rounded-pill">Lost</span></td>
                                 </tr>
-                                <tr>
+                                <tr class="slide-in-row">
                                     <td>2025-06-13 21:12:33</td>
                                     <td>Rs 1,000.00</td>
                                     <td>Rs 1,000.00</td>
                                     <td>Rs 2,000.00</td>
-                                    <td class="text-success">+Rs 1,000.00</td>
+                                    <td class="text-success win-glow">+Rs 1,000.00</td>
                                     <td>Roulette - Live Casino</td>
-                                    <td>BT56789012</td>
-                                    <td><span class="badge bg-success">Won</span></td>
+                                    <td><code>BT56789012</code></td>
+                                    <td><span class="badge bg-success rounded-pill">Won</span></td>
                                 </tr>
-                                <tr>
+                                <tr class="slide-in-row">
                                     <td>2025-06-12 18:45:21</td>
                                     <td>Rs 200.00</td>
                                     <td>Rs 200.00</td>
                                     <td>Rs 800.00</td>
-                                    <td class="text-success">+Rs 600.00</td>
+                                    <td class="text-success win-glow">+Rs 600.00</td>
                                     <td>Slot - Book of Ra</td>
-                                    <td>BT34567890</td>
-                                    <td><span class="badge bg-success">Won</span></td>
+                                    <td><code>BT34567890</code></td>
+                                    <td><span class="badge bg-success rounded-pill">Won</span></td>
                                 </tr>
-                                <tr>
+                                <tr class="slide-in-row">
                                     <td>2025-06-11 16:30:15</td>
                                     <td>Rs 750.00</td>
                                     <td>Rs 750.00</td>
                                     <td>Rs 1,500.00</td>
-                                    <td class="text-success">+Rs 750.00</td>
+                                    <td class="text-success win-glow">+Rs 750.00</td>
                                     <td>Tennis - Wimbledon</td>
-                                    <td>BT12345678</td>
-                                    <td><span class="badge bg-success">Won</span></td>
+                                    <td><code>BT12345678</code></td>
+                                    <td><span class="badge bg-success rounded-pill">Won</span></td>
                                 </tr>
-                                <tr>
+                                <tr class="slide-in-row">
                                     <td>2025-06-10 12:15:09</td>
                                     <td>Rs 300.00</td>
                                     <td>Rs 300.00</td>
                                     <td>Rs 0.00</td>
-                                    <td class="text-danger">-Rs 300.00</td>
+                                    <td class="text-danger loss-pulse">-Rs 300.00</td>
                                     <td>Blackjack - Live Casino</td>
-                                    <td>BT90123456</td>
-                                    <td><span class="badge bg-danger">Lost</span></td>
+                                    <td><code>BT90123456</code></td>
+                                    <td><span class="badge bg-danger rounded-pill">Lost</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="row mt-4">
+                    <div class="row mt-4 g-3">
                         <div class="col-md-6">
-                            <div class="alert alert-secondary">
+                            <div class="alert alert-secondary summary-card">
                                 <strong>Total Bets:</strong> 5 | <strong>Total Amount:</strong> Rs 2,750.00
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="alert alert-secondary text-end">
-                                <strong>Wins:</strong> 3 | <strong>Losses:</strong> 2 | <strong>Net:</strong> <span
-                                    class="text-success">+Rs 1,550.00</span>
+                            <div class="alert alert-secondary summary-card text-end">
+                                <strong>Wins:</strong> 3 | <strong>Losses:</strong> 2 | <strong>Net:</strong>
+                                <span class="net-profit win-glow">+Rs 1,550.00</span>
                             </div>
                         </div>
                     </div>
@@ -1113,19 +1115,24 @@
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                <a class="page-link" href="#" tabindex="-1">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
                             </li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
+        <!-- BETTING RECORD TAB ENDS -->
 
         <!-- Account Record Tab -->
         <div id="account-record" class="tab-content">
