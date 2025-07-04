@@ -736,13 +736,32 @@ body {
 
 /* --- DEPOSIT TAB (#deposit) STARTS --- */
 #deposit {
+    --bg: #ffffff;
+    --card-bg: #f0f0f0;
+    --text: #0f0f0f;
+    --text-muted: #555555;
+    --primary: #ab2e00;
+    --primary-light: #d58a00;
+    --accent: #d58a00;
+    --highlight: #ff8c00;
+    --btn: #ab2e00;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --hover-bg: rgba(255, 69, 0, 0.05);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --table-text: #0f0f0f;
+    --table-hover: rgba(0, 0, 0, 0.03);
+    --success: #00b894;
+    --danger: #d63031;
+    --warning: #fdcb6e;
+    --info: #0984e3;
+
     background-color: var(--bg);
     padding: 2rem;
     border-radius: 16px;
 }
 
 /* Card Styles */
-.neo-card {
+#deposit .neo-card {
     background-color: var(--card-bg);
     border: none;
     border-radius: 12px;
@@ -753,12 +772,12 @@ body {
     position: relative;
 }
 
-.neo-card:hover {
+#deposit .neo-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.neo-header {
+#deposit .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: white;
     border-bottom: none;
@@ -767,7 +786,7 @@ body {
     overflow: hidden;
 }
 
-.neo-header::after {
+#deposit .neo-header::after {
     content: '';
     position: absolute;
     top: 0;
@@ -789,20 +808,20 @@ body {
 }
 
 /* Payment Method Cards */
-.payment-method {
+#deposit .payment-method {
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: none;
 }
 
-.payment-method .method-header {
+#deposit .payment-method .method-header {
     position: relative;
     padding: 1rem 1.5rem;
     border-bottom: none;
 }
 
-.method-header .header-accent {
+#deposit .method-header .header-accent {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -811,11 +830,11 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
 }
 
-.payment-method .card-body {
+#deposit .payment-method .card-body {
     padding: 1.5rem;
 }
 
-.feature-list li {
+#deposit .feature-list li {
     padding: 0.5rem 0;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -823,13 +842,13 @@ body {
     align-items: center;
 }
 
-.feature-list li:hover {
+#deposit .feature-list li:hover {
     transform: translateX(5px);
     border-bottom-color: var(--primary);
 }
 
 /* Buttons */
-.btn {
+#deposit .btn {
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
@@ -839,40 +858,40 @@ body {
     overflow: hidden;
 }
 
-.btn-primary {
-    background-color: var(--primary);
+#deposit .btn-primary {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
-.btn-primary:hover {
-    background-color: var(--accent);
+#deposit .btn-primary:hover {
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
 }
 
-.btn-success {
-    background-color: var(--success);
+#deposit .btn-success {
+    background: linear-gradient(90deg, var(--success), #00d4a4);
     box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
 }
 
-.btn-success:hover {
-    background-color: #00d4a4;
+#deposit .btn-success:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 184, 148, 0.4);
 }
 
-.btn-outline-primary {
+#deposit .btn-outline-primary {
     border: 1px solid var(--primary);
     color: var(--primary);
     background: transparent;
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--primary);
+#deposit .btn-outline-primary:hover {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: white;
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
-.btn-pulse:hover {
+#deposit .btn-pulse:hover {
     animation: pulse 1.5s infinite;
 }
 
@@ -890,41 +909,41 @@ body {
     }
 }
 
-.btn-elevate {
+#deposit .btn-elevate {
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
     transition: all 0.3s ease;
 }
 
-.btn-elevate:hover {
+#deposit .btn-elevate:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
 }
 
 /* Animations */
-.hover-float {
+#deposit .hover-float {
     transition: all 0.3s ease;
 }
 
-.hover-float:hover {
+#deposit .hover-float:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.slide-in {
+#deposit .slide-in {
     opacity: 0;
     transform: translateX(-20px);
     animation: slideIn 0.5s forwards;
 }
 
-.slide-in:nth-child(1) {
+#deposit .slide-in:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.slide-in:nth-child(2) {
+#deposit .slide-in:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.slide-in:nth-child(3) {
+#deposit .slide-in:nth-child(3) {
     animation-delay: 0.3s;
 }
 
@@ -935,7 +954,7 @@ body {
     }
 }
 
-.pulse-slow {
+#deposit .pulse-slow {
     animation: pulse-slow 2s infinite;
 }
 
@@ -953,12 +972,12 @@ body {
     }
 }
 
-.shimmer {
+#deposit .shimmer {
     position: relative;
     overflow: hidden;
 }
 
-.shimmer::after {
+#deposit .shimmer::after {
     content: '';
     position: absolute;
     top: 0;
@@ -979,7 +998,7 @@ body {
 }
 
 /* Table Styles */
-.neo-table {
+#deposit .neo-table {
     --bs-table-bg: transparent;
     --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
     --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
@@ -988,8 +1007,8 @@ body {
     overflow: hidden;
 }
 
-.neo-table thead th {
-    background-color: var(--primary);
+#deposit .neo-table thead th {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: white;
     border: none;
     font-weight: 600;
@@ -999,46 +1018,47 @@ body {
     font-size: 0.8rem;
 }
 
-.neo-table tbody tr {
+#deposit .neo-table tbody tr {
     transition: all 0.3s ease;
 }
 
-.neo-table tbody tr:hover {
+#deposit .neo-table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
 /* Badges & Tags */
-.badge {
+#deposit .badge {
     padding: 0.5em 1em;
     font-weight: 600;
     letter-spacing: 0.5px;
+    border-radius: 20px;
 }
 
-.amount-highlight {
-    font-weight: 600;
+#deposit .amount-highlight {
+    font-weight: 700;
     color: var(--primary);
 }
 
-.method-tag {
+#deposit .method-tag {
     padding: 0.25em 0.75em;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-.method-tag.bank {
+#deposit .method-tag.bank {
     background: rgba(171, 46, 0, 0.1);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
 
-.method-tag.ewallet {
+#deposit .method-tag.ewallet {
     background: rgba(0, 184, 148, 0.1);
     color: var(--success);
     border: 1px solid var(--success);
 }
 
-.ref-code {
+#deposit .ref-code {
     color: var(--text-muted);
     font-family: monospace;
     background: rgba(0, 0, 0, 0.05);
@@ -1047,8 +1067,8 @@ body {
 }
 
 /* Form Elements */
-.neo-select,
-.neo-input .form-control {
+#deposit .neo-select,
+#deposit .neo-input .form-control {
     background-color: white;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -1057,44 +1077,44 @@ body {
     box-shadow: var(--shadow);
 }
 
-.neo-select:focus,
-.neo-input .form-control:focus {
+#deposit .neo-select:focus,
+#deposit .neo-input .form-control:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
 }
 
-.neo-input .input-group-text {
+#deposit .neo-input .input-group-text {
     background-color: var(--primary);
     color: white;
     border: none;
 }
 
 /* Amount Buttons */
-.amount-grid {
+#deposit .amount-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
 
-.amount-btn {
+#deposit .amount-btn {
     padding: 0.5rem;
     border-radius: 8px;
     transition: all 0.3s ease;
     font-weight: 600;
 }
 
-.amount-btn:hover {
+#deposit .amount-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
 
 /* Bonus List */
-.bonus-list {
+#deposit .bonus-list {
     border-radius: 8px;
     overflow: hidden;
 }
 
-.bonus-item {
+#deposit .bonus-item {
     background-color: white;
     border: 1px solid var(--border-color);
     margin-bottom: 0.5rem;
@@ -1102,12 +1122,12 @@ body {
     transition: all 0.3s ease;
 }
 
-.bonus-item:hover {
+#deposit .bonus-item:hover {
     transform: translateX(5px);
     background-color: var(--hover-bg);
 }
 
-.accent-text {
+#deposit .accent-text {
     color: var(--accent);
     font-weight: 700;
     display: flex;
@@ -1116,13 +1136,13 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    .amount-grid {
+    #deposit .amount-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 576px) {
-    .amount-grid {
+    #deposit .amount-grid {
         grid-template-columns: 1fr;
     }
 }
