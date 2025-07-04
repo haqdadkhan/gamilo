@@ -1249,6 +1249,12 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
 }
 
+#withdrawal .neo-input .input-group-text {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
 /* Buttons */
 #withdrawal .btn {
     border-radius: 8px;
@@ -1436,11 +1442,21 @@ body {
 }
 
 #betting-record .btn-search {
+    border: none;
     border-radius: 0 8px 8px 0;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
 }
+
+#betting-record .btn-search:hover {
+    transform: translateX(-2px);
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+}
+
+/* #messages .btn-primary  */
 
 /* Table Styles */
 #betting-record .neo-table {
