@@ -718,7 +718,7 @@
     .mobile-modal,
     .modal-dialog,
     .modal-content {
-        display: none !important;
+        /* display: none !important; */
     }
 }
 
@@ -941,7 +941,7 @@
 
 @media (min-width: 768px) {
     .ag-cards-container .agSwiper {
-        padding-right: 70px;
+        padding-right: 90px;
     }
 }
 
@@ -1064,7 +1064,7 @@
 
 @media (min-width: 768px) {
     .pg-cards-container .pgSwiper {
-        padding-right: 70px;
+        padding-right: 90px;
     }
 }
 

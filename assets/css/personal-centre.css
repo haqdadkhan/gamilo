@@ -1,5 +1,4 @@
 /* --- ROOT VARIABLES + DARK MODE STARTS --- */
-/* -- global variables -- */
 :root {
     --bg: #ffffff;
     --card-bg: #f0f0f0;
@@ -21,7 +20,7 @@
     --info: #0984e3;
 }
 
-/* eaSidebar variables */
+/* eaSidebar VARIABLES */
 #eaSidebar :root {
     --primary: #6c5ce7;
     --card-bg: #f8f9fa;
@@ -48,7 +47,6 @@
 }
 
 /* --- ROOT VARIABLES + DARK MODE ENDS --- */
-
 
 /* --- BODY STYLES STARTS --- */
 body {
@@ -735,32 +733,6 @@ body {
 
 
 /* --- DEPOSIT TAB (#deposit) STARTS --- */
-#deposit {
-    --bg: #ffffff;
-    --card-bg: #f0f0f0;
-    --text: #0f0f0f;
-    --text-muted: #555555;
-    --primary: #ab2e00;
-    --primary-light: #d58a00;
-    --accent: #d58a00;
-    --highlight: #ff8c00;
-    --btn: #ab2e00;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --hover-bg: rgba(255, 69, 0, 0.05);
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --table-text: #0f0f0f;
-    --table-hover: rgba(0, 0, 0, 0.03);
-    --success: #00b894;
-    --danger: #d63031;
-    --warning: #fdcb6e;
-    --info: #0984e3;
-
-    background-color: var(--bg);
-    padding: 2rem;
-    border-radius: 16px;
-}
-
-/* Card Styles */
 #deposit .neo-card {
     background-color: var(--card-bg);
     border: none;
@@ -4010,10 +3982,11 @@ body {
 /* --- BOTTOM NAVIGATION (bottom-nav) ENDS --- */
 
 
+
 /* --- GLOBAL STYLES STARTS --- */
 .main-content {
     margin-left: 280px;
-    padding: 30px;
+    padding: 20px;
     transition: all 0.3s;
     background: var(--bg);
 }
@@ -4032,7 +4005,7 @@ body {
 
 @media (max-width: 576px) {
     .main-content {
-        padding: 15px;
+        padding: 8px;
     }
 }
 
