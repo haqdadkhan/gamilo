@@ -1035,6 +1035,19 @@
 
 /* --- ALL GAMES CSS ENDS --- */
 /* --- POPULAR GAMES CSS STARTS --- */
+.sectionTitle div div i {
+    font-size: 28px;
+}
+
+.sectionTitle div div h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    line-height: 30px;
+    margin: 0;
+}
+
+/* section nav */
 .sectionTitle .sectionNav {
     display: flex;
     justify-content: center;
@@ -1062,18 +1075,6 @@
     border-radius: 0 20px 20px 0;
 }
 
-/* title */
-.sectionTitle div div i {
-    font-size: 28px;
-}
-
-.sectionTitle div div h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    line-height: 30px;
-    margin: 0;
-}
 
 .pg-cards-container .pgSwiper .swiper-slide {
     width: max-content;

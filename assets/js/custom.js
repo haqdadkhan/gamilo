@@ -82,23 +82,6 @@ function applySwiperBlurEffect(swiper, containerSelector) {
     updateBlur();
 }
 
-// --- FADE EFFECT - DYNAMIC CAROUSEL ---
-// function setupGameGridSwiper(selector) {
-//     const swiper = new Swiper(selector, {
-//         grabCursor: true,
-//         slidesPerView: 'auto',
-//         spaceBetween: 8,
-//         freeMode: true,
-//         watchOverflow: true,
-//         navigation: {
-//             nextEl: '.mySwiperButtonNext',
-//             prevEl: '.mySwiperButtonPrev',
-//         },
-//     });
-//     applySwiperBlurEffect(swiper, selector);
-//     return swiper;
-// }
-
 // --- ALL GAMES CAROUSEL ---
 const agSwiper = new Swiper(".agSwiper", {
     grabCursor: true,
@@ -151,6 +134,10 @@ const totSwiper = new Swiper(".totSwiper", {
         1200: {
             slidesPerView: 4
         }
+    },
+    navigation: {
+        nextEl: '.cusNextForTOT',
+        prevEl: '.cusPrevForTOT',
     },
 });
 // input for fade
