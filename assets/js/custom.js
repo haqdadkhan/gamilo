@@ -176,6 +176,10 @@ const pfSwiper = new Swiper('.pfSwiper', {
             slidesPerView: 4,
         },
     },
+    navigation: {
+        nextEl: '.cusNextForPF',
+        prevEl: '.cusPrevForPF',
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
