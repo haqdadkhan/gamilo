@@ -75,26 +75,45 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.desktop-header .header-logo i {
-    color: #0dcaf0;
-}
-
-.desktop-header .header-logo h4 {
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-.desktop-header .home-btn {
-    font-size: 1.05rem;
-    color: white;
+.desktop-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: transform 0.2s;
 }
 
-.desktop-header .home-btn:hover {
-    color: #0dcaf0;
+.desktop-header .logo:hover {
+    transform: scale(1.05);
 }
 
+.desktop-header .logo-img {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 201, 255, 0.5);
+}
+
+.desktop-header .logo-img i {
+    font-size: 24px;
+    color: #0f0c29;
+}
+
+.desktop-header .logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* RHS Dropdown Css  */
 .desktop-header .userLogo {
     border: none;
     background: none;
