@@ -180,10 +180,6 @@ const pfSwiper = new Swiper('.pfSwiper', {
         nextEl: '.cusNextForPF',
         prevEl: '.cusPrevForPF',
     },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    }
 });
 
 // --- THE FISHING ROD CAROUSEL ---
