@@ -591,27 +591,35 @@
     top: -60px;
     right: 0;
     display: flex;
-    gap: 10px;
+    gap: 1px;
 }
 
-.banner__feature .owl-nav button {
-    background: linear-gradient(135deg, #4e5a9d, #3a447c) !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff !important;
-    font-size: 20px !important;
+.banner__feature .owl-nav button:first-child {
+    color: #fff;
+    font-size: 14px !important;
+    padding: 6px 16px !important;
+    margin: 0;
+    background-color: #2c2c5c;
     transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 20px 0 0 20px;
+}
+
+.banner__feature .owl-nav button:last-child {
+    color: #fff;
+    font-size: 14px !important;
+    padding: 6px 16px !important;
+    margin: 0;
+    background-color: #2c2c5c;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
 }
 
 .banner__feature .owl-nav button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #5d6ab8, #4855a1) !important;
+    background-color: #3a3a70 !important;
+    border-color: #5757a6 !important;
+    box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
 }
 
 .banner__feature .owl-dots {
@@ -624,7 +632,7 @@
     height: 12px;
     border-radius: 50%;
     background: #3a447c !important;
-    margin: 0 5px;
+    margin: 0;
     transition: all 0.3s ease;
 }
 
@@ -687,9 +695,29 @@
     .banner__feature .header h1 {
         font-size: 2rem;
     }
+.banner__feature .owl-nav {
+        top: -50px;
+    }
+    .banner__feature .owl-nav button:first-child {
+        font-size: 12px !important;
+        padding: 4px 12px !important;
+    }
 
-    .banner__feature .owl-nav {
-        top: -55px;
+    .banner__feature .owl-nav button:last-child {
+        font-size: 12px !important;
+        padding: 4px 12px !important;
+    }
+}
+@media (max-width: 576px) {
+
+    .banner__feature .owl-nav button:first-child {
+        font-size: 10px !important;
+        padding: 4px 12px !important;
+    }
+
+    .banner__feature .owl-nav button:last-child {
+        font-size: 10px !important;
+        padding: 4px 12px !important;
     }
 }
 
@@ -1063,7 +1091,12 @@
     background-color: #2c2c5c;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 1px solid transparent;
+}
+
+.sectionTitle .sectionNav div.swiper-button-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .sectionTitle .sectionNav div:hover {
@@ -1117,11 +1150,45 @@
     }
 
     .sectionTitle div div i {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .sectionTitle div div h2 {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sectionTitle .sectionNav div {
+        padding: 4px 12px;
+        font-size: 10px;
+    }
+
+    .sectionTitle .sectionNav div:first-child {
+        padding: 4px 12px;
+        font-size: 10px;
+    }
+
+    .sectionTitle .sectionNav div:first-child i {
+        font-size: 10px;
+    }
+
+    .sectionTitle .sectionNav div:last-child {
+        padding: 4px 12px;
+        font-size: 10px;
+    }
+
+    .sectionTitle .sectionNav div:last-child i {
+        font-size: 10px;
+    }
+
+    .sectionTitle div div i {
+        font-size: 20px;
+    }
+
+    .sectionTitle div div h2 {
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 

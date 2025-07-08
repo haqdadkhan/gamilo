@@ -110,7 +110,7 @@ body {
     background: linear-gradient(to right, #00c9ff, #92fe9d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 
 /* RHS Dropdown Css  */
@@ -521,12 +521,15 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
 #my-account .security-status div:first-child {
     align-items: center;
 }
-    #my-account .security-status p{
-        font-size: 14px;
-    }
+
+#my-account .security-status p {
+    font-size: 14px;
+}
+
 #my-account .security-low {
     border-left-color: var(--danger);
 }
@@ -706,10 +709,11 @@ body {
         padding: 12px;
     }
 
-#my-account .table tbody tr td {
-    font-size: 12px;
-    padding: 8px 4px;
-}
+    #my-account .table tbody tr td {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+
     #my-account .badge {
         font-size: 10px;
         padding: 4px 8px;

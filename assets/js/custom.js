@@ -135,10 +135,6 @@ const totSwiper = new Swiper(".totSwiper", {
             slidesPerView: 4
         }
     },
-    navigation: {
-        nextEl: '.cusNextForTOT',
-        prevEl: '.cusPrevForTOT',
-    },
 });
 // input for fade
 applySwiperBlurEffect(totSwiper, '.totSwiper');
@@ -266,7 +262,7 @@ $(document).ready(function () {
         loop: true,
         margin: 20,
         responsiveClass: true,
-        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+        navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
         dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
@@ -277,11 +273,11 @@ $(document).ready(function () {
         responsive: {
             0: {
                 items: 1,
-                nav: false,
+                nav: true,
             },
             576: {
                 items: 2,
-                nav: false,
+                nav: true,
             },
             769: {
                 items: 3,
