@@ -70,7 +70,7 @@ $(document).ready(function (e) {
     });
 });
 
-// === FADE EFFECT - FUNCTION ===
+// --- FADE EFFECT - FUNCTION ---
 function applySwiperBlurEffect(swiper, containerSelector) {
     const container = document.querySelector(containerSelector);
     const updateBlur = () => {
@@ -81,26 +81,49 @@ function applySwiperBlurEffect(swiper, containerSelector) {
     swiper.on('touchMove', updateBlur);
     updateBlur();
 }
-// === FADE EFFECT - DYNAMIC CAROUSEL ===
-function setupGameGridSwiper(selector) {
-    const swiper = new Swiper(selector, {
-        grabCursor: true,
-        slidesPerView: 'auto',
-        spaceBetween: 8,
-        freeMode: true,
-        watchOverflow: true
-    });
-    applySwiperBlurEffect(swiper, selector);
-    return swiper;
-}
+
+// --- FADE EFFECT - DYNAMIC CAROUSEL ---
+// function setupGameGridSwiper(selector) {
+//     const swiper = new Swiper(selector, {
+//         grabCursor: true,
+//         slidesPerView: 'auto',
+//         spaceBetween: 8,
+//         freeMode: true,
+//         watchOverflow: true,
+//         navigation: {
+//             nextEl: '.mySwiperButtonNext',
+//             prevEl: '.mySwiperButtonPrev',
+//         },
+//     });
+//     applySwiperBlurEffect(swiper, selector);
+//     return swiper;
+// }
 
 // --- ALL GAMES CAROUSEL ---
+const agSwiper = new Swiper(".agSwiper", {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    freeMode: true,
+    watchOverflow: true,
+});
 // input for fade
-const agSwiper = setupGameGridSwiper('.agSwiper');
+applySwiperBlurEffect(agSwiper, '.agSwiper');
 
 // --- POPULAR GAMES CAROUSEL ---
+const pgSwiper = new Swiper(".pgSwiper", {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    freeMode: true,
+    watchOverflow: true,
+    navigation: {
+        nextEl: '.cusNextForPG',
+        prevEl: '.cusPrevForPG',
+    },
+});
 // input for fade
-const pgSwiper = setupGameGridSwiper('.pgSwiper');
+applySwiperBlurEffect(pgSwiper, '.pgSwiper');
 
 // --- TOT OF THE WEEK CAROUSEL ---
 const totSwiper = new Swiper(".totSwiper", {

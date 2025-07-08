@@ -1035,11 +1035,39 @@
 
 /* --- ALL GAMES CSS ENDS --- */
 /* --- POPULAR GAMES CSS STARTS --- */
-.sectionTitle div i {
+.sectionTitle .sectionNav {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    align-items: center;
+    color: white;
+}
+.sectionTitle .sectionNav div {
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 0.5px solid transparent;
+    background-color: #24244e;
+}
+.sectionTitle .sectionNav div i {
+    font-size: 14px;
+}
+.sectionTitle .sectionNav div:first-child {
+    padding: 6px 16px;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+}
+.sectionTitle .sectionNav div:last-child {
+    padding: 6px 16px;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+}
+
+/* title */
+.sectionTitle div div i {
     font-size: 28px;
 }
 
-.sectionTitle div h2 {
+.sectionTitle div div h2 {
     font-size: 24px;
     font-weight: 600;
     color: white;
@@ -1053,11 +1081,23 @@
 }
 
 @media (max-width: 769px) {
-    .sectionTitle div i {
+    .sectionTitle .sectionNav div {
+        padding: 4px 12px;
+    font-size: 12px;
+    }
+    .sectionTitle .sectionNav div:first-child {
+    padding: 4px 12px;
+    font-size: 12px;
+    }
+    .sectionTitle .sectionNav div:last-child {
+    padding: 4px 12px;
+    font-size: 12px;
+    }
+    .sectionTitle div div i {
         font-size: 28px;
     }
 
-    .sectionTitle div h2 {
+    .sectionTitle div div h2 {
         font-size: 20px;
     }
 }
