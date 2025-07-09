@@ -2,6 +2,7 @@
 :root {
     --bg: #ffffff;
     --card-bg: #f0f0f0;
+    --text-white: #ffffff;
     --text: #0f0f0f;
     --text-muted: #555555;
     --primary: #ab2e00;
@@ -13,7 +14,9 @@
     --hover-bg: rgba(255, 69, 0, 0.05);
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     --table-text: #0f0f0f;
+    --mini-text-bg: rgba(0, 0, 0, 0.05);
     --table-hover: rgba(0, 0, 0, 0.03);
+    --input-bg: #fff;
     --success: #00b894;
     --danger: #d63031;
     --warning: #fdcb6e;
@@ -41,9 +44,11 @@
     --btn: #d58a00;
     --border-color: rgba(255, 255, 255, 0.08);
     --hover-bg: rgba(255, 69, 0, 0.08);
+    --input-bg: rgb(255 250 250 / 5%);
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     --table-text: #ffffff;
-    --table-hover: rgba(255, 255, 255, 0.03);
+    --mini-text-bg: rgb(255 250 250 / 5%);
+    --table-hover: rgb(255 250 250 / 5%);
 }
 
 /* --- ROOT VARIABLES + DARK MODE ENDS --- */
@@ -155,7 +160,7 @@ body {
     height: 40px;
     border-radius: 50%;
     background: var(--primary);
-    color: white;
+    color: var(--text-white);
     border: none;
     cursor: pointer;
     display: flex;
@@ -222,7 +227,7 @@ body {
 
 #sidebar .sidebar-menu li a.active {
     background: var(--primary);
-    color: white;
+    color: var(--text-white);
     border-left: 4px solid var(--accent);
 }
 
@@ -234,13 +239,13 @@ body {
     color: var(--accent);
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     #sidebar {
         width: 250px;
     }
-}
+} */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #sidebar {
         width: 100%;
         height: auto;
@@ -293,7 +298,6 @@ body {
 
 /* --- ACCOUNT TAB (#my-account) STARTS --- */
 #my-account .card {
-    border: none;
     border-radius: 16px;
     box-shadow: var(--shadow);
     margin-bottom: 25px;
@@ -367,7 +371,7 @@ body {
     text-align: center;
     padding: 40px 25px;
     background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-radius: 16px 16px 0 0;
     position: relative;
     overflow: hidden;
@@ -463,7 +467,7 @@ body {
 
 #my-account .table thead th {
     background-color: var(--primary);
-    color: white;
+    color: var(--text-white);
     border: none;
     font-size: 16px;
     font-weight: 500;
@@ -632,7 +636,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    color: white;
+    color: var(--text-white);
     border: none;
 }
 
@@ -770,7 +774,7 @@ body {
 /* --- DEPOSIT TAB (#deposit) STARTS --- */
 #deposit .neo-card {
     background-color: var(--card-bg);
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 25px;
@@ -786,7 +790,7 @@ body {
 
 #deposit .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -814,6 +818,11 @@ body {
     }
 }
 
+#deposit .neo-card .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
 /* Payment Method Cards */
 #deposit .payment-method {
     border-radius: 12px;
@@ -838,15 +847,16 @@ body {
 }
 
 #deposit .payment-method .card-body {
-    padding: 1.5rem;
+    padding: 20px;
 }
 
 #deposit .feature-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    border-bottom: 1px dashed var(--border-color);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 #deposit .feature-list li:hover {
@@ -894,8 +904,12 @@ body {
 
 #deposit .btn-outline-primary:hover {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+}
+
+#deposit .btn-pulse {
+    font-size: 16px;
 }
 
 #deposit .btn-pulse:hover {
@@ -979,6 +993,10 @@ body {
     }
 }
 
+#deposit .neo-card .neo-alert {
+    font-size: 14px;
+}
+
 #deposit .shimmer {
     position: relative;
     overflow: hidden;
@@ -1016,21 +1034,32 @@ body {
 
 #deposit .neo-table thead th {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 0.8rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
 }
 
 #deposit .neo-table tbody tr {
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 #deposit .neo-table tbody tr:hover {
     background-color: var(--table-hover);
+}
+
+#deposit .neo-table tbody tr:hover td:first-child {
+    color: var(--table-text);
+}
+
+#deposit .neo-table tbody tr td {
+    padding: 12px 8px;
+    font-size: 14px;
+    align-content: center;
 }
 
 /* Badges & Tags */
@@ -1049,8 +1078,7 @@ body {
 #deposit .method-tag {
     padding: 0.25em 0.75em;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #deposit .method-tag.bank {
@@ -1068,17 +1096,27 @@ body {
 #deposit .ref-code {
     color: var(--text-muted);
     font-family: monospace;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--mini-text-bg);
     padding: 0.2em 0.4em;
     border-radius: 4px;
 }
 
 /* Form Elements */
-#deposit .neo-select,
-#deposit .neo-input .form-control {
-    background-color: white;
+#deposit .neo-select {
+    background-color: var(--input-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#deposit .neo-input .form-control {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-white);
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
@@ -1092,7 +1130,7 @@ body {
 
 #deposit .neo-input .input-group-text {
     background-color: var(--primary);
-    color: white;
+    color: var(--text-white);
     border: none;
 }
 
@@ -1122,16 +1160,17 @@ body {
 }
 
 #deposit .bonus-item {
-    background-color: white;
+    background-color: transparent;
     border: 1px solid var(--border-color);
     margin-bottom: 0.5rem;
+    color: var(--text);
     border-radius: 8px !important;
     transition: all 0.3s ease;
 }
 
 #deposit .bonus-item:hover {
-    transform: translateX(5px);
-    background-color: var(--hover-bg);
+    transform: translateX(3px);
+    background-color: var(--mini-text-bg);
 }
 
 #deposit .accent-text {
@@ -1144,13 +1183,51 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     #deposit .amount-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 769px) {
+    #deposit .btn-pulse {
+        font-size: 14px;
     }
 }
 
 @media (max-width: 576px) {
+    #deposit .payment-method .card-body {
+        padding: 12px;
+    }
+
+    #deposit .neo-header {
+        padding: 15px;
+    }
+
+    #deposit .neo-table thead th {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #deposit .neo-table tbody tr td {
+        font-size: 12px !important;
+        width: max-content;
+    }
+
+    #deposit .card-body {
+        padding: 10px;
+    }
+
+    #deposit .feature-list li {
+        font-size: 12px;
+    }
+
+    #deposit .payment-method .method-header {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 431px) {
     #deposit .amount-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1158,219 +1235,7 @@ body {
 
 
 /* --- WITHDRAWAL TAB (#withdrawal) STARTS --- */
-#withdrawal .card {
-    background-color: var(--card-bg);
-    border: none;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    margin-bottom: 25px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
 
-#withdrawal .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-#withdrawal .card-header {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
-    border-bottom: none;
-    padding: 1rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-    font-weight: 600;
-}
-
-#withdrawal .card-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-    animation: headerShine 3s infinite;
-}
-
-@keyframes headerShine {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Balance Card Specific */
-#withdrawal .balance-card {
-    position: relative;
-    overflow: hidden;
-}
-
-#withdrawal .balance-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0.3;
-    filter: blur(5px);
-    animation: balancePulse 3s infinite;
-}
-
-@keyframes balancePulse {
-
-    0%,
-    100% {
-        opacity: 0.3;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-#withdrawal .balance-card .card-body {
-    position: relative;
-    z-index: 1;
-}
-
-/* Form Elements */
-#withdrawal .form-control,
-#withdrawal .form-select {
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    background-color: white;
-}
-
-#withdrawal .form-control:focus,
-#withdrawal .form-select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
-}
-
-#withdrawal .neo-input .input-group-text {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-}
-
-/* Buttons */
-#withdrawal .btn {
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: none;
-}
-
-#withdrawal .btn-primary {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
-}
-
-#withdrawal .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
-}
-
-#withdrawal .btn-outline-primary {
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    background: transparent;
-}
-
-#withdrawal .btn-outline-primary:hover {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
-}
-
-/* Table Styles */
-#withdrawal .table {
-    --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
-    color: var(--text);
-}
-
-#withdrawal .table thead th {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
-    border: none;
-    font-weight: 600;
-    padding: 1rem;
-}
-
-#withdrawal .table tbody tr {
-    transition: all 0.3s ease;
-}
-
-#withdrawal .table tbody tr:hover {
-    background-color: var(--table-hover);
-}
-
-/* Badges */
-#withdrawal .badge {
-    padding: 0.5em 1em;
-    font-weight: 600;
-    border-radius: 20px;
-}
-
-#withdrawal .bg-primary {
-    background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
-}
-
-/* Animations */
-#withdrawal .slide-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#withdrawal .pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    #withdrawal {
-        padding: 1rem;
-    }
-
-    #withdrawal .card-header {
-        padding: 0.75rem 1rem;
-    }
-}
 
 /* --- WITHDRAWAL TAB (#withdrawal) ENDS --- */
 
@@ -1393,7 +1258,7 @@ body {
 
 #betting-record .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -1477,7 +1342,7 @@ body {
 
 #betting-record .neo-table thead th {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: 600;
     padding: 1rem;
@@ -1601,7 +1466,7 @@ body {
 #betting-record .pagination .page-item.active .page-link {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border-color: var(--primary);
-    color: white;
+    color: var(--text-white);
 }
 
 #betting-record .pagination .page-link {
@@ -1652,7 +1517,7 @@ body {
 
 #account-record .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -1720,7 +1585,7 @@ body {
 
 #account-record .neo-input-group .input-group-text {
     background-color: var(--primary);
-    color: white;
+    color: var(--text-white);
     border: none;
 }
 
@@ -1736,7 +1601,7 @@ body {
 
 #account-record .neo-table thead th {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: 600;
     padding: 1rem;
@@ -1854,7 +1719,7 @@ body {
 #account-record .pagination .page-item.active .page-link {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border-color: var(--primary);
-    color: white;
+    color: var(--text-white);
 }
 
 #account-record .pagination .page-link {
@@ -1974,7 +1839,7 @@ body {
 
 #profit-loss .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -2094,7 +1959,7 @@ body {
 
 #profit-loss .neo-table thead th {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: 600;
     padding: 1rem;
@@ -2279,7 +2144,7 @@ body {
 }
 
 #reward-centre .neo-header {
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -2363,7 +2228,7 @@ body {
 /* VIP Section */
 #reward-centre .vip-badge {
     background: linear-gradient(135deg, var(--btn), var(--accent));
-    color: white;
+    color: var(--text-white);
     padding: 0.5rem 1.5rem;
     border-radius: 20px;
     font-weight: bold;
@@ -2514,7 +2379,7 @@ body {
 
 #reward-centre .btn-warning {
     background: linear-gradient(90deg, var(--btn), var(--accent));
-    color: white;
+    color: var(--text-white);
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
@@ -2526,7 +2391,7 @@ body {
 
 #reward-centre .btn-info {
     background: linear-gradient(90deg, var(--info), #17c1e8);
-    color: white;
+    color: var(--text-white);
     box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
 }
 
@@ -2544,7 +2409,7 @@ body {
 
 #reward-centre .btn-outline-success:hover {
     background: linear-gradient(90deg, var(--success), #00d4a4);
-    color: white;
+    color: var(--text-white);
 }
 
 #reward-centre .btn-elevate {
@@ -2672,7 +2537,7 @@ body {
 }
 
 #invitation .neo-header {
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -2792,7 +2657,7 @@ body {
     justify-content: center;
     margin: 0 auto 10px;
     font-size: 1rem;
-    color: white;
+    color: var(--text-white);
 }
 
 #invitation .invited-card .stats-icon {
@@ -2847,7 +2712,7 @@ body {
 
 #invitation .neo-table thead th {
     background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: 600;
     padding: 1rem;
@@ -2885,7 +2750,7 @@ body {
     width: 28px;
     height: 28px;
     background: linear-gradient(135deg, var(--success), #00d4a4);
-    color: white;
+    color: var(--text-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3058,7 +2923,7 @@ body {
 
 #messages .inbox-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -3188,7 +3053,7 @@ body {
 
 #messages .message-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
 }
@@ -3233,7 +3098,7 @@ body {
 #messages .btn-primary {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border: none;
-    color: white;
+    color: var(--text-white);
     font-weight: 500;
     transition: all 0.3s ease;
 }
@@ -3262,7 +3127,7 @@ body {
 
 #messages .btn-outline-danger:hover {
     background-color: var(--danger);
-    color: white;
+    color: var(--text-white);
 }
 
 #messages .btn-action {
@@ -3343,7 +3208,7 @@ body {
 
 #rebate .neo-header {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border-bottom: none;
     padding: 1rem 1.5rem;
     position: relative;
@@ -3432,7 +3297,7 @@ body {
 
 #rebate .neo-input-group .input-group-text {
     background-color: var(--primary);
-    color: white;
+    color: var(--text-white);
     border: none;
 }
 
@@ -3448,7 +3313,7 @@ body {
 
 #rebate .neo-table thead th {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: 600;
     padding: 1rem;
@@ -3507,7 +3372,7 @@ body {
 
 #rebate .btn-outline-primary:hover {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
+    color: var(--text-white);
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
@@ -3655,7 +3520,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
+    color: var(--text-white);
     padding: 1.5rem;
 }
 
@@ -4026,13 +3891,7 @@ body {
     background: var(--bg);
 }
 
-@media (max-width: 992px) {
-    .main-content {
-        margin-left: 250px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .main-content {
         margin-left: 0;
         padding: 12px;
