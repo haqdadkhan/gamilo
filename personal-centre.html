@@ -77,7 +77,7 @@
         <!-- ACCOUNT TAB STARTS -->
         <div id="my-account" class="tab-content active">
             <div class="row">
-                <div class="col-lg-4 fade-in">
+                <div class="col-md-4 fade-in">
                     <div class="card slide-up" style="animation-delay: 0.1s;">
                         <div class="user-profile">
                             <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" class="user-avatar">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 fade-in">
+                <div class="col-md-8 fade-in">
                     <div class="card slide-up" style="animation-delay: 0.2s;">
                         <div class="card-header">
                             <h6><i class="fas fa-bell me-2"></i> Recent Activities</h6>
@@ -575,8 +575,8 @@
                                 50,000
                             </div>
 
-                            <div class="row mb-4 g-4">
-                                <div class="col-md-6">
+                            <div class="row mb-4 g-2 g-sm-3">
+                                <div class="col-sm-6">
                                     <div class="card h-100 payment-method hover-float" data-method="bank">
                                         <div class="card-header method-header bg-primary">
                                             <h6 class="m-0"><i class="fas fa-university me-2"></i> Bank Transfer</h6>
@@ -596,7 +596,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-sm-6">
                                     <div class="card h-100 payment-method hover-float" data-method="ewallet">
                                         <div class="card-header method-header bg-success">
                                             <h6 class="m-0"><i class="fas fa-mobile-alt me-2"></i> E-Wallet</h6>
@@ -672,90 +672,94 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="card neo-card">
-                        <div class="card-header neo-header">
-                            <h6 class="m-0"><i class="fas fa-info-circle me-2"></i> Deposit Information</h6>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="mb-3 accent-text"><i class="fas fa-wallet me-2"></i>JAZZCASH / EASYPASA</h6>
-                            <div class="mb-3">
-                                <label class="form-label">Channel</label>
-                                <select class="form-select neo-select">
-                                    <option selected>Channel 6</option>
-                                    <option>Channel 1</option>
-                                    <option>Channel 2</option>
-                                    <option>Channel 3</option>
-                                </select>
+                    <div class="row gap-sm-2 gap-md-3 gap-lg-0 justify-content-center p-2 p-sm-0">
+                        <div class="col-sm-6 col-lg-12 card neo-card p-0">
+                            <div class="card-header neo-header">
+                                <h6 class="m-0"><i class="fas fa-info-circle me-2"></i> Deposit Information</h6>
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Deposit Amount</label>
-                                <div class="amount-grid">
-                                    <button type="button" class="btn btn-outline-primary amount-btn">100</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">1,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">2,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">5,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">10,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">20,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">30,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">50,000</button>
-                                    <button type="button" class="btn btn-outline-primary amount-btn">100,000</button>
+                            <div class="card-body">
+                                <h6 class="mb-3 accent-text"><i class="fas fa-wallet me-2"></i>JAZZCASH / EASYPASA</h6>
+                                <div class="mb-3">
+                                    <label class="form-label">Channel</label>
+                                    <select class="form-select neo-select">
+                                        <option selected>Channel 6</option>
+                                        <option>Channel 1</option>
+                                        <option>Channel 2</option>
+                                        <option>Channel 3</option>
+                                    </select>
                                 </div>
-                            </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Custom Amount</label>
-                                <div class="input-group neo-input">
-                                    <span class="input-group-text">Rs</span>
-                                    <input type="number" class="form-control" placeholder="Enter amount" min="100"
-                                        max="50000">
+                                <div class="mb-3">
+                                    <label class="form-label">Deposit Amount</label>
+                                    <div class="amount-grid">
+                                        <button type="button" class="btn btn-outline-primary amount-btn">100</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">1,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">2,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">5,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">10,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">20,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">30,000</button>
+                                        <button type="button" class="btn btn-outline-primary amount-btn">50,000</button>
+                                        <button type="button"
+                                            class="btn btn-outline-primary amount-btn">100,000</button>
+                                    </div>
                                 </div>
-                                <small class="text-muted">Minimum: Rs 100 | Maximum: Rs 50,000</small>
-                            </div>
 
-                            <button class="btn btn-primary w-100 btn-elevate">Apply for Deposit</button>
-                        </div>
-                    </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Custom Amount</label>
+                                    <div class="input-group neo-input">
+                                        <span class="input-group-text">Rs</span>
+                                        <input type="number" class="form-control" placeholder="Enter amount" min="100"
+                                            max="50000">
+                                    </div>
+                                    <small class="text-muted">Minimum: Rs 100 | Maximum: Rs 50,000</small>
+                                </div>
 
-                    <div class="card neo-card">
-                        <div class="card-header neo-header">
-                            <h6 class="m-0"><i class="fas fa-gift me-2"></i> Deposit Bonus</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert alert-warning neo-alert shimmer">
-                                <i class="fas fa-exclamation-circle me-2"></i> 10% bonus on deposits above Rs 500 (Max
-                                Rs 1,000)
+                                <button class="btn btn-primary w-100 btn-elevate">Apply for Deposit</button>
                             </div>
-                            <ul class="list-group list-group-flush bonus-list">
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center bonus-item">
-                                    <div>
-                                        <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 500
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">+Rs 50</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center bonus-item">
-                                    <div>
-                                        <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 1,000
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">+Rs 100</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center bonus-item">
-                                    <div>
-                                        <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 5,000
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">+Rs 500</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center bonus-item">
-                                    <div>
-                                        <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 10,000
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">+Rs 1,000</span>
-                                </li>
-                            </ul>
+                        </div>
+
+                        <div class="col-sm-5 col-lg-12 card neo-card p-0">
+                            <div class="card-header neo-header">
+                                <h6 class="m-0"><i class="fas fa-gift me-2"></i> Deposit Bonus</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-warning neo-alert shimmer">
+                                    <i class="fas fa-exclamation-circle me-2"></i> 10% bonus on deposits above Rs 500
+                                    (Max
+                                    Rs 1,000)
+                                </div>
+                                <ul class="list-group list-group-flush bonus-list">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center bonus-item">
+                                        <div>
+                                            <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 500
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">+Rs 50</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center bonus-item">
+                                        <div>
+                                            <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 1,000
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">+Rs 100</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center bonus-item">
+                                        <div>
+                                            <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 5,000
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">+Rs 500</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center bonus-item">
+                                        <div>
+                                            <i class="fas fa-coins me-2 text-warning"></i>Deposit Rs 10,000
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">+Rs 1,000</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -765,7 +769,7 @@
 
         <!-- WITHDRAWAL TAB STARTS -->
         <div id="withdrawal" class="tab-content">
-            <div class="row g-4">
+            <div class="row g-2 g-md-3">
                 <div class="col-lg-8">
                     <div class="card neo-card">
                         <div class="card-header neo-header">
@@ -777,8 +781,8 @@
                                 Rs 50,000 per day
                             </div>
 
-                            <div class="row mb-4 g-4">
-                                <div class="col-md-6">
+                            <div class="row mb-4 g-2 g-sm-3">
+                                <div class="col-sm-6">
                                     <div class="card h-100 balance-card hover-glow">
                                         <div class="card-header">
                                             <h6>Available Balance</h6>
@@ -792,7 +796,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-sm-6">
                                     <div class="card h-100 withdraw-form hover-float">
                                         <div class="card-header">
                                             <h6>Withdrawal Method</h6>
@@ -873,89 +877,100 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="card neo-card">
-                        <div class="card-header neo-header">
-                            <h6 class="m-0"><i class="fas fa-credit-card me-2"></i> Withdrawal Accounts</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <h6 class="mb-3 accent-text"><i class="fas fa-university me-2"></i>Bank Accounts</h6>
-                                <div class="card account-card hover-grow">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <div class="d-flex align-items-center mb-2">
-                                                    <div class="bank-icon me-2">
-                                                        <i class="fas fa-landmark"></i>
+                    <div class="LLLLL">
+                        <div class="row g-sm-3 g-md-4 g-lg-0">
+                            <div class="col-12">
+                                <div class="card neo-card">
+                                    <div class="card-header neo-header">
+                                        <h6 class="m-0"><i class="fas fa-credit-card me-2"></i> Withdrawal Accounts</h6>
+                                    </div>
+                                    <div class="card-body d-flex flex-column flex-sm-row gap-2 gap-md-4 flex-lg-column gap-lg-0">
+                                        <div class="mb-4">
+                                            <h6 class="mb-3 accent-text"><i class="fas fa-university me-2"></i>Bank
+                                                Accounts
+                                            </h6>
+                                            <div class="card account-card hover-grow">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="bank-icon me-2">
+                                                                    <i class="fas fa-landmark"></i>
+                                                                </div>
+                                                                <h6 class="m-0">HBL Bank</h6>
+                                                            </div>
+                                                            <p class="mb-0 ms-3 text-muted">**** **** **** 1234</p>
+                                                        </div>
+                                                        <button class="btn btn-sm btn-outline-danger btn-icon">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
                                                     </div>
-                                                    <h6 class="m-0">HBL Bank</h6>
                                                 </div>
-                                                <p class="mb-0 text-muted">**** **** **** 1234</p>
                                             </div>
-                                            <button class="btn btn-sm btn-outline-danger btn-icon">
-                                                <i class="fas fa-trash-alt"></i>
+                                            <button class="btn btn-outline-primary w-100 hover-grow">
+                                                <i class="fas fa-plus-circle me-2"></i>Add Bank Account
+                                            </button>
+                                        </div>
+
+                                        <div>
+                                            <h6 class="mb-3 accent-text"><i class="fas fa-mobile-alt me-2"></i>E-Wallets
+                                            </h6>
+                                            <div class="alert alert-warning neo-alert">
+                                                <i class="fas fa-exclamation-circle me-2"></i> No e-wallets linked
+                                            </div>
+                                            <button class="btn btn-outline-primary w-100 hover-grow">
+                                                <i class="fas fa-plus-circle me-2"></i>Add E-Wallet
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-primary w-100 mt-3 hover-grow">
-                                    <i class="fas fa-plus-circle me-2"></i>Add Bank Account
-                                </button>
                             </div>
-
-                            <div>
-                                <h6 class="mb-3 accent-text"><i class="fas fa-mobile-alt me-2"></i>E-Wallets</h6>
-                                <div class="alert alert-warning neo-alert">
-                                    <i class="fas fa-exclamation-circle me-2"></i> No e-wallets linked
+                            <div class="col-sm-6 col-lg-12">
+                                <div class="card neo-card">
+                                    <div class="card-header neo-header">
+                                        <h6 class="m-0"><i class="fas fa-info-circle me-2"></i> Withdrawal Info</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush info-list">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                                <span><i class="fas fa-clock me-2"></i>Processing Time</span>
+                                                <span class="badge bg-primary rounded-pill">24-48 hours</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                                <span><i class="fas fa-percentage me-2"></i>Fees</span>
+                                                <span class="badge bg-primary rounded-pill">2% (min Rs 10)</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                                <span><i class="fas fa-calendar-day me-2"></i>Daily Limit</span>
+                                                <span class="badge bg-primary rounded-pill">Rs 50,000</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center hover-grow">
+                                                <span><i class="fas fa-check-circle me-2"></i>Remaining Today</span>
+                                                <span class="badge bg-success rounded-pill pulse-slow">10/10</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <button class="btn btn-outline-primary w-100 hover-grow">
-                                    <i class="fas fa-plus-circle me-2"></i>Add E-Wallet
-                                </button>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card neo-card">
-                        <div class="card-header neo-header">
-                            <h6 class="m-0"><i class="fas fa-info-circle me-2"></i> Withdrawal Info</h6>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush info-list">
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
-                                    <span><i class="fas fa-clock me-2"></i>Processing Time</span>
-                                    <span class="badge bg-primary rounded-pill">24-48 hours</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
-                                    <span><i class="fas fa-percentage me-2"></i>Fees</span>
-                                    <span class="badge bg-primary rounded-pill">2% (min Rs 10)</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
-                                    <span><i class="fas fa-calendar-day me-2"></i>Daily Limit</span>
-                                    <span class="badge bg-primary rounded-pill">Rs 50,000</span>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-center hover-grow">
-                                    <span><i class="fas fa-check-circle me-2"></i>Remaining Today</span>
-                                    <span class="badge bg-success rounded-pill pulse-slow">10/10</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card neo-card">
-                        <div class="card-header neo-header">
-                            <h6 class="m-0"><i class="fas fa-history me-2"></i> Recent Withdrawal</h6>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="empty-state">
-                                <div class="empty-icon">
-                                    <i class="fas fa-piggy-bank"></i>
+                            <div class="col-sm-6 col-lg-12">
+                                <div class="card neo-card">
+                                    <div class="card-header neo-header">
+                                        <h6 class="m-0"><i class="fas fa-history me-2"></i> Recent Withdrawal</h6>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <div class="empty-state">
+                                            <div class="empty-icon">
+                                                <i class="fas fa-piggy-bank"></i>
+                                            </div>
+                                            <p class="text-muted">No withdrawal requests</p>
+                                            <button class="btn btn-outline-primary hover-grow">View All</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="text-muted">No withdrawal requests</p>
-                                <button class="btn btn-outline-primary hover-grow">View All</button>
                             </div>
                         </div>
                     </div>
@@ -971,7 +986,7 @@
                     <h6 class="m-0"><i class="fas fa-clipboard-list me-2"></i> Betting Records</h6>
                 </div>
                 <div class="card-body">
-                    <div class="row mb-2 mb-md-4 g-1 g-sm-2 g-md-3">
+                    <div class="row mb-2 mb-md-4 g-1 g-sm-2">
                         <div class="col-6 col-md-3">
                             <label class="form-label">From Date</label>
                             <input type="date" class="form-control neo-input">
@@ -1002,7 +1017,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2 mb-md-4 g-1 g-sm-2 g-md-3">
+                    <div class="row mb-2 mb-md-4 g-1 g-sm-2">
                         <div class="col-6 col-md-3">
                             <label class="form-label">Vendor</label>
                             <select class="form-select neo-select">
@@ -1164,22 +1179,20 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row mb-4 g-3">
-                        <div class="col-md-3">
+                    <div class="row mb-2 mb-md-4 g-1 g-sm-2">
+                        <div class="col-6 col-md-3">
                             <label class="form-label">From Date</label>
                             <div class="input-group neo-input-group">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                 <input type="date" class="form-control neo-input">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <label class="form-label">To Date</label>
                             <div class="input-group neo-input-group">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                 <input type="date" class="form-control neo-input">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <label class="form-label">Transaction Type</label>
                             <select class="form-select neo-select">
                                 <option selected>All</option>
@@ -1191,7 +1204,7 @@
                                 <option>Adjustment</option>
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <label class="form-label">Status</label>
                             <select class="form-select neo-select">
                                 <option selected>All</option>
@@ -1202,7 +1215,38 @@
                         </div>
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="row mb-2 mb-md-4 g-1 g-sm-2">
+                        <div class="col-6 col-md-3">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select neo-select">
+                                <option selected>All</option>
+                                <option>Bank Transfer</option>
+                                <option>Credit Card</option>
+                                <option>E-Wallet</option>
+                                <option>Crypto</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 order-last order-md-2">
+                            <label class="form-label">Search</label>
+                            <div class="input-group neo-input-group">
+                                <input type="text" class="form-control neo-input" placeholder="Search transactions...">
+                                <button class="btn btn-primary btn-search">
+                                    <i class="fas fa-search me-1"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 order-md-3">
+                            <label class="form-label">Amount Range</label>
+                            <select class="form-select neo-select">
+                                <option selected>All</option>
+                                <option>Small (< Rs 1,000)</option>
+                                <option>Medium (Rs 1,000-5,000)</option>
+                                <option>Large (> Rs 5,000)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive my-3 my-md-4">
                         <table class="table table-hover neo-table">
                             <thead>
                                 <tr>
@@ -1217,79 +1261,79 @@
                             </thead>
                             <tbody>
                                 <tr class="slide-in-row">
-                                    <td><span class="transaction-date">2025-06-14</span> <span
-                                            class="transaction-time">14:23:45</span></td>
-                                    <td><code class="transaction-id">TR78901234</code></td>
-                                    <td><span class="badge-type bet">Bet</span></td>
-                                    <td class="transaction-amount text-danger loss-pulse">-Rs 500.00</td>
-                                    <td class="transaction-balance">Rs 2,500.00</td>
-                                    <td class="transaction-details">Football - Premier League</td>
-                                    <td><span class="badge bg-success rounded-pill pulse-slow">Completed</span></td>
+                                    <td>
+                                        <span class="transaction-date">2025-06-14</span>
+                                        <span class="transaction-time">14:23:45</span>
+                                    </td>
+                                    <td><code class="ref-code">TR78901234</code></td>
+                                    <td><span class="badge bg-primary rounded-pill">Bet</span></td>
+                                    <td class="text-danger loss-pulse">-Rs 500.00</td>
+                                    <td>Rs 2,500.00</td>
+                                    <td>Football - Premier League</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
                                 </tr>
                                 <tr class="slide-in-row">
-                                    <td><span class="transaction-date">2025-06-13</span> <span
-                                            class="transaction-time">21:12:33</span></td>
-                                    <td><code class="transaction-id">TR56789012</code></td>
-                                    <td><span class="badge-type win">Win</span></td>
-                                    <td class="transaction-amount text-success win-glow">+Rs 2,000.00</td>
-                                    <td class="transaction-balance">Rs 3,000.00</td>
-                                    <td class="transaction-details">Roulette - Live Casino</td>
-                                    <td><span class="badge bg-success rounded-pill pulse-slow">Completed</span></td>
+                                    <td>
+                                        <span class="transaction-date">2025-06-13</span>
+                                        <span class="transaction-time">21:12:33</span>
+                                    </td>
+                                    <td><code class="ref-code">TR56789012</code></td>
+                                    <td><span class="badge bg-success rounded-pill">Win</span></td>
+                                    <td class="text-success win-glow">+Rs 2,000.00</td>
+                                    <td>Rs 3,000.00</td>
+                                    <td>Roulette - Live Casino</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
                                 </tr>
                                 <tr class="slide-in-row">
-                                    <td><span class="transaction-date">2025-06-12</span> <span
-                                            class="transaction-time">18:45:21</span></td>
-                                    <td><code class="transaction-id">TR34567890</code></td>
-                                    <td><span class="badge-type win">Win</span></td>
-                                    <td class="transaction-amount text-success win-glow">+Rs 800.00</td>
-                                    <td class="transaction-balance">Rs 1,000.00</td>
-                                    <td class="transaction-details">Slot - Book of Ra</td>
-                                    <td><span class="badge bg-success rounded-pill pulse-slow">Completed</span></td>
+                                    <td>
+                                        <span class="transaction-date">2025-06-12</span>
+                                        <span class="transaction-time">18:45:21</span>
+                                    </td>
+                                    <td><code class="ref-code">TR34567890</code></td>
+                                    <td><span class="badge bg-success rounded-pill">Win</span></td>
+                                    <td class="text-success win-glow">+Rs 800.00</td>
+                                    <td>Rs 1,000.00</td>
+                                    <td>Slot - Book of Ra</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
                                 </tr>
                                 <tr class="slide-in-row">
-                                    <td><span class="transaction-date">2025-06-11</span> <span
-                                            class="transaction-time">16:30:15</span></td>
-                                    <td><code class="transaction-id">TR12345678</code></td>
-                                    <td><span class="badge-type deposit">Deposit</span></td>
-                                    <td class="transaction-amount text-success win-glow">+Rs 1,500.00</td>
-                                    <td class="transaction-balance">Rs 1,500.00</td>
-                                    <td class="transaction-details">Bank Transfer</td>
-                                    <td><span class="badge bg-success rounded-pill pulse-slow">Completed</span></td>
+                                    <td>
+                                        <span class="transaction-date">2025-06-11</span>
+                                        <span class="transaction-time">16:30:15</span>
+                                    </td>
+                                    <td><code class="ref-code">TR12345678</code></td>
+                                    <td><span class="badge bg-info rounded-pill">Deposit</span></td>
+                                    <td class="text-success win-glow">+Rs 1,500.00</td>
+                                    <td>Rs 1,500.00</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
                                 </tr>
                                 <tr class="slide-in-row">
-                                    <td><span class="transaction-date">2025-06-10</span> <span
-                                            class="transaction-time">12:15:09</span></td>
-                                    <td><code class="transaction-id">TR90123456</code></td>
-                                    <td><span class="badge-type withdrawal">Withdrawal</span></td>
-                                    <td class="transaction-amount text-danger loss-pulse">-Rs 3,000.00</td>
-                                    <td class="transaction-balance">Rs 0.00</td>
-                                    <td class="transaction-details">Bank Transfer</td>
-                                    <td><span class="badge bg-success rounded-pill pulse-slow">Completed</span></td>
+                                    <td>
+                                        <span class="transaction-date">2025-06-10</span>
+                                        <span class="transaction-time">12:15:09</span>
+                                    </td>
+                                    <td><code class="ref-code">TR90123456</code></td>
+                                    <td><span class="badge bg-warning rounded-pill">Withdrawal</span></td>
+                                    <td class="text-danger loss-pulse">-Rs 3,000.00</td>
+                                    <td>Rs 0.00</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="row mt-4 g-3">
+                    <div class="row mt-4 g-1 g-sm-3">
                         <div class="col-md-6">
                             <div class="alert alert-secondary summary-card">
-                                <div class="summary-icon">
-                                    <i class="fas fa-list-alt"></i>
-                                </div>
-                                <div>
-                                    <strong>Total Transactions:</strong> 5 | <strong>Total Amount:</strong> Rs 1,800.00
-                                </div>
+                                <strong>Total Transactions:</strong> 5 | <strong>Total Amount:</strong> Rs 1,800.00
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="alert alert-secondary summary-card text-end">
-                                <div class="summary-icon">
-                                    <i class="fas fa-calculator"></i>
-                                </div>
-                                <div>
-                                    <strong>Credits:</strong> Rs 4,300.00 | <strong>Debits:</strong> Rs 3,500.00 |
-                                    <strong>Net:</strong> <span class="net-profit win-glow">+Rs 800.00</span>
-                                </div>
+                                <strong>Credits:</strong> Rs 4,300.00 | <strong>Debits:</strong> Rs 3,500.00 |
+                                <strong>Net:</strong> <span class="net-profit win-glow">+Rs 800.00</span>
                             </div>
                         </div>
                     </div>

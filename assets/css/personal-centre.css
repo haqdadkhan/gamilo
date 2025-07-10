@@ -656,30 +656,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    #my-account .card-body.d-flex {
-        flex-direction: column;
-    }
-
-    #my-account .table thead th {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    #my-account .summary-card {
-        margin: 10px 0;
-    }
-
-    #my-account .summary-card:first-child {
-        margin-top: 0;
-    }
-
-    #my-account .summary-card:last-child {
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 769px) {
     #my-account .user-profile {
         padding: 30px 20px;
     }
@@ -718,7 +695,30 @@ body {
         font-size: 10px;
         padding: 4px 8px;
     }
+
+    #my-account .card-body.d-flex {
+        flex-direction: column;
+    }
+
+    #my-account .table thead th {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #my-account .summary-card {
+        margin: 10px 0;
+    }
+
+    #my-account .summary-card:first-child {
+        margin-top: 0;
+    }
+
+    #my-account .summary-card:last-child {
+        margin-bottom: 0;
+    }
 }
+
+
 
 @keyframes pulse {
     0% {
@@ -831,6 +831,7 @@ body {
     position: relative;
     padding: 1rem 1.5rem;
     border-bottom: none;
+    color: var(--text-white);
 }
 
 #deposit .method-header .header-accent {
@@ -1042,6 +1043,7 @@ body {
 #deposit .neo-table tbody tr {
     transition: all 0.3s ease;
     white-space: nowrap;
+    border-bottom: 1px solid var(--border-color);
 }
 
 #deposit .neo-table tbody tr:hover {
@@ -1099,6 +1101,11 @@ body {
 }
 
 /* Form Elements */
+#deposit .form-label {
+    padding: 0 6px;
+    font-size: 14px;
+}
+
 #deposit .neo-select {
     background-color: var(--input-bg);
     border: 1px solid var(--border-color);
@@ -1125,6 +1132,14 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
 }
 
+#deposit .neo-card .neo-input .input-group-text,
+#deposit .neo-card .neo-input .form-control,
+#deposit .neo-card .neo-select,
+#deposit .neo-card .btn-search {
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
 #deposit .neo-input .input-group-text {
     background-color: var(--primary);
     color: var(--text-white);
@@ -1143,11 +1158,20 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
     font-weight: 600;
+    font-size: 14px;
 }
 
 #deposit .amount-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
+}
+
+#deposit .neo-alert {
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    border: none;
 }
 
 /* Bonus List */
@@ -1163,6 +1187,7 @@ body {
     color: var(--text);
     border-radius: 8px !important;
     transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 #deposit .bonus-item:hover {
@@ -1189,13 +1214,20 @@ body {
         padding: 12px;
     }
 
+    #deposit .neo-card .neo-input .input-group-text,
+    #deposit .neo-card .neo-input .form-control,
+    #deposit .neo-card .neo-select,
+    #deposit .neo-card .btn-search {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
     #deposit .neo-header {
         padding: 15px;
     }
 
     #deposit .neo-table tbody tr td {
-        font-size: 12px !important;
-        width: max-content;
+        font-size: 12px;
     }
 
     #deposit .card-body {
@@ -1203,6 +1235,10 @@ body {
     }
 
     #deposit .btn-pulse {
+        font-size: 14px;
+    }
+
+    #deposit .btn-elevate {
         font-size: 14px;
     }
 
@@ -1214,9 +1250,7 @@ body {
     #deposit .payment-method .method-header {
         padding: 15px;
     }
-}
 
-@media (max-width: 576px) {
     #deposit .feature-list li {
         font-size: 12px;
     }
@@ -1331,7 +1365,7 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
-    color: var(--text);
+    color: var(--text-white);
     font-weight: 600;
 }
 
@@ -1378,13 +1412,9 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
-    color: var(--text);
+    color: var(--text-white);
     font-weight: 600;
     border-radius: 12px 12px 0 0;
-}
-
-#withdrawal .withdraw-form .card-body {
-    padding: 1.5rem;
 }
 
 /* Form Elements */
@@ -1414,6 +1444,13 @@ body {
 #withdrawal .neo-input .form-control:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+}
+
+#withdrawal .neo-input .input-group-text,
+#withdrawal .neo-input .form-control,
+#withdrawal .neo-select {
+    padding: 12px 16px;
+    font-size: 14px;
 }
 
 #withdrawal .neo-input .input-group-text {
@@ -1483,11 +1520,23 @@ body {
     border-color: var(--primary);
 }
 
-#withdrawal .account-card .card-body {
-    padding: 1rem;
+#withdrawal .neo-card .card-body {
+    padding: 12px;
 }
 
-#withdrawal .bank-icon {
+#withdrawal .neo-card .card-body div:first-child {
+    flex-grow: inherit;
+}
+
+#withdrawal .neo-card .card-body div:last-child {
+    flex-grow: inherit;
+}
+
+#withdrawal .account-card .card-body {
+    padding: 8px;
+}
+
+#withdrawal .card-body .card-body .bank-icon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -1496,6 +1545,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
+}
+
+#withdrawal .card-body .card-body p {
+    font-size: 13px;
 }
 
 /* Info List */
@@ -1511,7 +1565,7 @@ body {
     color: var(--text);
     border-radius: 8px !important;
     transition: all 0.3s ease;
-    padding: 1rem 1.25rem;
+    padding: 12px;
 }
 
 #withdrawal .info-list .list-group-item:hover {
@@ -1581,6 +1635,7 @@ body {
 #withdrawal .neo-table tbody tr {
     transition: all 0.3s ease;
     white-space: nowrap;
+    border-bottom: 1px solid var(--border-color);
 }
 
 #withdrawal .neo-table tbody tr:hover {
@@ -1680,7 +1735,7 @@ body {
 #withdrawal .neo-alert {
     font-size: 14px;
     border-radius: 8px;
-    padding: 1rem 1.25rem;
+    padding: 12px 16px;
     margin-bottom: 1.5rem;
     border: none;
 }
@@ -1715,11 +1770,29 @@ body {
     #withdrawal .balance-display h3 {
         font-size: 1.8rem;
     }
+    #withdrawal .neo-card {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 769px) {
+    #withdrawal .card-body .card-body .bank-icon {
+        font-size: 14px;
+    }
+
+    #withdrawal .card-body .card-body p {
+        font-size: 12px;
+    }
+
     #withdrawal .neo-header {
         padding: 0.75rem 1rem;
+    }
+
+    #withdrawal .neo-input .input-group-text,
+    #withdrawal .neo-input .form-control,
+    #withdrawal .neo-select {
+        padding: 10px 14px;
+        font-size: 12px;
     }
 
     #withdrawal .neo-table thead th {
@@ -1756,20 +1829,18 @@ body {
         padding: 0.65rem 1.25rem;
         font-size: 14px;
     }
-}
-
-@media (max-width: 576px) {
 
     #withdrawal .badge {
         font-size: 10px;
         padding: 4px 8px;
     }
 
-
     #withdrawal .balance-display h3 {
         font-size: 24px;
     }
 }
+
+
 
 /* --- WITHDRAWAL TAB (#withdrawal) ENDS --- */
 /* --- BETTING TAB (#betting-record) STARTS --- */
@@ -2095,28 +2166,25 @@ body {
         font-size: 14px;
         padding: 12px;
     }
-}
-
-@media (max-width: 576px) {
-
 
     #betting-record .badge {
         font-size: 10px;
         padding: 4px 8px;
     }
-
 }
+
+
 
 /* --- BETTING TAB (#betting-record) ENDS --- */
 /* --- ACCOUNT RECORD TAB (#my-account-record) STARTS --- */
 #account-record .neo-card {
     background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
 }
 
 #account-record .neo-card:hover {
@@ -2147,16 +2215,6 @@ body {
     animation: headerShine 3s infinite;
 }
 
-@keyframes headerShine {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
 #account-record .header-actions .btn {
     border-radius: 20px;
     padding: 0.25rem 0.75rem;
@@ -2170,12 +2228,23 @@ body {
 }
 
 /* Form Elements */
-#account-record .neo-input,
-#account-record .neo-select {
-    background-color: white;
+#account-record .neo-card .form-label {
+    padding: 0 6px;
+    font-size: 14px;
+}
+
+#account-record .neo-card .neo-input,
+#account-record .neo-card .neo-select,
+#account-record .neo-card .btn-search {
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+#account-record .form-select.neo-select {
+    background-color: var(--input-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 0.75rem 1rem;
+    color: var(--text-muted);
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
 }
@@ -2192,20 +2261,41 @@ body {
     box-shadow: var(--shadow);
 }
 
-#account-record .neo-input-group .input-group-text {
-    background-color: var(--primary);
-    color: var(--text-white);
+#account-record .form-control {
+    border-right: none;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#account-record .btn-search {
     border: none;
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+#account-record .btn-search:hover {
+    transform: translateX(-2px);
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
 
 /* Table Styles */
 #account-record .neo-table {
     --bs-table-bg: transparent;
     --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
     overflow: hidden;
+    border-color: var(--border-color);
 }
 
 #account-record .neo-table thead th {
@@ -2216,90 +2306,58 @@ body {
     padding: 12px 16px;
     text-transform: capitalize;
     letter-spacing: 0.5px;
-    font-size: 0.8rem;
+    font-size: 16px;
+    white-space: nowrap;
 }
 
 #account-record .neo-table tbody tr {
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 #account-record .neo-table tbody tr:hover {
     background-color: var(--table-hover);
 }
 
-/* Transaction Elements */
+#account-record .neo-table tbody tr td {
+    color: var(--text-muted);
+    padding: 10px 8px;
+    font-size: 14px;
+}
+
 #account-record .transaction-date {
-    font-weight: 600;
-    color: var(--text);
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
 #account-record .transaction-time {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 10px;
 }
 
-#account-record .transaction-id {
+#account-record .ref-code {
     color: var(--text-muted);
     font-family: monospace;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--mini-text-bg);
     padding: 0.2em 0.4em;
     border-radius: 4px;
 }
 
-#account-record .badge-type {
-    display: inline-block;
-    padding: 0.25em 0.75em;
+/* Badges */
+#account-record .badge {
+    padding: 4px 9px;
+    font-weight: 500;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* Amount Animations */
-#account-record .win-glow {
-    position: relative;
-    font-weight: 600;
-}
-
-#account-record .win-glow::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
-    z-index: -1;
-    opacity: 0.4;
-}
-
-#account-record .loss-pulse {
-    position: relative;
-    font-weight: 600;
-}
-
-#account-record .loss-pulse::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 4px;
-    background: rgba(220, 53, 69, 0.2);
-    z-index: -1;
-    opacity: 0.4;
+    font-size: 12px;
+    letter-spacing: 0.5px;
 }
 
 /* Summary Cards */
 #account-record .summary-card {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--mini-text-bg);
+    color: var(--text);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
 }
 
 #account-record .summary-card:hover {
@@ -2307,20 +2365,8 @@ body {
     box-shadow: var(--shadow);
 }
 
-#account-record .summary-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(171, 46, 0, 0.1);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-    flex-shrink: 0;
-}
-
 #account-record .net-profit {
+    margin-left: 3px;
     font-weight: 500;
 }
 
@@ -2370,43 +2416,79 @@ body {
     animation-delay: 0.5s;
 }
 
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#account-record .win-glow {
+    position: relative;
 }
 
-#account-record .pulse-slow {
-    animation: pulse-slow 2s infinite;
+#account-record .win-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.2);
+    z-index: -1;
+    opacity: 0.4;
 }
 
-@keyframes pulse-slow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
-    }
+#account-record .loss-pulse {
+    position: relative;
+}
 
-    70% {
-        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
-    }
+#account-record .loss-pulse::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 4px;
+    background: rgba(220, 53, 69, 0.2);
+    z-index: -1;
+    opacity: 0.4;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    #account-record .summary-card {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 769px) {
+    #account-record .neo-header {
+        padding: 0.75rem 1rem;
     }
 
-    #account-record .summary-icon {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
+    #account-record .neo-table thead th {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #account-record .neo-table tbody tr td {
+        font-size: 12px;
+    }
+
+    #account-record .card-body {
+        padding: 10px;
+    }
+
+    #account-record .neo-card .neo-input,
+    #account-record .neo-card .neo-select,
+    #account-record .neo-card .btn-search {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    #account-record .summary-card {
+        text-align: center !important;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #account-record .badge {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 }
+
+
 
 /* --- ACCOUNT RECORD TAB (#my-account-record) ENDS --- */
 
