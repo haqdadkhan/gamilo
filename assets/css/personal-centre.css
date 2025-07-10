@@ -1220,6 +1220,7 @@ body {
     #deposit .payment-method .method-header {
         padding: 15px;
     }
+
     #deposit .badge {
         font-size: 10px;
         padding: 4px 8px;
@@ -1741,6 +1742,7 @@ body {
     #withdrawal .neo-table tbody tr td {
         font-size: 12px !important;
     }
+
     #withdrawal .badge {
         font-size: 10px;
         padding: 4px 8px;
@@ -1912,11 +1914,15 @@ body {
 }
 
 #betting-record .neo-table tbody tr td:nth-child(2) {
-    color: var(--text);
     font-weight: 500;
 }
 
-#betting-record .time {
+#betting-record .bet-date {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+#betting-record .bet-time {
     font-size: 10px;
 }
 
@@ -2030,7 +2036,8 @@ body {
 }
 
 #betting-record .net-profit {
-    font-weight: 700;
+    margin-left: 3px;
+    font-weight: 500;
 }
 
 /* Pagination */
@@ -2060,6 +2067,8 @@ body {
 
     #betting-record .summary-card {
         text-align: center !important;
+        font-size: 14px;
+        padding: 12px;
     }
 }
 
@@ -2068,9 +2077,11 @@ body {
         padding: 12px;
         font-size: 14px;
     }
-#betting-record .neo-table tbody tr td {
-    font-size: 12px;
-}
+
+    #betting-record .neo-table tbody tr td {
+        font-size: 12px;
+    }
+
     #betting-record .badge {
         font-size: 10px;
         padding: 4px 8px;
@@ -2302,7 +2313,7 @@ body {
 }
 
 #account-record .net-profit {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* Pagination */
