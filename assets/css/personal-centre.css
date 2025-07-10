@@ -661,6 +661,11 @@ body {
         flex-direction: column;
     }
 
+    #my-account .table thead th {
+        font-size: 14px;
+        padding: 12px;
+    }
+
     #my-account .summary-card {
         margin: 10px 0;
     }
@@ -702,11 +707,6 @@ body {
 
     #my-account .security-status {
         padding: 15px 10px;
-    }
-
-    #my-account .table thead th {
-        font-size: 14px;
-        padding: 12px;
     }
 
     #my-account .table tbody tr td {
@@ -1032,11 +1032,11 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 16px;
     font-weight: 500;
-    padding: 15px;
+    padding: 12px 16px;
 }
 
 #deposit .neo-table tbody tr {
@@ -1185,23 +1185,12 @@ body {
 }
 
 @media (max-width: 769px) {
-    #deposit .btn-pulse {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 576px) {
     #deposit .payment-method .card-body {
         padding: 12px;
     }
 
     #deposit .neo-header {
         padding: 15px;
-    }
-
-    #deposit .neo-table thead th {
-        font-size: 14px;
-        padding: 12px;
     }
 
     #deposit .neo-table tbody tr td {
@@ -1213,12 +1202,23 @@ body {
         padding: 10px;
     }
 
-    #deposit .feature-list li {
-        font-size: 12px;
+    #deposit .btn-pulse {
+        font-size: 14px;
+    }
+
+    #deposit .neo-table thead th {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     #deposit .payment-method .method-header {
         padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    #deposit .feature-list li {
+        font-size: 12px;
     }
 
     #deposit .badge {
@@ -1571,11 +1571,11 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 16px;
     font-weight: 500;
-    padding: 15px;
+    padding: 12px 16px;
 }
 
 #withdrawal .neo-table tbody tr {
@@ -1717,14 +1717,39 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     #withdrawal .neo-header {
         padding: 0.75rem 1rem;
     }
 
+    #withdrawal .neo-table thead th {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #withdrawal .neo-table tbody tr td {
+        font-size: 12px !important;
+    }
+
+    #withdrawal .neo-card .card-header,
     #withdrawal .balance-card .card-body,
     #withdrawal .withdraw-form .card-body {
         padding: 12px;
+    }
+
+    #withdrawal .card-body {
+        padding: 10px;
+    }
+
+
+    #withdrawal .account-card .card-body {
+        padding: 12px;
+    }
+
+
+    #withdrawal .info-list .list-group-item {
+        padding: 12px 16px;
+        font-size: 14px;
     }
 
     #withdrawal .btn {
@@ -1734,32 +1759,12 @@ body {
 }
 
 @media (max-width: 576px) {
-    #withdrawal .neo-table thead th {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    #withdrawal .neo-table tbody tr td {
-        font-size: 12px !important;
-    }
 
     #withdrawal .badge {
         font-size: 10px;
         padding: 4px 8px;
     }
 
-    #withdrawal .card-body {
-        padding: 10px;
-    }
-
-    #withdrawal .info-list .list-group-item {
-        padding: 12px 16px;
-        font-size: 14px;
-    }
-
-    #withdrawal .account-card .card-body {
-        padding: 12px;
-    }
 
     #withdrawal .balance-display h3 {
         font-size: 24px;
@@ -1890,9 +1895,9 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 16px;
     white-space: nowrap;
@@ -2065,26 +2070,13 @@ body {
         padding: 0.75rem 1rem;
     }
 
-    #betting-record .summary-card {
-        text-align: center !important;
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 576px) {
     #betting-record .neo-table thead th {
-        padding: 12px;
+        padding: 8px 12px;
         font-size: 14px;
     }
 
     #betting-record .neo-table tbody tr td {
         font-size: 12px;
-    }
-
-    #betting-record .badge {
-        font-size: 10px;
-        padding: 4px 8px;
     }
 
     #betting-record .card-body {
@@ -2097,6 +2089,22 @@ body {
         padding: 8px 12px;
         font-size: 12px;
     }
+
+    #betting-record .summary-card {
+        text-align: center !important;
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    #betting-record .badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
 }
 
 /* --- BETTING TAB (#betting-record) ENDS --- */
@@ -2204,9 +2212,9 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 0.8rem;
 }
@@ -2389,25 +2397,6 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    #account-record {
-        padding: 1rem;
-    }
-
-    #account-record .neo-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    #account-record .header-actions {
-        margin-top: 0.5rem;
-        width: 100%;
-    }
-
-    #account-record .header-actions .btn {
-        width: 100%;
-    }
-
     #account-record .summary-card {
         flex-direction: column;
         text-align: center;
@@ -2562,9 +2551,9 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 0.8rem;
 }
@@ -3316,9 +3305,9 @@ body {
     background: linear-gradient(135deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 0.8rem;
 }
@@ -3918,9 +3907,9 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     border: none;
-    font-weight: 600;
-    padding: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     font-size: 0.8rem;
 }
