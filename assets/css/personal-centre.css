@@ -52,7 +52,6 @@
 }
 
 /* --- ROOT VARIABLES + DARK MODE ENDS --- */
-
 /* --- BODY STYLES STARTS --- */
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -63,8 +62,43 @@ body {
 }
 
 /* --- BODY STYLES ENDS --- */
+/* --- GLOBAL STYLES STARTS --- */
+.main-content {
+    margin-left: 280px;
+    padding: 20px;
+    transition: all 0.3s;
+    background: var(--bg);
+}
 
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        padding: 12px;
+    }
+}
 
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- GLOBAL STYLES ENDS --- */
 /* --- HEADER (desktop-header) STARTS --- */
 .desktop-header {
     position: sticky;
@@ -181,8 +215,6 @@ body {
 }
 
 /* --- HEADER (desktop-header) ENDS --- */
-
-
 /* --- SIDEBAR (#sidebar) STARTS --- */
 #sidebar {
     width: 280px;
@@ -294,8 +326,6 @@ body {
 }
 
 /* --- SIDEBAR (#sidebar) ENDS --- */
-
-
 /* --- ACCOUNT TAB (#my-account) STARTS --- */
 #my-account .card {
     border-radius: 16px;
@@ -718,8 +748,6 @@ body {
     }
 }
 
-
-
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -765,8 +793,280 @@ body {
 }
 
 /* --- ACCOUNT TAB (#my-account) ENDS --- */
+/* --- EDIT ACCOUNT (#eaSidebar) STARTS --- */
+#eaSidebar .tab-content {
+    display: block;
+}
 
+#eaSidebar {
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+#eaSidebar.open {
+    transform: translateX(0);
+}
+
+#eaSidebar .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: var(--text-white);
+    padding: 1.5rem;
+}
+
+#eaSidebar .settings-header h2 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#eaSidebar .settings-header p {
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+#eaSidebar .eaNav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 14px;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: nowrap;
+}
+
+#eaSidebar .eaNav .nav-link {
+    white-space: nowrap;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    border-radius: 0.375rem;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+#eaSidebar .eaNav .nav-link:hover {
+    color: var(--primary);
+    transform: translateY(-1px);
+    background-color: var(--hover-bg);
+}
+
+#eaSidebar .eaNav .nav-link.active {
+    color: var(--primary);
+    background: transparent;
+    font-weight: 600;
+    background-color: var(--hover-bg);
+}
+
+#eaSidebar .eaNav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+#eaSidebar .tab-content {
+    padding: 12px;
+}
+
+#eaSidebar .tab-content .eaPersonal button,
+#eaSidebar .tab-content .eaPassword button,
+#eaSidebar .tab-content .eaBank button,
+#eaSidebar .tab-content .eaWallet button,
+#eaSidebar .tab-content .eaTransaction button {
+    font-size: 16px;
+    padding: 8px 24px;
+}
+
+#eaSidebar .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+#eaSidebar .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+#eaSidebar .form-control,
+#eaSidebar .form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+#eaSidebar .form-control:focus,
+#eaSidebar .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    border-color: var(--primary);
+}
+
+#eaSidebar .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+#eaSidebar .input-group-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    z-index: 5;
+}
+
+#eaSidebar .input-with-icon {
+    padding-left: 45px !important;
+}
+
+#eaSidebar .bank-card {
+    border-radius: 10px;
+    padding: 14px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+#eaSidebar .bank-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+#eaSidebar .bank-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: white;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+}
+
+#eaSidebar .password-strength {
+    height: 5px;
+    background-color: #e9ecef;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#eaSidebar .password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#eaSidebar .password-requirements {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+#eaSidebar .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+#eaSidebar .btn-primary:hover {
+    background-color: #5a4bd1;
+    border-color: #5a4bd1;
+}
+
+#eaSidebar .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+#eaSidebar .divider::before,
+#eaSidebar .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#eaSidebar .divider::before {
+    margin-right: 1rem;
+}
+
+#eaSidebar .divider::after {
+    margin-left: 1rem;
+}
+
+#eaSidebar .account-status {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 2rem;
+}
+
+#eaSidebar .status-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+#eaSidebar .status-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    #eaSidebar .settings-header {
+        padding: 1rem;
+    }
+
+    #eaSidebar .eaNav .nav-link {
+        padding: 10px 20px;
+    }
+
+    #eaSidebar .tab-content .eaPersonal button,
+    #eaSidebar .tab-content .eaPassword button,
+    #eaSidebar .tab-content .eaBank button,
+    #eaSidebar .tab-content .eaWallet button,
+    #eaSidebar .tab-content .eaTransaction button {
+        font-size: 14px;
+    }
+
+    #eaSidebar .eaNav .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* --- EDIT ACCOUNT (#eaSidebar) ENDS --- */
 /* --- DEPOSIT TAB (#deposit) STARTS --- */
 #deposit .neo-card {
     background-color: var(--card-bg);
@@ -1844,8 +2144,6 @@ body {
     }
 }
 
-
-
 /* --- WITHDRAWAL TAB (#withdrawal) ENDS --- */
 /* --- BETTING TAB (#betting-record) STARTS --- */
 #betting-record .neo-card {
@@ -1952,8 +2250,6 @@ body {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
-
-/* #messages .btn-primary  */
 
 /* Table Styles */
 #betting-record .neo-table {
@@ -2176,8 +2472,6 @@ body {
         padding: 4px 8px;
     }
 }
-
-
 
 /* --- BETTING TAB (#betting-record) ENDS --- */
 /* --- ACCOUNT RECORD TAB (#my-account-record) STARTS --- */
@@ -2784,8 +3078,6 @@ body {
 }
 
 /* --- PROFIT & LOSS TAB (#profit-loss) ENDS --- */
-
-
 /* --- REWARD CENTRE TAB (#rewards-centre) STARTS --- */
 #reward-centre .neo-card {
     background-color: var(--card-bg);
@@ -2837,7 +3129,7 @@ body {
 }
 
 #reward-centre .bg-warning-gradient {
-    background: linear-gradient(90deg, var(--btn), var(--accent));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
 #reward-centre .bg-success-gradient {
@@ -3050,7 +3342,7 @@ body {
 }
 
 #reward-centre .btn-warning {
-    background: linear-gradient(90deg, var(--btn), var(--accent));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
 }
@@ -3228,8 +3520,6 @@ body {
 }
 
 /* --- REWARD CENTRE TAB (#rewards-centre) ENDS --- */
-
-
 /* --- INVITE FRIENDS TAB (#invitation) STARTS --- */
 #invitation .neo-card {
     background-color: var(--card-bg);
@@ -3614,8 +3904,6 @@ body {
 }
 
 /* --- INVITE FRIENDS TAB (#invitation) ENDS --- */
-
-
 /* --- MESSAGES TAB (#messages) STARTS --- */
 #messages .message-inbox {
     border: none;
@@ -3899,14 +4187,12 @@ body {
 }
 
 /* --- MESSAGES TAB (#messages) ENDS --- */
-
-
 /* --- MANUAL REBATE TAB (#rebate) STARTS --- */
 #rebate .neo-card {
     background-color: var(--card-bg);
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -3923,15 +4209,10 @@ body {
     border-bottom: none;
     padding: 16px 24px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
-}
-
-#rebate .bg-gradient-primary {
-    background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
-}
-
-#rebate .bg-gradient-info {
-    background: linear-gradient(90deg, var(--info), #17a2b8) !important;
 }
 
 #rebate .neo-header::after {
@@ -3945,22 +4226,31 @@ body {
     animation: headerShine 3s infinite;
 }
 
-@keyframes headerShine {
-    0% {
-        transform: translateX(-100%);
-    }
+#rebate .header-actions .btn {
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
 
-    100% {
-        transform: translateX(100%);
-    }
+#rebate .header-actions .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Alert Styles */
 #rebate .neo-alert {
-    border-radius: 8px;
-    border: none;
-    position: relative;
+    border: 1px solid var(--border-color);
     overflow: hidden;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+#rebate .neo-alert:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 #rebate .shimmer::after {
@@ -3977,19 +4267,20 @@ body {
     animation: shimmer 2s infinite;
 }
 
-@keyframes shimmer {
-    100% {
-        left: 100%;
-    }
+/* Form Elements */
+#rebate .neo-card .form-label {
+    padding: 0 6px;
+    font-size: 14px;
 }
 
-/* Form Elements */
 #rebate .neo-input,
 #rebate .neo-select {
-    background-color: white;
+    background-color: var(--input-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 0.75rem 1rem;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--text);
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
 }
@@ -4016,10 +4307,11 @@ body {
 #rebate .neo-table {
     --bs-table-bg: transparent;
     --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
     overflow: hidden;
+    border-color: var(--border-color);
 }
 
 #rebate .neo-table thead th {
@@ -4030,7 +4322,7 @@ body {
     padding: 12px 16px;
     text-transform: capitalize;
     letter-spacing: 0.5px;
-    font-size: 0.8rem;
+    font-size: 16px;
 }
 
 #rebate .neo-table tbody tr {
@@ -4041,18 +4333,31 @@ body {
     background-color: var(--table-hover);
 }
 
-#rebate .total-row {
-    background-color: rgba(171, 46, 0, 0.1) !important;
-    font-weight: 600;
+#rebate .neo-table tbody tr td {
+    color: var(--text-muted);
+    padding: 10px 8px;
+    font-size: 14px;
 }
 
+#rebate .total-row {
+    background-color: var(--table-hover) !important;
+    font-weight: 600;
+}
+#rebate .badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--mini-text-bg);
+    color: var(--text-white)
+}
 /* Game Type Badges */
 #rebate .game-type-badge {
-    display: inline-block;
-    padding: 0.25em 0.75em;
+       padding: 4px 9px;
+    font-weight: 500;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 12px;
+    color: var(--text-white);
 }
 
 /* Buttons */
@@ -4138,11 +4443,9 @@ body {
     0% {
         box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
     }
-
     70% {
         box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
     }
-
     100% {
         box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
     }
@@ -4156,11 +4459,9 @@ body {
     0% {
         box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
     }
-
     70% {
         box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
     }
-
     100% {
         box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
     }
@@ -4182,7 +4483,7 @@ body {
 
 #rebate .feature-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    border-bottom: 1px dashed var(--border-color);
     transition: all 0.3s ease;
 }
 
@@ -4192,296 +4493,50 @@ body {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 992px) {
-    #rebate {
-        padding: 1rem;
+@media (max-width: 769px) {
+    #rebate .neo-card {
+        margin-bottom: 0;
+    }
+    #rebate .neo-header {
+        padding: 0.75rem 1rem;
+    }
+
+    #rebate .neo-table thead th {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #rebate .neo-table tbody tr td {
+        font-size: 12px;
+    }
+
+    #rebate .badge {
+        font-size: 10px;
+    }
+
+    #rebate .card-body {
+        padding: 10px;
+    }
+
+    #rebate .neo-input,
+    #rebate .neo-select {
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
     #rebate .btn {
-        padding: 0.75rem 1rem;
+        padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
-}
 
+    #rebate .game-type-badge {
+        font-size: 10px;
+    }
+    #rebate .neo-alert {
+        padding: 8px 12px;
+    }
+}
 /* --- MANUAL REBATE TAB (#rebate) ENDS --- */
-
-
-/* --- EDIT ACCOUNT (#eaSidebar) STARTS --- */
-#eaSidebar .tab-content {
-    display: block;
-}
-
-#eaSidebar {
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-    width: 100%;
-    max-width: 600px;
-    background-color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#eaSidebar.open {
-    transform: translateX(0);
-}
-
-#eaSidebar .settings-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: var(--text-white);
-    padding: 1.5rem;
-}
-
-#eaSidebar .settings-header h2 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-#eaSidebar .settings-header p {
-    opacity: 0.9;
-    margin-bottom: 0;
-}
-
-#eaSidebar .eaNav {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 14px;
-    background: white;
-    border-bottom: 1px solid var(--border-color);
-    flex-wrap: nowrap;
-}
-
-#eaSidebar .eaNav .nav-link {
-    white-space: nowrap;
-    border: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    padding: 0.75rem 1.25rem;
-    position: relative;
-    border-radius: 0.375rem;
-    background-color: var(--card-bg);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-#eaSidebar .eaNav .nav-link:hover {
-    color: var(--primary);
-    transform: translateY(-1px);
-    background-color: var(--hover-bg);
-}
-
-#eaSidebar .eaNav .nav-link.active {
-    color: var(--primary);
-    background: transparent;
-    font-weight: 600;
-    background-color: var(--hover-bg);
-}
-
-#eaSidebar .eaNav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
-}
-
-#eaSidebar .tab-content {
-    padding: 12px;
-}
-
-#eaSidebar .tab-content .eaPersonal button,
-#eaSidebar .tab-content .eaPassword button,
-#eaSidebar .tab-content .eaBank button,
-#eaSidebar .tab-content .eaWallet button,
-#eaSidebar .tab-content .eaTransaction button {
-    font-size: 16px;
-    padding: 8px 24px;
-}
-
-#eaSidebar .section-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-    position: relative;
-    padding-bottom: 0.75rem;
-}
-
-#eaSidebar .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary);
-    border-radius: 3px;
-}
-
-#eaSidebar .form-control,
-#eaSidebar .form-select {
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
-    color: var(--text);
-}
-
-#eaSidebar .form-control:focus,
-#eaSidebar .form-select:focus {
-    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
-    border-color: var(--primary);
-}
-
-#eaSidebar .form-control::placeholder {
-    color: var(--text-muted);
-}
-
-#eaSidebar .input-group-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    z-index: 5;
-}
-
-#eaSidebar .input-with-icon {
-    padding-left: 45px !important;
-}
-
-#eaSidebar .bank-card {
-    border-radius: 10px;
-    padding: 14px;
-    background-color: white;
-    border: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-}
-
-#eaSidebar .bank-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-#eaSidebar .bank-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-right: 1rem;
-    border-radius: 8px;
-    background: white;
-    padding: 5px;
-    border: 1px solid var(--border-color);
-}
-
-#eaSidebar .password-strength {
-    height: 5px;
-    background-color: #e9ecef;
-    margin-top: 0.5rem;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-#eaSidebar .password-strength-bar {
-    height: 100%;
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-#eaSidebar .password-requirements {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-}
-
-#eaSidebar .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-}
-
-#eaSidebar .btn-primary:hover {
-    background-color: #5a4bd1;
-    border-color: #5a4bd1;
-}
-
-#eaSidebar .divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
-#eaSidebar .divider::before,
-#eaSidebar .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
-}
-
-#eaSidebar .divider::before {
-    margin-right: 1rem;
-}
-
-#eaSidebar .divider::after {
-    margin-left: 1rem;
-}
-
-#eaSidebar .account-status {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 2rem;
-}
-
-#eaSidebar .status-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed var(--border-color);
-}
-
-#eaSidebar .status-item:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    #eaSidebar .settings-header {
-        padding: 1rem;
-    }
-
-    #eaSidebar .eaNav .nav-link {
-        padding: 10px 20px;
-    }
-
-    #eaSidebar .tab-content .eaPersonal button,
-    #eaSidebar .tab-content .eaPassword button,
-    #eaSidebar .tab-content .eaBank button,
-    #eaSidebar .tab-content .eaWallet button,
-    #eaSidebar .tab-content .eaTransaction button {
-        font-size: 14px;
-    }
-
-    #eaSidebar .eaNav .nav-link {
-        font-size: 14px;
-    }
-}
-
-/* --- EDIT ACCOUNT (#eaSidebar) ENDS --- */
-
-
 /* --- BOTTOM NAVIGATION (bottom-nav) STARTS --- */
 .bottom-nav {
     position: fixed;
@@ -4591,43 +4646,3 @@ body {
 }
 
 /* --- BOTTOM NAVIGATION (bottom-nav) ENDS --- */
-
-
-
-/* --- GLOBAL STYLES STARTS --- */
-.main-content {
-    margin-left: 280px;
-    padding: 20px;
-    transition: all 0.3s;
-    background: var(--bg);
-}
-
-@media (max-width: 1024px) {
-    .main-content {
-        margin-left: 0;
-        padding: 12px;
-    }
-}
-
-.tab-content {
-    display: none;
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- GLOBAL STYLES ENDS --- */
