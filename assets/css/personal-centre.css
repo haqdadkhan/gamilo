@@ -1506,14 +1506,13 @@ body {
     #deposit .amount-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-}
-
-@media (max-width: 769px) {
 
     #deposit .neo-card {
         margin-bottom: 0;
     }
+}
 
+@media (max-width: 769px) {
     #deposit .payment-method .card-body {
         padding: 12px;
     }
@@ -3033,11 +3032,13 @@ body {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 769px) {
+@media (max-width: 992px) {
     #profit-loss .neo-card {
         margin-bottom: 0;
     }
+}
 
+@media (max-width: 769px) {
     #profit-loss .neo-header {
         padding: 0.75rem 1rem;
     }
@@ -4343,6 +4344,7 @@ body {
     background-color: var(--table-hover) !important;
     font-weight: 600;
 }
+
 #rebate .badge {
     padding: 4px 12px;
     border-radius: 20px;
@@ -4351,9 +4353,10 @@ body {
     background-color: var(--mini-text-bg);
     color: var(--text-white)
 }
+
 /* Game Type Badges */
 #rebate .game-type-badge {
-       padding: 4px 9px;
+    padding: 4px 9px;
     font-weight: 500;
     border-radius: 20px;
     font-size: 12px;
@@ -4443,9 +4446,11 @@ body {
     0% {
         box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
     }
+
     70% {
         box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
     }
@@ -4459,9 +4464,11 @@ body {
     0% {
         box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
     }
+
     70% {
         box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
     }
@@ -4481,10 +4488,15 @@ body {
     padding-left: 0;
 }
 
+#rebate .neo-card .card-body>p.mb-3 {
+    font-size: 16px;
+}
+
 #rebate .feature-list li {
     padding: 0.5rem 0;
     border-bottom: 1px dashed var(--border-color);
     transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 #rebate .feature-list li:hover {
@@ -4492,11 +4504,14 @@ body {
     border-bottom-color: var(--primary);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 769px) {
+@media (max-width: 992px) {
     #rebate .neo-card {
         margin-bottom: 0;
     }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 769px) {
     #rebate .neo-header {
         padding: 0.75rem 1rem;
     }
@@ -4532,10 +4547,20 @@ body {
     #rebate .game-type-badge {
         font-size: 10px;
     }
+
     #rebate .neo-alert {
         padding: 8px 12px;
     }
+
+    #rebate .neo-card .card-body>p.mb-3 {
+        font-size: 14px;
+    }
+
+    #rebate .feature-list li {
+        font-size: 12px;
+    }
 }
+
 /* --- MANUAL REBATE TAB (#rebate) ENDS --- */
 /* --- BOTTOM NAVIGATION (bottom-nav) STARTS --- */
 .bottom-nav {
