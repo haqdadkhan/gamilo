@@ -794,6 +794,7 @@ body {
 
 /* --- ACCOUNT TAB (#my-account) ENDS --- */
 /* --- EDIT ACCOUNT (#eaSidebar) STARTS --- */
+/* ===== COMPLETE eaSidebar.css ===== */
 #eaSidebar .tab-content {
     display: block;
 }
@@ -805,21 +806,42 @@ body {
     z-index: 1000;
     width: 100%;
     max-width: 600px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    border-left: 1px solid var(--border-color);
 }
 
 #eaSidebar.open {
     transform: translateX(0);
 }
 
+/* Header */
 #eaSidebar .settings-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
     padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#eaSidebar .settings-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: headerShine 3s infinite;
+}
+
+@keyframes headerShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 #eaSidebar .settings-header h2 {
@@ -832,6 +854,7 @@ body {
     margin-bottom: 0;
 }
 
+/* Tabs */
 #eaSidebar .eaNav {
     display: flex;
     flex-direction: row;
@@ -839,7 +862,7 @@ body {
     overflow-x: auto;
     white-space: nowrap;
     padding: 14px;
-    background: white;
+    background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
     flex-wrap: nowrap;
 }
@@ -852,7 +875,7 @@ body {
     padding: 0.75rem 1.25rem;
     position: relative;
     border-radius: 0.375rem;
-    background-color: var(--card-bg);
+    background: var(--input-bg);
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
@@ -860,39 +883,25 @@ body {
 #eaSidebar .eaNav .nav-link:hover {
     color: var(--primary);
     transform: translateY(-1px);
-    background-color: var(--hover-bg);
+    background: var(--hover-bg);
 }
 
 #eaSidebar .eaNav .nav-link.active {
     color: var(--primary);
-    background: transparent;
-    font-weight: 600;
-    background-color: var(--hover-bg);
+    background: var(--hover-bg);
 }
 
 #eaSidebar .eaNav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
+    background: var(--primary);
 }
 
+/* Content */
 #eaSidebar .tab-content {
     padding: 12px;
+    background: var(--card-bg);
 }
 
-#eaSidebar .tab-content .eaPersonal button,
-#eaSidebar .tab-content .eaPassword button,
-#eaSidebar .tab-content .eaBank button,
-#eaSidebar .tab-content .eaWallet button,
-#eaSidebar .tab-content .eaTransaction button {
-    font-size: 16px;
-    padding: 8px 24px;
-}
-
+/* Sections */
 #eaSidebar .section-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -913,18 +922,21 @@ body {
     border-radius: 3px;
 }
 
+/* Forms */
 #eaSidebar .form-control,
 #eaSidebar .form-select {
     padding: 0.75rem 1rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
+    background: var(--input-bg);
     color: var(--text);
 }
-
+#eaSidebar .form-select {
+    color: var(--text-muted);
+}
 #eaSidebar .form-control:focus,
 #eaSidebar .form-select:focus {
-    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
     border-color: var(--primary);
 }
 
@@ -945,19 +957,20 @@ body {
     padding-left: 45px !important;
 }
 
+/* Cards */
 #eaSidebar .bank-card {
     border-radius: 10px;
     padding: 14px;
-    background-color: white;
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     margin-bottom: 1.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow);
 }
 
 #eaSidebar .bank-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 #eaSidebar .bank-logo {
@@ -966,68 +979,36 @@ body {
     object-fit: contain;
     margin-right: 1rem;
     border-radius: 8px;
-    background: white;
+    background: var(--card-bg);
     padding: 5px;
     border: 1px solid var(--border-color);
 }
 
-#eaSidebar .password-strength {
-    height: 5px;
-    background-color: #e9ecef;
-    margin-top: 0.5rem;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-#eaSidebar .password-strength-bar {
-    height: 100%;
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-#eaSidebar .password-requirements {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-}
-
+/* Buttons */
 #eaSidebar .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-color: transparent;
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 #eaSidebar .btn-primary:hover {
-    background-color: #5a4bd1;
-    border-color: #5a4bd1;
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
 }
 
-#eaSidebar .divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    color: var(--text-muted);
-    font-size: 0.8rem;
+#eaSidebar .btn-outline-secondary {
+    border-color: var(--border-color);
+    color: var(--text);
 }
 
-#eaSidebar .divider::before,
-#eaSidebar .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
-}
-
-#eaSidebar .divider::before {
-    margin-right: 1rem;
-}
-
-#eaSidebar .divider::after {
-    margin-left: 1rem;
-}
-
+/* Status */
 #eaSidebar .account-status {
-    background-color: #f8f9fa;
+    background: var(--mini-text-bg);
     border-radius: 8px;
     padding: 14px;
     margin-bottom: 2rem;
@@ -1044,6 +1025,20 @@ body {
     border-bottom: none;
 }
 
+/* Badges */
+#eaSidebar .badge.bg-success {
+    background-color: var(--success) !important;
+}
+
+@media (max-width: 768px) {
+    #eaSidebar .settings-header {
+        padding: 1rem;
+    }
+    #eaSidebar .eaNav .nav-link {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
 @media (max-width: 768px) {
     #eaSidebar .settings-header {
         padding: 1rem;
