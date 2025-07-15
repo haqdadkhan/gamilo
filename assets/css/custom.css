@@ -695,9 +695,11 @@
     .banner__feature .header h1 {
         font-size: 2rem;
     }
-.banner__feature .owl-nav {
+
+    .banner__feature .owl-nav {
         top: -50px;
     }
+
     .banner__feature .owl-nav button:first-child {
         font-size: 12px !important;
         padding: 4px 12px !important;
@@ -708,6 +710,7 @@
         padding: 4px 12px !important;
     }
 }
+
 @media (max-width: 576px) {
 
     .banner__feature .owl-nav button:first-child {
