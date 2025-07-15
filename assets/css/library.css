@@ -1,16 +1,16 @@
-/* --- MAIN CONTENT CSS STARTS  --- */
-main {
+/* --- MAIN CONTENT CSS STARTS --- */
+#main-content {
     width: calc(100% - 288px);
 }
 
 @media (max-width: 992px) {
-    main {
+    #main-content {
         width: 100%;
     }
 }
 
-/* Back Button  */
-.backBtn {
+/* Back Button */
+#libGames .backBtn {
     margin-bottom: 25px;
     background-color: #2c2c5c;
     border-radius: 0 24px 24px 0;
@@ -23,26 +23,36 @@ main {
     gap: 8px;
 }
 
-.backBtn a,
-.backBtn i {
+#libGames .backBtn:hover {
+    background-color: #3a3a70;
+    border-color: #5757a6;
+    box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
+}
+
+#libGames .backBtn:active {
+    transform: scale(0.95);
+    background-color: #5050a0;
+}
+
+#libGames .backBtn a,
+#libGames .backBtn i {
     color: white !important;
 }
 
-.backBtn:hover i {
+#libGames .backBtn:hover i {
     transform: translate(-4px);
 }
 
-.backBtn i {
+#libGames .backBtn i {
     transition: transform 0.3s ease;
 }
 
-
 /* Section Title */
-.sectionTitle div div i {
+#libGames .sectionTitle div div i {
     font-size: 28px;
 }
 
-.sectionTitle div div h2 {
+#libGames .sectionTitle div div h2 {
     font-size: 24px;
     font-weight: 600;
     color: white;
@@ -50,7 +60,7 @@ main {
     margin: 0;
 }
 
-.sectionTitle .sectionNav {
+#libGames .sectionTitle .sectionNav {
     display: flex;
     justify-content: center;
     gap: 1px;
@@ -59,7 +69,7 @@ main {
     border-radius: 24px;
 }
 
-.sectionTitle .sectionNav div {
+#libGames .sectionTitle .sectionNav div {
     font-size: 14px;
     padding: 6px 12px;
     background-color: #2c2c5c;
@@ -67,107 +77,106 @@ main {
     cursor: pointer;
 }
 
-.sectionTitle .sectionNav div.swiper-button-disabled {
+#libGames .sectionTitle .sectionNav div.swiper-button-disabled {
     opacity: 0.6;
     cursor: not-allowed;
     pointer-events: none;
 }
 
-.sectionTitle .sectionNav div:hover {
+#libGames .sectionTitle .sectionNav div:hover {
     background-color: #3a3a70;
     border-color: #5757a6;
     box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
 }
 
-.sectionTitle .sectionNav div:active {
+#libGames .sectionTitle .sectionNav div:active {
     transform: scale(0.95);
     background-color: #5050a0;
 }
 
-.sectionTitle .sectionNav div i {
+#libGames .sectionTitle .sectionNav div i {
     font-size: 14px;
 }
 
-.sectionTitle .sectionNav div:first-child {
+#libGames .sectionTitle .sectionNav div:first-child {
     border-right: none;
     border-radius: 20px 0 0 20px;
     padding: 6px 16px;
 }
 
-.sectionTitle .sectionNav div:last-child {
+#libGames .sectionTitle .sectionNav div:last-child {
     border-left: none;
     border-radius: 0 20px 20px 0;
     padding: 6px 16px;
 }
 
 @media (max-width: 769px) {
-    #main-content .backBtn {
+    #main-content #libGames .backBtn {
         font-size: 12px;
         margin-bottom: 20px;
     }
 
-    .sectionTitle .sectionNav div {
+    #libGames .sectionTitle .sectionNav div {
         padding: 4px 12px;
         font-size: 12px;
     }
 
-    .sectionTitle .sectionNav div:first-child {
+    #libGames .sectionTitle .sectionNav div:first-child {
         padding: 4px 12px;
         font-size: 12px;
     }
 
-    .sectionTitle .sectionNav div:last-child {
+    #libGames .sectionTitle .sectionNav div:last-child {
         padding: 4px 12px;
         font-size: 12px;
     }
 
-    .sectionTitle div div i {
+    #libGames .sectionTitle div div i {
         font-size: 24px;
     }
 
-    .sectionTitle div div h2 {
+    #libGames .sectionTitle div div h2 {
         font-size: 20px;
     }
 }
 
 @media (max-width: 576px) {
-    .sectionTitle .sectionNav div {
+    #libGames .sectionTitle .sectionNav div {
         padding: 4px 12px;
         font-size: 10px;
     }
 
-    .sectionTitle .sectionNav div:first-child {
+    #libGames .sectionTitle .sectionNav div:first-child {
         padding: 4px 12px;
         font-size: 10px;
     }
 
-    .sectionTitle .sectionNav div:first-child i {
+    #libGames .sectionTitle .sectionNav div:first-child i {
         font-size: 10px;
     }
 
-    .sectionTitle .sectionNav div:last-child {
+    #libGames .sectionTitle .sectionNav div:last-child {
         padding: 4px 12px;
         font-size: 10px;
     }
 
-    .sectionTitle .sectionNav div:last-child i {
+    #libGames .sectionTitle .sectionNav div:last-child i {
         font-size: 10px;
     }
 
-    .sectionTitle div div i {
+    #libGames .sectionTitle div div i {
         font-size: 20px;
     }
 
-    .sectionTitle div div h2 {
+    #libGames .sectionTitle div div h2 {
         font-size: 18px;
         font-weight: 500;
     }
 }
 
-
-/* === FADE EFFECT CSS STARTS === */
-.swiper-blur-container::before,
-.swiper-blur-container::after {
+/* Fade Effect */
+#libGames .swiper-blur-container::before,
+#libGames .swiper-blur-container::after {
     content: '';
     position: absolute;
     top: 0;
@@ -179,28 +188,26 @@ main {
     transition: opacity 0.3s ease;
 }
 
-.swiper-blur-container::before {
+#libGames .swiper-blur-container::before {
     left: 0;
     background: linear-gradient(to right, #000616, transparent);
 }
 
-.swiper-blur-container::after {
+#libGames .swiper-blur-container::after {
     right: 0;
     background: linear-gradient(to left, #000616, transparent);
 }
 
-.show-left-blur::before {
+#libGames .swiper-blur-container.show-left-blur::before {
     opacity: 1;
 }
 
-.show-right-blur::after {
+#libGames .swiper-blur-container.show-right-blur::after {
     opacity: 1;
 }
 
-/* === FADE EFFECT CSS ENDS === */
-
-/* All nav Carousel  */
-.cusSearch {
+/* Search Button */
+#libGames .cusSearch {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
     border: none;
@@ -216,29 +223,29 @@ main {
     box-sizing: border-box;
 }
 
-/* Swiper container fixes */
-.swiper.lib-nav-carousel {
+/* Swiper Navigation */
+#libGames .swiper.lib-nav-carousel {
     width: 100%;
     margin: 0;
     padding: 0;
     overflow: visible;
 }
 
-.lib-nav-carousel {
+#libGames .lib-nav-carousel {
     overflow: hidden;
 }
 
-.lib-nav-carousel.nav-tabs {
+#libGames .lib-nav-carousel.nav-tabs {
     border: none;
 }
 
-.lib-nav-carousel .nav-item {
+#libGames .lib-nav-carousel .nav-item {
     width: auto !important;
     padding: 0;
     margin: 0;
 }
 
-.lib-nav-carousel .nav-link {
+#libGames .lib-nav-carousel .nav-link {
     background-color: #10142c;
     color: #fff;
     border: none;
@@ -256,33 +263,31 @@ main {
     transition: all 0.3s ease;
 }
 
-.lib-nav-carousel .nav-link.active,
-.lib-nav-carousel .nav-link:hover {
+#libGames .lib-nav-carousel .nav-link.active,
+#libGames .lib-nav-carousel .nav-link:hover {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: #ffffff !important;
 }
 
-/* Responsive fixes */
+/* Responsive Adjustments */
 @media (max-width: 530px) {
-    .lib-nav-carousel {}
-
-    .cusSearch {
-        padding: 8.5px;
+    #libGames .cusSearch {
+        padding: 11px;
         justify-content: center;
     }
 
-    .cusSearch span {
+    #libGames .cusSearch span {
         display: none;
     }
 
-    .lib-nav-carousel .nav-link {
+    #libGames .lib-nav-carousel .nav-link {
         font-size: 12px;
         padding: 8px 10px;
     }
 }
 
-/* Library */
-.allgames__items {
+/* Game Items */
+#libGames .allgames__items {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -290,51 +295,49 @@ main {
     height: 220px;
 }
 
-.allgames__items img {
+#libGames .allgames__items img {
     height: 100%;
     width: 100%;
-    /* aspect-ratio: 2/3; */
     border-radius: 10px;
     transition: all 0.4s;
     object-fit: fill;
 }
 
-.allgames__items:hover img {
+#libGames .allgames__items:hover img {
     scale: 1.1;
 }
 
-@media (max-width: 1024px) {
-    .allgames__items {
-        width: 155px;
-        height: 200px;
-    }
-}
-
-.allgames__container {
+#libGames .allgames__container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
+    #libGames .allgames__items {
+        width: 155px;
+        height: 200px;
+    }
+}
 
-    .allgames__items {
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
+@media (max-width: 769px) {
+    #libGames .lib-nav-carousel .nav-link,#libGames .cusSearch  {
+        font-size: 14px;
+    }
+
+    #libGames .allgames__items {
         width: calc((100% - 20px) / 3);
         height: 200px;
         aspect-ratio: 3/3 !important;
         flex-shrink: 0;
     }
 
-
-    .allgames__items .badges__two::before {
+    #libGames .allgames__items .badges__two::before {
         width: 25px;
     }
 
-    .allgames__items .badges__two .badge2 {
+    #libGames .allgames__items .badges__two .badge2 {
         width: 20px;
         font-weight: 100;
         height: 20px;
@@ -343,34 +346,31 @@ main {
         z-index: 1;
     }
 
-    .cmn--btn {
+    #libGames .cmn--btn {
         padding: 7px 14px 7px;
         font-size: 16px;
         line-height: 18px;
         font-weight: 200;
     }
 
-    .game__overlay {
+    #libGames .game__overlay {
         display: none !important;
     }
 }
 
 @media (max-width: 466px) {
-    .allgames__container {
+    #libGames .allgames__container {
         gap: 6px;
     }
 
-    .allgames__items {
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
+    #libGames .allgames__items {
         width: calc((100% - 20px) / 3);
         height: 170px;
         aspect-ratio: 3/3 !important;
         flex-shrink: 0;
     }
 
-    .cmn--btn {
+    #libGames .cmn--btn {
         padding: 2px 5px 2px;
         font-size: 12px;
         line-height: 10px;
@@ -379,7 +379,7 @@ main {
 }
 
 @media (max-width: 431px) {
-    .allgames__items {
+    #libGames .allgames__items {
         width: calc((100% - 20px) / 3);
         height: 150px;
     }
