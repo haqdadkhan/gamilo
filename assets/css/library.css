@@ -1,8 +1,4 @@
 /* --- MAIN CONTENT CSS STARTS --- */
-#main-content {
-    width: calc(100% - 288px);
-}
-
 @media (max-width: 992px) {
     #main-content {
         width: 100%;
@@ -12,9 +8,9 @@
 /* Back Button */
 #libGames .backBtn {
     margin-bottom: 25px;
-    background-color: #2c2c5c;
     border-radius: 0 24px 24px 0;
-    padding: 6px 16px;
+    padding: 6px 6px;
+    color: #abb7e0;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -23,20 +19,16 @@
     gap: 8px;
 }
 
-#libGames .backBtn:hover {
-    background-color: #3a3a70;
-    border-color: #5757a6;
-    box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
+#libGames .backBtn a span {
+    font-weight: 500;
 }
 
-#libGames .backBtn:active {
-    transform: scale(0.95);
-    background-color: #5050a0;
+#libGames .backBtn a {
+    font-size: 16px;
+    color: #abb7e0 !important;
 }
-
-#libGames .backBtn a,
-#libGames .backBtn i {
-    color: white !important;
+#libGames .backBtn:hover a {
+    color: #8282ee !important;
 }
 
 #libGames .backBtn:hover i {
@@ -112,8 +104,11 @@
 
 @media (max-width: 769px) {
     #main-content #libGames .backBtn {
-        font-size: 12px;
         margin-bottom: 20px;
+    }
+
+    #main-content #libGames .backBtn a {
+        font-size: 14px;
     }
 
     #libGames .sectionTitle .sectionNav div {
@@ -322,7 +317,9 @@
 }
 
 @media (max-width: 769px) {
-    #libGames .lib-nav-carousel .nav-link,#libGames .cusSearch  {
+
+    #libGames .lib-nav-carousel .nav-link,
+    #libGames .cusSearch {
         font-size: 14px;
     }
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/all.min.css" />
     <!-- Main Css -->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
     <!-- Personal custom Css  -->
     <link rel="stylesheet" href="assets/css/library.css" />
     <!-- Swiper's CSS -->
@@ -20,195 +21,576 @@
 </head>
 
 <body>
-
-    <!-- MAIN CONTENT STARTS -->
-    <main id="main-content" class="mx-auto pt-80">
-        <section class="mx-auto" id="libGames">
+    <div class="main__body__wrap d-flex">
+        <div class="left__body__wrap">
+            <!-- Sidebar Header Starts Here-->
             <div class="container">
-                <div class="backBtn">
-                    <a href="index.html" class="d-flex align-items-center gap-1 gap-md-2">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back</span>
-                    </a>
-                </div>
-                <div class="sectionTitle wow fadeInDown mb-3 mb-md-4" data-wow-delay="0.2s">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center gap-1 gap-md-2 overflow-hidden">
-                            <h2>All Games</h2>
-                        </div>
-                        <div class="sectionNav">
-                            <div class="cusPrevForLIB">
-                                <i class="fas fa-arrow-left"></i>
+                <!-- Modern Gaming Sidebar -->
+                <aside class="gaming-sidebar">
+                    <div class="sidebar-header">
+                        <a href="index.html" class="logo">
+                            <div class="logo-img">
+                                <i class="fas fa-dice-d20"></i>
                             </div>
-                            <div class="cusNextForLIB">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
+                            <div class="logo-text">USD777</div>
+                        </a>
                     </div>
-                </div>
-                <div class="wow fadeInDown mb-3 mb-md-4" data-wow-delay="0.2s">
-                    <div class="d-flex align-items-center gap-2 overflow-hidden">
-                        <div class="flex-1">
-                            <button class="d-flex cusSearch">
-                                <i class="fas fa-search"></i>
-                                <span>Search</span>
-                            </button>
-                        </div>
-                        <div class="overflow-hidden w-100">
-                            <div class="swiper lib-nav-carousel swiper-blur-container">
-                                <div class="swiper-wrapper border-0 nav-scroll-container nav-tabs" role="tablist">
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
-                                            <i class="fas fa-gamepad"></i> All Games
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">
-                                            <i class="fas fa-star"></i> Popular
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">
-                                            <i class="fas fa-bolt"></i> New
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">
-                                            <i class="fas fa-gift"></i> Bonus Trio
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab6">
-                                            <i class="fas fa-dice"></i> Hold’n’Spin
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab7">
-                                            <i class="fas fa-fire"></i> Hot
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="fade show active">
-                    <div class="allgames__container d-flex flex-wrap">
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-bs-toggle="modal" data-bs-target="#cloverModal"
-                            class="allgames__items libCard col-4 col-sm-3 col-md-2">
-                            <div class="badges__two">
-                                <span class="badge2">New</span>
-                            </div>
-                            <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
-                            <div class="game__overlay">
-                                <div class="btn__grp">
-                                    <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U" class="play-btn allvideo">
-                                        <img src="assets/img/allgames/play.png" alt="play">
-                                    </a>
-                                    <a href="#0" class="cmn--btn" data-bs-toggle="modal" data-bs-target="#critter">
-                                        <span>Play For Fun</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-    </main>
-    <!-- MAIN CONTENT ENDS -->
 
-    <!-- ====================================================== -->
-    <!-- Library js  -->
-    <script src="assets/js/library.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <nav class="sidebar-menu">
+                        <div class="menu-title">Main Menu</div>
+                        <ul class="menu-items">
+                            <li class="menu-item active">
+                                <a href="#home" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="menu-text">Home</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#livewinner" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="menu-text">Live Wins</div>
+                                    <div class="menu-badge">HOT</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#allgame" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-gamepad"></i>
+                                    </div>
+                                    <div class="menu-text">Games</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#battle" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-crosshairs"></i>
+                                    </div>
+                                    <div class="menu-text">Gamlio Battles</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#bonus" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-gift"></i>
+                                    </div>
+                                    <div class="menu-text">Rewards</div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="menu-title">More Features</div>
+                        <ul class="menu-items">
+                            <li class="menu-item">
+                                <a href="#provider" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-cubes"></i>
+                                    </div>
+                                    <div class="menu-text">Providers</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#twinner" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="menu-text">Winners</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#recent" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                    <div class="menu-text">Recent Winners</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./personal-centre.html" class="menu-link">
+                                    <div class="menu-icon">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <div class="menu-text">Personal Centre</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="btn-group">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Sign Up</span>
+                        </a>
+                        <a href="#" class="action-btn secondary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- External Toggle Button -->
+                <div class="sidebar-toggle">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            <!-- Sidebar Header Ends here -->
+        </div>
+
+        <div class="right__body__wrap right__space container mx-auto">
+            <!-- Logged-in User Header starts here -->
+            <header class="header-section">
+                <div class="">
+                    <div class="header-wrapper">
+                        <div class="logo-menu">
+                            <a href="index.html" class="logo">
+                                <img src="assets/img/logo/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <div class="search__form">
+                            <form action="#0">
+                                <input type="text" placeholder="Search..." />
+                                <span class="icon">
+                                    <img src="assets/img/header/search.svg" alt="img" />
+                                </span>
+                            </form>
+                        </div>
+
+                        <!-- Language Select + Burger -->
+                        <div class="lang langDisplay d-flex align-items-center gap-1 gap-sm-2">
+                            <div class="language__wrap langSelect">
+                                <div class="flag">
+                                    <img src="assets/img/header/uk.png" alt="flag" />
+                                </div>
+                                <select name="flag" id="flag-img1">
+                                    <option value="1">En</option>
+                                    <option value="2">Cy</option>
+                                    <option value="3">Et</option>
+                                </select>
+                            </div>
+                            <!-- Right Content  -->
+                            <div class="mneu-btn-grp d-flex align-items-center gap-1 gap-sm-2">
+                                <!-- Wallet Container -->
+                                <div class="wallet-box d-flex align-items-center gap-1 gap-sm-2 px-3 py-2">
+                                    <div class="balance text-white d-flex align-items-center gap-1 gap-sm-2">
+                                        <span class="text-base">Rs</span>
+                                        <span class="amaount">1,250.00</span>
+                                    </div>
+                                    <a href="#0" class="wallet-icon" data-bs-toggle="modal" data-bs-target="#deposit"
+                                        title="Deposit">
+                                        <img src="assets/img/header/deposit.png" alt="Deposit" />
+                                    </a>
+                                    <a href="#0" class="wallet-icon" data-bs-toggle="modal" data-bs-target="#withdraw"
+                                        title="Withdraw">
+                                        <img src="assets/img/header/withdraw.png" alt="Withdraw" />
+                                    </a>
+                                </div>
+                                <!-- Announcement / Support Icons -->
+                                <a href="#0" class="header-icon-sm asHide" title="Announcements">
+                                    <img src="assets/img/header/announcements.png" alt="Announcements" />
+                                </a>
+                                <a href="#0" class="header-icon-sm asHide" title="Customer Support">
+                                    <img src="assets/img/header/support.png" alt="Support" />
+                                </a>
+                                <!-- Profile Dropdown -->
+                                <div class="dropdown profile-dropdown">
+                                    <button class="btn p-0 d-flex align-items-center text-white"
+                                        data-bs-toggle="dropdown">
+                                        <img src="assets/img/header/profile.jpeg" alt="User" class="rounded-circle"
+                                            width="36" height="36" />
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end bg-dark p-3 rounded text-white"
+                                        style="min-width: 250px;">
+                                        <li class="text-center mb-2">
+                                            <img src="assets/img/header/profile.jpeg" alt="User"
+                                                class="rounded-circle mb-2" width="60" height="60" />
+                                            <div class="fw-bold">tester5429</div>
+                                            <div class="small text-muted">ID: 240170900</div>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider bg-secondary" />
+                                        </li>
+                                        <li><a class="dropdown-item text-white" href="#">My Account</a></li>
+                                        <li><a class="dropdown-item text-white" href="#">Betting Record</a></li>
+                                        <li><a class="dropdown-item text-white" href="#">Messages</a></li>
+                                        <li><a class="dropdown-item text-white" href="#">Customer Services</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider bg-secondary" />
+                                        </li>
+                                        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Bars  -->
+                            <div class="header-bar d-lg-none">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <!-- Main Menu -->
+                        <ul class="main-menu">
+                            <!-- Visually Dropped Items  -->
+                            <div class="dropShow d-flex justify-content-start align-items-center gap-1 gap-sm-2 mb-2">
+                                <!-- Search -->
+                                <div class="search__form searchShow">
+                                    <form action="#0">
+                                        <input type="text" placeholder="Search..." />
+                                        <span class="icon">
+                                            <img src="assets/img/header/search.svg" alt="img" />
+                                        </span>
+                                    </form>
+                                </div>
+                                <!-- lang selection  -->
+                                <div class="language__wrap cusLang">
+                                    <div class="flag">
+                                        <img src="assets/img/header/uk.png" alt="flag" />
+                                    </div>
+                                    <select name="flag" id=" flag-img1">
+                                        <option value="1">En</option>
+                                        <option value="2">Cy</option>
+                                        <option value="3">Et</option>
+                                    </select>
+                                </div>
+                                <!-- Announcement / Support Icons -->
+                                <a href="#0" class="header-icon-sm asBlown" title="Announcements">
+                                    <img src="assets/img/header/announcements.png" alt="Announcements" />
+                                </a>
+                                <a href="#0" class="header-icon-sm asBlown" title="Customer Support">
+                                    <img src="assets/img/header/support.png" alt="Support" />
+                                </a>
+                            </div>
+                            <!-- Header List  -->
+                            <li>
+                                <a href="#home">
+                                    <span class="icon"><img src="assets/img/header/home.png" alt="icon"></span>
+                                    <span>Homes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#livewinner">
+                                    <span class="icon"><img src="assets/img/header/live.png" alt="icon"></span>
+                                    <span>Live Wins</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#allgame">
+                                    <span class="icon"><img src="assets/img/header/games.png" alt="icon"></span>
+                                    <span>Games</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#battle">
+                                    <span class="icon"><img src="assets/img/header/battles.png" alt="icon"></span>
+                                    <span>Gamlio Battles</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#bonus">
+                                    <span class="icon"><img src="assets/img/header/rewards.png" alt="icon"></span>
+                                    <span>Rewards</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#provider">
+                                    <span class="icon"><img src="assets/img/header/provider.png" alt="icon"></span>
+                                    <span>Providers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#twinner">
+                                    <span class="icon"><img src="assets/img/header/winners.png" alt="icon"></span>
+                                    <span>Winners</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#recent">
+                                    <span class="icon"><img src="assets/img/header/award.png" alt="icon"></span>
+                                    <span>Recent winners</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./personal-centre.html">
+                                    <span class="icon"><img src="assets/img/header/award.png" alt="icon"></span>
+                                    <span>Personal Centre</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Right Side Section -->
+                        <div class="mneu-btn-grp menuDisplay d-flex align-items-center gap-2">
+                            <div class="language__wrap langSelect">
+                                <div class="flag">
+                                    <img src="assets/img/header/uk.png" alt="flag" />
+                                </div>
+                                <select name="flag" id="flag-img1">
+                                    <option value="1">En</option>
+                                    <option value="2">Cy</option>
+                                    <option value="3">Et</option>
+                                </select>
+                            </div>
+                            <!-- Wallet Container -->
+                            <div class="wallet-box d-flex align-items-center gap-2 px-3 py-2">
+                                <div class="balance text-white d-flex align-items-center gap-2">
+                                    <span class="text-base">Rs</span>
+                                    <span class="amaount">1,250.00</span>
+                                </div>
+                                <a href="#0" class="wallet-icon" data-bs-toggle="modal" data-bs-target="#deposit"
+                                    title="Deposit">
+                                    <img src="assets/img/header/deposit.png" alt="Deposit" />
+                                </a>
+                                <a href="#0" class="wallet-icon" data-bs-toggle="modal" data-bs-target="#withdraw"
+                                    title="Withdraw">
+                                    <img src="assets/img/header/withdraw.png" alt="Withdraw" />
+                                </a>
+                            </div>
+                            <!-- Announcement / Support Icons -->
+                            <a href="#0" class="header-icon-sm" title="Announcements">
+                                <img src="assets/img/header/announcements.png" alt="Announcements" />
+                            </a>
+                            <a href="#0" class="header-icon-sm" title="Customer Support">
+                                <img src="assets/img/header/support.png" alt="Support" />
+                            </a>
+                            <!-- Profile Dropdown -->
+                            <div class="dropdown profile-dropdown">
+                                <button class="userLogo btn d-flex align-items-center gap-2 text-white"
+                                    data-bs-toggle="dropdown">
+                                    <img src="assets/img/header/profile.jpeg" alt="User" class="rounded-circle" />
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end bg-dark p-3 rounded text-white"
+                                    style="min-width: 250px;">
+                                    <li class="text-center mb-2">
+                                        <img src="assets/img/header/profile.jpeg" alt="User" class="rounded-circle mb-2"
+                                            width="60" height="60" />
+                                        <div class="fw-bold">tester5429</div>
+                                        <div class="small text-muted">ID: 240170900</div>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider bg-secondary" />
+                                    </li>
+                                    <li><a class="dropdown-item text-white" href="#">My Account</a></li>
+                                    <li><a class="dropdown-item text-white" href="#">Betting Record</a></li>
+                                    <li><a class="dropdown-item text-white" href="#">Messages</a></li>
+                                    <li><a class="dropdown-item text-white" href="#">Customer Services</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider bg-secondary" />
+                                    </li>
+                                    <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- User Logged in header ends here   -->
+
+            <!-- MAIN CONTENT STARTS -->
+            <main id="main-content" class="mx-auto mt-1 mt-sm-4">
+                <section class="mx-auto" id="libGames">
+                    <div class="">
+                        <div class="backBtn">
+                            <a href="index.html" class="d-flex align-items-center gap-1 gap-md-2">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </a>
+                        </div>
+                        <div class="sectionTitle wow fadeInDown mb-3 mb-md-4" data-wow-delay="0.2s">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-1 gap-md-2 overflow-hidden">
+                                    <h2>All Games</h2>
+                                </div>
+                                <div class="sectionNav">
+                                    <div class="cusPrevForLIB">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </div>
+                                    <div class="cusNextForLIB">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wow fadeInDown mb-3 mb-md-4" data-wow-delay="0.2s">
+                            <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                <div class="flex-1">
+                                    <button class="d-flex cusSearch">
+                                        <i class="fas fa-search"></i>
+                                        <span>Search</span>
+                                    </button>
+                                </div>
+                                <div class="overflow-hidden w-100">
+                                    <div class="swiper lib-nav-carousel swiper-blur-container">
+                                        <div class="swiper-wrapper border-0 nav-scroll-container nav-tabs"
+                                            role="tablist">
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
+                                                    <i class="fas fa-gamepad"></i> All Games
+                                                </button>
+                                            </div>
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">
+                                                    <i class="fas fa-star"></i> Popular
+                                                </button>
+                                            </div>
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">
+                                                    <i class="fas fa-bolt"></i> New
+                                                </button>
+                                            </div>
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">
+                                                    <i class="fas fa-gift"></i> Bonus Trio
+                                                </button>
+                                            </div>
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab6">
+                                                    <i class="fas fa-dice"></i> Hold’n’Spin
+                                                </button>
+                                            </div>
+                                            <div class="swiper-slide nav-item">
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab7">
+                                                    <i class="fas fa-fire"></i> Hot
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fade show active">
+                            <div class="allgames__container d-flex flex-wrap">
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bs-toggle="modal" data-bs-target="#cloverModal"
+                                    class="allgames__items libCard col-4 col-sm-3 col-md-2">
+                                    <div class="badges__two">
+                                        <span class="badge2">New</span>
+                                    </div>
+                                    <img src="assets/img/allgames/game1.jpg" alt="img" class="img-fluid gameImg">
+                                    <div class="game__overlay">
+                                        <div class="btn__grp">
+                                            <a href="https://www.youtube.com/watch?v=IIDIwjgPi0U"
+                                                class="play-btn allvideo">
+                                                <img src="assets/img/allgames/play.png" alt="play">
+                                            </a>
+                                            <a href="#0" class="cmn--btn" data-bs-toggle="modal"
+                                                data-bs-target="#critter">
+                                                <span>Play For Fun</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- MAIN CONTENT ENDS -->
+
+        <!-- ====================================================== -->
+        <!-- Library js  -->
+        <script src="assets/js/library.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
