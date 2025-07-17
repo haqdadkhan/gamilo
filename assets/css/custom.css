@@ -2201,3 +2201,299 @@
 }
 
 /* --- PROMOTIONS CSS ENDS ---  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner__winer {
+    border-radius: 10px;
+    background-color: #10142c;
+    position: relative;
+    overflow: hidden;
+    padding: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Constant moving dot border for header */
+.banner__winer .amount__head {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.banner__winer .amount__head:hover {
+    border: 1px solid #8e2de2;
+}
+
+/* Animation keyframes for moving dot */
+@keyframes rotateDotBorder {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Content styling */
+.banner__winer .amount__head-inner {
+    background-color: #10142c;
+    border-radius: 8px;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.banner__winer .amount__head h5 {
+    text-align: start;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.banner__winer .amount__head h4 {
+    text-align: start;
+    font-size: 32px;
+    color: #7dbeff;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.banner__winer p {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin: 20px 15px;
+}
+
+.banner__winer p span {
+    color: #7dbeff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.banner__winer p:hover span {
+    color: #1d8cfc;
+}
+
+.banner__winer .amount__video {
+    border-radius: 10px;
+    background-color: rgba(142, 45, 226, 0.1);
+    padding: 15px 20px;
+    margin: 0 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(142, 45, 226, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner__winer .amount__video:hover {
+    border-radius: 10px 0 10px 0;
+    background-color: rgba(142, 45, 226, 0.2);
+    border-color: rgba(142, 45, 226, 0.6);
+}
+
+.banner__winer .amount__video .left__wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner__winer .amount__video .thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.banner__winer .amount__video .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.banner__winer .amount__video:hover .thumb img {
+    transform: scale(1.05);
+}
+
+.banner__winer .amount__video .content .raider {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.banner__winer .amount__video .content h6 {
+    font-size: 18px;
+    color: #7dbeff;
+    margin: 0;
+    font-weight: 600;
+}
+
+.banner__winer .amount__video .play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(142, 45, 226, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    border: 1px solid rgba(142, 45, 226, 0.5);
+}
+
+.banner__winer .amount__video .play-btn:hover {
+    background: #8e2de2;
+    transform: scale(1.1);
+}
+
+.banner__winer .amount__video .play-btn img {
+    width: 26px;
+    transition: all 0.3s ease;
+}
+
+.banner__winer .jack__btn {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    margin: 0 15px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.banner__winer .jack__btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+.banner__winer .jack__btn:hover {
+    background: #10142c;
+    color: #8e2de2;
+    border: 1px solid #8e2de2;
+    box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
+}
+
+.banner__winer .jack__btn:hover::before {
+    left: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .banner__winer .amount__head {
+        padding: 8px;
+    }
+
+    .banner__winer .amount__head h4 {
+        font-size: 28px;
+    }
+
+    .banner__winer p {
+        font-size: 16px;
+        margin: 15px;
+    }
+
+    .banner__winer .amount__video {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner__winer .amount__video .left__wrap .content .raider {
+        font-size: 14px;
+    }
+
+    .banner__winer .amount__video .left__wrap .content h6 {
+        font-size: 16px;
+    }
+
+    .banner__winer .amount__video .thumb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .banner__winer .jack__btn {
+        font-size: 16px;
+        padding: 12px;
+        margin: 0;
+    }
+}
