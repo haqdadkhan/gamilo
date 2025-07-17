@@ -425,10 +425,6 @@
         margin-left: 10px;
     }
 
-    .language__wrap.cusLang .flag {
-        background-color: #17223b !important;
-    }
-
     .cmn--btn {
         padding: 7px 14px 7px;
         font-size: 16px;
@@ -1860,7 +1856,36 @@
 
 
 /* --- BOTTOM NAV CSS Starts --- */
+/* :root {
+    --nav-bg: #ffffff;
+    --nav-shadow-color: rgba(0, 0, 0, 0.1);
+    --nav-icon-default: #6c757d;
+    --nav-icon-active: #4361ee;
+    --nav-text-default: #6c757d;
+    --nav-text-active: #4361ee;
+    --nav-indicator: #4361ee;
+    --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
+}
+
+[data-theme="dark"] {
+    --nav-bg: #191f46;
+    --nav-shadow-color: rgba(0, 0, 0, 0.3);
+    --nav-icon-default: #7dbeff;
+    --nav-icon-active: #1d8cfc;
+    --nav-text-default: #a0a0a0;
+    --nav-text-active: #1d8cfc;
+    --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
+    } */
+
 .bottom-nav {
+    --nav-bg: #191f46;
+    --nav-shadow-color: rgba(0, 0, 0, 0.3);
+    --nav-icon-default: #7dbeff;
+    --nav-icon-active: #1d8cfc;
+    --nav-text-default: #a0a0a0;
+    --nav-text-active: #1d8cfc;
+    --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
+
     position: fixed;
     bottom: 8px;
     left: 50%;
@@ -1868,9 +1893,9 @@
     width: calc(100% - 30px);
     max-width: 500px;
     height: 60px;
-    background: white;
+    background: var(--nav-bg);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px var(--nav-shadow-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1892,15 +1917,20 @@
 
 .nav-icon {
     font-size: 22px;
-    color: #6c757d;
+    color: var(--nav-icon-default);
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
 }
 
 .bottom-nav-item.active .nav-icon {
-    color: #4361ee;
-    transform: translateY(-5px);
+    color: var(--nav-icon-active);
+    transform: translateY(-7px);
+}
+
+.bottom-nav-item:hover .nav-icon {
+    color: var(--nav-icon-active);
+    transform: translateY(-7px);
 }
 
 .bottom-nav-item.active::before {
@@ -1909,7 +1939,7 @@
     top: -5px;
     width: 40px;
     height: 4px;
-    background: #4361ee;
+    background: var(--nav-indicator);
     border-radius: 2px;
 }
 
@@ -1917,7 +1947,7 @@
     position: absolute;
     bottom: 8px;
     font-size: 11px;
-    color: #6c757d;
+    color: var(--nav-text-default);
     font-weight: 500;
     transition: all 0.3s ease;
     opacity: 0;
@@ -1925,19 +1955,24 @@
 }
 
 .bottom-nav-item.active .bottom-nav-text {
-    color: #4361ee;
+    color: var(--nav-text-active);
     opacity: 1;
     transform: translateY(0);
 }
 
 .bottom-nav-item:hover .nav-icon {
-    color: #4361ee;
+    color: var(--nav-icon-active);
 }
 
 .bottom-nav-item:hover .bottom-nav-text {
     opacity: 1;
     transform: translateY(0);
-    color: #6c757d;
+    color: var(--nav-text-active);
+}
+
+.bottom-nav-item:hover.active i {
+    top: 0;
+    margin-bottom: 0;
 }
 
 @media (max-width: 376px) {
@@ -1967,7 +2002,6 @@
 }
 
 /* --- BOTTOM NAV CSS Ends --- */
-
 /* --- PROMOTIONS CSS STARTS ---  */
 /* Header Section */
 .promotions-header {

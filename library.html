@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="assets/css/all.min.css" />
     <!-- Main Css -->
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Personal custom Css  -->
-    <link rel="stylesheet" href="assets/css/library.css" />
     <!-- Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Personal Custom Css  -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Personal Library Css  -->
+    <link rel="stylesheet" href="assets/css/library.css" />
 </head>
 
 <body>
@@ -139,7 +140,7 @@
             <!-- Sidebar Header Ends here -->
         </div>
 
-        <div class="right__body__wrap right__space container mx-auto">
+        <div class="right__body__wrap right__space container-sm mx-auto">
             <!-- Logged-in User Header starts here -->
             <header class="header-section">
                 <div class="">
@@ -613,18 +614,44 @@
                 </a>
             </div>
         </nav>
+        <!-- Bottom Navigation Ends -->
     </div>
-    <!-- Bottom Navigation Ends -->
+    <!-- Games Modal Starts  -->
+    <div class="modal fade mobile-modal" id="cloverModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content clover-modal shine-effect">
+                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+                <div class="modal-header">
+                    <img src="https://images.294898493.com/TCG_GAME_ICONS/JL/EN/JL0045.png" alt="JILI Logo"
+                        class="game-logo">
+                    <div class="game-title">
+                        <h2>JILI</h2>
+                        <p>Clover Coins 3x3</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-play action-btn">Play Now</button>
+                    <button type="button" class="btn btn-trial action-btn">Free Trial</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Games Modal Ends  -->
     <!-- ====================================================== -->
-    <!-- Library js  -->
-    <script src="assets/js/library.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <!-- JQuery js  -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Main js  -->
     <script src="assets/js/main.js"></script>
+    <!-- Bootstrap js  -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Library js  -->
+    <script src="assets/js/library.js"></script>
+    <!-- Custom js  -->
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
