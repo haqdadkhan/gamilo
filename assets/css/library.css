@@ -27,12 +27,17 @@
     font-size: 16px;
     color: #abb7e0 !important;
 }
+
 #libGames .backBtn:hover a {
     color: #8282ee !important;
 }
 
 #libGames .backBtn:hover i {
     transform: translate(-4px);
+}
+
+#libGames .backBtn:active {
+    transform: scale(0.95);
 }
 
 #libGames .backBtn i {
@@ -267,7 +272,8 @@
 /* Responsive Adjustments */
 @media (max-width: 530px) {
     #libGames .cusSearch {
-        padding: 11px;
+        font-size: 12px !important;
+        padding: 8px;
         justify-content: center;
     }
 
@@ -276,7 +282,7 @@
     }
 
     #libGames .lib-nav-carousel .nav-link {
-        font-size: 12px;
+        font-size: 12px !important;
         padding: 8px 10px;
     }
 }
