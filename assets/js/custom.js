@@ -1,4 +1,34 @@
-// --- EVERYTHING'S ATTRIBUTES UPDATE ---
+const heroSwiper = new Swiper(".hero-carousel", {
+    grabCursor: true,
+    autoplay: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".cusNextForHero",
+        prevEl: ".cusPrevForHero",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+        },
+        768: {
+            slidesPerView: 2,
+            centeredSlides: false,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    }
+});
+
+// --- EVERYTHING'S ATTRIBUTES UPDATE for MOBILE ---
 function updateModalAttributes() {
     const isMobile = window.innerWidth <= 768;
     document.querySelectorAll('.agCard').forEach(card => {
