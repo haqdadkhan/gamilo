@@ -2243,6 +2243,38 @@
 
 
 
+/* HERO SECTION CSS ENDS */
+:root {
+    /* Hero Section Colors */
+    --hero-text-color: #e0e0ff;
+    --hero-shadow-color: rgba(0, 0, 0, 0.4);
+    --hero-card-gradient-start: #2f2f52;
+    --hero-card-gradient-end: #1b1b2c;
+    --hero-badge-bg: rgba(0, 201, 255, 0.2);
+    --hero-badge-border: #00c9ff;
+    --hero-badge-text: #00c9ff;
+    --hero-title-gradient-start: #00c9ff;
+    --hero-title-gradient-end: #92fe9d;
+    --hero-description-color: rgba(224, 224, 255, 0.8);
+    --hero-balance-btn-start: #00c9ff;
+    --hero-balance-btn-end: #92fe9d;
+    --hero-balance-btn-text: #111;
+    --hero-balance-btn-shadow: rgba(0, 201, 255, 0.3);
+    --hero-balance-btn-hover-shadow: rgba(0, 201, 255, 0.4);
+    --hero-terms-btn-bg: rgba(255, 255, 255, 0.1);
+    --hero-terms-btn-border: rgba(255, 255, 255, 0.2);
+    --hero-terms-btn-hover-bg: rgba(255, 255, 255, 0.2);
+    --hero-nav-btn-start: #00c6ff;
+    --hero-nav-btn-end: #0072ff;
+    --hero-nav-btn-border: #000616;
+    --hero-nav-prev-hover-start: #00d2ff;
+    --hero-nav-prev-hover-end: #3a47d5;
+    --hero-nav-next-hover-start: #3a47d5;
+    --hero-nav-next-hover-end: #00d2ff;
+    --hero-pagination-bullet: rgba(255, 255, 255, 0.3);
+    --hero-pagination-active-start: #00c9ff;
+    --hero-pagination-active-end: #92fe9d;
+}
 
 /* Hero Section - Main Container */
 #home.hero-section {
@@ -2272,8 +2304,8 @@
     position: relative;
     border-radius: 18px;
     padding: 2rem;
-    color: #e0e0ff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: var(--hero-text-color);
+    box-shadow: 0 10px 30px var(--hero-shadow-color);
     height: 100%;
     min-height: 280px;
     display: flex;
@@ -2283,7 +2315,7 @@
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card:hover .card-gradient {
-    background: #2f2f52;
+    background: var(--hero-card-gradient-start);
 }
 
 /* Card Gradient Background */
@@ -2294,7 +2326,7 @@
     border-radius: 18px;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top left, #2f2f52, #1b1b2c);
+    background: radial-gradient(circle at top left, var(--hero-card-gradient-start), var(--hero-card-gradient-end));
     z-index: 1;
 }
 
@@ -2317,13 +2349,13 @@
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: rgba(0, 201, 255, 0.2);
-    border: 1px solid #00c9ff;
+    background: var(--hero-badge-bg);
+    border: 1px solid var(--hero-badge-border);
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #00c9ff;
+    color: var(--hero-badge-text);
 }
 
 /* Card Title */
@@ -2331,7 +2363,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    background: linear-gradient(to right, var(--hero-title-gradient-start), var(--hero-title-gradient-end));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -2341,7 +2373,7 @@
 /* Card Description */
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .card-description {
     font-size: 0.95rem;
-    color: rgba(224, 224, 255, 0.8);
+    color: var(--hero-description-color);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -2372,27 +2404,27 @@
 
 /* Balance Button */
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .balance-btn {
-    background: linear-gradient(to right, #00c9ff, #92fe9d);
-    color: #111;
-    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
+    background: linear-gradient(to right, var(--hero-balance-btn-start), var(--hero-balance-btn-end));
+    color: var(--hero-balance-btn-text);
+    box-shadow: 0 4px 15px var(--hero-balance-btn-shadow);
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .balance-btn:hover {
     transform: translateY(-2px);
     color: #fff;
-    box-shadow: 0 6px 20px rgba(0, 201, 255, 0.4);
+    box-shadow: 0 6px 20px var(--hero-balance-btn-hover-shadow);
 }
 
 /* Terms Button */
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .terms-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--hero-terms-btn-bg);
     backdrop-filter: blur(5px);
-    color: #e0e0ff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--hero-text-color);
+    border: 1px solid var(--hero-terms-btn-border);
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .terms-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--hero-terms-btn-hover-bg);
     color: #fff;
 }
 
@@ -2409,16 +2441,16 @@
     border-radius: 50%;
     z-index: 7;
     color: #fff;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    border: 5px solid #000616;
+    background: linear-gradient(to right, var(--hero-nav-btn-start), var(--hero-nav-btn-end));
+    border: 5px solid var(--hero-nav-btn-border);
 }
 
 #home.hero-section .hero-container .cusPrevForHero:hover {
-    background: linear-gradient(to right, #00d2ff, #3a47d5);
+    background: linear-gradient(to right, var(--hero-nav-prev-hover-start), var(--hero-nav-prev-hover-end));
 }
 
 #home.hero-section .hero-container .cusNextForHero:hover {
-    background: linear-gradient(to right, #3a47d5, #00d2ff);
+    background: linear-gradient(to right, var(--hero-nav-next-hover-start), var(--hero-nav-next-hover-end));
 }
 
 #home.hero-section .hero-container .cusPrevForHero {
@@ -2442,7 +2474,7 @@
     z-index: 9;
     right: 0px;
     border-radius: 88px 0 0 0;
-    box-shadow: -10px 0px 0 0 #000616;
+    box-shadow: -10px 0px 0 0 var(--hero-nav-btn-border);
 }
 
 #home.hero-section .hero-container .cusPrevForHero::after {
@@ -2455,7 +2487,7 @@
     z-index: 9;
     right: 0px;
     border-radius: 0 0 0 88px;
-    box-shadow: -10px 0px 0 0 #000616;
+    box-shadow: -10px 0px 0 0 var(--hero-nav-btn-border);
 }
 
 #home.hero-section .hero-container .cusNextForHero::before {
@@ -2468,7 +2500,7 @@
     z-index: 9;
     left: 0px;
     border-radius: 0 88px 0 0;
-    box-shadow: 10px 0px 0 0 #000616;
+    box-shadow: 10px 0px 0 0 var(--hero-nav-btn-border);
 }
 
 #home.hero-section .hero-container .cusNextForHero::after {
@@ -2481,7 +2513,7 @@
     z-index: 9;
     left: 0px;
     border-radius: 0 0 88px 0;
-    box-shadow: 10px 0px 0 0 #000616;
+    box-shadow: 10px 0px 0 0 var(--hero-nav-btn-border);
 }
 
 /* Pagination Styles */
@@ -2491,17 +2523,17 @@
 }
 
 #home.hero-section .hero-container .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 8px;
+    height: 8px;
+    background: var(--hero-pagination-bullet);
     opacity: 1;
     transition: all 0.3s ease;
 }
 
 #home.hero-section .hero-container .swiper-pagination-bullet-active {
-    width: 30px;
+    width: 20px;
     border-radius: 5px;
-    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    background: linear-gradient(to right, var(--hero-pagination-active-start), var(--hero-pagination-active-end));
 }
 
 /* Responsive Breakpoints */
@@ -2565,6 +2597,8 @@
         width: calc(25% - 15px);
     }
 }
+
+/* HERO SECTION CSS ENDS */
 
 
 /* SITE LOADER CSS STARTS */
