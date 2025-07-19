@@ -22,7 +22,7 @@ const heroSwiper = new Swiper(".hero-carousel", {
             slidesPerView: 2,
             centeredSlides: false,
         },
-        1024: {
+        1025: {
             slidesPerView: 3,
         },
     }

@@ -231,9 +231,9 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    :root {
+    /* :root {
         --sidebar-width: 240px;
-    }
+    } */
 
     .menu-link {
         padding: 10px 12px;
@@ -2390,18 +2390,21 @@
     border: 5px solid #000616;
 }
 
-.cusPrevForHero:hover,
-.cusNextForHero:hover {
+.cusPrevForHero:hover {
     background: linear-gradient(to right, #00d2ff, #3a47d5);
 }
 
+.cusNextForHero:hover {
+    background: linear-gradient(to right, #3a47d5, #00d2ff);
+}
+
 .cusPrevForHero {
-    top: 42%;
+    top: 45%;
     left: -20px;
 }
 
 .cusNextForHero {
-    top: 42%;
+    top: 45%;
     right: -20px;
 }
 
@@ -2500,6 +2503,7 @@
 
     .card-description {
         font-size: 0.85rem;
+        max-width: 60%;
     }
 
     .card-btn {
@@ -2529,8 +2533,88 @@
     }
 }
 
+@media (min-width: 1300px) {
+    .card-description {
+        max-width: 60%;
+    }
+}
+
 @media (min-width: 1200px) {
     .swiper-slide {
         width: calc(25% - 15px);
     }
+}
+
+
+
+/* CSS Loader  */
+.preloader .thumb .loader-container {
+    text-align: center;
+    color: #ffffff;
+}
+
+.preloader .thumb .loader-container .loader {
+    width: 85px;
+    height: 85px;
+    border: 5px solid transparent;
+    border-top-color: #00ffcc;
+    border-bottom-color: #ff007a;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite;
+    position: relative;
+    margin: 0 auto;
+}
+
+.preloader .thumb .loader-container .loader::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 5px solid transparent;
+    border-left-color: #ff007a;
+    border-right-color: #00ffcc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite reverse, glow 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #8e2de2, 0 0 30px #00ffcc;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #8e2de2, 0 0 30px #00ffcc, 0 0 40px #8e2de2;
+    }
+}
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .preloader .thumb .loader-container .loader {
+    width: 70px;
+    height: 70px;}
 }
