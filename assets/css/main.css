@@ -837,7 +837,7 @@ p {
 }
 
 .menu-fixed {
-  z-index: 999999;
+  z-index: 99;
   transition: all 0.9s;
   background-color: var(--header-color);
   padding: 18px 0 20px;

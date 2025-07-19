@@ -2276,12 +2276,6 @@
     --hero-pagination-active-end: #92fe9d;
 }
 
-/* Hero Section - Main Container */
-#home.hero-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 #home.hero-section .hero-container {
     position: relative;
     max-width: 1400px;
@@ -2675,3 +2669,326 @@
 }
 
 /* SITE LOADER CSS ENDS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    /* Main Colors */
+    --color-primary: #2c2c5c;
+    --color-primary-light: #3a3a70;
+    --color-primary-lighter: #5050a0;
+    --color-primary-lightest: #5757a6;
+    --color-primary-accent: #6a6ac2;
+
+    /* Gradient Colors */
+    --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
+    --gradient-purple-light: linear-gradient(to right, #9d3df1, #5a15e8);
+    --gradient-red: linear-gradient(135deg, #ff416c, #ff4b2b);
+
+    /* Text Colors */
+    --text-white: white;
+    --text-light-blue: #abb7e0;
+    --text-purple-accent: #8282ee;
+
+    /* Background Colors */
+    --bg-dark: #000616;
+    --bg-darker: #10142c;
+    --bg-dark-light: #1a1d3a;
+
+    /* Shadow Colors */
+    --shadow-primary: rgba(87, 87, 166, 0.6);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-purple: rgba(142, 45, 226, 0.4);
+    --shadow-white: rgba(255, 255, 255, 0.7);
+}
+
+/* Custom Close Button with Font Awesome */
+#searchModal .btn-close-custom {
+    background: transparent;
+    border: none;
+    top: 5px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#searchModal .btn-close-custom:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: var(--text-purple-accent);
+}
+
+#searchModal .btn-close-custom .fa-times {
+    font-size: 22px;
+}
+
+/* SEARCH GAMES MODAL CSS Starts */
+/* Modal Sizing */
+#searchModal .modal-dialog {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+}
+
+#searchModal .modal-content {
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+}
+
+@media (min-width: 992px) {
+    #searchModal .modal-dialog {
+        max-width: 780px;
+        height: auto;
+        max-height: 684px;
+        margin: 1.75rem auto;
+    }
+
+    #searchModal .modal-content {
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid var(--color-primary-light);
+    }
+}
+
+/* Modal Content Styling */
+#searchModal .modal-content {
+    background: var(--bg-darker);
+    color: var(--text-white);
+}
+
+#searchModal .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 10;
+}
+
+#searchModal .btn-close:hover {
+    opacity: 1;
+}
+
+/* Search Bar */
+#searchModal .search-bar-container .input-group {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-primary-light);
+}
+
+#searchModal .search-bar-container .input-group-text {
+    color: var(--text-light-blue);
+    background-color: var(--bg-dark-light);
+    font-size: 14px;
+    border: none;
+}
+
+#searchModal .search-bar-container .form-control {
+    background-color: var(--bg-dark-light);
+    color: var(--text-white);
+    border: none;
+    padding: 12px;
+    outline: none;
+}
+
+#searchModal .search-bar-container .form-control::placeholder {
+    color: var(--text-light-blue);
+    opacity: 0.7;
+}
+
+/* Navigation Tabs */
+#searchModal .nav-scroll-container {
+    position: relative;
+}
+
+#searchModal .search-nav-carousel {
+    overflow: hidden;
+    border-bottom: none;
+}
+
+#searchModal .swiper-wrapper {
+    border-bottom: none;
+}
+
+#searchModal .search-nav-carousel .swiper-slide {
+    max-width: max-content;
+}
+
+#searchModal .search-nav-carousel .nav-link {
+    background-color: var(--bg-dark-light);
+    color: var(--text-light-blue);
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#searchModal .search-nav-carousel .nav-link.active,
+#searchModal .search-nav-carousel .nav-link:hover {
+    background: var(--gradient-purple);
+    color: var(--text-white) !important;
+}
+
+/* Game Cards */
+#searchModal .search-games-container {
+    margin: 0 -5px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+    #searchModal .search-games-container {
+        max-height: 450px;
+    }
+}
+
+#searchModal .search-game-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 180px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#searchModal .search-game-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#searchModal .search-game-card:hover .search-game-img {
+    transform: scale(1.05);
+}
+
+#searchModal .search-game-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--gradient-red);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+#searchModal .search-game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#searchModal .search-game-card:hover .search-game-overlay {
+    opacity: 1;
+}
+
+#searchModal .search-game-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchModal .search-play-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+#searchModal .search-play-btn:hover {
+    transform: scale(1.1);
+}
+
+#searchModal .search-play-btn img {
+    width: 100%;
+    height: auto;
+}
+
+#searchModal .search-play-fun-btn {
+    background: var(--gradient-purple);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#searchModal .search-play-fun-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-purple);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #searchModal .search-bar-container .form-control {
+        padding: 8px;
+    }
+
+    #searchModal .search-game-card {
+        height: 150px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    #searchModal .search-game-card {
+        height: 120px;
+    }
+
+    #searchModal .search-game-btns {
+        gap: 6px;
+    }
+
+    #searchModal .search-play-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    #searchModal .search-play-fun-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}
+
+/* SEARCH GAMES MODAL CSS Ends */

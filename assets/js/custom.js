@@ -460,3 +460,37 @@ if (localStorage.getItem('theme') === 'dark') {
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SEARCH BAR JS
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize the navigation swiper
+    const searchNavSwiper = new Swiper('.search-nav-carousel', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        freeMode: true,
+    });
+
+    // Add event listener to your search button
+    // document.querySelector('.cusSearch')?.addEventListener('click', function () {
+    //     const searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
+    //     searchModal.show();
+    // });
+});
