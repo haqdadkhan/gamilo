@@ -335,7 +335,7 @@
 }
 
 #libGames .allgames__items:hover img {
-    scale: 1.1;
+    scale: 1.05;
 }
 
 #libGames .allgames__container {
@@ -356,6 +356,7 @@
 
     #libGames .lib-nav-carousel .nav-link,
     #libGames .cusSearch {
+        font-weight: normal;
         font-size: 14px;
     }
 
@@ -393,7 +394,7 @@
 
 @media (max-width: 466px) {
     #libGames .allgames__container {
-        gap: 6px;
+        gap: 8px;
     }
 
     #libGames .allgames__items {
@@ -415,6 +416,12 @@
     #libGames .allgames__items {
         width: calc((100% - 20px) / 3);
         height: 150px;
+    }
+}
+
+@media (max-width: 376px) {
+    #libGames .allgames__items {
+        height: 130px;
     }
 }
 

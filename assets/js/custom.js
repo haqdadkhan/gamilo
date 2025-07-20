@@ -478,19 +478,3 @@ if (localStorage.getItem('theme') === 'dark') {
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
 }
-
-
-// ---LIBRARY NAV - SWIPER ---
-const anSwiper = new Swiper(".lib-nav-carousel", {
-    grabCursor: true,
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    watchOverflow: true,
-    navigation: {
-        nextEl: '.cusNextForLIB',
-        prevEl: '.cusPrevForLIB',
-    },
-});
-
-// Apply blur effect if needed
-applySwiperBlurEffect(anSwiper, '.lib-nav-carousel');
