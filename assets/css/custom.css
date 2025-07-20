@@ -2721,8 +2721,8 @@
 #searchModal .btn-close-custom {
     background: transparent;
     border: none;
-    top: 5px;
-    right: 8px;
+    top: 10px;
+    right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2755,9 +2755,11 @@
     height: 100vh;
     border-radius: 0;
     border: none;
+    background: var(--bg-darker);
+    color: var(--text-white);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 993px) {
     #searchModal .modal-dialog {
         max-width: 780px;
         height: auto;
@@ -2772,12 +2774,7 @@
     }
 }
 
-/* Modal Content Styling */
-#searchModal .modal-content {
-    background: var(--bg-darker);
-    color: var(--text-white);
-}
-
+/* Close Button */
 #searchModal .btn-close {
     filter: invert(1);
     opacity: 0.8;
@@ -2800,7 +2797,7 @@
 
 #searchModal .search-bar-container .input-group-text {
     color: var(--text-light-blue);
-    background-color: var(--bg-dark-light);
+    background-color: var(--bg-darker);
     font-size: 14px;
     border: none;
 }
@@ -2808,9 +2805,10 @@
 #searchModal .search-bar-container .form-control {
     background-color: var(--bg-dark-light);
     color: var(--text-white);
-    border: none;
     padding: 12px;
+    border: none;
     outline: none;
+    box-shadow: none;
 }
 
 #searchModal .search-bar-container .form-control::placeholder {
@@ -2855,15 +2853,12 @@
 
 /* Game Cards */
 #searchModal .search-games-container {
-    margin: 0 -5px;
     max-height: calc(100vh - 250px);
     overflow-y: auto;
-}
-
-@media (min-width: 992px) {
-    #searchModal .search-games-container {
-        max-height: 450px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
 }
 
 #searchModal .search-game-card {
@@ -2879,7 +2874,7 @@
 #searchModal .search-game-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: transform 0.3s ease;
 }
 
@@ -2889,29 +2884,51 @@
 
 #searchModal .search-game-badge {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    background: var(--gradient-red);
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 10px;
-    z-index: 2;
+    /* top: -3px; */
+    left: 5%;
+    z-index: 1;
+}
+
+#searchModal .search-game-badge::before {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    content: "";
+    background: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
+    width: 28px;
+    height: 3.17px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#searchModal .search-game-badge .badge {
+    clip-path: polygon(50% 0%, 100% 0, 90% 17%, 91% 100%, 50% 60%, 10% 99%, 9% 16%, 0 0);
+    background: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
+    width: 23px;
+    font-weight: 400;
+    height: 22px;
+    line-height: 15px;
+    margin-left: 3px;
+    display: block;
+    text-align: center;
+    font-size: 7px;
+    z-index: 1;
+    color: var(--white-color);
 }
 
 #searchModal .search-game-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s;
 }
 
 #searchModal .search-game-card:hover .search-game-overlay {
@@ -2923,11 +2940,12 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: 20%;
 }
 
 #searchModal .search-play-btn {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2959,21 +2977,57 @@
     box-shadow: 0 4px 10px var(--shadow-purple);
 }
 
+
+#searchModal .search-game-card {
+    width: 142px;
+    height: 200px;
+}
+
+@media (max-width: 992px) {
+    #searchModal .search-game-card {
+        width: 135px;
+        height: 185px;
+    }
+}
+
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
+    #searchModal .search-game-badge::before {
+        width: 25px;
+    }
+
+    #searchModal .search-game-badge .badge {
+        width: 20px;
+        font-weight: 100;
+        height: 20px;
+        line-height: 15px;
+        font-size: 6px;
+        z-index: 1;
+    }
+
+    #searchModal .search-game-overlay {
+        display: none;
+    }
+
+    #searchModal .modal-body {
+        padding: 0 12px;
+    }
+
     #searchModal .search-bar-container .form-control {
+        font-size: 12px;
         padding: 8px;
     }
 
     #searchModal .search-game-card {
-        height: 150px;
+        width: 130px;
+        height: 180px;
     }
-
 }
 
 @media (max-width: 576px) {
     #searchModal .search-game-card {
-        height: 120px;
+        width: 115px;
+        height: 150px;
     }
 
     #searchModal .search-game-btns {
@@ -2988,6 +3042,21 @@
     #searchModal .search-play-fun-btn {
         padding: 4px 8px;
         font-size: 10px;
+    }
+
+    #searchModal .search-nav-carousel .nav-link {
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 466px) {
+    #searchModal .search-games-container {
+        gap: 8px;
+    }
+
+    #searchModal .search-game-card {
+        width: 93px;
+        height: 125px;
     }
 }
 

@@ -1,33 +1,3 @@
-const heroSwiper = new Swiper(".hero-carousel", {
-    grabCursor: true,
-    autoplay: true,
-    slidesPerView: 1,
-    spaceBetween: 16,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".cusNextForHero",
-        prevEl: ".cusPrevForHero",
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 1.5,
-            centeredSlides: true,
-        },
-        768: {
-            slidesPerView: 2,
-            centeredSlides: false,
-        },
-        1025: {
-            slidesPerView: 3,
-        },
-    }
-});
-
 // --- EVERYTHING'S ATTRIBUTES UPDATE for MOBILE ---
 function updateModalAttributes() {
     const isMobile = window.innerWidth <= 768;
@@ -85,6 +55,15 @@ function updateModalAttributes() {
             card.removeAttribute('data-bs-target');
         }
     });
+    document.querySelectorAll('.search-game-card').forEach(card => {
+        if (isMobile) {
+            card.setAttribute('data-bs-toggle', 'modal');
+            card.setAttribute('data-bs-target', '#cloverModal');
+        } else {
+            card.removeAttribute('data-bs-toggle');
+            card.removeAttribute('data-bs-target');
+        }
+    });
 }
 updateModalAttributes();
 window.addEventListener('resize', updateModalAttributes);
@@ -111,6 +90,45 @@ function applySwiperBlurEffect(swiper, containerSelector) {
     swiper.on('touchMove', updateBlur);
     updateBlur();
 }
+
+// --- HERO CAROUSEL ---
+const heroSwiper = new Swiper('.hero-carousel', {
+    grabCursor: true,
+    autoplay: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".cusNextForHero",
+        prevEl: ".cusPrevForHero",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+        },
+        768: {
+            slidesPerView: 2,
+            centeredSlides: false,
+        },
+        1025: {
+            slidesPerView: 3,
+        },
+    }
+});
+
+// --- SEARCH NAV CAROUSEL ---
+const searchNavSwiper = new Swiper('.search-nav-carousel', {
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    freeMode: true,
+    watchOverflow: true,
+});
 
 // --- ALL GAMES CAROUSEL ---
 const agSwiper = new Swiper(".agSwiper", {
@@ -462,35 +480,17 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// SEARCH BAR JS
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize the navigation swiper
-    const searchNavSwiper = new Swiper('.search-nav-carousel', {
-        slidesPerView: 'auto',
-        spaceBetween: 8,
-        freeMode: true,
-    });
-
-    // Add event listener to your search button
-    // document.querySelector('.cusSearch')?.addEventListener('click', function () {
-    //     const searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
-    //     searchModal.show();
-    // });
+// ---LIBRARY NAV - SWIPER ---
+const anSwiper = new Swiper(".lib-nav-carousel", {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    watchOverflow: true,
+    navigation: {
+        nextEl: '.cusNextForLIB',
+        prevEl: '.cusPrevForLIB',
+    },
 });
+
+// Apply blur effect if needed
+applySwiperBlurEffect(anSwiper, '.lib-nav-carousel');
