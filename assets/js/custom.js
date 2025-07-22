@@ -68,17 +68,6 @@ function updateModalAttributes() {
 updateModalAttributes();
 window.addEventListener('resize', updateModalAttributes);
 
-// --- ALL NAV CAROUSEL ---
-$(document).ready(function (e) {
-    $(".all-nav-carousel").owlCarousel({
-        loop: false,
-        margin: 10,
-        nav: false,
-        dots: false,
-        autoWidth: true,
-    });
-});
-
 // --- FADE EFFECT - FUNCTION ---
 function applySwiperBlurEffect(swiper, containerSelector) {
     const container = document.querySelector(containerSelector);
@@ -90,6 +79,69 @@ function applySwiperBlurEffect(swiper, containerSelector) {
     swiper.on('touchMove', updateBlur);
     updateBlur();
 }
+
+// --- LATEST WINNERS CAROUSEL ---
+$(document).ready(function () {
+    $('#winner').owlCarousel({
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
+        navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        smartSpeed: 800,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+            },
+            576: {
+                items: 2,
+                nav: true,
+            },
+            769: {
+                items: 3,
+                nav: true,
+            },
+            1025: {
+                items: 4,
+                nav: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+            }
+        }
+    });
+
+    // Add animation to items when they become active
+    $('#winner').on('changed.owl.carousel', function (event) {
+        const currentItem = event.item.index;
+        const items = $(this).find('.owl-item');
+
+        // Reset all items
+        items.removeClass('active-animate');
+
+        // Animate the active items
+        setTimeout(function () {
+            items.eq(currentItem).addClass('active-animate');
+            if (items.eq(currentItem + 1).length) {
+                items.eq(currentItem + 1).addClass('active-animate');
+            }
+        }, 50);
+    });
+
+    // Trigger initial animation
+    setTimeout(function () {
+        $('#winner .owl-item.active').addClass('active-animate');
+        $('#winner .owl-item.active').next().addClass('active-animate');
+    }, 300);
+});
+
 
 // --- HERO CAROUSEL ---
 const heroSwiper = new Swiper('.hero-carousel', {
@@ -121,6 +173,15 @@ const heroSwiper = new Swiper('.hero-carousel', {
         },
     }
 });
+
+// --- ALL NAV CAROUSEL ---
+const anSwiper = new Swiper('.all-nav-carousel', {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    watchOverflow: true,
+})
+applySwiperBlurEffect(anSwiper, '.all-nav-carousel');
 
 // --- SEARCH NAV CAROUSEL ---
 const searchNavSwiper = new Swiper('.search-nav-carousel', {
@@ -304,68 +365,6 @@ const jpSwiper = new Swiper('.jpSwiper', {
     },
 });
 
-// --- LATEST WINNERS CAROUSEL ---
-$(document).ready(function () {
-    $('#winner').owlCarousel({
-        loop: true,
-        margin: 20,
-        responsiveClass: true,
-        navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        smartSpeed: 800,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true,
-            },
-            576: {
-                items: 2,
-                nav: true,
-            },
-            769: {
-                items: 3,
-                nav: true,
-            },
-            1025: {
-                items: 4,
-                nav: true,
-            },
-            1200: {
-                items: 4,
-                nav: true,
-            }
-        }
-    });
-
-    // Add animation to items when they become active
-    $('#winner').on('changed.owl.carousel', function (event) {
-        const currentItem = event.item.index;
-        const items = $(this).find('.owl-item');
-
-        // Reset all items
-        items.removeClass('active-animate');
-
-        // Animate the active items
-        setTimeout(function () {
-            items.eq(currentItem).addClass('active-animate');
-            if (items.eq(currentItem + 1).length) {
-                items.eq(currentItem + 1).addClass('active-animate');
-            }
-        }, 50);
-    });
-
-    // Trigger initial animation
-    setTimeout(function () {
-        $('#winner .owl-item.active').addClass('active-animate');
-        $('#winner .owl-item.active').next().addClass('active-animate');
-    }, 300);
-});
-
 // --- BOTTOM NAV JS ---
 function setActive(clickedItem) {
     document.querySelectorAll('.bottom-nav-item').forEach(item => {
@@ -478,3 +477,21 @@ if (localStorage.getItem('theme') === 'dark') {
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
 }
+
+
+// ---LIBRARY NAV - SWIPER ---
+const lnSwiper = new Swiper(".lib-nav-carousel", {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    watchOverflow: true,
+    navigation: {
+        nextEl: '.cusNextForLIB',
+        prevEl: '.cusPrevForLIB',
+    },
+});
+
+// Apply blur effect if needed
+applySwiperBlurEffect(lnSwiper, '.lib-nav-carousel');
+
+

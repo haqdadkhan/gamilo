@@ -871,12 +871,13 @@
     width: 100%;
 }
 
-.owl-carousel.all-nav-carousel.nav-tabs {
+.owl-carousel.all-nav-carousel .nav-tabs {
     border: none;
 }
 
 .all-nav-carousel .nav-item {
     padding: 0;
+    max-width: max-content;
 }
 
 .all-nav-carousel .nav-link {
