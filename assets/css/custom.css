@@ -518,15 +518,44 @@
 
 /* --- HEADER CSS ENDS --- */
 
+
+
+
+
+:root {
+    /* Marquee colors */
+    --marquee-gradient-start: #3BE41F;
+    --marquee-gradient-end: #35C31E;
+    --marquee-text-color: #000;
+    --marquee-shadow: rgba(0, 0, 0, 0.2);
+
+    /* Latest Winners colors */
+    --winner-text-color: #fff;
+    --winner-secondary-text: #abb7e0;
+    --nav-button-bg: #2c2c5c;
+    --nav-button-hover-bg: #3a3a70;
+    --nav-button-hover-border: #5757a6;
+    --nav-button-hover-shadow: rgba(87, 87, 166, 0.6);
+    --dot-inactive-bg: #3a447c;
+    --dot-active-bg: #4e5a9d;
+    --header-gradient-start: #6c8eff;
+    --header-gradient-end: #a66bff;
+    --header-text-shadow: rgba(108, 142, 255, 0.3);
+    --winner-number-gradient-start: #ff6b6b;
+    --winner-number-gradient-end: #ff8e8e;
+    --winner-number-shadow: rgba(0, 0, 0, 0.2);
+    --currency-color: #35C31E;
+}
+
 /*---- MARQUEE CSS STARTS ----*/
 .announcement-bar {
-    background: linear-gradient(90deg, #3BE41F 0%, #35C31E 100%);
-    color: #000;
+    background: linear-gradient(90deg, var(--marquee-gradient-start) 0%, var(--marquee-gradient-end) 100%);
+    color: var(--marquee-text-color);
     padding: 10px;
     margin: 12px;
     font-weight: bold;
     font-size: 14px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px var(--marquee-shadow);
     position: relative;
     z-index: 10;
     overflow: hidden;
@@ -569,7 +598,7 @@
 
 .banner__feature .content h6 {
     font-size: 14px;
-    color: #fff;
+    color: var(--winner-text-color);
     margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
@@ -578,7 +607,7 @@
 
 .banner__feature .content p {
     font-size: 1rem;
-    color: #abb7e0;
+    color: var(--winner-secondary-text);
     margin-bottom: 0;
 }
 
@@ -591,31 +620,31 @@
 }
 
 .banner__feature .owl-nav button:first-child {
-    color: #fff;
+    color: var(--winner-text-color);
     font-size: 14px !important;
     padding: 6px 16px !important;
     margin: 0;
-    background-color: #2c2c5c;
+    background-color: var(--nav-button-bg);
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 20px 0 0 20px;
 }
 
 .banner__feature .owl-nav button:last-child {
-    color: #fff;
+    color: var(--winner-text-color);
     font-size: 14px !important;
     padding: 6px 16px !important;
     margin: 0;
-    background-color: #2c2c5c;
+    background-color: var(--nav-button-bg);
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 0 20px 20px 0;
 }
 
 .banner__feature .owl-nav button:hover {
-    background-color: #3a3a70 !important;
-    border-color: #5757a6 !important;
-    box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
+    background-color: var(--nav-button-hover-bg) !important;
+    border-color: var(--nav-button-hover-border) !important;
+    box-shadow: 0 0 6px var(--nav-button-hover-shadow);
 }
 
 .banner__feature .owl-dots {
@@ -627,13 +656,13 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #3a447c !important;
+    background: var(--dot-inactive-bg) !important;
     margin: 0;
     transition: all 0.3s ease;
 }
 
 .banner__feature .owl-dots button.owl-dot.active {
-    background: #4e5a9d !important;
+    background: var(--dot-active-bg) !important;
     transform: scale(1.2);
 }
 
@@ -649,14 +678,14 @@
 .banner__feature .header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, #6c8eff, #a66bff);
+    background: linear-gradient(90deg, var(--header-gradient-start), var(--header-gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 10px rgba(108, 142, 255, 0.3);
+    text-shadow: 0 2px 10px var(--header-text-shadow);
 }
 
 .banner__feature .header p {
-    color: #abb7e0;
+    color: var(--winner-secondary-text);
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
@@ -666,7 +695,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    background: linear-gradient(135deg, var(--winner-number-gradient-start), var(--winner-number-gradient-end));
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -675,11 +704,11 @@
     justify-content: center;
     font-weight: bold;
     font-size: 0.9rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px var(--winner-number-shadow);
 }
 
 .banner__feature .currency {
-    color: #35C31E;
+    color: var(--currency-color);
     font-weight: bold;
 }
 
@@ -708,7 +737,6 @@
 }
 
 @media (max-width: 576px) {
-
     .banner__feature .owl-nav button:first-child {
         font-size: 10px !important;
         padding: 4px 12px !important;
@@ -732,128 +760,89 @@
 
 /* --- LATEST WINNERS CSS ENDS ---  */
 
-/* --- MODAL BACKDROP --- */
-@media (min-width: 768px) {
-    /* .modal-backdrop {
-        display: none !important;
-    } */
-}
 
-/* --- GAME MODAL CSS Starts ---  */
-@media (min-width: 769px) {
 
-    .mobile-modal,
-    .modal-dialog,
-    .modal-content {
-        /* display: none !important; */
-    }
-}
 
-.mobile-modal .modal-dialog {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    max-width: 100%;
-    transition: transform 0.3s ease-out;
-}
 
-.mobile-modal .modal-content {
-    border-radius: 25px 25px 0 0;
-    border: none;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, #121c25, #1d2d3a);
-    color: white;
-    padding: 25px 20px 20px;
-    border-top: 3px solid #f8d56b;
-}
 
-.modal-header {
-    display: flex;
-    justify-content: start;
-    gap: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
-    align-items: center;
-    position: relative;
-}
-
-.game-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 15px;
-    border: 3px solid #f8d56b;
-    background: white;
-    padding: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.game-title {
-    margin-left: 15px;
-}
-
-.game-title h2 {
-    font-weight: 800;
-    font-size: 1.7rem;
-    margin-bottom: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    letter-spacing: 1px;
-    color: #f8d56b;
-}
-
-.game-title p {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-bottom: 0;
-    letter-spacing: 0.5px;
-}
-
-.modal-footer {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0 0 0;
-}
-
-.btn-play {
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
-    border: 2px solid #ff416c;
-    padding: 8px 32px;
-}
-
-.btn-trial {
-    padding: 8px 32px;
-    background: linear-gradient(45deg, #11998e, #38ef7d);
-    border: 2px solid #38ef7d;
-}
-
-.close-btn {
+/* === FADE EFFECT CSS STARTS === */
+.swiper-blur-container::before,
+.swiper-blur-container::after {
+    content: '';
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
     width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s;
-    backdrop-filter: blur(5px);
+    height: 100%;
     z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.close-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
+.swiper-blur-container::before {
+    left: 0;
+    background: linear-gradient(to right, #000616, transparent);
 }
 
-/* --- GAME MODAL CSS Ends --- */
+.swiper-blur-container::after {
+    right: 0;
+    background: linear-gradient(to left, #000616, transparent);
+}
+
+.show-left-blur::before {
+    opacity: 1;
+}
+
+.show-right-blur::after {
+    opacity: 1;
+}
+
+/* === FADE EFFECT CSS ENDS === */
+
+
+
+
+
+/* === MAIN ROOT FOR ALL main__body__wrap SECTIONS === */
+:root {
+    /* Gradient Colors */
+    --gradient-purple-pink: linear-gradient(90deg, #622fe3, #f805af);
+    --gradient-blue-cyan: linear-gradient(180deg, #aa00ff, #00e1ff);
+    --gradient-dark-blue: linear-gradient(145deg, #13153b, #0a0c24);
+    --gradient-dark-purple: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    --gradient-light-purple: linear-gradient(45deg, #a29bfe, #6c5ce7);
+    --gradient-overlay: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    --gradient-footer: linear-gradient(to right, #0f112f, #1a1c3e);
+
+    /* Solid Colors */
+    --color-dark-bg: #000616;
+    --color-white: white;
+    --color-purple: #622fe3;
+    --color-light-purple: #8b86f4;
+    --color-dark-purple: #642fe3;
+    --color-pink: #f805af;
+    --color-neon-pink: #ff00ae;
+    --color-gold: #ffd700;
+    --color-dark-blue: #0a0c24;
+    --color-darker-blue: #000616;
+    --color-nav-bg: #2c2c5c;
+    --color-nav-hover: #3a3a70;
+    --color-nav-active: #5050a0;
+    --color-border-purple: #5757a6;
+    --color-bullet-inactive: rgb(104, 94, 119);
+    --color-bullet-active: #642fe3;
+
+    /* Transparent Colors */
+    --transparent-black: rgba(0, 0, 0, 0.6);
+    --transparent-black-light: rgba(0, 0, 0, 0.5);
+    --transparent-black-lighter: rgba(0, 0, 0, 0.4);
+    --transparent-black-dark: rgba(0, 0, 0, 0.7);
+    --transparent-white-border: rgba(255, 255, 255, 0.05);
+    --transparent-white-light: rgba(255, 255, 255, 0.1);
+    --transparent-white-medium: rgba(255, 255, 255, 0.2);
+    --transparent-pink-border: rgba(255, 0, 174, 0.15);
+    --transparent-pink-glow: rgba(255, 0, 174, 0.4);
+}
 
 /* --- NAV OWL CAROUSEL CSS Starts ---  */
 .cusSearch {
@@ -924,42 +913,6 @@
 
 /* --- NAV OWL CAROUSEL CSS Ends --- */
 
-
-/* === FADE EFFECT CSS STARTS === */
-.swiper-blur-container::before,
-.swiper-blur-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 100%;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.swiper-blur-container::before {
-    left: 0;
-    background: linear-gradient(to right, #000616, transparent);
-}
-
-.swiper-blur-container::after {
-    right: 0;
-    background: linear-gradient(to left, #000616, transparent);
-}
-
-.show-left-blur::before {
-    opacity: 1;
-}
-
-.show-right-blur::after {
-    opacity: 1;
-}
-
-/* === FADE EFFECT CSS ENDS === */
-
-
 /* --- ALL GAMES CSS STARTS --- */
 .ag-cards-container .agSwiper .swiper-slide {
     width: max-content;
@@ -983,7 +936,6 @@
 .allgames__items img {
     height: 100%;
     width: 100%;
-    /* aspect-ratio: 2/3; */
     border-radius: 10px;
     transition: all 0.4s;
     object-fit: fill;
@@ -998,18 +950,18 @@
     width: max-content;
     padding: 1px;
     border-radius: 25px;
-    background: linear-gradient(90deg, #622fe3, #f805af);
+    background: var(--gradient-purple-pink);
 }
 
 .exploreAllGamesPapa:hover {
-    background: #8b86f4;
+    background: var(--color-light-purple);
 }
 
 .exploreAllGames {
     padding: 5px 48px;
     border-radius: 25px;
-    background: #000616;
-    color: white;
+    background: var(--color-dark-bg);
+    color: var(--color-white);
     font-size: 18px;
     font-weight: 500;
     outline: none;
@@ -1069,7 +1021,7 @@
 .sectionTitle div div h2 {
     font-size: 24px;
     font-weight: 600;
-    color: white;
+    color: var(--color-white);
     line-height: 30px;
     margin: 0;
 }
@@ -1080,14 +1032,14 @@
     justify-content: center;
     gap: 1px;
     align-items: center;
-    color: white;
+    color: var(--color-white);
     border-radius: 24px;
 }
 
 .sectionTitle .sectionNav div {
     font-size: 14px;
     padding: 6px 12px;
-    background-color: #2c2c5c;
+    background-color: var(--color-nav-bg);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -1099,14 +1051,14 @@
 }
 
 .sectionTitle .sectionNav div:hover {
-    background-color: #3a3a70;
-    border-color: #5757a6;
+    background-color: var(--color-nav-hover);
+    border-color: var(--color-border-purple);
     box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
 }
 
 .sectionTitle .sectionNav div:active {
     transform: scale(0.95);
-    background-color: #5050a0;
+    background-color: var(--color-nav-active);
 }
 
 .sectionTitle .sectionNav div i {
@@ -1124,7 +1076,6 @@
     border-radius: 0 20px 20px 0;
     padding: 6px 16px;
 }
-
 
 /* cards container */
 .pg-cards-container .pgSwiper .swiper-slide {
@@ -1203,12 +1154,12 @@
     position: relative;
     max-width: 240px;
     height: 280px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px var(--transparent-black-lighter);
     transition: transform 0.3s ease;
 }
 
 .totCard:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 30px var(--transparent-black-light);
 }
 
 .totCard .totCardMainImage {
@@ -1242,10 +1193,10 @@
     line-height: 140px;
     font-weight: 800;
     z-index: 2;
-    color: #0a0c24;
+    color: var(--color-dark-blue);
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: transparent;
-    background: linear-gradient(180deg, #aa00ff, #00e1ff);
+    background: var(--gradient-blue-cyan);
     -webkit-background-clip: text;
     background-clip: text;
     text-align: center;
@@ -1261,7 +1212,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    background: var(--gradient-overlay);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -1303,18 +1254,18 @@
 /* --- POOL FUN CSS STARTS --- */
 .pfCard {
     max-width: 300px;
-    background: linear-gradient(145deg, #13153b, #0a0c24);
+    background: var(--gradient-dark-blue);
     border-radius: 16px;
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px var(--transparent-black-lighter);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 0, 174, 0.15);
+    border: 1px solid var(--transparent-pink-border);
     position: relative;
 }
 
 .pfCard:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 30px var(--transparent-black-light);
 }
 
 .pfCardMainImage {
@@ -1337,8 +1288,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px 15px;
-    background: linear-gradient(to right, #0f112f, #1a1c3e);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--gradient-footer);
+    border-top: 1px solid var(--transparent-white-border);
 }
 
 .pfCardInfo {
@@ -1352,15 +1303,15 @@
     height: 36px;
     border-radius: 6px;
     object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--transparent-white-light);
+    box-shadow: 0 2px 8px var(--transparent-black-light);
 }
 
 .pfCardTitle {
-    color: #fff;
+    color: var(--color-white);
     font-size: 14px;
     font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px var(--transparent-black-light);
     letter-spacing: 0.5px;
     max-width: 130px;
     white-space: nowrap;
@@ -1370,8 +1321,8 @@
 
 .pfCardPlayBtn {
     background: transparent;
-    color: white;
-    border: 1px solid #ff00ae;
+    color: var(--color-white);
+    border: 1px solid var(--color-neon-pink);
     font-size: 12px;
     padding: 3px 10px;
     border-radius: 20px;
@@ -1380,28 +1331,27 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 0 5px #ff00ae, 0 0 10px #ff00ae inset;
+    box-shadow: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink) inset;
     animation: neonBorderPulse 3s infinite;
 }
 
 @keyframes neonBorderPulse {
     0% {
-        box-shadow: 0 0 4px #ff00ae, 0 0 8px #ff00ae inset;
+        box-shadow: 0 0 4px var(--color-neon-pink), 0 0 8px var(--color-neon-pink) inset;
     }
 
     50% {
-        box-shadow: 0 0 8px #ff00ae, 0 0 16px #ff00ae inset;
+        box-shadow: 0 0 8px var(--color-neon-pink), 0 0 16px var(--color-neon-pink) inset;
     }
 
     100% {
-        box-shadow: 0 0 4px #ff00ae, 0 0 8px #ff00ae inset;
+        box-shadow: 0 0 4px var(--color-neon-pink), 0 0 8px var(--color-neon-pink) inset;
     }
 }
 
-
 .pfCardPlayBtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 0, 174, 0.4);
+    box-shadow: 0 6px 20px var(--transparent-pink-glow);
 }
 
 .pfCardPlayBtn:active {
@@ -1415,7 +1365,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #ff00ae, transparent);
+    background: linear-gradient(90deg, var(--color-neon-pink), transparent);
     z-index: 2;
 }
 
@@ -1423,8 +1373,8 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ff00ae;
+    background: var(--transparent-black-dark);
+    color: var(--color-neon-pink);
     padding: 4px 10px;
     border-radius: 12px;
     font-size: 11px;
@@ -1444,7 +1394,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    background: var(--gradient-overlay);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -1485,7 +1435,7 @@
 .pf-cards-container .swiper-pagination-bullet {
     width: 9px;
     height: 9px;
-    background: rgb(104, 94, 119);
+    background: var(--color-bullet-inactive);
     opacity: 1;
     border-radius: 50%;
     margin: 0 4px;
@@ -1493,11 +1443,11 @@
 }
 
 .pf-cards-container .swiper-pagination-bullet:hover {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 .pf-cards-container .swiper-pagination-bullet-active {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 @media (max-width: 1100px) {
@@ -1544,7 +1494,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #642fe3;
+    border: 1px solid var(--color-dark-purple);
     border-radius: 15px;
 }
 
@@ -1576,7 +1526,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 15px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    background: var(--gradient-overlay);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -1617,7 +1567,7 @@
 .tfr-cards-container .swiper-pagination-bullet {
     width: 9px;
     height: 9px;
-    background: rgb(104, 94, 119);
+    background: var(--color-bullet-inactive);
     opacity: 1;
     border-radius: 50%;
     margin: 0 4px;
@@ -1625,11 +1575,11 @@
 }
 
 .tfr-cards-container .swiper-pagination-bullet:hover {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 .tfr-cards-container .swiper-pagination-bullet-active {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 @media (max-width:769px) {
@@ -1641,9 +1591,9 @@
 /* --- THE FISHING ROD SECT ENDS --- */
 /* --- JACKPOT SECT STARTS --- */
 .sectionTitle button {
-    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    background: var(--gradient-dark-purple);
     border: none;
-    color: white;
+    color: var(--color-white);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 14px;
@@ -1653,16 +1603,16 @@
 
 .sectionTitle button:hover {
     transition: all 0.3s ease;
-    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
-    box-shadow: 0 0 8px #6c5ce7;
+    background: var(--gradient-light-purple);
+    box-shadow: 0 0 8px var(--color-dark-purple);
 }
 
 .jp-section-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background: linear-gradient(var(--transparent-black), var(--transparent-black)),
         url('https://arquypielago.com/wp-content/uploads/2025/02/9.jpg') center/cover no-repeat;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px var(--transparent-black-light);
     backdrop-filter: blur(8px);
     overflow: hidden;
 }
@@ -1673,7 +1623,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--transparent-white-medium);
     padding-bottom: 1rem;
 }
 
@@ -1682,7 +1632,7 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .jackpot-amount {
@@ -1691,7 +1641,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #ffd700;
+    color: var(--color-gold);
     animation: jackpotPulse 2s infinite;
 }
 
@@ -1706,10 +1656,18 @@
 }
 
 .jpCard:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 24px var(--transparent-black-light);
 }
 
-.jpCardBanner {
+.jpCard .jpCardMainImage {
+    width: 120px !important;
+    height: 160px !important;
+    position: relative;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.jpCard .jpCardMainImage .jpCardBanner {
     border-radius: 8px !important;
     width: 120px !important;
     height: 160px !important;
@@ -1728,8 +1686,8 @@
     width: 100%;
     text-align: center;
     padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: var(--transparent-black-light);
+    color: var(--color-white);
     font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -1763,14 +1721,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #642fe3;
+    border: 1px solid var(--color-dark-purple);
     border-radius: 15px;
 }
 
 .jp-cards-container .swiper-pagination-bullet {
     width: 9px;
     height: 9px;
-    background: rgb(104, 94, 119);
+    background: var(--color-bullet-inactive);
     opacity: 1;
     border-radius: 50%;
     margin: 0 4px;
@@ -1778,11 +1736,11 @@
 }
 
 .jp-cards-container .swiper-pagination-bullet:hover {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 .jp-cards-container .swiper-pagination-bullet-active {
-    background: #642fe3;
+    background: var(--color-bullet-active);
 }
 
 /* othersssss */
@@ -1795,7 +1753,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    background: var(--gradient-overlay);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -1855,6 +1813,11 @@
 
 
 
+
+
+
+
+
 /* --- BOTTOM NAV CSS Starts --- */
 /* :root {
     --nav-bg: #ffffff;
@@ -1877,7 +1840,7 @@
     --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
     } */
 
-.bottom-nav {
+:root {
     --nav-bg: #191f46;
     --nav-shadow-color: rgba(0, 0, 0, 0.3);
     --nav-icon-default: #7dbeff;
@@ -1885,7 +1848,9 @@
     --nav-text-default: #a0a0a0;
     --nav-text-active: #1d8cfc;
     --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
+}
 
+.bottom-nav {
     position: fixed;
     bottom: 8px;
     left: 50%;
@@ -1939,7 +1904,7 @@
     top: -5px;
     width: 40px;
     height: 4px;
-    background: var(--nav-indicator);
+    background: var(--nav-text-active);
     border-radius: 2px;
 }
 
@@ -2002,22 +1967,43 @@
 }
 
 /* --- BOTTOM NAV CSS Ends --- */
+
+
+
+
+
 /* --- PROMOTIONS CSS STARTS ---  */
+:root {
+    --promo-header-bg: #0c1f3f;
+    --promo-text-white: #ffffff;
+    --promo-card-bg: #ffffff;
+    --promo-card-shadow: rgba(0, 0, 0, 0.08);
+    --promo-card-title: #222222;
+    --promo-button-primary: #3a0ca3;
+    --promo-button-hover: #270c75;
+    --promo-modal-header-gradient-start: #3a0ca3;
+    --promo-modal-header-gradient-end: #14213d;
+    --promo-modal-accent: #3a0ca3;
+    --promo-modal-list-bullet: #3a0ca3;
+    --promo-goodluck-bg: rgba(58, 12, 163, 0.05);
+    --promo-goodluck-border: rgba(58, 12, 163, 0.3);
+}
+
 /* Header Section */
 .promotions-header {
-    background-color: #0c1f3f;
+    background-color: var(--promo-header-bg);
     padding: 12px 16px;
 }
 
 .promotions-back-icon {
-    color: white;
+    color: var(--promo-text-white);
     font-size: 18px;
     margin-right: 12px;
     cursor: pointer;
 }
 
 .promotions-title {
-    color: white;
+    color: var(--promo-text-white);
     font-size: 28px;
     font-weight: 700;
     margin: 0;
@@ -2032,9 +2018,9 @@
 
 /* Promotion Cards */
 .promotions-card-mobile {
-    background-color: #ffffff;
+    background-color: var(--promo-card-bg);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--promo-card-shadow);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     display: flex;
@@ -2068,12 +2054,12 @@
     font-size: 16px;
     font-weight: 600;
     margin: 0;
-    color: #222;
+    color: var(--promo-card-title);
 }
 
 .promotions-card-button {
-    background-color: #3a0ca3;
-    color: white;
+    background-color: var(--promo-button-primary);
+    color: var(--promo-text-white);
     border: none;
     border-radius: 8px;
     padding: 6px 14px;
@@ -2086,7 +2072,7 @@
 }
 
 .promotions-card-button:hover {
-    background-color: #270c75;
+    background-color: var(--promo-button-hover);
 }
 
 /* Modal Styling */
@@ -2097,8 +2083,8 @@
 }
 
 .promotions-modal .modal-header {
-    background: linear-gradient(135deg, #3a0ca3, #14213d);
-    color: white;
+    background: linear-gradient(135deg, var(--promo-modal-header-gradient-start), var(--promo-modal-header-gradient-end));
+    color: var(--promo-text-white);
     border-bottom: none;
     padding: 24px;
 }
@@ -2122,7 +2108,7 @@
 }
 
 .promotions-modal-section-title {
-    color: #3a0ca3;
+    color: var(--promo-modal-accent);
     font-weight: 700;
     margin-bottom: 16px;
     position: relative;
@@ -2138,7 +2124,7 @@
     transform: translateY(-50%);
     height: 70%;
     width: 5px;
-    background: #3a0ca3;
+    background: var(--promo-modal-accent);
     border-radius: 3px;
 }
 
@@ -2154,21 +2140,21 @@
 
 .promotions-modal-list li::before {
     content: "•";
-    color: #3a0ca3;
+    color: var(--promo-modal-list-bullet);
     font-weight: bold;
     position: absolute;
     left: -16px;
 }
 
 .promotions-modal-goodluck {
-    background: rgba(58, 12, 163, 0.05);
+    background: var(--promo-goodluck-bg);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     margin-top: 32px;
     font-weight: 600;
-    color: #3a0ca3;
-    border: 1px dashed rgba(58, 12, 163, 0.3);
+    color: var(--promo-modal-accent);
+    border: 1px dashed var(--promo-goodluck-border);
 }
 
 /* Responsive Adjustments */
@@ -2214,36 +2200,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* HERO SECTION CSS ENDS */
 :root {
     /* Hero Section Colors */
     --hero-text-color: #e0e0ff;
@@ -2405,7 +2361,7 @@
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .balance-btn:hover {
     transform: translateY(-2px);
-    color: #fff;
+    color: var(--text-white);
     box-shadow: 0 6px 20px var(--hero-balance-btn-hover-shadow);
 }
 
@@ -2419,7 +2375,7 @@
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .terms-btn:hover {
     background: var(--hero-terms-btn-hover-bg);
-    color: #fff;
+    color: var(--text-white);
 }
 
 /* Navigation Buttons */
@@ -2434,7 +2390,7 @@
     align-items: center;
     border-radius: 50%;
     z-index: 7;
-    color: #fff;
+    color: var(--text-white);
     background: linear-gradient(to right, var(--hero-nav-btn-start), var(--hero-nav-btn-end));
     border: 5px solid var(--hero-nav-btn-border);
 }
@@ -2595,86 +2551,6 @@
 /* HERO SECTION CSS ENDS */
 
 
-/* SITE LOADER CSS STARTS */
-.preloader .thumb .loader-container {
-    text-align: center;
-    color: #ffffff;
-}
-
-.preloader .thumb .loader-container .loader {
-    width: 85px;
-    height: 85px;
-    border: 5px solid transparent;
-    border-top-color: #00ffcc;
-    border-bottom-color: #ff007a;
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite;
-    position: relative;
-    margin: 0 auto;
-}
-
-.preloader .thumb .loader-container .loader::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    border: 5px solid transparent;
-    border-left-color: #ff007a;
-    border-right-color: #00ffcc;
-    border-radius: 50%;
-    animation: spin 1s linear infinite reverse, glow 2s ease-in-out infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes glow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 10px #00ffcc, 0 0 20px #8e2de2, 0 0 30px #00ffcc;
-    }
-
-    50% {
-        box-shadow: 0 0 20px #8e2de2, 0 0 30px #00ffcc, 0 0 40px #8e2de2;
-    }
-}
-
-@keyframes fade {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-@media (max-width: 768px) {
-    .preloader .thumb .loader-container .loader {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-/* SITE LOADER CSS ENDS */
-
-
-
-
-
-
 
 
 
@@ -2699,6 +2575,7 @@
     --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
     --gradient-purple-light: linear-gradient(to right, #9d3df1, #5a15e8);
     --gradient-red: linear-gradient(135deg, #ff416c, #ff4b2b);
+    --gradient-green: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
 
     /* Text Colors */
     --text-white: white;
@@ -2709,12 +2586,14 @@
     --bg-dark: #000616;
     --bg-darker: #10142c;
     --bg-dark-light: #1a1d3a;
+    --bg-gradient-dark: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
 
     /* Shadow Colors */
     --shadow-primary: rgba(87, 87, 166, 0.6);
     --shadow-dark: rgba(0, 0, 0, 0.3);
     --shadow-purple: rgba(142, 45, 226, 0.4);
     --shadow-white: rgba(255, 255, 255, 0.7);
+    --shadow-black: rgba(0, 0, 0, 0.2);
 }
 
 /* Custom Close Button with Font Awesome */
@@ -2867,7 +2746,7 @@
     overflow: hidden;
     height: 180px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px var(--shadow-black);
     transition: all 0.3s ease;
 }
 
@@ -2884,7 +2763,6 @@
 
 #searchModal .search-game-badge {
     position: absolute;
-    /* top: -3px; */
     left: 5%;
     z-index: 1;
 }
@@ -2895,7 +2773,7 @@
     left: 0;
     width: 100%;
     content: "";
-    background: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
+    background: var(--gradient-green);
     width: 28px;
     height: 3.17px;
     border-top-left-radius: 5px;
@@ -2904,7 +2782,7 @@
 
 #searchModal .search-game-badge .badge {
     clip-path: polygon(50% 0%, 100% 0, 90% 17%, 91% 100%, 50% 60%, 10% 99%, 9% 16%, 0 0);
-    background: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
+    background: var(--gradient-green);
     width: 23px;
     font-weight: 400;
     height: 22px;
@@ -2914,7 +2792,7 @@
     text-align: center;
     font-size: 7px;
     z-index: 1;
-    color: var(--white-color);
+    color: var(--text-white);
 }
 
 #searchModal .search-game-overlay {
@@ -2926,7 +2804,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 10px;
-    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    background: var(--bg-gradient-dark);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -2963,7 +2841,7 @@
 
 #searchModal .search-play-fun-btn {
     background: var(--gradient-purple);
-    color: white;
+    color: var(--text-white);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -2977,9 +2855,8 @@
     box-shadow: 0 4px 10px var(--shadow-purple);
 }
 
-
 #searchModal .search-game-card {
-    width: 142px;
+    width: 140px;
     height: 200px;
 }
 
@@ -3070,3 +2947,100 @@
 }
 
 /* SEARCH GAMES MODAL CSS Ends */
+
+
+
+
+
+
+
+
+
+
+
+
+/* SITE LOADER CSS STARTS */
+:root {
+    /* Loader Specific Colors */
+    --loader-primary: #00ffcc;
+    --loader-secondary: #ff007a;
+    --loader-glow-purple: #8e2de2;
+
+    /* Animation Effects */
+    --glow-effect-1: 0 0 10px var(--loader-primary), 0 0 20px var(--loader-glow-purple), 0 0 30px var(--loader-primary);
+    --glow-effect-2: 0 0 20px var(--loader-glow-purple), 0 0 30px var(--loader-primary), 0 0 40px var(--loader-glow-purple);
+}
+
+.preloader .thumb .loader-container {
+    text-align: center;
+    color: var(--text-white);
+}
+
+.preloader .thumb .loader-container .loader {
+    width: 85px;
+    height: 85px;
+    border: 5px solid transparent;
+    border-top-color: var(--loader-primary);
+    border-bottom-color: var(--loader-secondary);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite;
+    position: relative;
+    margin: 0 auto;
+}
+
+.preloader .thumb .loader-container .loader::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 5px solid transparent;
+    border-left-color: var(--loader-secondary);
+    border-right-color: var(--loader-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite reverse, glow 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: var(--glow-effect-1);
+    }
+
+    50% {
+        box-shadow: var(--glow-effect-2);
+    }
+}
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .preloader .thumb .loader-container .loader {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* SITE LOADER CSS ENDS */
