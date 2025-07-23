@@ -254,28 +254,28 @@
 }
 
 /* Swiper Navigation */
-#libGames .swiper.lib-nav-carousel {
+#libGames .swiper.lnSwiper {
     width: 100%;
     margin: 0;
     padding: 0;
     overflow: visible;
 }
 
-#libGames .lib-nav-carousel {
+#libGames .lnSwiper {
     overflow: hidden;
 }
 
-#libGames .lib-nav-carousel.nav-tabs {
+#libGames .lnSwiper.nav-tabs {
     border: none;
 }
 
-#libGames .lib-nav-carousel .nav-item {
+#libGames .lnSwiper .nav-item {
     width: auto !important;
     padding: 0;
     margin: 0;
 }
 
-#libGames .lib-nav-carousel .nav-link {
+#libGames .lnSwiper .nav-link {
     background-color: var(--bg-darker);
     color: var(--text-white);
     border: none;
@@ -293,8 +293,8 @@
     transition: all 0.3s ease;
 }
 
-#libGames .lib-nav-carousel .nav-link.active,
-#libGames .lib-nav-carousel .nav-link:hover {
+#libGames .lnSwiper .nav-link.active,
+#libGames .lnSwiper .nav-link:hover {
     background: var(--gradient-purple);
     color: var(--text-white) !important;
 }
@@ -311,7 +311,7 @@
         display: none;
     }
 
-    #libGames .lib-nav-carousel .nav-link {
+    #libGames .lnSwiper .nav-link {
         font-size: 12px !important;
         padding: 8px 10px;
     }
@@ -354,7 +354,7 @@
 
 @media (max-width: 769px) {
 
-    #libGames .lib-nav-carousel .nav-link,
+    #libGames .lnSwiper .nav-link,
     #libGames .cusSearch {
         font-weight: normal;
         font-size: 14px;

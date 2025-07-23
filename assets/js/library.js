@@ -11,7 +11,7 @@ function applySwiperBlurEffect(swiper, containerSelector) {
 }
 document.addEventListener('DOMContentLoaded', function () {
     // ---LIBRARY NAV - SWIPER ---
-    const anSwiper = new Swiper(".lib-nav-carousel", {
+    const anSwiper = new Swiper(".lnSwiper", {
         grabCursor: true,
         slidesPerView: 'auto',
         spaceBetween: 8,
@@ -23,5 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Apply blur effect if needed
-    applySwiperBlurEffect(anSwiper, '.lib-nav-carousel');
+    applySwiperBlurEffect(anSwiper, '.lnSwiper');
+
+    // --- SEARCH NAV CAROUSEL ---
+    const snSwiper = new Swiper('.snSwiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        freeMode: true,
+        watchOverflow: true,
+    });
 });

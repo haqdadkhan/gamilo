@@ -480,7 +480,7 @@ if (localStorage.getItem('theme') === 'dark') {
 
 
 // ---LIBRARY NAV - SWIPER ---
-const lnSwiper = new Swiper(".lib-nav-carousel", {
+const lnSwiper = new Swiper(".lnSwiper", {
     grabCursor: true,
     slidesPerView: 'auto',
     spaceBetween: 8,
@@ -492,6 +492,6 @@ const lnSwiper = new Swiper(".lib-nav-carousel", {
 });
 
 // Apply blur effect if needed
-applySwiperBlurEffect(lnSwiper, '.lib-nav-carousel');
+applySwiperBlurEffect(lnSwiper, '.lnSwiper');
 
 
