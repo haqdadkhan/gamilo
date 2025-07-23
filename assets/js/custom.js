@@ -175,16 +175,16 @@ const heroSwiper = new Swiper('.hero-carousel', {
 });
 
 // --- ALL NAV CAROUSEL ---
-const anSwiper = new Swiper('.all-nav-carousel', {
+const anSwiper = new Swiper('.anSwiper', {
     grabCursor: true,
     slidesPerView: 'auto',
     spaceBetween: 8,
     watchOverflow: true,
 })
-applySwiperBlurEffect(anSwiper, '.all-nav-carousel');
+applySwiperBlurEffect(anSwiper, '.anSwiper');
 
 // --- SEARCH NAV CAROUSEL ---
-const searchNavSwiper = new Swiper('.search-nav-carousel', {
+const snSwiper = new Swiper('.snSwiper', {
     slidesPerView: 'auto',
     spaceBetween: 8,
     freeMode: true,
