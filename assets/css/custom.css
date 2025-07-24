@@ -524,10 +524,10 @@
 
 :root {
     /* Marquee colors */
-    --marquee-gradient-start: #3BE41F;
-    --marquee-gradient-end: #35C31E;
-    --marquee-text-color: #000;
-    --marquee-shadow: rgba(0, 0, 0, 0.2);
+    --marquee-gradient-start: rgb(13,19,41);
+    --marquee-gradient-end: rgb(13,19,41);
+    --marquee-text-color: rgba(224, 224, 255, 0.8);
+    --marquee-border: rgba(115,180,255,0.12);
 
     /* Latest Winners colors */
     --winner-text-color: #fff;
@@ -553,9 +553,9 @@
     color: var(--marquee-text-color);
     padding: 10px;
     margin: 12px;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 14px;
-    box-shadow: 0 2px 10px var(--marquee-shadow);
+    border: 1px solid var(--marquee-border);
     position: relative;
     z-index: 10;
     overflow: hidden;
