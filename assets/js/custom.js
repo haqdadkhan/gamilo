@@ -146,7 +146,10 @@ $(document).ready(function () {
 // --- HERO CAROUSEL ---
 const heroSwiper = new Swiper('.hero-carousel', {
     grabCursor: true,
-    autoplay: true,
+    autoplay: {
+        delay: 2500,
+        pauseOnMouseEnter: true,
+    },
     slidesPerView: 1,
     spaceBetween: 16,
     centeredSlides: true,

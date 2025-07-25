@@ -12,7 +12,7 @@
 
 /* --- SIDEBAR CSS STARTS ---  */
 :root {
-    --sidebar-bg: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --sidebar-bg: rgb(28, 29, 64);
     --sidebar-width: 280px;
     --accent-color: #00c9ff;
     --secondary-accent: #92fe9d;
@@ -34,10 +34,9 @@
     top: 0;
     z-index: 1000;
     overflow: hidden;
-    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    border-right: 1px solid rgba(0, 201, 255, 0.2);
+    /* border-right: 1px solid rgba(0, 201, 255, 0.2); */
 }
 
 .sidebar-header {
@@ -620,29 +619,31 @@
 }
 
 .banner__feature .owl-nav button:first-child {
-    color: var(--winner-text-color);
     font-size: 14px !important;
-    padding: 6px 16px !important;
     margin: 0;
-    background-color: var(--nav-button-bg);
+    padding: 6px 16px !important;
+    color: var(--winner-text-color);
+    border: 2px solid var(--nav-button-bg);
+    background: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 20px 0 0 20px;
 }
 
 .banner__feature .owl-nav button:last-child {
-    color: var(--winner-text-color);
     font-size: 14px !important;
-    padding: 6px 16px !important;
     margin: 0;
-    background-color: var(--nav-button-bg);
+    padding: 6px 16px !important;
+    color: var(--winner-text-color);
+    border: 2px solid var(--nav-button-bg);
+    background: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 0 20px 20px 0;
 }
 
 .banner__feature .owl-nav button:hover {
-    background-color: var(--nav-button-hover-bg) !important;
+    background-color: transparent !important;
     border-color: var(--nav-button-hover-border) !important;
     box-shadow: 0 0 6px var(--nav-button-hover-shadow);
 }
@@ -662,8 +663,7 @@
 }
 
 .banner__feature .owl-dots button.owl-dot.active {
-    background: var(--dot-active-bg) !important;
-    transform: scale(1.2);
+    transform: scale(0.95) !important;
 }
 
 .banner__feature .owl-carousel .owl-stage {
@@ -1040,26 +1040,25 @@
 .sectionTitle .sectionNav div {
     font-size: 14px;
     padding: 6px 12px;
-    background-color: var(--color-nav-bg);
+    border: 2px solid var(--color-nav-bg);
+    background: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .sectionTitle .sectionNav div.swiper-button-disabled {
-    opacity: 0.6;
+    opacity: 0.4;
     cursor: not-allowed;
     pointer-events: none;
 }
 
 .sectionTitle .sectionNav div:hover {
-    background-color: var(--color-nav-hover);
     border-color: var(--color-border-purple);
     box-shadow: 0 0 6px rgba(87, 87, 166, 0.6);
 }
 
 .sectionTitle .sectionNav div:active {
     transform: scale(0.95);
-    background-color: var(--color-nav-active);
 }
 
 .sectionTitle .sectionNav div i {
@@ -2223,7 +2222,7 @@
     --hero-terms-btn-hover-bg: rgba(255, 255, 255, 0.2);
     --hero-nav-btn-start: #00c6ff;
     --hero-nav-btn-end: #0072ff;
-    --hero-nav-btn-border: #000616;
+    --hero-nav-btn-border: hsla(238, 49%, 12%, 1);
     --hero-nav-prev-hover-start: #00d2ff;
     --hero-nav-prev-hover-end: #3a47d5;
     --hero-nav-next-hover-start: #3a47d5;
@@ -2256,7 +2255,6 @@
     border-radius: 18px;
     padding: 2rem;
     color: var(--hero-text-color);
-    box-shadow: 0 10px 30px var(--hero-shadow-color);
     height: 100%;
     min-height: 280px;
     display: flex;
@@ -2277,7 +2275,7 @@
     border-radius: 18px;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, var(--hero-card-gradient-start), var(--hero-card-gradient-end));
+    background: radial-gradient(circle at right, var(--hero-card-gradient-start), var(--hero-card-gradient-end));
     z-index: 1;
 }
 
