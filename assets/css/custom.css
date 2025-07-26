@@ -2204,8 +2204,8 @@
     /* Hero Section Colors */
     --hero-text-color: #e0e0ff;
     --hero-shadow-color: rgba(0, 0, 0, 0.4);
-    --hero-card-gradient-start: #2f2f52;
-    --hero-card-gradient-end: #1b1b2c;
+    --hero-card-gradient-start: rgb(28, 29, 64);
+    --hero-card-gradient-end: rgb(28, 29, 64);
     --hero-badge-bg: rgba(0, 201, 255, 0.2);
     --hero-badge-border: #00c9ff;
     --hero-badge-text: #00c9ff;

@@ -9,7 +9,7 @@
 :root {
   --theme-color: #3BE41F;
   --base-color: #35C31E;
-  --header-color: hsla(238,49%,12%,1);
+  --header-color: hsla(238, 49%, 12%, 1);
   --banner-color: #35082B;
   --banner-box: #18233F;
   --amaount-color: #05FF00;
@@ -1253,6 +1253,13 @@ p {
   }
 }
 
+.main__body__wrap {
+  background-image: radial-gradient(closest-side, transparent, hsla(238, 49%, 12%, 1) 100%), repeating-conic-gradient(from 45deg, rgb(19, 20, 48) 0deg, rgb(19, 20, 48) 25%, transparent 0deg, transparent 50%);
+  background-size: 100% 100%, 200px 200px;
+  background-attachment: fixed;
+  background-position: 0px 0px, 100px 100px;
+}
+
 .main__body__wrap .left__body__wrap {
   width: 288px;
 }
@@ -1317,10 +1324,6 @@ p {
 
 .main__body__wrap .right__body__wrap {
   width: calc(100% - 288px);
-  background-image: radial-gradient(closest-side, transparent, rgb(15, 16, 44) 100%), repeating-conic-gradient(from 45deg, rgb(21, 22, 50) 0deg, rgb(21, 22, 50) 25%, transparent 0deg, transparent 50%);
-			background-size: 100% 100%, 200px 200px;
-			background-attachment: fixed;
-			background-position: 0px 0px, 100px 100px;
 }
 
 .game__slide .owl-nav,
