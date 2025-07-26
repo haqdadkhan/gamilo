@@ -719,11 +719,12 @@
             <!-- Announcement Bar Ends Here -->
 
             <!--Banner Feature Here-->
-            <section class="banner__feature">
+            <section class="latest-winners-section">
                 <div class="container-fluid">
-                    <div class="feature__wrap">
-                        <h5 class="d-flex align-items-center gap-2 mb-3">
-                            <span class="nuxt-icon">
+                    <div class="winners-wrapper">
+                        <h5 class="section-heading d-flex align-items-center gap-2 mb-3">
+                            <span class="icon-wrapper">
+                                <!-- SVG icon preserved -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g opacity="0.8" clip-path="url(#clip0_2156_4757)">
@@ -738,127 +739,102 @@
                                     </defs>
                                 </svg>
                             </span>
-                            <span class="fw-bold text-uppercase text-light" style="letter-spacing: 0.5px;">Latest
-                                Winners</span>
-                            <span class="badge text-white px-3 py-1 rounded-pill"
-                                style="background: linear-gradient(90deg, #3BE41F 0%, #35C31E 100%); font-size: 0.75rem;">
-                                LIVE
-                            </span>
+                            <span class="section-title text-uppercase text-light">Latest Winners</span>
+                            <span class="status-badge">LIVE</span>
                         </h5>
+
                         <div class="owl-carousel owl-theme" id="winner">
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">1</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
+                            <!-- Repeat for each winner -->
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
                                             <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                Sarah Johnson
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€120</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">2</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
-                                            <i class="fas fa-gem" style="font-size: 32px; color: #6ab7ff;"></i>
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
+                                            <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                Michael Chen
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€75</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson Ali Khan</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">3</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
-                                            <i class="fas fa-coins" style="font-size: 32px; color: #ffd700;"></i>
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
+                                            <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                Emma Rodriguez Khan
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€200</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">4</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
-                                            <i class="fas fa-crown" style="font-size: 32px; color: #ff6b6b;"></i>
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
+                                            <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                David Wilson
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€50</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">5</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
-                                            <i class="fas fa-star" style="font-size: 32px; color: #a66bff;"></i>
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
+                                            <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                Olivia Smith
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€150</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="feature__items">
-                                    <div class="winner-number">6</div>
-                                    <div class="feature__left">
-                                        <div class="thumb bg-info p-2 rounded">
-                                            <i class="fas fa-medal" style="font-size: 32px; color: #6c8eff;"></i>
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-rank">1</div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon bg-info">
+                                            <i class="fas fa-trophy" style="font-size: 32px; color: gold;"></i>
                                         </div>
-                                        <div class="content">
-                                            <h6>
-                                                James Brown
-                                            </h6>
-                                            <p>
-                                                Earn <span class="currency">€90</span>
-                                            </p>
+                                        <div class="winner-details">
+                                            <h6>Sarah Johnson</h6>
+                                            <p>Earn <span class="winner-currency">€120</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Add more winner-card entries similarly -->
                         </div>
-
                     </div>
                 </div>
             </section>
+
             <!--Banner Feature End-->
 
             <!-- ALL GAMES STARTS -->

@@ -573,6 +573,16 @@
     will-change: transform;
 }
 
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .marquee-wrapper:hover .marquee-content {
     animation-play-state: paused;
 }
@@ -586,118 +596,78 @@
 
 
 /* --- LATEST WINNERS CSS STARTS ---  */
-.banner__feature .thumb img {
-    width: 40px;
-    height: 40px;
+.latest-winners-section {
+    margin-top: 40px;
 }
 
-.banner__feature .content {
-    overflow: hidden;
+.latest-winners-section .icon-wrapper svg {
+    opacity: 0.8;
 }
 
-.banner__feature .content h6 {
+.section-heading .status-badge {
+    background: linear-gradient(90deg, #3BE41F 0%, #35C31E 100%);
+    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 25px;
+    line-height: 16px;
+    color: white;
+}
+
+.winner-card .winner-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to top, #1a1c3e, #0f112f);
+    border: 1px solid #1a1c3e;
+    border-radius: 10px;
+    padding: 8px 10px 12px;
+    transition: all 0.4s;
+    position: relative;
+}
+
+.winner-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: calc(100% - 40px);
+}
+
+.winner-icon {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.winner-details {
+    max-width: 70%;
+}
+
+.winner-details h6 {
     font-size: 14px;
     color: var(--winner-text-color);
     margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 
-.banner__feature .content p {
+.winner-details p {
     font-size: 1rem;
     color: var(--winner-secondary-text);
     margin-bottom: 0;
 }
 
-.banner__feature .owl-nav {
-    position: absolute;
-    top: -60px;
-    right: 0;
-    display: flex;
-    gap: 1px;
+.winner-currency {
+    color: var(--currency-color);
+    font-weight: bold;
 }
 
-.banner__feature .owl-nav button:first-child {
-    font-size: 14px !important;
-    margin: 0;
-    padding: 6px 16px !important;
-    color: var(--winner-text-color);
-    border: 2px solid var(--nav-button-bg);
-    background: transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border-radius: 20px 0 0 20px;
-}
-
-.banner__feature .owl-nav button:last-child {
-    font-size: 14px !important;
-    margin: 0;
-    padding: 6px 16px !important;
-    color: var(--winner-text-color);
-    border: 2px solid var(--nav-button-bg);
-    background: transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border-radius: 0 20px 20px 0;
-}
-
-.banner__feature .owl-nav button:hover {
-    background-color: transparent !important;
-    border-color: var(--nav-button-hover-border) !important;
-    box-shadow: 0 0 6px var(--nav-button-hover-shadow);
-}
-
-.banner__feature .owl-dots {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.banner__feature .owl-dots button.owl-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--dot-inactive-bg) !important;
-    margin: 0;
-    transition: all 0.3s ease;
-}
-
-.banner__feature .owl-dots button.owl-dot.active {
-    transform: scale(0.95) !important;
-}
-
-.banner__feature .owl-carousel .owl-stage {
-    margin-bottom: 15px;
-}
-
-.banner__feature .header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.banner__feature .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, var(--header-gradient-start), var(--header-gradient-end));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 10px var(--header-text-shadow);
-}
-
-.banner__feature .header p {
-    color: var(--winner-secondary-text);
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.banner__feature .winner-number {
+.winner-rank {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: linear-gradient(135deg, var(--winner-number-gradient-start), var(--winner-number-gradient-end));
     width: 30px;
     height: 30px;
+    background: var(--hero-balance-btn-start);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -707,54 +677,104 @@
     box-shadow: 0 3px 6px var(--winner-number-shadow);
 }
 
-.banner__feature .currency {
-    color: var(--currency-color);
-    font-weight: bold;
+.latest-winners-section .owl-stage-outer {
+    padding-top: 8px;
+}
+
+.latest-winners-section .owl-carousel .owl-stage {
+    margin-bottom: 15px;
+}
+
+.latest-winners-section .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.latest-winners-section .owl-dots button.owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--dot-inactive-bg) !important;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.latest-winners-section .owl-dots button.owl-dot.active {
+    transform: scale(0.95) !important;
+}
+
+.latest-winners-section .owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    display: flex;
+    gap: 1px;
+}
+
+.latest-winners-section .owl-nav button {
+    background: transparent;
+    cursor: pointer;
+    margin: .5px !important;
+    transition: all 0.3s ease;
+}
+
+.latest-winners-section .owl-nav button:active {
+    transform: scale(0.95);
+}
+
+.latest-winners-section .owl-nav button:first-child {
+    font-size: 14px !important;
+    padding: 6px 16px !important;
+    border-radius: 20px 0 0 20px;
+    color: var(--winner-text-color);
+    border: 2px solid var(--nav-button-bg);
+}
+
+.latest-winners-section .owl-nav button:last-child {
+    font-size: 14px !important;
+    padding: 6px 16px !important;
+    border-radius: 0 20px 20px 0;
+    color: var(--winner-text-color);
+    border: 2px solid var(--nav-button-bg);
+}
+
+.latest-winners-section .owl-nav button:hover {
+    background-color: transparent !important;
+    border-color: var(--nav-button-hover-border) !important;
+    box-shadow: 0 0 6px var(--nav-button-hover-shadow);
 }
 
 @media (max-width: 769px) {
-    .banner__feature .banner__feature {
-        padding: 20px 15px;
+    .latest-winners-section .owl-nav {
+        top: -52px;
     }
 
-    .banner__feature .header h1 {
-        font-size: 2rem;
-    }
-
-    .banner__feature .owl-nav {
-        top: -50px;
-    }
-
-    .banner__feature .owl-nav button:first-child {
+    .latest-winners-section .owl-nav button:first-child {
         font-size: 12px !important;
         padding: 4px 12px !important;
     }
 
-    .banner__feature .owl-nav button:last-child {
+    .latest-winners-section .owl-nav button:last-child {
         font-size: 12px !important;
         padding: 4px 12px !important;
     }
 }
 
 @media (max-width: 576px) {
-    .banner__feature .owl-nav button:first-child {
-        font-size: 10px !important;
+    .latest-winners-section .owl-nav button:first-child {
         padding: 4px 12px !important;
+        font-size: 10px !important;
     }
 
-    .banner__feature .owl-nav button:last-child {
-        font-size: 10px !important;
+    .latest-winners-section .owl-nav button:last-child {
         padding: 4px 12px !important;
+        font-size: 10px !important;
     }
 }
 
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-50%);
+@media (max-width: 371px) {
+    .latest-winners-section .owl-nav {
+        display: none;
     }
 }
 
@@ -781,12 +801,12 @@
 
 .swiper-blur-container::before {
     left: 0;
-    background: linear-gradient(to right, #000616, transparent);
+    background: linear-gradient(to right, hsla(238, 49%, 12%, 1), transparent);
 }
 
 .swiper-blur-container::after {
     right: 0;
-    background: linear-gradient(to left, #000616, transparent);
+    background: linear-gradient(to left, hsla(238, 49%, 12%, 1), transparent);
 }
 
 .show-left-blur::before {
@@ -812,7 +832,7 @@
     --gradient-dark-purple: linear-gradient(45deg, #6c5ce7, #a29bfe);
     --gradient-light-purple: linear-gradient(45deg, #a29bfe, #6c5ce7);
     --gradient-overlay: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    --gradient-footer: linear-gradient(to right, #0f112f, #1a1c3e);
+    --gradient-footer: linear-gradient(to top, #1a1c3e, #0f112f);
 
     /* Solid Colors */
     --color-dark-bg: #000616;
@@ -2670,17 +2690,19 @@
 @media (min-width: 993px) {
     #searchModal .modal-dialog {
         max-width: 780px;
-        height: auto;
+        /* height: auto; */
         max-height: 684px;
         margin: 1.75rem auto;
     }
 
     #searchModal .modal-content {
-        height: auto;
+        height: 90vh;
+        overflow: hidden;
         border-radius: 16px;
         border: 1px solid var(--color-primary-light);
     }
 }
+
 
 /* Close Button */
 #searchModal .btn-close {
@@ -2761,7 +2783,7 @@
 
 /* Game Cards */
 #searchModal .search-games-container {
-    max-height: calc(100vh - 170px);
+    max-height: calc(100vh - 270px);
     overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
@@ -2894,10 +2916,19 @@
         width: 135px;
         height: 185px;
     }
+
+    #searchModal .search-games-container {
+        max-height: calc(100vh - 200px);
+    }
+
 }
 
 /* Responsive Adjustments */
 @media (max-width: 769px) {
+    #searchModal .search-games-container {
+        max-height: calc(100vh - 160px);
+    }
+
     #searchModal .search-game-badge::before {
         width: 25px;
     }
