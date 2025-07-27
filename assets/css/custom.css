@@ -903,7 +903,7 @@
 }
 
 .anSwiper .nav-link {
-    background-color: var(--bg-dark-light);
+    background-color: var(--an-tab-bg);
     color: var(--text-white);
     border: none;
     border-radius: 8px;
@@ -2619,37 +2619,29 @@
 
 
 
-
+/* SEARCH GAMES MODAL CSS Starts */
 :root {
-    /* Main Colors */
-    --search-border: #3a3a70;
+    --sm-border: #3a3a70;
+    --sm-tab-border: #5757a6;
+
+    --text-white: #fff;
+    --sm-font-blue: #abb7e0;
+    --sm-close-btn: #8282ee;
 
     /* Gradient Colors */
-    --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
-    --gradient-purple-light: linear-gradient(to right, #9d3df1, #5a15e8);
-    --gradient-red: linear-gradient(135deg, #ff416c, #ff4b2b);
-    --gradient-green: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
+    --sm-badge-gradient: linear-gradient(180deg, #66A615 0%, #15A64F 100%);
 
-    /* Text Colors */
-    --text-white: white;
-    --text-light-blue: #abb7e0;
-    --text-purple-accent: #8282ee;
+    --sm-tab-bg: rgb(28, 29, 64);
+    --sm-tab-active-bg: radial-gradient(#3a3a70, #1c1d40);
+    --sm-background: hsla(238, 49%, 12%, 1);
 
-    /* Background Colors */
-    --bg-dark: #000616;
-    --bg-darker: #10142c;
-    --bg-dark-light: rgb(28, 29, 64);
-    --bg-gradient-dark: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    --sm-card-overlay: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    --sm-fun-card-btn: linear-gradient(to right, #8e2de2, #4a00e0);
 
-    /* Shadow Colors */
-    --shadow-primary: rgba(87, 87, 166, 0.6);
-    --shadow-dark: rgba(0, 0, 0, 0.3);
-    --shadow-purple: rgba(142, 45, 226, 0.4);
-    --shadow-white: rgba(255, 255, 255, 0.7);
-    --shadow-black: rgba(0, 0, 0, 0.2);
+    --sm-shadow-purple: rgba(142, 45, 226, 0.4);
+    --sm-shadow-black: rgba(0, 0, 0, 0.2);
 }
 
-/* Custom Close Button with Font Awesome */
 #searchModal .btn-close-custom {
     background: transparent;
     border: none;
@@ -2667,15 +2659,13 @@
 #searchModal .btn-close-custom:hover {
     opacity: 1;
     transform: rotate(90deg);
-    color: var(--text-purple-accent);
+    color: var(--sm-close-btn);
 }
 
 #searchModal .btn-close-custom .fa-times {
     font-size: 22px;
 }
 
-/* SEARCH GAMES MODAL CSS Starts */
-/* Modal Sizing */
 #searchModal .modal-dialog {
     margin: 0;
     width: 100%;
@@ -2687,7 +2677,7 @@
     height: 100vh;
     border-radius: 0;
     border: none;
-    background: var(--bg-darker);
+    background: var(--sm-background);
     color: var(--text-white);
 }
 
@@ -2703,10 +2693,9 @@
         height: 90vh;
         overflow: hidden;
         border-radius: 16px;
-        border: 1px solid var(--search-border);
+        border: 1px solid var(--sm-border);
     }
 }
-
 
 /* Close Button */
 #searchModal .btn-close {
@@ -2726,18 +2715,18 @@
 #searchModal .search-bar-container .input-group {
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--search-border);
+    border: 1px solid var(--sm-border);
 }
 
 #searchModal .search-bar-container .input-group-text {
-    color: var(--text-light-blue);
-    background-color: var(--bg-darker);
+    color: var(--sm-font-blue);
+    background-color: var(--sm-background);
     font-size: 14px;
     border: none;
 }
 
 #searchModal .search-bar-container .form-control {
-    background-color: var(--bg-dark-light);
+    background-color: var(--sm-tab-bg);
     color: var(--text-white);
     padding: 12px;
     border: none;
@@ -2746,13 +2735,15 @@
 }
 
 #searchModal .search-bar-container .form-control::placeholder {
-    color: var(--text-light-blue);
+    color: var(--sm-font-blue);
     opacity: 0.7;
 }
 
 /* Navigation Tabs */
-#searchModal .nav-scroll-container {
+#searchModal .nav-scroll-container,
+#libGames .nav-scroll-container {
     position: relative;
+    padding: 2px;
 }
 
 #searchModal .snSwiper {
@@ -2769,19 +2760,24 @@
 }
 
 #searchModal .snSwiper .nav-link {
-    background-color: var(--bg-dark-light);
-    color: var(--text-light-blue);
+    background-color: var(--sm-tab-bg);
+    color: var(--sm-font-blue);
     border-radius: 8px;
     padding: 8px 16px;
-    border: none;
+    border: 1px solid transparent;
     white-space: nowrap;
     font-size: 14px;
     transition: all 0.3s ease;
 }
 
-#searchModal .snSwiper .nav-link.active,
+#searchModal .snSwiper .nav-link.active {
+    border: 1px solid var(--sm-tab-border);
+    background: var(--sm-tab-active-bg);
+    color: var(--text-white) !important;
+}
+
 #searchModal .snSwiper .nav-link:hover {
-    background: var(--gradient-purple);
+    border: 1px solid var(--sm-tab-border);
     color: var(--text-white) !important;
 }
 
@@ -2801,7 +2797,7 @@
     overflow: hidden;
     height: 180px;
     cursor: pointer;
-    box-shadow: 0 4px 15px var(--shadow-black);
+    box-shadow: 0 4px 15px var(--sm-shadow-black);
     transition: all 0.3s ease;
 }
 
@@ -2828,7 +2824,7 @@
     left: 0;
     width: 100%;
     content: "";
-    background: var(--gradient-green);
+    background: var(--sm-badge-gradient);
     width: 28px;
     height: 3.17px;
     border-top-left-radius: 5px;
@@ -2837,7 +2833,7 @@
 
 #searchModal .search-game-badge .badge {
     clip-path: polygon(50% 0%, 100% 0, 90% 17%, 91% 100%, 50% 60%, 10% 99%, 9% 16%, 0 0);
-    background: var(--gradient-green);
+    background: var(--sm-badge-gradient);
     width: 23px;
     font-weight: 400;
     height: 22px;
@@ -2859,7 +2855,7 @@
     justify-content: center;
     inset: 0 0 -100% 0;
     border-radius: 10px;
-    background: var(--bg-gradient-dark);
+    background: var(--sm-card-overlay);
     opacity: 0;
     transition: all 0.4s;
 }
@@ -2895,7 +2891,7 @@
 }
 
 #searchModal .search-play-fun-btn {
-    background: var(--gradient-purple);
+    background: var(--sm-fun-card-btn);
     color: var(--text-white);
     padding: 6px 12px;
     border-radius: 20px;
@@ -2907,7 +2903,7 @@
 
 #searchModal .search-play-fun-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px var(--shadow-purple);
+    box-shadow: 0 4px 10px var(--sm-shadow-purple);
 }
 
 #searchModal .search-game-card {
