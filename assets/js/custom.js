@@ -99,7 +99,7 @@ $(document).ready(function () {
                 items: 1,
                 nav: true,
             },
-            576: {
+            476: {
                 items: 2,
                 nav: true,
             },
