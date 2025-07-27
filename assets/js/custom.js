@@ -84,7 +84,7 @@ function applySwiperBlurEffect(swiper, containerSelector) {
 $(document).ready(function () {
     $('#winner').owlCarousel({
         loop: true,
-        margin: 20,
+        margin: 10,
         responsiveClass: true,
         navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
         dots: false,
