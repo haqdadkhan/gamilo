@@ -584,12 +584,12 @@
     --winner-text-primary: #fff;
     --winner-text-secondary: #abb7e0;
     /* Background Colors */
-    --winner-nav-border: #2c2c5c;
+    --winner-nav-border: #3a3a70;
     --winner-nav-hover-border: #5757a6;
     --winner-nav-hover-shadow: rgba(87, 87, 166, 0.6);
     --winner-currency-color: #35C31E;
     --live-badge: #ff2e2e;
-    --winner-card-bg: linear-gradient(to top, #1c1d40, hsla(238, 49%, 12%, 1));
+    --winner-card-bg: linear-gradient(to top, rgb(28, 29, 64), hsla(238, 49%, 12%, 1));
     --winner-card-border: #1c1d40;
     --winner-badge-bg: rgba(0, 201, 255, 0.2);
     --winner-badge-border: #00c9ff;
@@ -829,7 +829,7 @@
     --gradient-dark-purple: linear-gradient(45deg, #6c5ce7, #a29bfe);
     --gradient-light-purple: linear-gradient(45deg, #a29bfe, #6c5ce7);
     --gradient-overlay: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    --gradient-footer: linear-gradient(to top, #1c1d40, hsla(238, 49%, 12%, 1));
+    --gradient-footer: linear-gradient(to top, rgb(28, 29, 64), hsla(238, 49%, 12%, 1));
 
     /* Solid Colors */
     --color-dark-bg: #000616;
@@ -842,7 +842,7 @@
     --color-gold: #ffd700;
     --color-dark-blue: #0a0c24;
     --color-darker-blue: #000616;
-    --color-nav-bg: #2c2c5c;
+    --color-nav-border: #3a3a70;
     --color-nav-hover: #3a3a70;
     --color-nav-active: #5050a0;
     --color-border-purple: #5757a6;
@@ -863,9 +863,8 @@
 
 /* --- NAV OWL CAROUSEL CSS Starts ---  */
 .cusSearch {
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: white;
-    border: none;
+    border: 1px solid #3a3a70;
     border-radius: 8px;
     padding: 8px 14px;
     font-size: 16px;
@@ -876,20 +875,19 @@
     white-space: nowrap;
     width: 100%;
     box-sizing: border-box;
+    background: transparent;
+}
+
+.cusSearch:hover {
+    background: var(--bg-dark-light);
 }
 
 .cusSearch i {
     font-size: 16px;
 }
 
-.owl-carousel.anSwiper {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.owl-carousel.anSwiper .nav-tabs {
-    border: none;
+.anSwiper .nav-scroll-container {
+    padding: 2px 0;
 }
 
 .anSwiper .nav-item {
@@ -898,7 +896,7 @@
 }
 
 .anSwiper .nav-link {
-    background-color: #10142c;
+    background-color: var(--bg-dark-light);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -911,11 +909,17 @@
     white-space: nowrap;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.anSwiper .nav-link.active,
 .anSwiper .nav-link:hover {
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    border: 1px solid #5757a6;
+}
+
+.anSwiper .nav-link.active {
+    border: 1px solid #5757a6;
+    background: radial-gradient(#3a3a70, #1c1d40);
     color: #ffffff !important;
 }
 
@@ -1057,7 +1061,7 @@
 .sectionTitle .sectionNav div {
     font-size: 14px;
     padding: 6px 12px;
-    border: 2px solid var(--color-nav-bg);
+    border: 2px solid var(--color-nav-border);
     background: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -2331,6 +2335,7 @@
     filter: brightness(0.7);
     transition: all 0.3s ease;
 }
+
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card:hover .card-pattern {
     filter: brightness(1);
 }
@@ -2610,11 +2615,7 @@
 
 :root {
     /* Main Colors */
-    --color-primary: #2c2c5c;
-    --color-primary-light: #3a3a70;
-    --color-primary-lighter: #5050a0;
-    --color-primary-lightest: #5757a6;
-    --color-primary-accent: #6a6ac2;
+    --search-border: #3a3a70;
 
     /* Gradient Colors */
     --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
@@ -2630,7 +2631,7 @@
     /* Background Colors */
     --bg-dark: #000616;
     --bg-darker: #10142c;
-    --bg-dark-light: #1a1d3a;
+    --bg-dark-light: rgb(28, 29, 64);
     --bg-gradient-dark: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
 
     /* Shadow Colors */
@@ -2695,7 +2696,7 @@
         height: 90vh;
         overflow: hidden;
         border-radius: 16px;
-        border: 1px solid var(--color-primary-light);
+        border: 1px solid var(--search-border);
     }
 }
 
@@ -2718,7 +2719,7 @@
 #searchModal .search-bar-container .input-group {
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--color-primary-light);
+    border: 1px solid var(--search-border);
 }
 
 #searchModal .search-bar-container .input-group-text {
