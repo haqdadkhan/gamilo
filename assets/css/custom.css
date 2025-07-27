@@ -521,34 +521,17 @@
 
 
 
-:root {
-    /* Marquee colors */
-    --marquee-gradient-start: rgb(28, 29, 64);
-    --marquee-gradient-end: rgb(28, 29, 64);
-    --marquee-text-color: rgba(224, 224, 255, 0.8);
-    --marquee-border: #3a3a70;
 
-    /* Latest Winners colors */
-    --winner-text-color: #fff;
-    --winner-secondary-text: #abb7e0;
-    --nav-button-bg: #2c2c5c;
-    --nav-button-hover-bg: #3a3a70;
-    --nav-button-hover-border: #5757a6;
-    --nav-button-hover-shadow: rgba(87, 87, 166, 0.6);
-    --dot-inactive-bg: #3a447c;
-    --dot-active-bg: #4e5a9d;
-    --header-gradient-start: #6c8eff;
-    --header-gradient-end: #a66bff;
-    --header-text-shadow: rgba(108, 142, 255, 0.3);
-    --winner-number-gradient-start: #ff6b6b;
-    --winner-number-gradient-end: #ff8e8e;
-    --winner-number-shadow: rgba(0, 0, 0, 0.2);
-    --currency-color: #35C31E;
-}
 
 /*---- MARQUEE CSS STARTS ----*/
+:root {
+    --marquee-text-color: #e0e0ff;
+    --marquee-bg: rgb(28, 29, 64);
+    --marquee-border: #3a3a70;
+}
+
 .announcement-bar {
-    background: linear-gradient(to right, var(--marquee-gradient-start) 0%, var(--marquee-gradient-end) 100%);
+    background: var(--marquee-bg);
     color: var(--marquee-text-color);
     padding: 10px;
     margin: 12px;
@@ -596,6 +579,22 @@
 
 
 /* --- LATEST WINNERS CSS STARTS ---  */
+:root {
+    /* Font Colors */
+    --winner-text-primary: #fff;
+    --winner-text-secondary: #abb7e0;
+    /* Background Colors */
+    --winner-nav-border: #2c2c5c;
+    --winner-nav-hover-border: #5757a6;
+    --winner-nav-hover-shadow: rgba(87, 87, 166, 0.6);
+    --winner-currency-color: #35C31E;
+    --live-badge: #35C31E;
+    --winner-card-bg: linear-gradient(to top, #1a1c3e, #0f112f);
+    --winner-card-border: #1a1c3e;
+    --winner-badge-bg: rgba(0, 201, 255, 0.2);
+    --winner-badge-border: #00c9ff;
+}
+
 .latest-winners-section {
     margin-top: 40px;
 }
@@ -605,20 +604,20 @@
 }
 
 .section-heading .status-badge {
-    background: linear-gradient(90deg, #3BE41F 0%, #35C31E 100%);
+    background: var(--live-badge);
     font-size: 10px;
     padding: 4px 12px;
     border-radius: 25px;
-    line-height: 16px;
-    color: white;
+    line-height: 14px;
+    color: var(--text-white);
 }
 
 .winner-card .winner-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to top, #1a1c3e, #0f112f);
-    border: 1px solid #1a1c3e;
+    background: var(--winner-card-bg);
+    border: 1px solid var(--winner-card-border);
     border-radius: 10px;
     padding: 8px;
     transition: all 0.4s;
@@ -650,7 +649,7 @@
 
 .winner-details h6 {
     font-size: 14px;
-    color: var(--winner-text-color);
+    color: var(--winner-text-primary);
     margin-bottom: 5px;
     white-space: nowrap !important;
     overflow: hidden !important;
@@ -660,12 +659,12 @@
 .winner-details p {
     font-size: 16px;
     line-height: 16px;
-    color: var(--winner-secondary-text);
+    color: var(--winner-text-secondary);
     margin-bottom: 0;
 }
 
 .winner-currency {
-    color: var(--currency-color);
+    color: var(--winner-currency-color);
     font-weight: bold;
 }
 
@@ -678,13 +677,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--hero-badge-bg);
-    border: 1px solid var(--hero-badge-border);
+    background: var(--winner-badge-bg);
+    border: 1px solid var(--winner-badge-border);
     border-radius: 50%;
     font-size: 10px;
     font-weight: 400;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--text-white);
 }
 
 .latest-winners-section .owl-stage-outer {
@@ -693,24 +692,6 @@
 
 .latest-winners-section .owl-carousel .owl-stage {
     margin-bottom: 15px;
-}
-
-.latest-winners-section .owl-dots {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.latest-winners-section .owl-dots button.owl-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--dot-inactive-bg) !important;
-    margin: 0;
-    transition: all 0.3s ease;
-}
-
-.latest-winners-section .owl-dots button.owl-dot.active {
-    transform: scale(0.95) !important;
 }
 
 .latest-winners-section .owl-nav {
@@ -736,22 +717,22 @@
     font-size: 14px !important;
     padding: 6px 16px !important;
     border-radius: 20px 0 0 20px;
-    color: var(--winner-text-color);
-    border: 2px solid var(--nav-button-bg);
+    color: var(--winner-text-primary);
+    border: 2px solid var(--winner-nav-border);
 }
 
 .latest-winners-section .owl-nav button:last-child {
     font-size: 14px !important;
     padding: 6px 16px !important;
     border-radius: 0 20px 20px 0;
-    color: var(--winner-text-color);
-    border: 2px solid var(--nav-button-bg);
+    color: var(--winner-text-primary);
+    border: 2px solid var(--winner-nav-border);
 }
 
 .latest-winners-section .owl-nav button:hover {
     background-color: transparent !important;
-    border-color: var(--nav-button-hover-border) !important;
-    box-shadow: 0 0 6px var(--nav-button-hover-shadow);
+    border-color: var(--winner-nav-hover-border) !important;
+    box-shadow: 0 0 6px var(--winner-nav-hover-shadow);
 }
 
 @media (max-width: 769px) {
@@ -2231,35 +2212,29 @@
 
 
 :root {
-    /* Hero Section Colors */
-    --hero-text-color: #e0e0ff;
-    --hero-shadow-color: rgba(0, 0, 0, 0.4);
-    --hero-card-gradient-start: rgb(28, 29, 64);
-    --hero-card-gradient-end: rgb(28, 29, 64);
+    /* Hero Font Colors */
+    --hero-text-white: #fff;
+    --hero-text-light: #e0e0ff;
+    --hero-text-dark: #111;
+    --hero-badge-text: #00c9ff;
+    --hero-title-gradient: linear-gradient(to right, #00c9ff, #92fe9d);
+    --hero-description-color: rgba(224, 224, 255, 0.8);
+    /* Hero BGs */
+    --hero-card-bg: rgb(28, 29, 64);
     --hero-badge-bg: rgba(0, 201, 255, 0.2);
     --hero-badge-border: #00c9ff;
-    --hero-badge-text: #00c9ff;
-    --hero-title-gradient-start: #00c9ff;
-    --hero-title-gradient-end: #92fe9d;
-    --hero-description-color: rgba(224, 224, 255, 0.8);
-    --hero-balance-btn-start: #00c9ff;
-    --hero-balance-btn-end: #92fe9d;
-    --hero-balance-btn-text: #111;
+    --hero-bal-btn-bg: linear-gradient(to right, #00c9ff, #92fe9d);
     --hero-balance-btn-shadow: rgba(0, 201, 255, 0.3);
     --hero-balance-btn-hover-shadow: rgba(0, 201, 255, 0.4);
     --hero-terms-btn-bg: rgba(255, 255, 255, 0.1);
     --hero-terms-btn-border: rgba(255, 255, 255, 0.2);
     --hero-terms-btn-hover-bg: rgba(255, 255, 255, 0.2);
-    --hero-nav-btn-start: #00c6ff;
-    --hero-nav-btn-end: #0072ff;
+    /* Nav Btns */
+    --hero-nav-btn-bg: linear-gradient(to right, #00c6ff, #0072ff);
     --hero-nav-btn-border: hsla(238, 49%, 12%, 1);
-    --hero-nav-prev-hover-start: #00d2ff;
-    --hero-nav-prev-hover-end: #3a47d5;
-    --hero-nav-next-hover-start: #3a47d5;
-    --hero-nav-next-hover-end: #00d2ff;
+    --hero-nav-btn-hover-bg: #0072ff;
     --hero-pagination-bullet: rgba(255, 255, 255, 0.3);
-    --hero-pagination-active-start: #00c9ff;
-    --hero-pagination-active-end: #92fe9d;
+    --hero-pagination-bullet-active: linear-gradient(to right, #00c9ff, #92fe9d);
 }
 
 #home.hero-section .hero-container {
@@ -2284,7 +2259,7 @@
     position: relative;
     border-radius: 18px;
     padding: 2rem;
-    color: var(--hero-text-color);
+    color: var(--hero-text-light);
     height: 100%;
     min-height: 280px;
     display: flex;
@@ -2294,7 +2269,7 @@
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card:hover .card-gradient {
-    background: var(--hero-card-gradient-start);
+    background: var(--hero-card-bg);
 }
 
 /* Card Gradient Background */
@@ -2305,7 +2280,7 @@
     border-radius: 18px;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at right, var(--hero-card-gradient-start), var(--hero-card-gradient-end));
+    background: var(--hero-card-bg);
     z-index: 1;
 }
 
@@ -2327,6 +2302,7 @@
     animation-timing-function: linear;
     background-image: url(../img/banner/arrows.png);
     mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255) 50%);
+    border-radius: 18px;
 }
 
 @keyframes arrowAnimation {
@@ -2372,7 +2348,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, var(--hero-title-gradient-start), var(--hero-title-gradient-end));
+    background: var(--hero-title-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -2413,14 +2389,13 @@
 
 /* Balance Button */
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .balance-btn {
-    background: linear-gradient(to right, var(--hero-balance-btn-start), var(--hero-balance-btn-end));
-    color: var(--hero-balance-btn-text);
+    background: var(--hero-bal-btn-bg);
+    color: var(--hero-text-dark);
     box-shadow: 0 4px 15px var(--hero-balance-btn-shadow);
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .balance-btn:hover {
-    transform: translateY(-2px);
-    color: var(--text-white);
+    color: var(--hero-text-white);
     box-shadow: 0 6px 20px var(--hero-balance-btn-hover-shadow);
 }
 
@@ -2428,13 +2403,13 @@
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .terms-btn {
     background: var(--hero-terms-btn-bg);
     backdrop-filter: blur(5px);
-    color: var(--hero-text-color);
+    color: var(--hero-text-light);
     border: 1px solid var(--hero-terms-btn-border);
 }
 
 #home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card .terms-btn:hover {
     background: var(--hero-terms-btn-hover-bg);
-    color: var(--text-white);
+    color: var(--hero-text-white);
 }
 
 /* Navigation Buttons */
@@ -2450,16 +2425,16 @@
     border-radius: 50%;
     z-index: 7;
     color: var(--text-white);
-    background: linear-gradient(to right, var(--hero-nav-btn-start), var(--hero-nav-btn-end));
+    background: var(--hero-nav-btn-bg);
     border: 5px solid var(--hero-nav-btn-border);
 }
 
 #home.hero-section .hero-container .cusPrevForHero:hover {
-    background: linear-gradient(to right, var(--hero-nav-prev-hover-start), var(--hero-nav-prev-hover-end));
+    background: var(--hero-nav-btn-hover-bg);
 }
 
 #home.hero-section .hero-container .cusNextForHero:hover {
-    background: linear-gradient(to right, var(--hero-nav-next-hover-start), var(--hero-nav-next-hover-end));
+    background: var(--hero-nav-btn-hover-bg);
 }
 
 #home.hero-section .hero-container .cusPrevForHero {
@@ -2542,7 +2517,7 @@
 #home.hero-section .hero-container .swiper-pagination-bullet-active {
     width: 20px;
     border-radius: 5px;
-    background: linear-gradient(to right, var(--hero-pagination-active-start), var(--hero-pagination-active-end));
+    background: var(--hero-pagination-bullet-active);
 }
 
 /* Responsive Breakpoints */
