@@ -588,9 +588,9 @@
     --winner-nav-hover-border: #5757a6;
     --winner-nav-hover-shadow: rgba(87, 87, 166, 0.6);
     --winner-currency-color: #35C31E;
-    --live-badge: #35C31E;
-    --winner-card-bg: linear-gradient(to top, #1a1c3e, #0f112f);
-    --winner-card-border: #1a1c3e;
+    --live-badge: #ff2e2e;
+    --winner-card-bg: linear-gradient(to top, #1c1d40, hsla(238, 49%, 12%, 1));
+    --winner-card-border: #1c1d40;
     --winner-badge-bg: rgba(0, 201, 255, 0.2);
     --winner-badge-border: #00c9ff;
 }
@@ -641,6 +641,12 @@
 .winner-icon img {
     width: 100%;
     height: 100%;
+    filter: brightness(0.8);
+    transition: all 0.4s;
+}
+
+.winner-card:hover img {
+    filter: brightness(1.2);
 }
 
 .winner-details {
@@ -823,7 +829,7 @@
     --gradient-dark-purple: linear-gradient(45deg, #6c5ce7, #a29bfe);
     --gradient-light-purple: linear-gradient(45deg, #a29bfe, #6c5ce7);
     --gradient-overlay: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
-    --gradient-footer: linear-gradient(to top, #1a1c3e, #0f112f);
+    --gradient-footer: linear-gradient(to top, #1c1d40, hsla(238, 49%, 12%, 1));
 
     /* Solid Colors */
     --color-dark-bg: #000616;
@@ -2322,6 +2328,11 @@
     right: 0;
     width: 200px;
     z-index: 2;
+    filter: brightness(0.7);
+    transition: all 0.3s ease;
+}
+#home.hero-section .hero-container .hero-carousel .swiper-slide .hero-card:hover .card-pattern {
+    filter: brightness(1);
 }
 
 /* Text Content Container */

@@ -107,11 +107,7 @@ $(document).ready(function () {
                 items: 3,
                 nav: true,
             },
-            1025: {
-                items: 4,
-                nav: true,
-            },
-            1200: {
+            1124: {
                 items: 4,
                 nav: true,
             }
