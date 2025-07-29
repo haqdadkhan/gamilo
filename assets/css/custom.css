@@ -962,11 +962,16 @@
     text-transform: uppercase;
     display: block;
     text-align: center;
-    align-items: center;
     z-index: 1;
-    color: var(--white-color);
-    padding: 4.5px 10px;
+    color: #abb7e0;
     border: 1px solid #5757a6;
+    padding: 4.5px 13px 5px;
+    border-radius: 25px;
+    transform: skew(0deg);
+    transition: all 0.3s ease;
+}
+
+.main-game-card:hover .game-badge .badge {
     border-radius: 4px;
     transform: skew(-20deg);
 }
@@ -1132,18 +1137,27 @@
 }
 
 .exploreAllGamesPapa:hover {
-    background: var(--color-light-purple);
+    background: #5757a6;
 }
 
 .exploreAllGames {
     padding: 5px 48px;
     border-radius: 25px;
-    background: var(--color-dark-bg);
-    color: var(--color-white);
-    font-size: 18px;
+    background: hsla(238, 49%, 12%, 1);
+    color: #abb7e0 !important;
+    font-size: 16px;
     font-weight: 500;
     outline: none;
     border: none;
+}
+
+.exploreAllGames a {
+    color: #abb7e0 !important;
+    transition: all 0.3s ease;
+}
+
+.exploreAllGames:hover a {
+    color: #fff !important;
 }
 
 @media (max-width: 1024px) {
