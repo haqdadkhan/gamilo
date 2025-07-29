@@ -947,12 +947,17 @@
 
 /* --- ALL GAMES NAV CAROUSEL CSS Ends --- */
 
-/* EVERY GAME CARD OVERLAY CSS STARTS */
+/* --- EVERY GAME CARD OVERLAY CSS STARTS --- */
 .main-game-card .game-badge {
     position: absolute;
     top: 4px;
-    left: 8px;
+    left: 4px;
     z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.main-game-card:hover .game-badge{
+    left: 8px;
 }
 
 .main-game-card .game-badge .badge {
@@ -1094,7 +1099,7 @@
     transition: all 0.4s;
 }
 
-/* EVERY GAME CARD OVERLAY CSS ENDS */
+/* --- EVERY GAME CARD OVERLAY CSS ENDS --- */
 
 /* --- ALL GAMES CSS STARTS --- */
 .ag-cards-container .agSwiper .swiper-slide {
@@ -1345,12 +1350,7 @@
     position: relative;
     max-width: 240px;
     height: 280px;
-    box-shadow: 0 10px 25px var(--transparent-black-lighter);
     transition: transform 0.3s ease;
-}
-
-.totCard:hover {
-    box-shadow: 0 15px 30px var(--transparent-black-light);
 }
 
 .totCard .totCardMainImage {
@@ -1369,11 +1369,11 @@
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 .totCardMainImage:hover .totCardBanner {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 .totCard>span {
@@ -1384,7 +1384,7 @@
     line-height: 140px;
     font-weight: 800;
     z-index: 2;
-    color: var(--color-dark-blue);
+    color: hsla(238, 49%, 12%, 1);
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: transparent;
     background: var(--gradient-blue-cyan);
@@ -1450,7 +1450,6 @@
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
     box-shadow: 0 10px 25px var(--transparent-black-lighter);
-    transition: transform 0.3s ease;
     border: 1px solid var(--transparent-pink-border);
     position: relative;
 }
@@ -1494,8 +1493,14 @@
     height: 36px;
     border-radius: 6px;
     object-fit: cover;
+    filter: brightness(0.7);
     border: 2px solid var(--transparent-white-light);
     box-shadow: 0 2px 8px var(--transparent-black-light);
+    transition: all 0.3s ease;
+}
+
+.pfCard:hover .pfCardThumbnail {
+    filter: brightness(1);
 }
 
 .pfCardTitle {
@@ -1541,7 +1546,7 @@
 }
 
 .pfCardPlayBtn:hover {
-    transform: translateY(-2px);
+    background: var(--color-neon-pink);
     box-shadow: 0 6px 20px var(--transparent-pink-glow);
 }
 
