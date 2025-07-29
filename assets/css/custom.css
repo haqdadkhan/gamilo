@@ -424,14 +424,14 @@
         margin-left: 10px;
     }
 
-    .cmn--btn {
+    .overlay-btn {
         padding: 7px 14px 7px;
         font-size: 16px;
         line-height: 18px;
         font-weight: 200;
     }
 
-    .game__overlay {
+    .game-card-overlay {
         display: none !important;
     }
 }
@@ -499,7 +499,7 @@
         width: 20px !important;
     }
 
-    .cmn--btn {
+    .overlay-btn {
         padding: 2px 5px 2px;
         font-size: 12px;
         line-height: 10px;
@@ -783,6 +783,10 @@
 
 
 /* === FADE EFFECT CSS STARTS === */
+:root {
+    --blur: hsla(238, 49%, 12%, 1);
+}
+
 .swiper-blur-container::before,
 .swiper-blur-container::after {
     content: '';
@@ -798,12 +802,12 @@
 
 .swiper-blur-container::before {
     left: 0;
-    background: linear-gradient(to right, hsla(238, 49%, 12%, 1), transparent);
+    background: linear-gradient(to right, var(--blur), transparent);
 }
 
 .swiper-blur-container::after {
     right: 0;
-    background: linear-gradient(to left, hsla(238, 49%, 12%, 1), transparent);
+    background: linear-gradient(to left, var(--blur), transparent);
 }
 
 .show-left-blur::before {
@@ -861,12 +865,13 @@
     --transparent-pink-glow: rgba(255, 0, 174, 0.4);
 }
 
-/* --- NAV OWL CAROUSEL CSS Starts ---  */
+/* --- ALL GAMES NAV CAROUSEL CSS Starts ---  */
 :root {
     --an-cus-border: #3a3a70;
     --an-tab-bg: rgb(28, 29, 64);
     --an-tab-active-bg: radial-gradient(#3a3a70, #1c1d40);
     --an-tab-border: #5757a6;
+    --an-font-blue: #abb7e0;
 }
 
 .cusSearch {
@@ -904,7 +909,7 @@
 
 .anSwiper .nav-link {
     background-color: var(--an-tab-bg);
-    color: var(--text-white);
+    color: var(--an-font-blue);
     border: none;
     border-radius: 8px;
     padding: 8px 14px;
@@ -940,7 +945,151 @@
     }
 }
 
-/* --- NAV OWL CAROUSEL CSS Ends --- */
+/* --- ALL GAMES NAV CAROUSEL CSS Ends --- */
+
+/* EVERY GAME CARD OVERLAY CSS STARTS */
+.main-game-card .game-badge {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    z-index: 1;
+}
+
+.main-game-card .game-badge .badge {
+    background: hsla(238, 49%, 12%, 1);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    color: var(--white-color);
+    padding: 4.5px 10px;
+    border: 1px solid #5757a6;
+    border-radius: 4px;
+    transform: skew(-20deg);
+}
+
+.main-game-card .game-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 4px;
+    border: 1px solid #5757a6;
+    background: radial-gradient(#3a3a70, #1c1d40);
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.main-game-card .game-title p {
+    color: var(--white-color);
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.main-game-card .game-card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    inset: 0 0 -100% 0;
+    border-radius: 10px;
+    background: linear-gradient(181.17deg, rgba(0, 6, 22, 0) 1%, rgba(1, 17, 57, 0.78) 100.27%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.main-game-card .game-card-overlay .overlay-btn-grp {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.main-game-card .game-card-overlay .overlay-btn-grp .allvideo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    transition: all 0.4s;
+}
+
+.main-game-card .game-card-overlay .overlay-btn-grp .allvideo img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-game-card .game-card-overlay .overlay-btn-grp .overlay-btn {
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.main-game-card:hover .game-card-overlay {
+    inset: 0 0 -100% 0;
+    opacity: 1;
+}
+
+.overlay-btn {
+    padding: 8px 25px 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    display: inline-block;
+    color: var(--white-color) !important;
+    text-transform: capitalize;
+    font-family: "Jost", sans-serif;
+    transition: all 0.3s;
+    text-align: center;
+    background: transparent;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.overlay-btn::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgb(2, 174, 221), #35cf45 87%);
+    height: 100%;
+    width: 0px;
+    transition: all 0.4s;
+}
+
+.overlay-btn:hover::before {
+    width: 100%;
+}
+
+.overlay-btn:hover {
+    color: var(--theme-color) !important;
+}
+
+.overlay-btn:hover span {
+    color: var(--white-color);
+}
+
+.overlay-btn span {
+    z-index: 1;
+    position: relative;
+    transition: all 0.4s;
+}
+
+/* EVERY GAME CARD OVERLAY CSS ENDS */
 
 /* --- ALL GAMES CSS STARTS --- */
 .ag-cards-container .agSwiper .swiper-slide {
@@ -954,7 +1103,7 @@
     }
 }
 
-.allgames__items {
+.main-game-card {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -962,7 +1111,7 @@
     height: 220px;
 }
 
-.allgames__items img {
+.main-game-card img {
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -970,7 +1119,7 @@
     object-fit: fill;
 }
 
-.allgames__items:hover img {
+.main-game-card:hover img {
     scale: 1.1;
 }
 
@@ -998,7 +1147,7 @@
 }
 
 @media (max-width: 1024px) {
-    .allgames__items {
+    .main-game-card {
         width: 155px;
         height: 200px;
     }
@@ -1010,7 +1159,7 @@
         font-size: 14px;
     }
 
-    .allgames__items {
+    .main-game-card {
         width: 130px;
         height: 180px;
     }
@@ -1020,11 +1169,11 @@
         font-size: 18px;
     }
 
-    .allgames__items .badges__two::before {
+    .main-game-card .game-badge::before {
         width: 25px;
     }
 
-    .allgames__items .badges__two .badge2 {
+    .main-game-card .game-badge .badge {
         width: 20px;
         font-weight: 100;
         height: 20px;
@@ -1035,7 +1184,7 @@
 }
 
 @media (max-width: 466px) {
-    .allgames__items {
+    .main-game-card {
         width: 105px;
         height: 150px;
     }
@@ -1231,7 +1380,7 @@
     margin-top: 100px;
 }
 
-.totCard .game__overlay {
+.totCard .game-card-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1245,14 +1394,14 @@
     transition: all 0.4s;
 }
 
-.totCard .game__overlay .btn__grp {
+.totCard .game-card-overlay .overlay-btn-grp {
     display: grid;
     gap: 10px;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.totCard .game__overlay .btn__grp .allvideo {
+.totCard .game-card-overlay .overlay-btn-grp .allvideo {
     display: block;
     width: 35px;
     height: 35px;
@@ -1260,12 +1409,12 @@
     transition: all 0.4s;
 }
 
-.totCard .game__overlay .btn__grp .allvideo img {
+.totCard .game-card-overlay .overlay-btn-grp .allvideo img {
     width: 100%;
     height: 100%;
 }
 
-.totCard .game__overlay .btn__grp .cmn--btn {
+.totCard .game-card-overlay .overlay-btn-grp .overlay-btn {
     font-weight: 600;
     background-color: transparent;
     border: 1px solid var(--theme-color);
@@ -1273,7 +1422,7 @@
     padding: 5px 20px;
 }
 
-.totCard:hover .game__overlay {
+.totCard:hover .game-card-overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
 }
@@ -1413,7 +1562,7 @@
 }
 
 /* other stylings  */
-.pfCard .game__overlay {
+.pfCard .game-card-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1427,14 +1576,14 @@
     transition: all 0.4s;
 }
 
-.pfCard .game__overlay .btn__grp {
+.pfCard .game-card-overlay .overlay-btn-grp {
     display: grid;
     gap: 10px;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.pfCard .game__overlay .btn__grp .allvideo {
+.pfCard .game-card-overlay .overlay-btn-grp .allvideo {
     display: block;
     width: 35px;
     height: 35px;
@@ -1442,12 +1591,12 @@
     transition: all 0.4s;
 }
 
-.pfCard .game__overlay .btn__grp .allvideo img {
+.pfCard .game-card-overlay .overlay-btn-grp .allvideo img {
     width: 100%;
     height: 100%;
 }
 
-.pfCard .game__overlay .btn__grp .cmn--btn {
+.pfCard .game-card-overlay .overlay-btn-grp .overlay-btn {
     font-weight: 600;
     background-color: transparent;
     border: 1px solid var(--theme-color);
@@ -1455,7 +1604,7 @@
     padding: 5px 20px;
 }
 
-.pfCard:hover .game__overlay {
+.pfCard:hover .game-card-overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
 }
@@ -1545,7 +1694,7 @@
     opacity: 1;
 }
 
-.tfrCard .game__overlay {
+.tfrCard .game-card-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1559,14 +1708,14 @@
     transition: all 0.4s;
 }
 
-.tfrCard .game__overlay .btn__grp {
+.tfrCard .game-card-overlay .overlay-btn-grp {
     display: grid;
     gap: 10px;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.tfrCard .game__overlay .btn__grp .allvideo {
+.tfrCard .game-card-overlay .overlay-btn-grp .allvideo {
     display: block;
     width: 35px;
     height: 35px !important;
@@ -1574,12 +1723,12 @@
     transition: all 0.4s;
 }
 
-.tfrCard .game__overlay .btn__grp .allvideo img {
+.tfrCard .game-card-overlay .overlay-btn-grp .allvideo img {
     width: 100%;
     height: 100% !important;
 }
 
-.tfrCard .game__overlay .btn__grp .cmn--btn {
+.tfrCard .game-card-overlay .overlay-btn-grp .overlay-btn {
     font-weight: 600;
     background-color: transparent;
     border: 1px solid var(--theme-color);
@@ -1587,7 +1736,7 @@
     padding: 5px 20px;
 }
 
-.tfrCard.swiper-slide-active .game__overlay {
+.tfrCard.swiper-slide-active .game-card-overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
 }
@@ -1611,7 +1760,7 @@
 }
 
 @media (max-width:769px) {
-    .tfrCard .game__overlay {
+    .tfrCard .game-card-overlay {
         display: grid !important;
     }
 }
@@ -1772,7 +1921,7 @@
 }
 
 /* othersssss */
-.jpCard .game__overlay {
+.jpCard .game-card-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1786,14 +1935,14 @@
     transition: all 0.4s;
 }
 
-.jpCard .game__overlay .btn__grp {
+.jpCard .game-card-overlay .overlay-btn-grp {
     display: grid;
     gap: 10px;
     align-items: center;
     margin-bottom: 60px;
 }
 
-.jpCard .game__overlay .btn__grp .allvideo {
+.jpCard .game-card-overlay .overlay-btn-grp .allvideo {
     display: block;
     width: 35px;
     height: 35px;
@@ -1801,12 +1950,12 @@
     transition: all 0.4s;
 }
 
-.jpCard .game__overlay .btn__grp .allvideo img {
+.jpCard .game-card-overlay .overlay-btn-grp .allvideo img {
     width: 100%;
     height: 100%;
 }
 
-.jpCard:hover .game__overlay {
+.jpCard:hover .game-card-overlay {
     inset: 0 0 -100% 0;
     opacity: 1;
 }
