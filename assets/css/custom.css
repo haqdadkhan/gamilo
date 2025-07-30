@@ -1203,12 +1203,13 @@
     }
 
     .main-game-card .game-badge .badge {
-        width: 20px;
         font-weight: 100;
-        height: 20px;
-        line-height: 15px;
-        font-size: 7px;
-        z-index: 1;
+        font-size: 8px;
+    }
+
+    .main-game-card .game-title p {
+        font-size: 10px;
+        line-height: 22px;
     }
 }
 
@@ -1216,6 +1217,17 @@
     .main-game-card {
         width: 105px;
         height: 150px;
+    }
+
+    .main-game-card .game-badge .badge {
+        font-weight: 100;
+        font-size: 7px;
+        padding: 3.5px 9px 4px;
+    }
+
+    .main-game-card .game-title p {
+        font-size: 10px;
+        line-height: 18px;
     }
 }
 
