@@ -1459,13 +1459,12 @@
     border-radius: 16px;
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 10px 25px var(--transparent-black-lighter);
     border: 1px solid var(--transparent-pink-border);
     position: relative;
 }
 
 .pfCard:hover {
-    box-shadow: 0 15px 30px var(--transparent-black-light);
+    box-shadow: 0 5px 5px var(--transparent-black-light);
 }
 
 .pfCardMainImage {

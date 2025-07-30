@@ -91,8 +91,8 @@ $(document).ready(function () {
         autoplay: true,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
+        animateIn: 'fadeInDownBig',
+        animateOut: 'hinge',
         smartSpeed: 800,
         responsive: {
             0: {
@@ -113,31 +113,7 @@ $(document).ready(function () {
             }
         }
     });
-
-    // Add animation to items when they become active
-    $('#winner').on('changed.owl.carousel', function (event) {
-        const currentItem = event.item.index;
-        const items = $(this).find('.owl-item');
-
-        // Reset all items
-        items.removeClass('active-animate');
-
-        // Animate the active items
-        setTimeout(function () {
-            items.eq(currentItem).addClass('active-animate');
-            if (items.eq(currentItem + 1).length) {
-                items.eq(currentItem + 1).addClass('active-animate');
-            }
-        }, 50);
-    });
-
-    // Trigger initial animation
-    setTimeout(function () {
-        $('#winner .owl-item.active').addClass('active-animate');
-        $('#winner .owl-item.active').next().addClass('active-animate');
-    }, 300);
 });
-
 
 // --- HERO CAROUSEL ---
 const heroSwiper = new Swiper('.hero-carousel', {
