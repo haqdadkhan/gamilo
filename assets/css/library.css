@@ -305,6 +305,10 @@
     color: var(--text-white) !important;
 }
 
+#libGames .allgames__container {
+    gap: 10px;
+}
+
 @media (max-width: 769px) {
     .cusSearch span {
         display: none;

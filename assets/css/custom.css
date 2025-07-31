@@ -3163,8 +3163,9 @@
     }
 
     #searchModal .search-game-card {
-        width: 130px;
-        height: 180px;
+        width: calc((100% - 40px) / 4);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
     }
 
     #searchModal .search-games-container {
@@ -3179,8 +3180,10 @@
 
 @media (max-width: 576px) {
     #searchModal .search-game-card {
-        width: 115px;
-        height: 150px;
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 180px;
     }
 
     #searchModal .search-game-card .game-title p {
@@ -3213,8 +3216,10 @@
     }
 
     #searchModal .search-game-card {
-        width: 93px;
-        height: 125px;
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 155px;
     }
 
     #searchModal .search-game-card .search-game-badge .badge {
@@ -3226,6 +3231,15 @@
     #searchModal .search-game-card .game-title p {
         font-size: 10px;
         line-height: 18px;
+    }
+}
+
+@media (max-width: 431px) {
+    #searchModal .search-game-card {
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 145px;
     }
 }
 
