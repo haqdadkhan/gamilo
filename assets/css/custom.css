@@ -575,6 +575,12 @@
     flex-shrink: 0;
 }
 
+@media (max-width: 576px) {
+    .announcement-bar {
+        margin: 0;
+    }
+}
+
 /* --- MARQUEE CSS ENDS ---  */
 
 
@@ -816,6 +822,14 @@
 
 .show-right-blur::after {
     opacity: 1;
+}
+
+@media (max-width:576px) {
+
+    .swiper-blur-container::before,
+    .swiper-blur-container::after {
+        width: 15px;
+    }
 }
 
 /* === FADE EFFECT CSS ENDS === */
