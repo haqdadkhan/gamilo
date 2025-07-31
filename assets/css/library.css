@@ -317,6 +317,10 @@
 
 /* Responsive Adjustments */
 @media (max-width: 530px) {
+    #libGames .allgames__container {
+        gap: 8px;
+    }
+
     #libGames .cusSearch {
         font-size: 12px !important;
         padding: 8px;
@@ -333,112 +337,73 @@
     }
 }
 
-/* Game Items */
-#libGames .allgames__items {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 175px;
-    height: 220px;
-}
-
-#libGames .allgames__items img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    transition: all 0.4s;
-    object-fit: fill;
-}
-
-#libGames .allgames__items:hover img {
-    scale: 1.05;
-}
-
-#libGames .allgames__container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-}
-
+/* Game Cards */
 @media (max-width: 1024px) {
-    #libGames .allgames__items {
+    #libGames .main-game-card {
         width: 155px;
         height: 200px;
     }
 }
 
 @media (max-width: 769px) {
-
-    #libGames .lnSwiper .nav-link,
-    #libGames .cusSearch {
-        font-weight: normal;
-        font-size: 14px;
-    }
-
-    #libGames .allgames__items {
-        width: calc((100% - 20px) / 3);
-        height: 200px;
+    #libGames .main-game-card {
+        width: calc((100% - 30px) / 3);
         aspect-ratio: 3/3 !important;
         flex-shrink: 0;
+        height: 180px;
     }
 
-    #libGames .allgames__items .badges__two::before {
+    #libGames .main-game-card .game-badge::before {
         width: 25px;
     }
 
-    #libGames .allgames__items .badges__two .badge2 {
-        width: 20px;
+    #libGames .main-game-card .game-badge .badge {
         font-weight: 100;
-        height: 20px;
-        line-height: 15px;
-        font-size: 7px;
-        z-index: 1;
+        font-size: 8px;
     }
 
-    #libGames .cmn--btn {
-        padding: 7px 14px 7px;
-        font-size: 16px;
-        line-height: 18px;
-        font-weight: 200;
+    #libGames .main-game-card .game-title p {
+        font-size: 10px;
+        line-height: 22px;
     }
+}
 
-    #libGames .game__overlay {
-        display: none !important;
+@media (max-width: 576px) {
+    #libGames .main-game-card {
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
     }
 }
 
 @media (max-width: 466px) {
-    #libGames .allgames__container {
-        gap: 8px;
-    }
-
-    #libGames .allgames__items {
+    #libGames .main-game-card {
         width: calc((100% - 20px) / 3);
-        height: 170px;
         aspect-ratio: 3/3 !important;
         flex-shrink: 0;
+        height: 155px;
     }
 
-    #libGames .cmn--btn {
-        padding: 2px 5px 2px;
-        font-size: 12px;
-        line-height: 10px;
-        font-weight: 200;
+    #libGames .main-game-card .game-badge .badge {
+        font-weight: 100;
+        font-size: 7px;
+        padding: 3.5px 9px 4px;
+    }
+
+    #libGames .main-game-card .game-title p {
+        font-size: 10px;
+        line-height: 18px;
     }
 }
 
-@media (max-width: 431px) {
-    #libGames .allgames__items {
+@media (max-width: 430px) {
+    #libGames .main-game-card {
         width: calc((100% - 20px) / 3);
-        height: 150px;
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 145px;
     }
 }
 
-@media (max-width: 376px) {
-    #libGames .allgames__items {
-        height: 130px;
-    }
-}
 
 /* --- MAIN CONTENT CSS ENDS --- */
