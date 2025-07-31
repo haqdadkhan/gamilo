@@ -1189,7 +1189,9 @@
     }
 
     .main-game-card {
-        width: 130px;
+        width: calc((100% - 30px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
         height: 180px;
     }
 
@@ -1213,10 +1215,20 @@
     }
 }
 
+@media (max-width: 576px) {
+    .main-game-card {
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+    }
+}
+
 @media (max-width: 466px) {
     .main-game-card {
-        width: 105px;
-        height: 150px;
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 155px;
     }
 
     .main-game-card .game-badge .badge {
@@ -1228,6 +1240,14 @@
     .main-game-card .game-title p {
         font-size: 10px;
         line-height: 18px;
+    }
+}
+@media (max-width: 430px) {
+    .main-game-card {
+        width: calc((100% - 20px) / 3);
+        aspect-ratio: 3/3 !important;
+        flex-shrink: 0;
+        height: 130px;
     }
 }
 
