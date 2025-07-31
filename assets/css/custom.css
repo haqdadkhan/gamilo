@@ -3132,7 +3132,6 @@
     #searchModal .search-games-container {
         max-height: calc(100vh - 200px);
     }
-
 }
 
 /* Responsive Adjustments */
@@ -3146,12 +3145,8 @@
     }
 
     #searchModal .search-game-card .search-game-badge .badge {
-        width: 20px;
         font-weight: 100;
-        height: 20px;
-        line-height: 15px;
-        font-size: 6px;
-        z-index: 1;
+        font-size: 8px;
     }
 
     #searchModal .search-game-overlay {
@@ -3188,6 +3183,11 @@
         height: 150px;
     }
 
+    #searchModal .search-game-card .game-title p {
+        font-size: 10px;
+        line-height: 22px;
+    }
+
     #searchModal .search-game-btns {
         gap: 6px;
     }
@@ -3215,6 +3215,17 @@
     #searchModal .search-game-card {
         width: 93px;
         height: 125px;
+    }
+
+    #searchModal .search-game-card .search-game-badge .badge {
+        font-weight: 100;
+        font-size: 7px;
+        padding: 3.5px 9px 4px;
+    }
+
+    #searchModal .search-game-card .game-title p {
+        font-size: 10px;
+        line-height: 18px;
     }
 }
 
