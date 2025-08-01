@@ -12,15 +12,37 @@
     --btn: #ab2e00;
     --border-color: rgba(0, 0, 0, 0.1);
     --hover-bg: rgba(255, 69, 0, 0.05);
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --table: rgba(0, 0, 0, 0.02);
     --table-text: #0f0f0f;
     --mini-text-bg: rgba(0, 0, 0, 0.05);
     --table-hover: rgba(0, 0, 0, 0.03);
     --input-bg: #fff;
     --success: #00b894;
+    --light-success: #00d4a4;
     --danger: #d63031;
     --warning: #fdcb6e;
     --info: #0984e3;
+    --win-glow: rgba(0, 184, 148, 0.2);
+    --loss-pulse: rgba(220, 53, 69, 0.2);
+    --dull-success: rgba(0, 184, 148, 0.4);
+    --dull-danger: rgba(171, 46, 0, 0.4);
+    --dull-gray: rgba(171, 46, 0, 0);
+    --dull-dark: rgba(0, 184, 148, 0);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --box-shadow: rgba(0, 0, 0, 0.15);
+    --nav-shadow-color: rgba(0, 0, 0, 0.2);
+    --deposit-shadow: rgba(0, 184, 148, 0.3);
+    --deposit-shadow-light: rgba(0, 184, 148, 0.4);
+    --dim-box-shadow: rgba(171, 46, 0, 0.15);
+    --normal-border-color: rgba(255, 255, 255, 0.3);
+    --bg-highlight-success:rgba(0, 184, 148, 0.1);
+    --bg-highlight-danger: rgba(220, 53, 69, 0.1);
+    --bg-primary-light: rgba(171, 46, 0, 0.1);
+    --bg-vip-badge: linear-gradient(135deg, #fdcb6e, #e17055);
+    --bg-normal: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    --bg-norm-light: rgba(255, 255, 255, 0.2);
+    --bg-norm-lighter: rgba(255, 255, 255, 0.3);
+    --bg-deposit: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
 }
 
 /* eaSidebar VARIABLES */
@@ -111,7 +133,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px var(--nav-shadow-color);
 }
 
 .desktop-header .logo {
@@ -200,7 +222,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px var(--nav-shadow-color);
 }
 
 @media (max-width: 576px) {
@@ -341,7 +363,7 @@ body {
 
 #my-account .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px var(--box-shadow);
 }
 
 #my-account .card::before {
@@ -351,7 +373,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(43, 37, 90, 0.1), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
@@ -412,9 +434,9 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.3);
+    border: 4px solid var(--normal-border-color);
     margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px var(--nav-shadow-color);
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
@@ -422,7 +444,7 @@ body {
 
 #my-account .user-avatar:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px var(--nav-shadow-color);
 }
 
 #my-account .user-profile h4 {
@@ -436,15 +458,15 @@ body {
 }
 
 #my-account .vip-badge {
-    background: linear-gradient(135deg, #fdcb6e, #e17055);
-    color: #2d3436;
+    background: var(--bg-vip-badge);
+    color: var(--text-muted);
     padding: 5px 15px;
     border-radius: 30px;
     font-size: 12px;
     font-weight: 700;
     display: inline-block;
     margin-top: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--box-shadow);
     position: relative;
     z-index: 1;
     animation: pulse 2s infinite;
@@ -460,7 +482,7 @@ body {
     font-size: 32px;
     font-weight: 700;
     margin: 15px 0 0;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 5px var(--box-shadow);
     position: relative;
     z-index: 1;
 }
@@ -484,7 +506,7 @@ body {
 #my-account .table-responsive {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--mini-text-bg);
 }
 
 #my-account .table {
@@ -553,7 +575,7 @@ body {
 
 #my-account .security-status:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px var(--box-shadow);
 }
 
 #my-account .security-status div:first-child {
@@ -581,7 +603,7 @@ body {
     border-radius: 5px;
     background-color: var(--hover-bg);
     margin-top: 15px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px var(--box-shadow);
 }
 
 #my-account .progress-bar {
@@ -619,7 +641,7 @@ body {
 
 #my-account .summary-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--box-shadow);
 }
 
 #my-account .summary-card::before {
@@ -658,7 +680,7 @@ body {
 }
 
 #my-account #edit-profile-btn {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--bg-norm-light);
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -671,7 +693,7 @@ body {
 }
 
 #my-account #edit-profile-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--bg-norm-lighter);
     transform: rotate(15deg);
 }
 
@@ -835,7 +857,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -962,7 +984,7 @@ body {
 
 #eaSidebar .form-control:focus,
 #eaSidebar .form-select:focus {
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
     border-color: var(--primary);
 }
 
@@ -1003,7 +1025,7 @@ body {
 
 #eaSidebar .bank-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #eaSidebar .bank-logo {
@@ -1023,15 +1045,15 @@ body {
     border-color: transparent;
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    color: var(--text-white);
+    box-shadow: 0 4px 12px var(--dull-danger);
     transition: all 0.3s ease;
 }
 
 #eaSidebar .btn-primary:hover {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 6px 16px var(--dull-danger);
 }
 
 #eaSidebar .btn-outline-secondary {
@@ -1099,7 +1121,6 @@ body {
     #eaSidebar .alert.alert-warning {
         padding: 8px 12px;
     }
-
 }
 
 /* --- EDIT ACCOUNT (#eaSidebar) ENDS --- */
@@ -1108,7 +1129,7 @@ body {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -1117,7 +1138,7 @@ body {
 
 #deposit .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #deposit .neo-header {
@@ -1136,7 +1157,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -1176,7 +1197,7 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    background: var(--bg-deposit);
 }
 
 #deposit .payment-method .card-body {
@@ -1210,23 +1231,23 @@ body {
 
 #deposit .btn-primary {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #deposit .btn-primary:hover {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 6px 16px var(--dull-danger);
 }
 
 #deposit .btn-success {
-    background: linear-gradient(90deg, var(--success), #00d4a4);
-    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+    background: linear-gradient(90deg, var(--success), var(--light-success));
+    box-shadow: 0 4px 12px var(--deposit-shadow);
 }
 
 #deposit .btn-success:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 184, 148, 0.4);
+    box-shadow: 0 6px 16px var(--deposit-shadow-light);
 }
 
 #deposit .btn-outline-primary {
@@ -1238,7 +1259,7 @@ body {
 #deposit .btn-outline-primary:hover {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #deposit .btn-pulse {
@@ -1251,26 +1272,26 @@ body {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-danger);
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 10px var(--dull-gray);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 0 var(--dull-gray);
     }
 }
 
 #deposit .btn-elevate {
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
     transition: all 0.3s ease;
 }
 
 #deposit .btn-elevate:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 8px 20px var(--dull-danger);
 }
 
 /* Animations */
@@ -1280,7 +1301,7 @@ body {
 
 #deposit .hover-float:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px var(--box-shadow);
 }
 
 #deposit .slide-in {
@@ -1314,15 +1335,15 @@ body {
 
 @keyframes pulse-slow {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-success);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 8px var(--dull-dark);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 0 var(--dull-dark);
     }
 }
 
@@ -1344,7 +1365,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg,
             transparent,
-            rgba(255, 255, 255, 0.3),
+            var(--bg-norm-light),
             transparent);
     animation: shimmer 2s infinite;
 }
@@ -1358,8 +1379,8 @@ body {
 /* Table Styles */
 #deposit .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    --bs-table-striped-bg: var(--table);
+    --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
     overflow: hidden;
@@ -1417,13 +1438,13 @@ body {
 }
 
 #deposit .method-tag.bank {
-    background: rgba(171, 46, 0, 0.1);
+    background: var(--bg-primary-light);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
 
 #deposit .method-tag.ewallet {
-    background: rgba(0, 184, 148, 0.1);
+    background: var(--bg-highlight-success);
     color: var(--success);
     border: 1px solid var(--success);
 }
@@ -1465,7 +1486,7 @@ body {
 #deposit .neo-select:focus,
 #deposit .neo-input .form-control:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
 }
 
 #deposit .neo-card .neo-input .input-group-text,
@@ -1612,7 +1633,7 @@ body {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -1621,7 +1642,7 @@ body {
 
 #withdrawal .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #withdrawal .neo-header {
@@ -1642,7 +1663,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -1672,7 +1693,7 @@ body {
 
 #withdrawal .balance-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px var(--box-shadow);
 }
 
 #withdrawal .balance-card::before {
@@ -1744,7 +1765,7 @@ body {
 
 #withdrawal .withdraw-form:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px var(--box-shadow);
 }
 
 #withdrawal .withdraw-form .card-header {
@@ -1782,7 +1803,7 @@ body {
 #withdrawal .neo-select:focus,
 #withdrawal .neo-input .form-control:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
 }
 
 #withdrawal .neo-input .input-group-text,
@@ -1813,13 +1834,13 @@ body {
 
 #withdrawal .btn-primary {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #withdrawal .btn-primary:hover {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 8px 20px var(--dull-danger);
 }
 
 #withdrawal .btn-outline-primary {
@@ -1831,17 +1852,17 @@ body {
 #withdrawal .btn-outline-primary:hover {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #withdrawal .btn-elevate {
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
     transition: all 0.3s ease;
 }
 
 #withdrawal .btn-elevate:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 8px 20px var(--dull-danger);
 }
 
 /* Account Cards */
@@ -1855,7 +1876,7 @@ body {
 
 #withdrawal .account-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--box-shadow);
     border-color: var(--primary);
 }
 
@@ -1938,23 +1959,23 @@ body {
 
 @keyframes pulse-slow {
     0% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-danger);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 8px var(--dull-gray);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 0 var(--dull-gray);
     }
 }
 
 /* Table Styles */
 #withdrawal .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    --bs-table-striped-bg: var(--table);
+    --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text) !important;
     border-radius: 8px;
     overflow: hidden;
@@ -2004,13 +2025,13 @@ body {
 }
 
 #withdrawal .method-tag.bank {
-    background: rgba(171, 46, 0, 0.1);
+    background: var(--bg-primary-light);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
 
 #withdrawal .method-tag.ewallet {
-    background: rgba(0, 184, 148, 0.1);
+    background: var(--bg-highlight-success);
     color: var(--success);
     border: 1px solid var(--success);
 }
@@ -2092,7 +2113,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg,
             transparent,
-            rgba(255, 255, 255, 0.3),
+            var(--bg-norm-light),
             transparent);
     animation: shimmer 2s infinite;
 }
@@ -2185,7 +2206,7 @@ body {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--shadow);
     margin-bottom: 25px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -2193,7 +2214,7 @@ body {
 
 #betting-record .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #betting-record .neo-header {
@@ -2212,7 +2233,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -2251,7 +2272,7 @@ body {
 #betting-record .neo-input:focus,
 #betting-record .neo-select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
 }
 
 #betting-record .neo-input-group {
@@ -2283,14 +2304,14 @@ body {
 #betting-record .btn-search:hover {
     transform: translateX(-2px);
     background: linear-gradient(90deg, var(--accent), var(--highlight));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 /* Table Styles */
 #betting-record .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
-    --bs-table-hover-bg: rgba(171, 46, 0, 0.05);
+    --bs-table-striped-bg: var(--table);
+    --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
     overflow: hidden;
@@ -2410,7 +2431,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
+    background: var(--win-glow);
     z-index: -1;
     opacity: 0.4;
 }
@@ -2427,14 +2448,14 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(220, 53, 69, 0.2);
+    background: var(--loss-pulse);
     z-index: -1;
     opacity: 0.4;
 }
 
 /* Summary Cards */
 #betting-record .summary-card {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--table-hover);
     color: var(--text);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -2522,7 +2543,7 @@ body {
 
 #account-record .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #account-record .neo-header {
@@ -2544,7 +2565,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -2552,12 +2573,12 @@ body {
     border-radius: 20px;
     padding: 0.25rem 0.75rem;
     font-size: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--normal-border-color);
     transition: all 0.3s ease;
 }
 
 #account-record .header-actions .btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--bg-norm-light);
 }
 
 /* Form Elements */
@@ -2585,7 +2606,7 @@ body {
 #account-record .neo-input:focus,
 #account-record .neo-select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
 }
 
 #account-record .neo-input-group {
@@ -2617,13 +2638,13 @@ body {
 #account-record .btn-search:hover {
     transform: translateX(-2px);
     background: linear-gradient(90deg, var(--accent), var(--highlight));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 /* Table Styles */
 #account-record .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-striped-bg: var(--table);
     --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
@@ -2761,7 +2782,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
+    background: var(--win-glow);
     z-index: -1;
     opacity: 0.4;
 }
@@ -2778,7 +2799,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(220, 53, 69, 0.2);
+    background: var(--loss-pulse);
     z-index: -1;
     opacity: 0.4;
 }
@@ -2835,7 +2856,7 @@ body {
 
 #profit-loss .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #profit-loss .neo-header {
@@ -2854,7 +2875,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -2888,12 +2909,12 @@ body {
 }
 
 #profit-loss .profit-card .summary-icon {
-    background-color: rgba(0, 184, 148, 0.1);
+    background-color: var(--bg-highlight-success);
     color: var(--success);
 }
 
 #profit-loss .loss-card .summary-icon {
-    background-color: rgba(220, 53, 69, 0.1);
+    background-color: var(--bg-highlight-danger);
     color: var(--danger);
 }
 
@@ -2927,19 +2948,19 @@ body {
 }
 
 #profit-loss .best-day .highlight-icon {
-    background-color: rgba(0, 184, 148, 0.1);
+    background-color: var(--bg-highlight-success);
     color: var(--success);
 }
 
 #profit-loss .worst-day .highlight-icon {
-    background-color: rgba(220, 53, 69, 0.1);
+    background-color: var(--bg-highlight-danger);
     color: var(--danger);
 }
 
 /* Table Styles */
 #profit-loss .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-striped-bg: var(--table);
     --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
@@ -3036,7 +3057,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
+    background: var(--win-glow);
     z-index: -1;
     opacity: 0.4;
 }
@@ -3053,7 +3074,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(220, 53, 69, 0.2);
+    background: var(--loss-pulse);
     z-index: -1;
     opacity: 0.4;
 }
@@ -3129,7 +3150,7 @@ body {
 
 #reward-centre .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #reward-centre .neo-card .neo-header {
@@ -3147,7 +3168,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -3170,11 +3191,11 @@ body {
 }
 
 #reward-centre .bg-success-gradient {
-    background: linear-gradient(90deg, var(--success), #00b894);
+    background: var(--success);
 }
 
 #reward-centre .bg-info-gradient {
-    background: linear-gradient(90deg, var(--info), #0984e3);
+    background: var(--info);
 }
 
 /* Reward Items */
@@ -3208,7 +3229,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, var(--bg-norm-light), transparent);
     animation: shimmer 2s infinite;
 }
 
@@ -3227,7 +3248,7 @@ body {
     font-weight: 600;
     display: inline-block;
     font-size: 14px;
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #reward-centre .glow-effect {
@@ -3353,11 +3374,11 @@ body {
 }
 
 #reward-centre .bg-primary-light {
-    background-color: rgba(171, 46, 0, 0.1);
+    background-color: var(--bg-primary-light);
 }
 
 #reward-centre .bg-success-light {
-    background-color: rgba(0, 184, 148, 0.1);
+    background-color: var(--bg-highlight-success);
 }
 
 /* Reward History */
@@ -3381,17 +3402,17 @@ body {
 #reward-centre .btn-warning {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #reward-centre .btn-warning:hover {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 6px 16px var(--dull-danger);
 }
 
 #reward-centre .btn-info {
-    background: linear-gradient(90deg, var(--info), #0984e3);
+    background: var(--info);
     color: var(--text-white);
     box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
 }
@@ -3409,18 +3430,18 @@ body {
 }
 
 #reward-centre .btn-outline-success:hover {
-    background: linear-gradient(90deg, var(--success), #00d4a4);
+    background: linear-gradient(90deg, var(--success), var(--light-success));
     color: var(--text-white);
 }
 
 #reward-centre .btn-elevate {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--box-shadow);
     transition: all 0.3s ease;
 }
 
 #reward-centre .btn-elevate:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px var(--box-shadow);
 }
 
 #reward-centre .btn {
@@ -3435,7 +3456,7 @@ body {
 
 #reward-centre .hover-float:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px var(--box-shadow);
 }
 
 #reward-centre .hover-grow {
@@ -3452,15 +3473,15 @@ body {
 
 @keyframes pulse-slow {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-success);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 8px var(--dull-dark);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 0 var(--dull-dark);
     }
 }
 
@@ -3477,7 +3498,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
+    background: var(--win-glow);
     z-index: -1;
     animation: winPulse 2s infinite;
 }
@@ -3570,7 +3591,7 @@ body {
 
 #invitation .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #invitation .neo-header {
@@ -3592,7 +3613,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -3601,7 +3622,7 @@ body {
 }
 
 #invitation .bg-success-gradient {
-    background: linear-gradient(90deg, var(--success), #00d4a4) !important;
+    background: linear-gradient(90deg, var(--success), var(--light-success)) !important;
 }
 
 #invitation .neo-card .card-body {
@@ -3679,7 +3700,7 @@ body {
 }
 
 #invitation .active-card::before {
-    background: linear-gradient(90deg, var(--success), #00d4a4);
+    background: linear-gradient(90deg, var(--success), var(--light-success));
 }
 
 #invitation .earned-card::before {
@@ -3703,7 +3724,7 @@ body {
 }
 
 #invitation .active-card .stats-icon {
-    background: linear-gradient(90deg, var(--success), #00d4a4);
+    background: linear-gradient(90deg, var(--success), var(--light-success));
 }
 
 #invitation .earned-card .stats-icon {
@@ -3741,7 +3762,7 @@ body {
 #invitation .btn-social:hover {
     color: var(--text-white);
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px var(--box-shadow);
 }
 
 #invitation .btn-social.facebook:hover {
@@ -3766,7 +3787,7 @@ body {
 /* Table Styles */
 #invitation .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-striped-bg: var(--table);
     --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
@@ -3828,7 +3849,7 @@ body {
 #invitation .step-number {
     width: 24px;
     height: 24px;
-    background: linear-gradient(90deg, var(--success), #00d4a4);
+    background: linear-gradient(90deg, var(--success), var(--light-success));
     color: var(--text-white);
     border-radius: 50%;
     display: flex;
@@ -3852,7 +3873,7 @@ body {
 
 #invitation .hover-scale:hover {
     transform: scale(1.03);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--box-shadow);
 }
 
 #invitation .hover-bounce {
@@ -3861,7 +3882,7 @@ body {
 
 #invitation .hover-bounce:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--box-shadow);
 }
 
 #invitation .hover-slide {
@@ -3878,15 +3899,15 @@ body {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-danger);
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 10px var(--dull-gray);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 0 var(--dull-gray);
     }
 }
 
@@ -3914,11 +3935,11 @@ body {
 
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-success);
     }
 
     50% {
-        box-shadow: 0 0 0 5px rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 5px var(--dull-dark);
     }
 }
 
@@ -3960,7 +3981,7 @@ body {
     right: -2px;
     bottom: -2px;
     border-radius: 4px;
-    background: rgba(0, 184, 148, 0.2);
+    background: var(--win-glow);
     z-index: -1;
     opacity: 0.4;
 }
@@ -4046,7 +4067,7 @@ body {
 
 #rebate .neo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--box-shadow);
 }
 
 #rebate .neo-header {
@@ -4068,7 +4089,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: var(--bg-normal);
     animation: headerShine 3s infinite;
 }
 
@@ -4076,7 +4097,7 @@ body {
     border-radius: 20px;
     padding: 0.25rem 0.75rem;
     font-size: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--normal-border-color);
     transition: all 0.3s ease;
 }
 
@@ -4108,7 +4129,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg,
             transparent,
-            rgba(255, 255, 255, 0.3),
+            var(--bg-norm-light),
             transparent);
     animation: shimmer 2s infinite;
 }
@@ -4134,7 +4155,7 @@ body {
 #rebate .neo-input:focus,
 #rebate .neo-select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(171, 46, 0, 0.15);
+    box-shadow: 0 0 0 0.25rem var(--dim-box-shadow);
 }
 
 #rebate .neo-input-group {
@@ -4152,7 +4173,7 @@ body {
 /* Table Styles */
 #rebate .neo-table {
     --bs-table-bg: transparent;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+    --bs-table-striped-bg: var(--table);
     --bs-table-hover-bg: var(--table-hover);
     color: var(--table-text);
     border-radius: 8px;
@@ -4219,13 +4240,13 @@ body {
 
 #rebate .btn-primary {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #rebate .btn-primary:hover {
     background: linear-gradient(90deg, var(--accent), var(--highlight));
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(171, 46, 0, 0.4);
+    box-shadow: 0 6px 16px var(--dull-danger);
 }
 
 #rebate .btn-outline-primary {
@@ -4237,7 +4258,7 @@ body {
 #rebate .btn-outline-primary:hover {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     color: var(--text-white);
-    box-shadow: 0 4px 12px rgba(171, 46, 0, 0.3);
+    box-shadow: 0 4px 12px var(--dull-danger);
 }
 
 #rebate .btn-icon-text {
@@ -4289,15 +4310,15 @@ body {
 
 @keyframes pulse-slow {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-success);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 8px var(--dull-dark);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+        box-shadow: 0 0 0 0 var(--dull-dark);
     }
 }
 
@@ -4307,15 +4328,15 @@ body {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0.4);
+        box-shadow: 0 0 0 0 var(--dull-danger);
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 10px var(--dull-gray);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(171, 46, 0, 0);
+        box-shadow: 0 0 0 0 var(--dull-gray);
     }
 }
 
@@ -4421,7 +4442,7 @@ body {
 
 [data-theme="dark"] {
     --nav-bg: #191f46;
-    --nav-shadow-color: rgba(0, 0, 0, 0.3);
+    --nav-shadow-color: var(--nav-shadow-color);
     --nav-icon-default: #7dbeff;
     --nav-icon-active: #1d8cfc;
     --nav-text-default: #a0a0a0;
