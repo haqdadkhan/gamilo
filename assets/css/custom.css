@@ -585,11 +585,10 @@
 
 
 /* --- LATEST WINNERS CSS STARTS ---  */
-:root {
-    /* Font Colors */
+/* :root {
     --winner-text-primary: #fff;
     --winner-text-secondary: #abb7e0;
-    /* Background Colors */
+
     --winner-nav-border: #3a3a70;
     --winner-nav-hover-border: #5757a6;
     --winner-nav-hover-shadow: rgba(87, 87, 166, 0.6);
@@ -779,7 +778,7 @@
     .latest-winners-section .owl-nav {
         display: none;
     }
-}
+} */
 
 /* --- LATEST WINNERS CSS ENDS ---  */
 

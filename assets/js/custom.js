@@ -81,12 +81,47 @@ function applySwiperBlurEffect(swiper, containerSelector) {
 }
 
 // --- LATEST WINNERS CAROUSEL ---
+// $(document).ready(function () {
+//     $('#winner').owlCarousel({
+//         loop: true,
+//         margin: 10,
+//         responsiveClass: true,
+//         navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+//         dots: false,
+//         autoplay: true,
+//         autoplayTimeout: 3000,
+//         autoplayHoverPause: true,
+//         animateIn: 'fadeInDownBig',
+//         animateOut: 'hinge',
+//         smartSpeed: 800,
+//         responsive: {
+//             0: {
+//                 items: 1,
+//                 nav: true,
+//             },
+//             476: {
+//                 items: 2,
+//                 nav: true,
+//             },
+//             769: {
+//                 items: 3,
+//                 nav: true,
+//             },
+//             1124: {
+//                 items: 4,
+//                 nav: true,
+//             }
+//         }
+//     });
+// });
+
+// --- LATEST WINNERS CAROUSEL ---
 $(document).ready(function () {
     $('#winner').owlCarousel({
         loop: true,
         margin: 10,
         responsiveClass: true,
-        navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+        navText: false,
         dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
@@ -103,11 +138,11 @@ $(document).ready(function () {
                 items: 2,
                 nav: true,
             },
-            769: {
+            1024: {
                 items: 3,
                 nav: true,
             },
-            1124: {
+            1224: {
                 items: 4,
                 nav: true,
             }

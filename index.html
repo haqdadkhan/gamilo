@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Personal custom Css  -->
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Personal Premium CSS  -->
+    <link rel="stylesheet" href="assets/css/primum.css">
     <!-- Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
@@ -727,12 +729,11 @@
             <!-- Announcement Bar Ends Here -->
 
             <!--Banner Feature Here-->
-            <section class="latest-winners-section" id="liveWinners">
+            <!-- <section class="latest-winners-section" id="liveWinners">
                 <div class="container-fluid">
                     <div class="winners-wrapper">
                         <h5 class="section-heading d-flex align-items-center gap-2 mb-3">
                             <span class="icon-wrapper">
-                                <!-- SVG icon preserved -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g opacity="0.8" clip-path="url(#clip0_2156_4757)">
@@ -752,7 +753,6 @@
                         </h5>
 
                         <div class="owl-carousel owl-theme" id="winner">
-                            <!-- Repeat for each winner -->
                             <div class="winner-card">
                                 <div class="winner-box">
                                     <div class="winner-rank">1</div>
@@ -843,12 +843,355 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Add more winner-card entries similarly -->
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!--Banner Feature End-->
+
+
+
+
+
+
+
+
+            <!-- Premium Winners Section -->
+            <section class="latest-winners-section premium-winners mt-5">
+                <div class="container-fluid">
+                    <div class="winners-wrapper">
+                        <!-- Section Header with Animated Elements -->
+                        <div class="section-header d-flex justify-content-between align-items mb-4">
+                            <div class="d-flex align-items-center gap-2 gap-sm-3 position-relative">
+                                <h5 class="section-heading d-flex align-items-center gap-1 gap-sm-2 mb-0">
+                                    <span class="icon-wrapper">
+                                        <svg class="my-svg" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 2L20 10L28 11.5L22 18L24 26L16 22L8 26L10 18L4 11.5L12 10L16 2Z"
+                                                fill="url(#trophy-gradient)" />
+                                            <path
+                                                d="M16 22L24 26L22 18L28 11.5L20 10L16 2L12 10L4 11.5L10 18L8 26L16 22Z"
+                                                stroke="url(#trophy-border)" stroke-width="2" stroke-linejoin="round" />
+                                            <defs>
+                                                <linearGradient id="trophy-gradient" x1="16" y1="2" x2="16" y2="26"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFD700" />
+                                                    <stop offset="1" stop-color="#FFA500" />
+                                                </linearGradient>
+                                                <linearGradient id="trophy-border" x1="16" y1="2" x2="16" y2="26"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFF9C4" />
+                                                    <stop offset="1" stop-color="#FFC107" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    <span class="section-title">
+                                        <span class="title-text">Latest Winners</span>
+                                        <span class="title-underline"></span>
+                                    </span>
+                                </h5>
+                                <span class="status-badge d-flex align-items-center gap-1 ms-auto">
+                                    <span class="pulse-dot"></span>
+                                    <span class="badge-text text-white">LIVE</span>
+                                    <span class="signal-bars">
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="view-all-winners">
+                                <a href="#" class="btn btn-premium">
+                                    <span class="btn-content">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>View Hall of Fame</span>
+                                    </span>
+                                    <span class="btn-shine"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Winners Carousel with Enhanced Cards -->
+                        <div class="owl-carousel owl-theme winners-carousel" id="winner">
+                            <!-- Winner 1 -->
+                            <div class="winner-card">
+                                <div class="winner-box podium-first">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank gold">
+                                        <div class="medal-shine"></div>
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                            <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="John Doe">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>John Doe</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                New York, USA
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Grand Prize</span>
+                                        <span class="separator">•</span>
+                                        <span class="sub-category">Weekly Jackpot</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">15000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 28, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Winner 2 -->
+                            <div class="winner-card">
+                                <div class="winner-box podium-second">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank silver">
+                                        <div class="medal-shine"></div>
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                            <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="Sarah Smith">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>Sarah Smith</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                London, UK
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Runner Up</span>
+                                        <span class="separator">•</span>
+                                        <span class="sub-category">Daily Challenge</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">8000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 27, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Winner 3 -->
+                            <div class="winner-card">
+                                <div class="winner-box podium-third">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank bronze">
+                                        <div class="medal-shine"></div>
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                           <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="Akira Tanaka">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>Akira Tanaka</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Tokyo, Japan
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Third Place</span>
+                                        <span class="separator">•</span>
+                                        <span class="sub-category">Monthly Tournament</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">5000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 26, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Winner 4 -->
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank">
+                                        <span class="rank-number">4</span>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                            <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="Emma Wilson">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>Emma Wilson</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Sydney, Australia
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Special Prize</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">3000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 25, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Winner 5 -->
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank">
+                                        <span class="rank-number">5</span>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                            <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="Max Schmidt">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>Max Schmidt</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Berlin, Germany
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Bonus Round</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">2000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 24, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Winner 6 -->
+                            <div class="winner-card">
+                                <div class="winner-box">
+                                    <div class="winner-glow"></div>
+                                    <div class="winner-pattern"></div>
+                                    <div class="winner-rank">
+                                        <span class="rank-number">6</span>
+                                    </div>
+                                    <div class="winner-info">
+                                        <div class="winner-icon">
+                                            <div class="avatar-frame"></div>
+                                            <div class="winner-avatar">
+                                                <img src="https://i.pinimg.com/736x/a4/f6/36/a4f636d335a06d3e67424374778e0af7.jpg" alt="Lisa Chen">
+                                            </div>
+                                            <div class="winner-verified" data-tooltip="Verified Winner">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="winner-details">
+                                            <h6>Lisa Chen</h6>
+                                            <div class="winner-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Singapore
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-badge">
+                                        <span class="main-category">Daily Prize</span>
+                                    </div>
+                                    <div class="winner-earnings-display">
+                                        <div class="earning-amount">
+                                            <span class="currency">$</span>
+                                            <span class="amount">1000.00</span>
+                                        </div>
+                                        <div class="earning-label">Winnings</div>
+                                        <div class="win-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Jul 23, 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!--Banner Feature End-->
+
+
+
+
+
+
+
 
             <!-- ALL GAMES STARTS -->
             <section class="pt-3 pt-md-5" id="allGames">
