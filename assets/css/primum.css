@@ -102,7 +102,7 @@
     }
 }
 
-.premium-winners .icon-wrapper .my-svg {
+.premium-winners .icon-wrapper svg {
     filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
     transition: transform 0.3s;
     width: 30px;
@@ -771,7 +771,7 @@
         text-align: center;
     }
 
-    .premium-winners .icon-wrapper .my-svg {
+    .premium-winners .icon-wrapper svg {
         width: 25px;
         height: 25px;
     }
