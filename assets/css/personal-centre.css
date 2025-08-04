@@ -1,98 +1,6 @@
-/* --- ROOT VARIABLES + DARK MODE STARTS --- */
-:root {
-    --bg: #ffffff;
-    --card-bg: #f0f4f8;
-    --text-white: #ffffff;
-    --text: #1e293b;
-    --text-muted: #64748b;
+/* --- ROOT VARIABLES --- */
+@import url('./pc-colors.css');
 
-    --primary: #2563eb;
-    /* Strong royal blue */
-    --primary-light: #3b82f6;
-    /* Lighter royal blue */
-    --accent: #0ea5e9;
-    /* Sky blue */
-    --highlight: #06b6d4;
-    /* Cyan glow */
-    --btn: #2563eb;
-
-    --border-color: rgba(0, 0, 0, 0.08);
-    --hover-bg: rgba(14, 165, 233, 0.06);
-
-    --table: rgba(0, 0, 0, 0.02);
-    --table-text: #1e293b;
-    --mini-text-bg: rgba(0, 0, 0, 0.03);
-    --table-hover: rgba(0, 0, 0, 0.03);
-    --input-bg: #ffffff;
-
-    --success: #10b981;
-    --light-success: #34d399;
-    --danger: #ef4444;
-    --warning: #f59e0b;
-    --info: #3b82f6;
-    --info-hover: linear-gradient(90deg, #3b82f6, #0ea5e9);
-    --info-shadow: rgba(14, 165, 233, 0.3);
-    --info-shadow-hover: rgba(14, 165, 233, 0.4);
-
-    --win-glow: rgba(16, 185, 129, 0.2);
-    --loss-pulse: rgba(239, 68, 68, 0.2);
-    --dull-success: rgba(16, 185, 129, 0.4);
-    --dull-danger: rgba(14, 165, 233, 0.4);
-    --dull-gray: rgba(100, 116, 139, 0.1);
-    --dull-dark: rgba(16, 185, 129, 0);
-
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    --box-shadow: rgba(0, 0, 0, 0.1);
-    --nav-shadow-color: rgba(0, 0, 0, 0.1);
-
-    --deposit-shadow: rgba(16, 185, 129, 0.3);
-    --deposit-shadow-light: rgba(16, 185, 129, 0.4);
-    --dim-box-shadow: rgba(37, 99, 235, 0.15);
-    --normal-border-color: rgba(255, 255, 255, 0.3);
-
-    --bg-highlight-success: rgba(16, 185, 129, 0.1);
-    --bg-highlight-danger: rgba(239, 68, 68, 0.1);
-    --bg-primary-light: rgba(37, 99, 235, 0.1);
-
-    --bg-vip-badge: linear-gradient(135deg, var(--primary), var(--accent));
-    --bg-normal: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-    --bg-norm-light: rgba(255, 255, 255, 0.2);
-    --bg-norm-lighter: rgba(255, 255, 255, 0.3);
-    --bg-deposit: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
-
-    --facebook-bg: #1877f2;
-    --twitter-bg: #1da1f2;
-    --whatsapp-bg: #25d366;
-
-    --sidebar-bg: #f0f0f0;
-}
-
-[data-theme="dark"] {
-    --bg: hsla(238, 49%, 12%, 1);
-    /* Deep indigo */
-    --sidebar-bg: #181b36;
-    --card-bg: #181b36;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-
-    --primary: #417cfa;
-    /* Brighter royal blue */
-    --accent: #52c8ff;
-    /* Ice blue */
-    --highlight: #0efeff;
-    --btn: #00c6ff;
-
-    --border-color: rgba(0, 212, 255, 0.2);
-    --hover-bg: rgba(0, 212, 255, 0.08);
-    --input-bg: #1e223d;
-
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --table-text: #d6e4ff;
-    --mini-text-bg: rgba(0, 212, 255, 0.05);
-    --table-hover: rgba(0, 212, 255, 0.07);
-}
-
-/* --- ROOT VARIABLES + DARK MODE ENDS --- */
 /* --- BODY STYLES STARTS --- */
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -148,11 +56,12 @@ body {
     width: 100%;
     z-index: 7;
     padding: 12px 30px;
-    background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    background: var(--sidebar-bg);
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 12px var(--nav-shadow-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .desktop-header .logo {
@@ -802,11 +711,11 @@ body {
 
 @keyframes accPulse {
     0% {
-        box-shadow: 0 0 0 0 var(--dull-danger);
+        box-shadow: 0 0 0 0 var(--highlight);
     }
 
     70% {
-        box-shadow: 0 0 0 14px var(--dull-dark);
+        box-shadow: 0 0 0 12px var(--dull-dark);
     }
 
     100% {
@@ -3274,7 +3183,7 @@ body {
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 0 0 var(--dull-danger);
+        box-shadow: 0 0 0 0 var(--highlight);
     }
 
     70% {
@@ -4433,27 +4342,6 @@ body {
 
 /* --- MANUAL REBATE TAB (#rebate) ENDS --- */
 /* --- BOTTOM NAVIGATION (bottom-nav) STARTS --- */
-:root {
-    --nav-bg: #ffffff;
-    --nav-shadow-color: rgba(0, 0, 0, 0.1);
-    --nav-icon-default: #6c757d;
-    --nav-icon-active: #4361ee;
-    --nav-text-default: #6c757d;
-    --nav-text-active: #4361ee;
-    --nav-indicator: #4361ee;
-    --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
-}
-
-[data-theme="dark"] {
-    --nav-bg: #191f46;
-    --nav-shadow-color: var(--nav-shadow-color);
-    --nav-icon-default: #7dbeff;
-    --nav-icon-active: #1d8cfc;
-    --nav-text-default: #a0a0a0;
-    --nav-text-active: #1d8cfc;
-    --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
-}
-
 .bottom-nav {
     position: fixed;
     bottom: 8px;
