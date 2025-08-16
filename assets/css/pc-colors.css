@@ -7,15 +7,15 @@
     --text-muted: #64748b;
 
     --primary-light: #3b82f6;
-    /* --primary: #2563eb;
+    --primary: #2563eb;
     --accent: #0ea5e9;
     --highlight: #06b6d4;
-    --hover-bg: rgba(14, 165, 233, 0.06); */
+    --hover-bg: rgba(14, 165, 233, 0.06);
 
-    --primary: #00c9ff;
+    /* --primary: #00c9ff;
     --accent: #92fe9d;
     --highlight: #0efeff;
-    --hover-bg: rgba(0, 212, 255, 0.08);
+    --hover-bg: rgba(0, 212, 255, 0.08); */
 
     --btn: #2563eb;
     --border-color: rgba(0, 0, 0, 0.08);
@@ -73,15 +73,15 @@
     --text: #e2e8f0;
     --text-muted: #94a3b8;
 
-    /* --primary: #5757a6;
+    --primary: #5757a6;
     --accent: #3a3a70;
     --highlight: #362c83;
-    --hover-bg: #5757a62c; */
+    --hover-bg: #5757a62c;
 
-    --primary: #00c9ff;
+    /* --primary: #00c9ff;
     --accent: #92fe9d;
     --highlight: #0efeff;
-    --hover-bg: rgba(0, 212, 255, 0.08);
+    --hover-bg: rgba(0, 212, 255, 0.08); */
 
     --btn: #00c6ff;
     --border-color: rgba(0, 212, 255, 0.2);
