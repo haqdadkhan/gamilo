@@ -984,7 +984,7 @@
     color: #fff !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
     .main-game-card {
         width: 155px;
         height: 200px;
@@ -1482,7 +1482,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
     .pfCardTitle {
         max-width: 140px;
     }

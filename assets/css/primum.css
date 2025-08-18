@@ -469,9 +469,9 @@
 
 .premium-winners .category-badge {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4px;
 }
 
 .premium-winners .main-category {
@@ -504,7 +504,7 @@
 .premium-winners .earning-amount {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
     color: #35C31E;
     margin-bottom: 5px;
@@ -519,13 +519,14 @@
 
 .premium-winners .win-date {
     position: absolute;
-    bottom: 10px;
+    top: 55%;
     right: 10px;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--premium-text-lighter);
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
+    z-index: 3;
 }
 
 .premium-winners .winner-stats-bar {

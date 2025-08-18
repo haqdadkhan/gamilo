@@ -103,7 +103,7 @@ $(document).ready(function () {
                 items: 2,
                 nav: true,
             },
-            1024: {
+            1025: {
                 items: 3,
                 nav: true,
             },
