@@ -92,7 +92,7 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         animateIn: 'fadeInDownBig',
-        animateOut: 'fadeOut',
+        animateOut: 'hinge',
         smartSpeed: 800,
         responsive: {
             0: {
