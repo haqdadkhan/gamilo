@@ -797,9 +797,22 @@
 }
 
 @media (max-width: 576px) {
-
     .premium-winners .winner-icon {
         width: 60px;
         height: 60px;
+    }
+
+    .premium-winners .pulse-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .premium-winners .badge-text {
+        font-size: 10px;
+    }
+
+    .premium-winners .signal-bars {
+        height: 10px;
+        gap: 2px;
     }
 }
