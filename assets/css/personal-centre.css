@@ -120,23 +120,49 @@ body {
 }
 
 .desktop-header .dropdown-menu {
-    background-color: #1e1e1e;
-    border: none;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px;
     min-width: 250px;
-    z-index: 999;
+    margin-top: 10px;
+    transform-origin: top right;
+    animation: fadeInDropdown 0.3s ease-out;
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .desktop-header .dropdown-item {
-    transition: background-color 0.2s ease;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+    font-size: 14px;
 }
 
 .desktop-header .dropdown-item:hover {
-    background-color: #2a2a2a;
+    background: var(--hover-bg);
+    color: var(--text);
+    transform: translateX(3px);
 }
 
 .desktop-header .dropdown-divider {
-    margin: 0.5rem 0;
+    border-color: var(--border-color);
+    margin: 8px 0;
 }
 
 .desktop-header .theme-toggle {

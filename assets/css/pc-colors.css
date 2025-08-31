@@ -1,5 +1,6 @@
 :root {
-    --bg: #ffffff;
+
+    /* --bg: #ffffff;
     --sidebar-bg: #f0f0f0;
     --card-bg: #f0f4f8;
     --text-white: #ffffff;
@@ -12,11 +13,6 @@
     --highlight: #06b6d4;
     --hover-bg: rgba(14, 165, 233, 0.06);
 
-    /* --primary: #00c9ff;
-    --accent: #92fe9d;
-    --highlight: #0efeff;
-    --hover-bg: rgba(0, 212, 255, 0.08); */
-
     --btn: #2563eb;
     --border-color: rgba(0, 0, 0, 0.08);
 
@@ -24,7 +20,28 @@
     --table-text: #1e293b;
     --mini-text-bg: rgba(0, 0, 0, 0.03);
     --table-hover: rgba(0, 0, 0, 0.03);
-    --input-bg: #ffffff;
+    --input-bg: #ffffff; */
+
+    --bg: hsla(238, 49%, 12%, 1);
+    --sidebar-bg: #181b36;
+    --card-bg: #181b36;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+
+    --primary: #5757a6;
+    --accent: #3a3a70;
+    --highlight: #362c83;
+    --hover-bg: #5757a62c;
+
+    --btn: #00c6ff;
+    --border-color: rgba(0, 212, 255, 0.2);
+
+    --input-bg: #1e223d;
+    --table: rgba(0, 0, 0, 0.02);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --table-text: #d6e4ff;
+    --mini-text-bg: rgba(0, 212, 255, 0.05);
+    --table-hover: rgba(0, 212, 255, 0.07);
 
     --success: #10b981;
     --light-success: #34d399;
@@ -78,11 +95,6 @@
     --highlight: #362c83;
     --hover-bg: #5757a62c;
 
-    /* --primary: #00c9ff;
-    --accent: #92fe9d;
-    --highlight: #0efeff;
-    --hover-bg: rgba(0, 212, 255, 0.08); */
-
     --btn: #00c6ff;
     --border-color: rgba(0, 212, 255, 0.2);
     --input-bg: #1e223d;
@@ -95,14 +107,13 @@
 
 /* --- BOTTOM NAVIGATION (bottom-nav) STARTS --- */
 :root {
-    --nav-bg: #ffffff;
-    --nav-shadow-color: rgba(0, 0, 0, 0.1);
-    --nav-icon-default: #6c757d;
-    --nav-icon-active: #4361ee;
-    --nav-text-default: #6c757d;
-    --nav-text-active: #4361ee;
-    --nav-indicator: #4361ee;
-    --gradient-purple: linear-gradient(to right, #8e2de2, #4a00e0);
+    --nav-bg: #191f46;
+    --nav-shadow-color: var(--nav-shadow-color);
+    --nav-icon-default: #7dbeff;
+    --nav-icon-active: #1d8cfc;
+    --nav-text-default: #a0a0a0;
+    --nav-text-active: #1d8cfc;
+    --nav-indicator: linear-gradient(to right, #8e2de2, #4a00e0);
 }
 
 [data-theme="dark"] {
