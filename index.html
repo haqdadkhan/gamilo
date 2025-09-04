@@ -3810,9 +3810,96 @@
 
 
 
+<style>
+    /* Ensure modal content is centered vertically and horizontally */
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+        min-height: 100vh; /* Full screen height for vertical centering */
+        justify-content: center;
+        margin: 0 auto;
+    }
 
+    .modal-content {
+        position: relative;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+    }
 
+    /* Optional visual styles */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
 
+    .modal-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .game-logo {
+        width: 60px;
+        height: auto;
+    }
+
+    .game-title h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .game-title p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .action-btn {
+        flex: 1;
+        margin: 0 5px;
+        background-color: #28a745;
+        border: none;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-trial {
+        background-color: #007bff;
+    }
+
+    .action-btn:hover {
+        opacity: 0.9;
+    }
+
+    /* Optional: backdrop blur for elegance */
+    .modal.fade .modal-dialog {
+        transition: transform 0.3s ease-out;
+        transform: translate(0, 0);
+    }
+</style>
 
 
     <!-- Games Modal Starts  -->
@@ -3838,6 +3925,7 @@
         </div>
     </div>
     <!-- Games Modal Ends  -->
+
     <!--Register Modal Start-->
     <div class="modal register__modal fade" id="register" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
